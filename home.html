@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Donau AI</title>
+    <link href="./src/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+
+    <!-- Header (Public) -->
+    <header class="bg-white border-b border-gray-200 px-8 h-18 flex items-center justify-between sticky top-0 z-50">
+        <div class="flex items-center gap-2">
+             <a href="home.html">
+                <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+             </a>
+        </div>
+        <div class="flex items-center gap-6">
+            <a href="signin.html" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Sign In</a>
+            <a href="signup.html" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-lg transition-colors">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="grow max-w-7xl mx-auto w-full px-8 py-12">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h1 class="text-4xl font-bold text-slate-900 mb-6">Connecting Brands with World-Class Manufacturers</h1>
+            <p class="text-lg text-slate-500 mb-8 leading-relaxed">Divestreamline your production process with our AI-powered platform. Find the perfect partner, manage briefs, and launch products faster.</p>
+            <div class="flex items-center justify-center gap-4">
+                <a href="signup.html" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg transition-colors">Start for Free</a>
+                <a href="for-brands.html" class="px-6 py-3 bg-white border border-gray-200 hover:border-blue-600 hover:text-blue-600 text-slate-700 font-bold rounded-lg transition-colors">Learn More</a>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <i class="ph ph-rocket-launch text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Fast Matching</h3>
+                <p class="text-slate-500">Get matched with verified manufacturers in days, not months.</p>
+            </div>
+             <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <i class="ph ph-chat-circle-text text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Seamless Communication</h3>
+                <p class="text-slate-500">Manage all your conversations and files in one secure place.</p>
+            </div>
+             <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <i class="ph ph-shield-check text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2">Verified Partners</h3>
+                <p class="text-slate-500">Work with manufacturers that have been vetted for quality and reliability.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-8">
+        <div class="max-w-[1400px] mx-auto px-8">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                     <div class="mb-4">
+                        <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed max-w-sm">AI-powered platform connecting brands with manufacturers</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Platform</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="home.html" class="hover:text-blue-600">Home</a></li>
+                        <li><a href="for-brands.html" class="hover:text-blue-600">For Brands</a></li>
+                        <li><a href="for-manufacturers.html" class="hover:text-blue-600">For Manufacturers</a></li>
+                        <li><a href="ai-brief-assistant.html" class="hover:text-blue-600">AI Brief Assistant</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="api-documentation.html" class="hover:text-blue-600">API Documentation</a></li>
+                        <li><a href="help-center.html" class="hover:text-blue-600">Help Center</a></li>
+                        <li><a href="product-categories.html" class="hover:text-blue-600">Product Categories</a></li>
+                        <li><a href="success-stories.html" class="hover:text-blue-600">Success Stories</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="about-us.html" class="hover:text-blue-600">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-blue-600">Contact</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-blue-600">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="hover:text-blue-600">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-100 pt-6 flex justify-between items-center text-sm text-slate-400">
+                <p>&copy; 2026 DonauApp</p>
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-2 cursor-pointer hover:text-slate-600">
+                        <i class="ph ph-globe"></i>
+                        <span>English</span>
+                    </div>
+                    <div class="flex items-center gap-2 cursor-pointer hover:text-slate-600">
+                        <i class="ph ph-currency-eur"></i>
+                        <span>EUR</span>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="hover:text-blue-600"><i class="ph ph-facebook-logo text-lg"></i></a>
+                        <a href="#" class="hover:text-blue-600"><i class="ph ph-instagram-logo text-lg"></i></a>
+                        <a href="#" class="hover:text-blue-600"><i class="ph ph-linkedin-logo text-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./src/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brief Chat - Donau AI</title>
+    <link href="./src/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 h-screen flex overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-gray-200 flex flex-col flex-shrink-0">
+        <!-- Logo -->
+        <div class="h-18 flex items-center px-6">
+            <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+        </div>
+
+        <!-- Nav Links -->
+        <div class="flex-1 px-4 py-6 space-y-1">
+            <a href="dashboard-filled.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-squares-four text-lg"></i>
+                Dashboard
+            </a>
+            <a href="briefs.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 text-blue-600 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-magnifying-glass text-lg"></i>
+                Find Briefs
+            </a>
+            <a href="messages.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-chat-circle-dots text-lg"></i>
+                Messages
+            </a>
+            <a href="settings-account.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-gear text-lg"></i>
+                Settings
+            </a>
+        </div>
+
+        <!-- Bottom Actions -->
+        <div class="p-4 border-t border-gray-100">
+            <a href="signin.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-red-600 hover:bg-red-50 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-sign-out text-lg"></i>
+                Sign Out
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="flex-1 flex flex-col min-w-0">
+        
+        <!-- Header -->
+        <header class="bg-white border-b border-gray-200 h-18 flex items-center justify-between px-8 flex-shrink-0">
+            <!-- Search -->
+            <div class="w-96">
+                <div class="relative">
+                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
+                    <input type="text" placeholder="Search briefs, manufacturers..." class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-slate-400">
+                </div>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="flex items-center gap-4">
+                <button class="text-slate-400 hover:text-slate-600 relative">
+                    <i class="ph ph-bell text-xl"></i>
+                    <!-- Notification Dot if needed -->
+                    <!-- <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border border-white"></span> -->
+                </button>
+                <button class="text-slate-400 hover:text-slate-600">
+                    <i class="ph ph-user-circle text-xl"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Scrollable Area -->
+        <main class="flex-1 overflow-y-auto p-8 flex flex-col min-h-0">
+            
+            <!-- Header -->
+            <div class="flex justify-between items-start mb-6 shrink-0">
+                <div>
+                    <div class="flex items-center gap-3 mb-1">
+                        <h1 class="text-2xl font-bold text-slate-900">Premium Vitamin D3 Supplement</h1>
+                        <span class="bg-blue-50 text-blue-600 text-xs px-2.5 py-0.5 rounded-full font-medium">Under Discussion</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-slate-500">
+                        <i class="ph ph-buildings text-sm"></i>
+                        <span>Evergreenapparel.co</span>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <button class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-colors shadow-sm">Submit Proposal</button>
+                    <button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <i class="ph ph-dots-three-vertical text-xl"></i>
+                    </button>
+                </div>
+            </div>
+    
+             <!-- Tabs -->
+            <div class="border-b border-gray-200 mb-6 shrink-0">
+                <div class="flex gap-8">
+                    <a href="brief-detail.html" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium text-sm flex items-center gap-2 transition-colors">
+                        <i class="ph ph-file-text text-lg"></i>
+                        Overview
+                    </a>
+                    <a href="brief-detail-proposal.html" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium text-sm flex items-center gap-2 transition-colors">
+                        <i class="ph ph-file-text text-lg"></i>
+                        Proposal
+                    </a>
+                    <a href="brief-detail-chat.html" class="pb-3 border-b-2 border-blue-600 text-blue-600 font-medium text-sm flex items-center gap-2">
+                        <i class="ph ph-chat-circle-dots text-lg"></i>
+                        Chat
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Chat Area -->
+            <div class="grow bg-white rounded-xl border border-gray-200 shadow-sm flex flex-col overflow-hidden min-h-0">
+                
+                <!-- Messages List -->
+                <div class="grow overflow-y-auto p-6 space-y-6">
+                    
+                    <!-- Date Separator -->
+                    <div class="flex justify-center">
+                        <span class="text-[10px] font-medium text-slate-400 bg-gray-50 px-2 py-0.5 rounded">Today</span>
+                    </div>
+    
+                    <!-- Received Message -->
+                    <div class="flex gap-4 max-w-[70%]">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold shrink-0 mt-1">EA</div>
+                        <div>
+                                <div class="flex items-baseline gap-2 mb-1">
+                                    <span class="text-xs font-bold text-slate-900">Evergreen Apparel Co.</span>
+                                    <span class="text-[10px] text-slate-400">10:30 AM</span>
+                                </div>
+                                <div class="bg-gray-100 rounded-2xl rounded-tl-none p-4 text-sm text-slate-700 leading-relaxed shadow-sm">
+                                <p>Hi! We're really interested in your production capabilities. Could you clarify if the organic cotton you use is GOTS certified?</p>
+                                </div>
+                        </div>
+                    </div>
+    
+                    <!-- Sent Message -->
+                    <div class="flex gap-4 max-w-[70%] ml-auto flex-row-reverse">
+                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-1">MT</div>
+                        <div class="flex flex-col items-end">
+                                <div class="flex items-baseline gap-2 mb-1">
+                                    <span class="text-[10px] text-slate-400">10:45 AM</span>
+                                    <span class="text-xs font-bold text-slate-900">You</span>
+                                </div>
+                                <div class="bg-blue-600 rounded-2xl rounded-tr-none p-4 text-sm text-white leading-relaxed shadow-sm">
+                                <p>Hello! Yes, absolutely. All our organic cotton is GOTS certified, and we can provide the certificates upon request.</p>
+                                </div>
+                        </div>
+                    </div>
+                     
+                     <!-- Received Message -->
+                    <div class="flex gap-4 max-w-[70%]">
+                        <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold shrink-0 mt-1">EA</div>
+                         <div>
+                                <div class="flex items-baseline gap-2 mb-1">
+                                    <span class="text-xs font-bold text-slate-900">Evergreen Apparel Co.</span>
+                                    <span class="text-[10px] text-slate-400">11:00 AM</span>
+                                </div>
+                                <div class="bg-gray-100 rounded-2xl rounded-tl-none p-4 text-sm text-slate-700 leading-relaxed shadow-sm">
+                                <p>That's great to hear! We would love to see some samples of previous work similar to our requirements.</p>
+                                </div>
+                        </div>
+                    </div>
+    
+                </div>
+    
+                <!-- Input Area -->
+                <div class="p-4 border-t border-gray-100 bg-white shrink-0">
+                    <div class="flex gap-2 max-w-4xl mx-auto">
+                        <button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 bg-gray-50 rounded-lg hover:bg-gray-100 border border-gray-200 text-xl">
+                            <i class="ph ph-paperclip"></i>
+                        </button>
+                        <input type="text" placeholder="Type your message..." class="grow px-4 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
+                        <button class="w-10 h-10 flex items-center justify-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 shadow-sm text-xl">
+                            <i class="ph ph-paper-plane-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+        </main>
+    </div>
+
+    <script src="./src/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brief Proposal - Donau AI</title>
+    <link href="./src/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 h-screen flex overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-gray-200 flex flex-col flex-shrink-0">
+        <!-- Logo -->
+        <div class="h-18 flex items-center px-6">
+            <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+        </div>
+
+        <!-- Nav Links -->
+        <div class="flex-1 px-4 py-6 space-y-1">
+            <a href="dashboard-filled.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-squares-four text-lg"></i>
+                Dashboard
+            </a>
+            <a href="briefs.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 text-blue-600 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-magnifying-glass text-lg"></i>
+                Find Briefs
+            </a>
+            <a href="messages.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-chat-circle-dots text-lg"></i>
+                Messages
+            </a>
+            <a href="settings-account.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-gear text-lg"></i>
+                Settings
+            </a>
+        </div>
+
+        <!-- Bottom Actions -->
+        <div class="p-4 border-t border-gray-100">
+            <a href="signin.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-red-600 hover:bg-red-50 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-sign-out text-lg"></i>
+                Sign Out
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="flex-1 flex flex-col min-w-0">
+        
+        <!-- Header -->
+        <header class="bg-white border-b border-gray-200 h-18 flex items-center justify-between px-8 flex-shrink-0">
+            <!-- Search -->
+            <div class="w-96">
+                <div class="relative">
+                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
+                    <input type="text" placeholder="Search briefs, manufacturers..." class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-slate-400">
+                </div>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="flex items-center gap-4">
+                <button class="text-slate-400 hover:text-slate-600 relative">
+                    <i class="ph ph-bell text-xl"></i>
+                    <!-- Notification Dot if needed -->
+                    <!-- <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border border-white"></span> -->
+                </button>
+                <button class="text-slate-400 hover:text-slate-600">
+                    <i class="ph ph-user-circle text-xl"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Scrollable Area -->
+        <main class="flex-1 overflow-y-auto p-8">
+            <div class="max-w-[1400px] mb-12 flex items-start gap-8">
+                
+                <!-- Left Content -->
+                <div class="grow min-w-0">
+                     <!-- Header -->
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <div class="flex items-center gap-3 mb-1">
+                                <h1 class="text-2xl font-bold text-slate-900">Premium Vitamin D3 Supplement</h1>
+                                <span class="bg-blue-50 text-blue-600 text-xs px-2.5 py-0.5 rounded-full font-medium">Under Discussion</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-500">
+                                <i class="ph ph-buildings text-sm"></i>
+                                <span>Evergreenapparel.co</span>
+                            </div>
+                            <div class="flex items-center gap-3 mt-3 text-xs text-slate-400">
+                                <span class="font-mono text-blue-500 font-medium">#BR12345678</span>
+                                <span>•</span>
+                                <span>Dietary Supplements</span>
+                                <span>•</span>
+                                <span>Created 12/01/2026</span>
+                                <span>•</span>
+                                <span>Last Updated 18/01/2026</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-colors shadow-sm">Submit Proposal</button>
+                            <button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 border border-gray-200 rounded-lg hover:bg-gray-50">
+                                <i class="ph ph-dots-three-vertical text-xl"></i>
+                            </button>
+                        </div>
+                    </div>
+        
+                     <!-- Tabs -->
+                    <div class="border-b border-gray-200 mb-8">
+                        <div class="flex gap-8">
+                            <a href="brief-detail.html" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium text-sm flex items-center gap-2 transition-colors">
+                                <i class="ph ph-file-text text-lg"></i>
+                                Overview
+                            </a>
+                            <a href="brief-detail-proposal.html" class="pb-3 border-b-2 border-blue-600 text-blue-600 font-medium text-sm flex items-center gap-2">
+                                <i class="ph ph-file-text text-lg"></i>
+                                Proposal
+                            </a>
+                            <a href="brief-detail-chat.html" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium text-sm flex items-center gap-2 transition-colors">
+                                <i class="ph ph-chat-circle-dots text-lg"></i>
+                                Chat
+                            </a>
+                        </div>
+                    </div>
+        
+                    <!-- Proposals Section -->
+                    <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6 mb-20 min-h-[500px]">
+                        <h2 class="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Proposals</h2>
+                        
+                        <!-- Submitted Proposal Card -->
+                        <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+                            <div class="mb-4">
+                                 <h3 class="text-sm font-bold text-slate-900">Your Proposal</h3>
+                                 <span class="text-xs text-slate-400">Submitted on 15/01/2025</span>
+                            </div>
+        
+                            <div class="bg-white rounded-lg border border-gray-200 p-4 mb-4 grid grid-cols-3 gap-6">
+                                <div>
+                                     <span class="block text-[10px] text-slate-400 font-medium uppercase mb-1">Quoted Price</span>
+                                     <span class="block text-lg font-bold text-slate-900">€10,000</span>
+                                </div>
+                                <div>
+                                     <span class="block text-[10px] text-slate-400 font-medium uppercase mb-1">Timeline</span>
+                                     <span class="block text-lg font-bold text-slate-900">2 weeks</span>
+                                </div>
+                                 <div>
+                                     <span class="block text-[10px] text-slate-400 font-medium uppercase mb-1">MOQ</span>
+                                     <span class="block text-lg font-bold text-slate-900">4,000</span>
+                                </div>
+                            </div>
+        
+                            <div class="mb-6">
+                                 <h4 class="text-xs font-bold text-slate-900 mb-2">Notes</h4>
+                                 <p class="text-sm text-slate-500 leading-relaxed">
+                                     We can meet all your requirements with GOTS certified organic cotton. Price includes packaging.
+                                 </p>
+                            </div>
+        
+                            <div class="flex justify-end gap-3">
+                                 <button class="px-5 py-2 text-sm font-medium text-slate-600 border border-gray-300 rounded-lg hover:bg-white bg-white shadow-sm">Cancel</button>
+                                 <button class="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 shadow-sm">Edit</button>
+                            </div>
+                        </div>
+        
+                    </div>
+        
+                </div>
+        
+                <!-- AI Sidebar -->
+                <div class="w-[360px] bg-white border border-gray-200 rounded-xl shadow-lg flex flex-col h-[600px] sticky top-8 shrink-0">
+                     
+                     <!-- Header -->
+                     <div class="p-4 border-b border-gray-100 flex items-center justify-between bg-zinc-50 rounded-t-xl">
+                         <div class="flex items-center gap-3">
+                             <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-sm">
+                                 <i class="ph ph-robot text-lg"></i>
+                             </div>
+                             <div>
+                                 <h3 class="text-sm font-bold text-slate-900">Donau AI Assistant</h3>
+                                 <p class="text-[10px] text-slate-500">Your assistant for winning new briefs.</p>
+                             </div>
+                         </div>
+                         <button class="text-slate-400 hover:text-slate-600">
+                             <i class="ph ph-x"></i>
+                         </button>
+                     </div>
+        
+                     <!-- Chat Area -->
+                     <div class="grow p-6 flex flex-col items-center justify-center text-center overflow-y-auto">
+                         <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+                             <i class="ph ph-robot text-2xl"></i>
+                         </div>
+                         <h4 class="text-sm font-bold text-slate-900 mb-2">Welcome to Donau AI!</h4>
+                         <p class="text-xs text-slate-500 max-w-[240px] leading-relaxed mb-6">
+                             I'm here to help you analyze new briefs, draft competitive proposals, or answer questions about active invites.
+                         </p>
+                         <div class="flex flex-wrap gap-2 justify-center">
+                             <button class="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded-lg text-xs font-medium text-slate-600 hover:bg-white hover:border-blue-200 hover:text-blue-600 transition-colors">Draft a Proposal</button>
+                             <button class="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded-lg text-xs font-medium text-slate-600 hover:bg-white hover:border-blue-200 hover:text-blue-600 transition-colors">Production FAQs</button>
+                         </div>
+                     </div>
+        
+                     <!-- Input Area -->
+                     <div class="p-4 border-t border-gray-100">
+                         <div class="relative">
+                             <input type="text" placeholder="Type your response..." class="w-full pl-10 pr-10 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-xs focus:outline-none focus:ring-1 focus:ring-blue-500">
+                             <i class="ph ph-paperclip absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
+                             <button class="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 bg-blue-600 text-white rounded flex items-center justify-center hover:bg-blue-700">
+                                 <i class="ph ph-paper-plane-right text-sm"></i>
+                             </button>
+                         </div>
+                     </div>
+        
+                </div>
+        
+            </div>
+        </main>
+    </div>
+
+    <script src="./src/js/main.js"></script>
+</body>
+</html>

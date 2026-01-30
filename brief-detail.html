@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brief Detail - Donau AI</title>
+    <link href="./src/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 h-screen flex overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-gray-200 flex flex-col flex-shrink-0">
+        <!-- Logo -->
+        <div class="h-18 flex items-center px-6">
+            <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+        </div>
+
+        <!-- Nav Links -->
+        <div class="flex-1 px-4 py-6 space-y-1">
+            <a href="dashboard-filled.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-squares-four text-lg"></i>
+                Dashboard
+            </a>
+            <a href="briefs.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 text-blue-600 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-magnifying-glass text-lg"></i>
+                Find Briefs
+            </a>
+            <a href="messages.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-chat-circle-dots text-lg"></i>
+                Messages
+            </a>
+            <a href="settings-account.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-gear text-lg"></i>
+                Settings
+            </a>
+        </div>
+
+        <!-- Bottom Actions -->
+        <div class="p-4 border-t border-gray-100">
+            <a href="signin.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-red-600 hover:bg-red-50 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-sign-out text-lg"></i>
+                Sign Out
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="flex-1 flex flex-col min-w-0">
+        
+        <!-- Header -->
+        <header class="bg-white border-b border-gray-200 h-18 flex items-center justify-between px-8 flex-shrink-0">
+            <!-- Search -->
+            <div class="w-96">
+                <div class="relative">
+                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
+                    <input type="text" placeholder="Search briefs, manufacturers..." class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-slate-400">
+                </div>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="flex items-center gap-4">
+                <button class="text-slate-400 hover:text-slate-600 relative">
+                    <i class="ph ph-bell text-xl"></i>
+                    <!-- Notification Dot if needed -->
+                    <!-- <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border border-white"></span> -->
+                </button>
+                <button class="text-slate-400 hover:text-slate-600">
+                    <i class="ph ph-user-circle text-xl"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Scrollable Area -->
+        <main class="flex-1 overflow-y-auto p-8">
+            <div class="max-w-[1200px] mb-12">
+                
+                <!-- Header -->
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <div class="flex items-center gap-3 mb-1">
+                            <h1 class="text-2xl font-bold text-slate-900">Premium Vitamin D3 Supplement</h1>
+                            <span class="bg-blue-50 text-blue-600 text-xs px-2.5 py-0.5 rounded-full font-medium">Under Discussion</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-slate-500">
+                            <i class="ph ph-buildings text-sm"></i>
+                            <span>Evergreenapparel.co</span>
+                        </div>
+                         <div class="flex items-center gap-3 mt-3 text-xs text-slate-400">
+                            <span class="font-mono text-blue-500 font-medium">#BR12345678</span>
+                            <span>•</span>
+                            <span>Dietary Supplements</span>
+                            <span>•</span>
+                            <span>Created 12/01/2026</span>
+                            <span>•</span>
+                            <span>Last Updated 18/01/2026</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-colors shadow-sm">Submit Proposal</button>
+                        <button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 border border-gray-200 rounded-lg hover:bg-gray-50">
+                            <i class="ph ph-dots-three-vertical text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+        
+                <!-- Alert -->
+                <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 flex items-center justify-between mb-8">
+                    <div class="flex items-center gap-4">
+                         <div class="w-8 h-8 rounded bg-blue-600 flex items-center justify-center text-white shrink-0">
+                            <i class="ph ph-sparkle text-lg"></i>
+                        </div>
+                        <p class="text-sm text-slate-700 leading-relaxed">The timeline is not specified. Consider asking the brand for clarification before submitting your proposal. "MOQ is not mentioned. Confirming this ensures your proposal matches expectations.</p>
+                    </div>
+                    <a href="#" class="text-sm font-bold text-blue-600 hover:underline shrink-0 ml-4">Chat with Brand</a>
+                </div>
+        
+                <!-- Tabs -->
+                <div class="border-b border-gray-200 mb-8">
+                    <div class="flex gap-8">
+                        <a href="brief-detail.html" class="pb-3 border-b-2 border-blue-600 text-blue-600 font-medium text-sm flex items-center gap-2">
+                            <i class="ph ph-file-text text-lg"></i>
+                            Overview
+                        </a>
+                        <a href="brief-detail-proposal.html" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium text-sm flex items-center gap-2 transition-colors">
+                            <i class="ph ph-file-text text-lg"></i>
+                            Proposal
+                        </a>
+                        <a href="brief-detail-chat.html" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium text-sm flex items-center gap-2 transition-colors">
+                            <i class="ph ph-chat-circle-dots text-lg"></i>
+                            Chat
+                        </a>
+                    </div>
+                </div>
+        
+                <!-- Project Requirements -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6 mb-6">
+                    <h2 class="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Project Requirements</h2>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        We are looking for eco-friendly packaging solutions for our new organic skincare line. The packaging must be 100% recyclable, aesthetically pleasing, and cost-effective. We need samples within 2 weeks and full production capability.
+                    </p>
+                </div>
+        
+                <!-- Technical Specifications -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6 mb-6">
+                    <h2 class="text-sm font-bold text-slate-900 mb-6 uppercase tracking-wide">Technical Specifications</h2>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <!-- Row 1 -->
+                        <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                            <span class="text-xs font-semibold text-slate-500 w-24 shrink-0">Material</span>
+                            <span class="text-sm font-semibold text-slate-900">Recyclable cardboard or biodegradable plastic</span>
+                        </div>
+                        <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                            <span class="text-xs font-semibold text-slate-500 w-24 shrink-0">Dimensions</span>
+                            <span class="text-sm font-semibold text-slate-900">15cm x 10cm x 5cm</span>
+                        </div>
+                         <!-- Row 2 -->
+                        <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                            <span class="text-xs font-semibold text-slate-500 w-24 shrink-0">Printing</span>
+                            <span class="text-sm font-semibold text-slate-900">Full color CMYK with matte finish</span>
+                        </div>
+                        <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                            <span class="text-xs font-semibold text-slate-500 w-24 shrink-0">MOQ</span>
+                            <span class="text-sm font-semibold text-slate-900">10,000 units minimum</span>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Brief Details -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6 mb-6">
+                    <h2 class="text-sm font-bold text-slate-900 mb-6 uppercase tracking-wide">Brief Details</h2>
+                    
+                    <div class="grid grid-cols-4 gap-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center text-slate-400 shrink-0">
+                                <i class="ph ph-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-slate-400 font-medium uppercase">Quantity</span>
+                                <span class="block text-sm font-bold text-slate-900">5,000 units</span>
+                            </div>
+                        </div>
+                        
+                         <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center text-slate-400 shrink-0">
+                                <i class="ph ph-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-slate-400 font-medium uppercase">Timeline</span>
+                                <span class="block text-sm font-bold text-slate-900">8-12 weeks</span>
+                            </div>
+                        </div>
+        
+                         <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center text-slate-400 shrink-0">
+                                <i class="ph ph-wallet text-xl"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-slate-400 font-medium uppercase">Budget Range</span>
+                                <span class="block text-sm font-bold text-slate-900">€30,000 - €45,000</span>
+                            </div>
+                        </div>
+        
+                         <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center text-slate-400 shrink-0">
+                                <i class="ph ph-file text-xl"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] text-slate-400 font-medium uppercase">Category</span>
+                                <span class="block text-sm font-bold text-slate-900">Dietry Supplements</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Attachments -->
+                 <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6 mb-20">
+                    <h2 class="text-sm font-bold text-slate-900 mb-6 uppercase tracking-wide">Attachments</h2>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center p-4 bg-gray-50 rounded-lg border border-transparent hover:border-gray-200 transition-all cursor-pointer group">
+                            <div class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-slate-400 shrink-0 group-hover:bg-white group-hover:shadow-sm transition-all">
+                                <i class="ph ph-file-pdf text-xl"></i>
+                            </div>
+                            <div class="ml-4 grow">
+                                <span class="block text-sm font-bold text-slate-900">Specs.pdf</span>
+                                <span class="block text-xs text-slate-400">PDF Document • 2.4 MB</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center p-4 bg-gray-50 rounded-lg border border-transparent hover:border-gray-200 transition-all cursor-pointer group">
+                            <div class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-slate-400 shrink-0 group-hover:bg-white group-hover:shadow-sm transition-all">
+                                <i class="ph ph-file-image text-xl"></i>
+                            </div>
+                            <div class="ml-4 grow">
+                                <span class="block text-sm font-bold text-slate-900">Design-mockup.png</span>
+                                <span class="block text-xs text-slate-400">PDF Document • 2.4 MB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                 <!-- Floating Chat Trigger (Optional based on design) -->
+                 <div class="fixed bottom-8 right-8">
+                    <button class="w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-105">
+                        <i class="ph ph-chat-circle-dots text-3xl"></i>
+                    </button>
+                </div>
+        
+            </div>
+        </main>
+    </div>
+
+    <script src="./src/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Donau AI</title>
+    <link href="./src/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 h-screen flex overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r border-gray-200 flex flex-col flex-shrink-0">
+        <!-- Logo -->
+        <div class="h-18 flex items-center px-6">
+            <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+        </div>
+
+        <!-- Nav Links -->
+        <div class="flex-1 px-4 py-6 space-y-1">
+            <a href="dashboard-filled.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 text-blue-600 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-squares-four text-lg"></i>
+                Dashboard
+            </a>
+            <a href="briefs.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-magnifying-glass text-lg"></i>
+                Find Briefs
+            </a>
+            <a href="messages.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-chat-circle-dots text-lg"></i>
+                Messages
+            </a>
+            <a href="settings-account.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-gear text-lg"></i>
+                Settings
+            </a>
+        </div>
+
+        <!-- Bottom Actions -->
+        <div class="p-4 border-t border-gray-100">
+            <a href="signin.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-red-600 hover:bg-red-50 rounded-lg text-sm font-medium transition-colors">
+                <i class="ph ph-sign-out text-lg"></i>
+                Sign Out
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="flex-1 flex flex-col min-w-0">
+        
+        <!-- Header -->
+        <header class="bg-white border-b border-gray-200 h-18 flex items-center justify-between px-8 flex-shrink-0">
+            <!-- Search -->
+            <div class="w-96">
+                <div class="relative">
+                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
+                    <input type="text" placeholder="Search briefs, manufacturers..." class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-slate-400">
+                </div>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="flex items-center gap-4">
+                <button class="text-slate-400 hover:text-slate-600 relative">
+                    <i class="ph ph-bell text-xl"></i>
+                    <!-- Notification Dot if needed -->
+                    <!-- <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border border-white"></span> -->
+                </button>
+                <button class="text-slate-400 hover:text-slate-600">
+                    <i class="ph ph-user-circle text-xl"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Scrollable Area -->
+        <main class="flex-1 overflow-y-auto p-8">
+            <div class="max-w-[1200px] mb-12">
+                
+                <div class="mb-8">
+                    <h1 class="text-2xl font-bold text-slate-900">Manufacturer Dashboard</h1>
+                    <p class="text-slate-500 text-sm mt-1">Invitations, matches and your active proposals in one place.</p>
+                </div>
+
+                <!-- Alert Banner -->
+                <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 flex items-center justify-between mb-8">
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-8 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
+                            <i class="ph ph-info text-lg"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm">A brand has invited you to review this brief. Take a look to see if it matches your capabilities.</p>
+                    </div>
+                    <button class="bg-white text-blue-600 px-4 py-2 rounded-lg border border-blue-200 text-sm font-medium hover:bg-blue-50 transition-colors">Review Brief</button>
+                </div>
+
+                <!-- Stats Row -->
+                <div class="grid grid-cols-3 gap-6 mb-8">
+                    <!-- Total Brief -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex items-center gap-6">
+                        <div class="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center text-slate-500">
+                            <i class="ph ph-file-text text-2xl"></i>
+                        </div>
+                        <div>
+                            <span class="block text-sm font-medium text-slate-500">Total Brief</span>
+                            <span class="block text-xl font-bold text-slate-900 mt-1">-</span>
+                        </div>
+                    </div>
+                    <!-- New Brief -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex items-center gap-6">
+                         <div class="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center text-slate-500">
+                            <i class="ph ph-file-plus text-2xl"></i>
+                        </div>
+                        <div>
+                            <span class="block text-sm font-medium text-slate-500">New Brief</span>
+                            <span class="block text-xl font-bold text-slate-900 mt-1">-</span>
+                        </div>
+                    </div>
+                    <!-- Active Brief -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex items-center gap-6">
+                         <div class="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center text-slate-500">
+                            <i class="ph ph-check-circle text-2xl"></i>
+                        </div>
+                        <div>
+                            <span class="block text-sm font-medium text-slate-500">Active Brief</span>
+                            <span class="block text-xl font-bold text-slate-900 mt-1">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Grid -->
+                <div class="grid grid-cols-3 gap-6">
+                    
+                    <!-- Recent Briefs (Span 2) -->
+                    <div class="col-span-2">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-bold text-slate-900">Recent Briefs</h3>
+                            <a href="#" class="text-sm text-blue-600 font-medium hover:underline">View All</a>
+                        </div>
+                        <div class="bg-white rounded-xl border border-gray-200 shadow-sm h-80 flex flex-col items-center justify-center text-center p-8">
+                            <div class="mb-4">
+                                <!-- Placeholder illustration logic -->
+                                <i class="ph ph-file-search text-4xl text-slate-300"></i> <!-- Replacing with icon -->
+                            </div>
+                             <!-- Trying to mimic the sparkle/file image from design with an icon for now -->
+                             <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iMjAiIGZpbGw9IiNGOFA5RkEiLz4KPHBhdGggZD0iTTIwIDEwTDIyLjI0NSAxNS41MUwyOCAyMGwtNS43NTUgNC40OUwyMCAzMGwtMi4yNDUtNS41MUwxMiAyMGw1Ljc1NS00LjQ5TDIwIDEwWiIgZmlsbD0iIzQwQzRGQiIvPgo8L3N2Zz4=" alt="No Invites" class="w-12 h-12 mb-3 hidden"> 
+                             <!-- Using a sparkle icon from phosphor as placeholder if image unavailable, but I'll use text for now -->
+                             
+                             <!-- Assuming image is generic "No data" -->
+                            <h4 class="font-bold text-slate-900 mb-1">No Invites Yet</h4>
+                            <p class="text-slate-500 text-sm max-w-xs mx-auto">No briefs have been shared to you yet. When a brand invites you, you'll see their brief here.</p>
+                        </div>
+                    </div>
+
+                    <!-- Notifications (Span 1) -->
+                    <div class="col-span-1">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-bold text-slate-900">Notifications</h3>
+                            <a href="#" class="text-sm text-blue-600 font-medium hover:underline">View All</a>
+                        </div>
+                        <div class="bg-white rounded-xl border border-gray-200 shadow-sm h-48 flex flex-col items-center justify-center text-center p-6">
+                            <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-slate-400 mb-3">
+                                <i class="ph ph-clock text-xl"></i>
+                            </div>
+                            <h4 class="font-bold text-slate-900 text-sm mb-1">No Notifications Yet</h4>
+                            <p class="text-xs text-slate-500">New updates will appear here when available.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="./src/js/main.js"></script>
+</body>
+</html>
