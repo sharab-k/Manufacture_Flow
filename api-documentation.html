@@ -34,11 +34,11 @@
             <div class="w-full md:w-64 shrink-0 top-24 sticky">
                 <h3 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Documentation</h3>
                 <ul class="space-y-1">
-                    <li><a href="#" class="block px-3 py-2 text-blue-600 font-medium bg-blue-50 rounded-lg">Introduction</a></li>
-                    <li><a href="#" class="block px-3 py-2 text-slate-500 hover:text-slate-900 hover:bg-gray-50 rounded-lg">Authentication</a></li>
-                    <li><a href="#" class="block px-3 py-2 text-slate-500 hover:text-slate-900 hover:bg-gray-50 rounded-lg">Briefs API</a></li>
-                    <li><a href="#" class="block px-3 py-2 text-slate-500 hover:text-slate-900 hover:bg-gray-50 rounded-lg">Manufacturers API</a></li>
-                    <li><a href="#" class="block px-3 py-2 text-slate-500 hover:text-slate-900 hover:bg-gray-50 rounded-lg">Webhooks</a></li>
+                    <li><a href="#introduction" class="block px-3 py-2 text-blue-600 font-medium bg-blue-50 rounded-lg">Introduction</a></li>
+                    <li><a href="#authentication" class="block px-3 py-2 text-slate-500 hover:text-slate-900 hover:bg-gray-50 rounded-lg">Authentication</a></li>
+                    <li><a href="#briefs-api" class="block px-3 py-2 text-slate-500 hover:text-slate-900 hover:bg-gray-50 rounded-lg">Briefs API</a></li>
+                    <li><a href="#manufacturers-api" class="block px-3 py-2 text-slate-500 hover:text-slate-900 hover:bg-gray-50 rounded-lg">Manufacturers API</a></li>
+                    <li><a href="#webhooks" class="block px-3 py-2 text-slate-500 hover:text-slate-900 hover:bg-gray-50 rounded-lg">Webhooks</a></li>
                 </ul>
             </div>
 
@@ -50,9 +50,14 @@
                 </p>
 
                 <div class="prose prose-slate max-w-none">
-                    <h2 class="text-xl font-bold text-slate-900 mb-4">Getting Started</h2>
+                    <h2 id="introduction" class="text-xl font-bold text-slate-900 mb-4 scroll-mt-28">Getting Started</h2>
                     <p class="text-slate-500 mb-6">
                         To get started, you'll need an API key. You can generate one in your account settings under the "Integrations" tab.
+                    </p>
+
+                    <h2 id="authentication" class="text-xl font-bold text-slate-900 mb-4 scroll-mt-28">Authentication</h2>
+                    <p class="text-slate-500 mb-6">
+                        Authenticate requests using your API key in the header.
                     </p>
 
                     <div class="bg-slate-900 rounded-xl p-6 mb-8 overflow-x-auto">
@@ -61,6 +66,21 @@
                               -H "Authorization: Bearer YOUR_API_KEY"
                         </code>
                     </div>
+
+                    <h2 id="briefs-api" class="text-xl font-bold text-slate-900 mb-4 scroll-mt-28">Briefs API</h2>
+                    <p class="text-slate-500 mb-6">
+                        Endpoints to manage product briefs.
+                    </p>
+
+                    <h2 id="manufacturers-api" class="text-xl font-bold text-slate-900 mb-4 scroll-mt-28">Manufacturers API</h2>
+                    <p class="text-slate-500 mb-6">
+                        Endpoints to search and filter manufacturers.
+                    </p>
+
+                    <h2 id="webhooks" class="text-xl font-bold text-slate-900 mb-4 scroll-mt-28">Webhooks</h2>
+                    <p class="text-slate-500 mb-6">
+                        Subscribe to real-time events.
+                    </p>
 
                     <h2 class="text-xl font-bold text-slate-900 mb-4">Rate Limits</h2>
                     <p class="text-slate-500 mb-6">
@@ -125,9 +145,9 @@
                         <span>EUR</span>
                     </div>
                     <div class="flex gap-4">
-                        <a href="#" class="hover:text-blue-600"><i class="ph ph-facebook-logo text-lg"></i></a>
-                        <a href="#" class="hover:text-blue-600"><i class="ph ph-instagram-logo text-lg"></i></a>
-                        <a href="#" class="hover:text-blue-600"><i class="ph ph-linkedin-logo text-lg"></i></a>
+                        <a href="https://facebook.com" class="hover:text-blue-600"><i class="ph ph-facebook-logo text-lg"></i></a>
+                        <a href="https://instagram.com" class="hover:text-blue-600"><i class="ph ph-instagram-logo text-lg"></i></a>
+                        <a href="https://linkedin.com" class="hover:text-blue-600"><i class="ph ph-linkedin-logo text-lg"></i></a>
                     </div>
                 </div>
             </div>
