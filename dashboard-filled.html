@@ -14,15 +14,18 @@
 </head>
 <body class="bg-gray-50 h-screen flex overflow-hidden">
 
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/50 z-40 hidden md:hidden glass"></div>
+
     <!-- Sidebar -->
-    <aside class="w-64 bg-white border-r border-gray-200 flex flex-col shrink-0">
+    <aside class="w-64 bg-white border-r border-gray-200 flex-col shrink-0 hidden md:flex transition-all duration-300">
         <!-- Logo -->
         <div class="h-18 flex items-center px-6 py-6">
-            <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-10 w-auto">
+            <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 md:h-10 w-auto">
         </div>
 
         <!-- Nav Links -->
-        <div class="flex-1 px-4 py-6 space-y-1">
+        <div class="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
             <a href="dashboard-filled.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 text-blue-600 rounded-lg text-sm font-medium transition-colors">
                 <i class="ph ph-squares-four text-lg"></i>
                 Dashboard
@@ -54,17 +57,27 @@
     <div class="flex-1 flex flex-col min-w-0">
         
         <!-- Header -->
-        <header class="bg-white border-b border-gray-200 h-18 flex items-center justify-between px-8 shrink-0">
-            <!-- Search -->
-            <div class="w-96">
-                <div class="relative">
-                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
-                    <input type="text" placeholder="Search briefs, manufacturers..." class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-slate-400">
+        <header class="bg-white border-b border-gray-200 h-18 flex items-center justify-between px-4 md:px-8 shrink-0">
+            <div class="flex items-center gap-4">
+                 <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-toggle" class="md:hidden text-slate-500 hover:text-slate-700">
+                    <i class="ph ph-list text-2xl"></i>
+                </button>
+
+                <!-- Search -->
+                <div class="w-full md:w-96 hidden md:block">
+                    <div class="relative">
+                        <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
+                        <input type="text" placeholder="Search briefs, manufacturers..." class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-slate-400">
+                    </div>
                 </div>
             </div>
 
             <!-- Right Actions -->
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4 md:gap-6">
+                <button class="md:hidden text-slate-400 hover:text-slate-600">
+                    <i class="ph ph-magnifying-glass text-xl"></i>
+                </button>
                 <!-- Help -->
                 <a href="help-center.html" class="text-slate-400 hover:text-slate-600">
                     <i class="ph ph-question text-xl"></i>
@@ -76,7 +89,7 @@
                         <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
                     </button>
                     <!-- Notification Dropdown -->
-                    <div id="notification-dropdown" data-dropdown-content class="hidden absolute right-0 mt-4 bg-white rounded-2xl shadow-xl border border-gray-100 z-50 overflow-hidden animate-fade-in" style="width: 400px; min-width: 400px;">
+                    <div id="notification-dropdown" data-dropdown-content class="hidden absolute right-0 mt-4 bg-white rounded-2xl shadow-xl border border-gray-100 z-50 overflow-hidden animate-fade-in w-80 md:w-[400px]" style="min-width: unset;">
                         <!-- Header -->
                         <div class="px-6 py-[22px] border-b border-gray-100 flex justify-between items-center">
                             <h4 class="font-bold text-slate-900 text-lg">Notifications</h4>
@@ -174,7 +187,7 @@
         </header>
 
         <!-- Main Scrollable Area -->
-        <main class="flex-1 overflow-y-auto p-8">
+        <main class="flex-1 overflow-y-auto p-4 md:p-8">
             <div class="max-w-[1200px] mb-12">
                 
                 <div class="mb-8">
@@ -183,14 +196,14 @@
                 </div>
 
                 <!-- Alert Banner -->
-                <div class="bg-blue-50 border border-blue-100 rounded-2xl p-4 flex items-center justify-between mb-8">
+                <div class="bg-blue-50 border border-blue-100 rounded-2xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">
                     <div class="flex items-center gap-4">
                         <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center shrink-0">
                             <i class="ph ph-sparkle text-lg"></i>
                         </div>
                         <p class="text-slate-700 text-sm">A brand has invited you to review this brief. Take a look to see if it matches your capabilities.</p>
                     </div>
-                    <button class="text-blue-600 text-sm font-bold hover:underline px-4">Review Brief</button>
+                    <button class="text-blue-600 text-sm font-bold hover:underline px-4 whitespace-nowrap">Review Brief</button>
                 </div>
 
                 <!-- Stats Row -->
@@ -238,7 +251,7 @@
                         </div>
                         
                         <!-- Brief Card 1 -->
-                        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-blue-200 transition-colors">
+                        <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-blue-200 transition-colors">
                             <div class="flex flex-col gap-4">
                                 <div>
                                     <span class="text-xs text-blue-500 font-medium tracking-tight mb-2 block">#BR12345678</span>
@@ -269,7 +282,7 @@
                         </div>
 
                         <!-- Brief Card 2 -->
-                        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-blue-200 transition-colors">
+                        <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-blue-200 transition-colors">
                             <div class="flex flex-col gap-4">
                                 <div>
                                     <span class="text-xs text-blue-500 font-medium tracking-tight mb-2 block">#BR12345678</span>
@@ -300,7 +313,7 @@
                         </div>
 
                         <!-- Brief Card 3 -->
-                        <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-blue-200 transition-colors">
+                        <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-blue-200 transition-colors">
                             <div class="flex flex-col gap-4">
                                 <div>
                                     <span class="text-xs text-blue-500 font-medium tracking-tight mb-2 block">#BR12345678</span>

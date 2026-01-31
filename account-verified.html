@@ -12,12 +12,12 @@
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-gray-50 h-screen flex flex-col justify-between">
+<body class="bg-gray-50 min-h-screen flex flex-col justify-between">
 
     <!-- Header -->
-    <header class="w-full px-8 py-6 flex justify-between items-center">
+    <header class="w-full px-4 md:px-8 py-6 flex justify-between items-center">
         <a href="home.html" class="flex items-center gap-2">
-            <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+            <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 md:h-10 w-auto">
         </a>
         
         <div class="flex items-center gap-2 text-slate-600 cursor-pointer hover:text-slate-900">
@@ -28,8 +28,8 @@
     </header>
 
     <!-- Main Content -->
-    <main class="grow flex items-center justify-center px-4">
-        <div class="bg-white p-10 rounded-2xl shadow-xl w-full max-w-[500px] text-center">
+    <main class="grow flex items-center justify-center px-4 py-8">
+        <div class="bg-white p-6 md:p-10 rounded-2xl shadow-xl w-full max-w-[500px] text-center">
             
             <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl shadow-lg shadow-blue-200">
                 <i class="ph ph-check"></i>
@@ -50,12 +50,14 @@
     <script src="./src/js/main.js"></script>
 
     <!-- Footer -->
-    <footer class="w-full px-8 py-6 text-sm text-slate-500 flex items-center gap-4">
+    <footer class="w-full px-4 md:px-8 py-6 text-sm text-slate-500 flex flex-col md:flex-row justify-center md:items-center gap-2 md:gap-4 text-center md:text-left">
         <span>&copy; 2026 DonauAI</span>
-        <span class="w-px h-3 bg-slate-300"></span>
-        <a href="privacy-policy.html" class="hover:text-slate-900">Privacy Policy</a>
-        <span class="w-px h-3 bg-slate-300"></span>
-        <a href="terms-of-service.html" class="hover:text-slate-900">Terms of Service</a>
+        <span class="hidden md:block w-px h-3 bg-slate-300"></span>
+        <div class="flex items-center justify-center gap-4">
+            <a href="privacy-policy.html" class="hover:text-slate-900">Privacy Policy</a>
+            <span class="w-px h-3 bg-slate-300"></span>
+            <a href="terms-of-service.html" class="hover:text-slate-900">Terms of Service</a>
+        </div>
     </footer>
 
 </body>

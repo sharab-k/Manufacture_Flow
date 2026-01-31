@@ -15,9 +15,9 @@
 <body class="bg-gray-50 flex flex-col min-h-screen">
 
     <!-- Header -->
-    <header class="w-full px-8 py-6 flex justify-between items-center">
+    <header class="w-full px-4 md:px-8 py-6 flex justify-between items-center">
             <a href="home.html" class="flex flex-col items-center mb-8">
-                 <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-10 w-auto mb-2">
+                 <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 md:h-10 w-auto mb-2">
             </a>      <div class="flex items-center gap-2 text-slate-600 cursor-pointer hover:text-slate-900">
             <img src="https://flagcdn.com/w20/gb.png" srcset="https://flagcdn.com/w40/gb.png 2x" width="20" alt="English">
             <span class="font-medium text-sm">English</span>
@@ -27,7 +27,7 @@
 
     <!-- Main Content -->
     <main class="grow flex items-center justify-center px-4 py-8">
-        <div class="bg-white p-10 rounded-2xl shadow-xl w-full max-w-[600px]">
+        <div class="bg-white p-6 md:p-10 rounded-2xl shadow-xl w-full max-w-[600px]">
             <div class="text-center mb-8">
                 <h1 class="text-2xl font-bold text-slate-900 mb-2">Create your account</h1>
                 <p class="text-slate-500 text-sm">Start connecting with trusted partners today</p>
@@ -38,7 +38,7 @@
                 <!-- Account Type Selection -->
                 <div class="mb-6">
                     <label class="block text-sm font-semibold text-slate-900 mb-2">I am a</label>
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <label class="border rounded-xl p-4 cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-all flex items-start gap-3 group has-checked:border-blue-500 has-checked:bg-blue-50 has-checked:ring-1 has-checked:ring-blue-500">
                             <input type="radio" name="account_type" value="brand" class="hidden">
                             <div class="p-2 bg-gray-100 rounded-lg group-has-checked:bg-blue-100 text-slate-500 group-has-checked:text-blue-600">
@@ -62,7 +62,7 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <label for="first_name" class="block text-sm font-semibold text-slate-900 mb-1.5">First Name</label>
                         <input type="text" id="first_name" placeholder="Enter First Name" 
@@ -131,12 +131,14 @@
     <script src="./src/js/main.js"></script>
 
     <!-- Footer -->
-    <footer class="w-full px-8 py-6 text-sm text-slate-500 flex items-center gap-4">
+    <footer class="w-full px-4 md:px-8 py-6 text-sm text-slate-500 flex flex-col md:flex-row justify-center md:items-center gap-2 md:gap-4 text-center md:text-left">
         <span>&copy; 2026 DonauAI</span>
-        <span class="w-px h-3 bg-slate-300"></span>
-        <a href="privacy-policy.html" class="hover:text-slate-900">Privacy Policy</a>
-        <span class="w-px h-3 bg-slate-300"></span>
-        <a href="terms-of-service.html" class="hover:text-slate-900">Terms of Service</a>
+        <span class="hidden md:block w-px h-3 bg-slate-300"></span>
+        <div class="flex items-center justify-center gap-4">
+            <a href="privacy-policy.html" class="hover:text-slate-900">Privacy Policy</a>
+            <span class="w-px h-3 bg-slate-300"></span>
+            <a href="terms-of-service.html" class="hover:text-slate-900">Terms of Service</a>
+        </div>
     </footer>
 
 </body>

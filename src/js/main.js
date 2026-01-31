@@ -303,4 +303,32 @@ document.addEventListener("DOMContentLoaded", () => {
   if (mainContent) {
     mainContent.classList.add("animate-slide-up");
   }
+
+  // Feature: Mobile Sidebar Toggle
+  const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+  const sidebar = document.querySelector("aside");
+  const overlay = document.getElementById("sidebar-overlay");
+
+  if (mobileMenuToggle && sidebar) {
+    mobileMenuToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("hidden");
+        // For mobile, we might want to make it fixed and full height
+        sidebar.classList.toggle("fixed");
+        sidebar.classList.toggle("inset-y-0");
+        sidebar.classList.toggle("left-0");
+        sidebar.classList.toggle("z-50");
+        
+        if (overlay) {
+            overlay.classList.toggle("hidden");
+        }
+    });
+
+    if (overlay) {
+        overlay.addEventListener("click", () => {
+            sidebar.classList.add("hidden");
+            sidebar.classList.remove("fixed", "inset-y-0", "left-0", "z-50");
+            overlay.classList.add("hidden");
+        });
+    }
+  }
 });

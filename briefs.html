@@ -14,15 +14,18 @@
 </head>
 <body class="bg-gray-50 h-screen flex overflow-hidden">
 
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/50 z-40 hidden md:hidden glass"></div>
+
     <!-- Sidebar -->
-    <aside class="w-64 bg-white border-r border-gray-200 flex flex-col shrink-0">
+    <aside class="w-64 bg-white border-r border-gray-200 flex-col shrink-0 hidden md:flex transition-all duration-300">
         <!-- Logo -->
-        <div class="h-18 flex items-center px-6">
-             <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+        <div class="h-18 flex items-center px-6 py-6">
+             <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 md:h-10 w-auto">
         </div>
 
         <!-- Nav Links -->
-        <div class="flex-1 px-4 py-6 space-y-1">
+        <div class="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
             <a href="dashboard-filled.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg text-sm font-medium transition-colors">
                 <i class="ph ph-squares-four text-lg"></i>
                 Dashboard
@@ -54,17 +57,27 @@
     <div class="flex-1 flex flex-col min-w-0">
         
         <!-- Header -->
-        <header class="bg-white border-b border-gray-200 h-18 flex items-center justify-between px-8 shrink-0">
-            <!-- Search -->
-            <div class="w-96">
-                <div class="relative">
-                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
-                    <input type="text" placeholder="Search briefs, manufacturers..." class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-slate-400">
+        <header class="bg-white border-b border-gray-200 h-18 flex items-center justify-between px-4 md:px-8 shrink-0">
+            <div class="flex items-center gap-4">
+                 <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-toggle" class="md:hidden text-slate-500 hover:text-slate-700">
+                    <i class="ph ph-list text-2xl"></i>
+                </button>
+
+                <!-- Search -->
+                <div class="w-full md:w-96 hidden md:block">
+                    <div class="relative">
+                        <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
+                        <input type="text" placeholder="Search briefs, manufacturers..." class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-slate-400">
+                    </div>
                 </div>
             </div>
 
             <!-- Right Actions -->
             <div class="flex items-center gap-4">
+                <button class="md:hidden text-slate-400 hover:text-slate-600">
+                    <i class="ph ph-magnifying-glass text-xl"></i>
+                </button>
                 <a href="help-center.html" class="text-slate-400 hover:text-slate-600">
                     <i class="ph ph-question text-xl"></i>
                 </a>
@@ -80,7 +93,7 @@
         </header>
 
         <!-- Main Scrollable Area -->
-        <main class="flex-1 overflow-y-auto p-8">
+        <main class="flex-1 overflow-y-auto p-4 md:p-8">
             <div class="max-w-[1200px] mb-12">
                 
                 <div class="mb-8">
@@ -89,7 +102,7 @@
                 </div>
         
                 <!-- Stats Row -->
-                <div class="grid grid-cols-3 gap-6 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                     <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm flex items-center justify-between">
                         <div>
                             <span class="block text-xs font-medium text-slate-500 uppercase tracking-wide">Total Brief</span>
@@ -120,24 +133,24 @@
                 </div>
         
                 <!-- Filters -->
-                <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm mb-6 flex gap-4">
+                <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm mb-6 flex flex-col md:flex-row gap-4">
                      <div class="relative grow max-w-sm">
                         <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
                         <input type="text" placeholder="Search..." class="w-full pl-10 pr-4 py-2 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
                     </div>
-                     <div class="relative w-48">
+                     <div class="relative w-full md:w-48">
                          <select class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm text-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500 appearance-none bg-white">
                             <option>Select Category</option>
                         </select>
                         <i class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
                     </div>
-                     <div class="relative w-48">
+                     <div class="relative w-full md:w-48">
                          <select class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm text-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500 appearance-none bg-white">
                             <option>Select Page</option>
                         </select>
                         <i class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
                     </div>
-                     <div class="relative w-48">
+                     <div class="relative w-full md:w-48">
                          <select class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm text-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500 appearance-none bg-white">
                             <option>Select Status</option>
                         </select>
@@ -150,24 +163,24 @@
                     
                     <!-- Brief 1 (Draft) -->
                      <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:border-blue-200 transition-colors">
-                        <div class="flex justify-between items-start mb-2">
+                        <div class="flex flex-col md:flex-row justify-between items-start mb-2 gap-4">
                             <div>
                                 <span class="text-xs text-blue-500 font-medium font-mono">#BR12345678</span>
-                                 <div class="flex items-center gap-2 mt-1">
+                                 <div class="flex flex-wrap items-center gap-2 mt-1">
                                      <a href="brief-detail.html" class="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors">Premium Vitamin D3 Supplement</a>
                                      <span class="bg-gray-100 text-gray-600 text-xs px-2 py-0.5 rounded-full font-medium">Draft</span>
                                 </div>
                             </div>
-                             <div class="flex items-center gap-2">
-                                <button class="px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">Chat</button>
-                                <a href="brief-detail.html" class="px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">View</a>
+                             <div class="flex items-center gap-2 w-full md:w-auto mt-2 md:mt-0">
+                                <button class="flex-1 md:flex-none justify-center px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">Chat</button>
+                                <a href="brief-detail.html" class="flex-1 md:flex-none text-center px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">View</a>
                                 <button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-slate-600 rounded-lg hover:bg-gray-50">
                                     <i class="ph ph-dots-three-vertical text-xl"></i>
                                 </button>
                             </div>
                         </div>
                         <p class="text-sm text-slate-500 mb-6 max-w-3xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
-                        <div class="flex items-center gap-6 text-sm text-slate-500">
+                        <div class="flex flex-wrap items-center gap-4 md:gap-6 text-sm text-slate-500">
                             <div class="flex items-center gap-2">
                                 <i class="ph ph-buildings text-lg"></i>
                                 <span>Evergreenapparel.co</span>
@@ -189,24 +202,24 @@
         
                     <!-- Brief 2 (Shared) -->
                      <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:border-blue-200 transition-colors">
-                        <div class="flex justify-between items-start mb-2">
+                        <div class="flex flex-col md:flex-row justify-between items-start mb-2 gap-4">
                             <div>
                                 <span class="text-xs text-blue-500 font-medium font-mono">#BR12345678</span>
-                                 <div class="flex items-center gap-2 mt-1">
+                                 <div class="flex flex-wrap items-center gap-2 mt-1">
                                      <a href="brief-detail.html" class="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors">Premium Vitamin D3 Supplement</a>
                                      <span class="bg-blue-100 text-blue-600 text-xs px-2 py-0.5 rounded-full font-medium">Shared</span>
                                 </div>
                             </div>
-                             <div class="flex items-center gap-2">
-                                <button class="px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">Chat</button>
-                                <a href="brief-detail.html" class="px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">View</a>
+                             <div class="flex items-center gap-2 w-full md:w-auto mt-2 md:mt-0">
+                                <button class="flex-1 md:flex-none justify-center px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">Chat</button>
+                                <a href="brief-detail.html" class="flex-1 md:flex-none text-center px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">View</a>
                                 <button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-slate-600 rounded-lg hover:bg-gray-50">
                                     <i class="ph ph-dots-three-vertical text-xl"></i>
                                 </button>
                             </div>
                         </div>
                         <p class="text-sm text-slate-500 mb-6 max-w-3xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
-                       <div class="flex items-center gap-6 text-sm text-slate-500">
+                        <div class="flex flex-wrap items-center gap-4 md:gap-6 text-sm text-slate-500">
                             <div class="flex items-center gap-2">
                                 <i class="ph ph-buildings text-lg"></i>
                                 <span>Evergreenapparel.co</span>
@@ -228,24 +241,24 @@
         
                     <!-- Brief 3 (Invited) -->
                     <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:border-blue-200 transition-colors">
-                        <div class="flex justify-between items-start mb-2">
+                        <div class="flex flex-col md:flex-row justify-between items-start mb-2 gap-4">
                             <div>
                                 <span class="text-xs text-blue-500 font-medium font-mono">#BR12345678</span>
-                                 <div class="flex items-center gap-2 mt-1">
+                                 <div class="flex flex-wrap items-center gap-2 mt-1">
                                      <a href="brief-detail.html" class="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors">Premium Vitamin D3 Supplement</a>
                                      <span class="bg-purple-100 text-purple-600 text-xs px-2 py-0.5 rounded-full font-medium">Invited</span>
                                 </div>
                             </div>
-                             <div class="flex items-center gap-2">
-                                <button class="px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">Chat</button>
-                                <a href="brief-detail.html" class="px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">View</a>
+                             <div class="flex items-center gap-2 w-full md:w-auto mt-2 md:mt-0">
+                                <button class="flex-1 md:flex-none justify-center px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">Chat</button>
+                                <a href="brief-detail.html" class="flex-1 md:flex-none text-center px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">View</a>
                                 <button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-slate-600 rounded-lg hover:bg-gray-50">
                                     <i class="ph ph-dots-three-vertical text-xl"></i>
                                 </button>
                             </div>
                         </div>
                         <p class="text-sm text-slate-500 mb-6 max-w-3xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
-                        <div class="flex items-center gap-6 text-sm text-slate-500">
+                        <div class="flex flex-wrap items-center gap-4 md:gap-6 text-sm text-slate-500">
                             <div class="flex items-center gap-2">
                                 <i class="ph ph-buildings text-lg"></i>
                                 <span>Evergreenapparel.co</span>
@@ -268,17 +281,17 @@
                      <!-- Brief 4 (Matched with Alert) -->
                      <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:border-blue-200 transition-colors">
                          <div class="p-6 pb-0">
-                            <div class="flex justify-between items-start mb-2">
+                            <div class="flex flex-col md:flex-row justify-between items-start mb-2 gap-4">
                                 <div>
                                     <span class="text-xs text-blue-500 font-medium font-mono">#BR12345678</span>
-                                    <div class="flex items-center gap-2 mt-1">
+                                    <div class="flex flex-wrap items-center gap-2 mt-1">
                                         <a href="brief-detail.html" class="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors">Premium Vitamin D3 Supplement</a>
                                         <span class="bg-orange-100 text-orange-600 text-xs px-2 py-0.5 rounded-full font-medium">Matched</span>
                                     </div>
                                 </div>
-                                <div class="flex items-center gap-2">
-                                    <button class="px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">Chat</button>
-                                    <a href="brief-detail.html" class="px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">View</a>
+                                <div class="flex items-center gap-2 w-full md:w-auto mt-2 md:mt-0">
+                                    <button class="flex-1 md:flex-none justify-center px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">Chat</button>
+                                    <a href="brief-detail.html" class="flex-1 md:flex-none text-center px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">View</a>
                                     <button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-slate-600 rounded-lg hover:bg-gray-50">
                                         <i class="ph ph-dots-three-vertical text-xl"></i>
                                     </button>
@@ -288,7 +301,7 @@
                             <div class="mb-4">
                                 <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
                             </div>
-                             <div class="flex items-center gap-6 text-sm text-slate-500 mb-6">
+                             <div class="flex flex-wrap items-center gap-4 md:gap-6 text-sm text-slate-500 mb-6">
                                 <div class="flex items-center gap-2">
                                     <i class="ph ph-buildings text-lg"></i>
                                     <span>Evergreenapparel.co</span>
@@ -319,24 +332,24 @@
         
                     <!-- Brief 5 -->
                    <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6 hover:border-blue-200 transition-colors">
-                        <div class="flex justify-between items-start mb-2">
+                        <div class="flex flex-col md:flex-row justify-between items-start mb-2 gap-4">
                             <div>
                                 <span class="text-xs text-blue-500 font-medium font-mono">#BR12345678</span>
-                                 <div class="flex items-center gap-2 mt-1">
+                                 <div class="flex flex-wrap items-center gap-2 mt-1">
                                      <a href="brief-detail.html" class="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors">Premium Vitamin D3 Supplement</a>
                                      <span class="bg-cyan-100 text-cyan-600 text-xs px-2 py-0.5 rounded-full font-medium">Proposal Received</span>
                                 </div>
                             </div>
-                             <div class="flex items-center gap-2">
-                                <button class="px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">Chat</button>
-                                <a href="brief-detail.html" class="px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">View</a>
+                             <div class="flex items-center gap-2 w-full md:w-auto mt-2 md:mt-0">
+                                <button class="flex-1 md:flex-none justify-center px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">Chat</button>
+                                <a href="brief-detail.html" class="flex-1 md:flex-none text-center px-4 py-1.5 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50">View</a>
                                 <button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-slate-600 rounded-lg hover:bg-gray-50">
                                     <i class="ph ph-dots-three-vertical text-xl"></i>
                                 </button>
                             </div>
                         </div>
                         <p class="text-sm text-slate-500 mb-6 max-w-3xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
-                        <div class="flex items-center gap-6 text-sm text-slate-500">
+                        <div class="flex flex-wrap items-center gap-4 md:gap-6 text-sm text-slate-500">
                             <div class="flex items-center gap-2">
                                 <i class="ph ph-buildings text-lg"></i>
                                 <span>Evergreenapparel.co</span>

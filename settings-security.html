@@ -14,15 +14,18 @@
 </head>
 <body class="bg-gray-50 h-screen flex overflow-hidden">
 
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/50 z-40 hidden md:hidden glass"></div>
+
     <!-- Sidebar -->
-    <aside class="w-64 bg-white border-r border-gray-200 flex flex-col shrink-0">
+    <aside class="w-64 bg-white border-r border-gray-200 flex-col shrink-0 hidden md:flex transition-all duration-300">
         <!-- Logo -->
-        <div class="h-18 flex items-center px-6">
-            <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+        <div class="h-18 flex items-center px-6 py-6">
+            <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 md:h-10 w-auto">
         </div>
 
         <!-- Nav Links -->
-        <div class="flex-1 px-4 py-6 space-y-1">
+        <div class="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
             <a href="dashboard-filled.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg text-sm font-medium transition-colors">
                 <i class="ph ph-squares-four text-lg"></i>
                 Dashboard
@@ -54,17 +57,27 @@
     <div class="flex-1 flex flex-col min-w-0">
         
         <!-- Header -->
-        <header class="bg-white border-b border-gray-200 h-18 flex items-center justify-between px-8 shrink-0">
-            <!-- Search -->
-            <div class="w-96">
-                <div class="relative">
-                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
-                    <input type="text" placeholder="Search briefs, manufacturers..." class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-slate-400">
+        <header class="bg-white border-b border-gray-200 h-18 flex items-center justify-between px-4 md:px-8 shrink-0">
+            <div class="flex items-center gap-4">
+                 <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-toggle" class="md:hidden text-slate-500 hover:text-slate-700">
+                    <i class="ph ph-list text-2xl"></i>
+                </button>
+
+                <!-- Search -->
+                <div class="w-full md:w-96 hidden md:block">
+                    <div class="relative">
+                        <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
+                        <input type="text" placeholder="Search briefs, manufacturers..." class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-slate-400">
+                    </div>
                 </div>
             </div>
 
             <!-- Right Actions -->
             <div class="flex items-center gap-4">
+                <button class="md:hidden text-slate-400 hover:text-slate-600">
+                    <i class="ph ph-magnifying-glass text-xl"></i>
+                </button>
                 <a href="help-center.html" class="text-slate-400 hover:text-slate-600">
                     <i class="ph ph-question text-xl"></i>
                 </a>
@@ -80,16 +93,16 @@
         </header>
 
         <!-- Main Scrollable Area -->
-        <main class="flex-1 overflow-y-auto p-8">
+        <main class="flex-1 overflow-y-auto p-4 md:p-8">
             <div class="max-w-[1200px] mb-12">
                 
                 <div class="mb-8">
                     <h1 class="text-2xl font-bold text-slate-900">Settings</h1>
                 </div>
         
-                <div class="flex gap-12 items-start">
+                <div class="flex flex-col md:flex-row gap-6 md:gap-12 items-start">
                     <!-- Sidebar -->
-                    <div class="w-64 flex flex-col gap-2 shrink-0">
+                    <div class="w-full md:w-64 flex flex-col gap-2 shrink-0 overflow-x-auto">
                         <a href="settings-account.html" class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg font-medium text-sm transition-colors">
                             <i class="ph ph-user-circle text-lg"></i>
                             Account
