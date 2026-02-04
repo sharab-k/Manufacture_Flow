@@ -16,6 +16,30 @@
 
 
 
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/50 z-40 hidden backdrop-blur-sm transition-opacity"></div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white shadow-xl z-50 transform transition-transform duration-300 hidden flex flex-col">
+        <div class="px-6 py-4 flex items-center justify-between border-b border-gray-100">
+            <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-6 w-auto">
+        </div>
+        <nav class="p-4 space-y-2">
+            <a href="dashboard-filled.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-squares-four text-lg"></i>
+                Dashboard
+            </a>
+            <a href="briefs.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-briefcase text-lg"></i>
+                Product Briefs
+            </a>
+            <a href="messages.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-blue-50 text-blue-600 font-medium text-sm transition-colors">
+                <i class="ph ph-chat-circle-dots text-lg"></i>
+                Messages
+            </a>
+        </nav>
+    </div>
+
     <!-- Main Content Wrapper -->
     <div class="flex-1 flex flex-col min-w-0">
         
@@ -46,8 +70,8 @@
 
             <!-- Right Actions -->
             <div class="flex items-center gap-4 md:gap-6">
-                <button class="md:hidden text-slate-400 hover:text-slate-600">
-                    <i class="ph ph-magnifying-glass text-xl"></i>
+                <button id="mobile-menu-toggle" class="md:hidden text-slate-500 hover:text-slate-700 p-2">
+                    <i class="ph ph-list text-2xl"></i>
                 </button>
                 <!-- Help -->
                 <a href="help-center.html" class="text-slate-400 hover:text-slate-600">
@@ -150,7 +174,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 pt-16 pb-8 shrink-0">
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-8 shrink-0 hidden md:block">
         <div class="max-w-[1400px] mx-auto px-4 md:px-8">
             <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
                 <div class="col-span-1 md:col-span-2">

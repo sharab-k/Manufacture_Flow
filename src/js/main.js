@@ -310,15 +310,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.querySelector("aside");
   const overlay = document.getElementById("sidebar-overlay");
 
-  if (mobileMenuToggle && sidebar) {
+  if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener("click", () => {
-        sidebar.classList.toggle("hidden");
-        // For mobile, we might want to make it fixed and full height
-        sidebar.classList.toggle("fixed");
-        sidebar.classList.toggle("inset-y-0");
-        sidebar.classList.toggle("left-0");
-        sidebar.classList.toggle("z-50");
+        if (sidebar) {
+            sidebar.classList.toggle("hidden");
+            sidebar.classList.toggle("fixed");
+            sidebar.classList.toggle("inset-y-0");
+            sidebar.classList.toggle("left-0");
+            sidebar.classList.toggle("z-50");
+        }
         
+        const mobileMenu = document.getElementById("mobile-menu");
+        if (mobileMenu) {
+            mobileMenu.classList.toggle("hidden");
+        }
+
         if (overlay) {
             overlay.classList.toggle("hidden");
         }
@@ -326,8 +332,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (overlay) {
         overlay.addEventListener("click", () => {
-            sidebar.classList.add("hidden");
-            sidebar.classList.remove("fixed", "inset-y-0", "left-0", "z-50");
+            if (sidebar) {
+                sidebar.classList.add("hidden");
+                sidebar.classList.remove("fixed", "inset-y-0", "left-0", "z-50");
+            }
+            const mobileMenu = document.getElementById("mobile-menu");
+            if (mobileMenu) {
+                mobileMenu.classList.add("hidden");
+            }
             overlay.classList.add("hidden");
         });
     }
