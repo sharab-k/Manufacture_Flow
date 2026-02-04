@@ -150,68 +150,47 @@
             <!-- Chat Area -->
             <div class="grow bg-white rounded-xl border border-gray-200 shadow-sm flex flex-col overflow-hidden min-h-0">
                 
-                <!-- Messages List -->
-                <div class="grow overflow-y-auto p-6 space-y-6">
-                    
-                    <!-- Date Separator -->
-                    <div class="flex justify-center">
-                        <span class="text-[10px] font-medium text-slate-400 bg-gray-50 px-2 py-0.5 rounded">Today</span>
-                    </div>
-    
-                    <!-- Received Message -->
-                    <div class="flex gap-4 max-w-[85%] md:max-w-[70%]">
-                        <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold shrink-0 mt-1">EA</div>
+                <!-- Chat Header -->
+                <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between shrink-0">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-bold">GT</div>
                         <div>
-                                <div class="flex items-baseline gap-2 mb-1">
-                                    <span class="text-xs font-bold text-slate-900">Evergreen Apparel Co.</span>
-                                    <span class="text-[10px] text-slate-400">10:30 AM</span>
-                                </div>
-                                <div class="bg-gray-100 rounded-2xl rounded-tl-none p-4 text-sm text-slate-700 leading-relaxed shadow-sm">
-                                <p>Hi! We're really interested in your production capabilities. Could you clarify if the organic cotton you use is GOTS certified?</p>
-                                </div>
+                            <span class="block text-sm font-bold text-slate-900">GreenThread Manufacturing</span>
+                            <span class="block text-xs text-slate-500">Manufacturer</span>
                         </div>
                     </div>
-    
-                    <!-- Sent Message -->
-                    <div class="flex gap-4 max-w-[85%] md:max-w-[70%] ml-auto flex-row-reverse">
-                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-1">MT</div>
-                        <div class="flex flex-col items-end">
-                                <div class="flex items-baseline gap-2 mb-1">
-                                    <span class="text-[10px] text-slate-400">10:45 AM</span>
-                                    <span class="text-xs font-bold text-slate-900">You</span>
-                                </div>
-                                <div class="bg-blue-600 rounded-2xl rounded-tr-none p-4 text-sm text-white leading-relaxed shadow-sm">
-                                <p>Hello! Yes, absolutely. All our organic cotton is GOTS certified, and we can provide the certificates upon request.</p>
-                                </div>
+                </div>
+
+                <!-- Messages List -->
+                <div class="grow overflow-y-auto p-6 space-y-6 flex flex-col">
+                    
+                    <!-- Sent Message: Hello -->
+                     <div class="flex flex-col items-end self-end max-w-[80%]">
+                        <div class="bg-blue-500 rounded-2xl rounded-tr-none px-6 py-3 text-white text-sm shadow-sm">
+                            Hello
                         </div>
                     </div>
-                     
-                     <!-- Received Message -->
-                    <div class="flex gap-4 max-w-[85%] md:max-w-[70%]">
-                        <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold shrink-0 mt-1">EA</div>
-                         <div>
-                                <div class="flex items-baseline gap-2 mb-1">
-                                    <span class="text-xs font-bold text-slate-900">Evergreen Apparel Co.</span>
-                                    <span class="text-[10px] text-slate-400">11:00 AM</span>
-                                </div>
-                                <div class="bg-gray-100 rounded-2xl rounded-tl-none p-4 text-sm text-slate-700 leading-relaxed shadow-sm">
-                                <p>That's great to hear! We would love to see some samples of previous work similar to our requirements.</p>
-                                </div>
-                        </div>
+
+                    <!-- Received Message: Welcome Block -->
+                    <div class="bg-gray-50 rounded-xl p-6 max-w-[90%] md:max-w-[70%] text-sm text-slate-700 leading-relaxed">
+                        <p class="mb-4">Hi! I'm here to help you create a detailed product brief. Let's start with the basics. What type of product are you looking to manufacture?</p>
+                        <span class="text-xs text-slate-400">20:32</span>
                     </div>
-    
+
                 </div>
     
                 <!-- Input Area -->
                 <div class="p-4 border-t border-gray-100 bg-white shrink-0">
-                    <div class="flex gap-2 max-w-4xl mx-auto">
-                        <button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 bg-gray-50 rounded-lg hover:bg-gray-100 border border-gray-200 text-xl">
-                            <i class="ph ph-paperclip"></i>
+                    <div class="flex gap-3 max-w-full">
+                        <button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors shrink-0">
+                            <i class="ph ph-paperclip text-xl"></i>
                         </button>
-                        <input type="text" placeholder="Type your message..." class="grow px-4 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
-                        <button class="w-10 h-10 flex items-center justify-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 shadow-sm text-xl">
-                            <i class="ph ph-paper-plane-right"></i>
-                        </button>
+                        <div class="grow relative">
+                            <input type="text" placeholder="Type your response..." class="w-full h-10 pl-4 pr-12 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all text-slate-600">
+                             <button class="absolute right-1 top-1 w-8 h-8 flex items-center justify-center bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+                                <i class="ph ph-paper-plane-right text-lg"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
