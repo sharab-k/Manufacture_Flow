@@ -12,65 +12,36 @@
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-gray-50 h-screen flex overflow-hidden">
+<body class="bg-gray-50 h-screen flex flex-col overflow-y-auto">
 
-    <!-- Mobile Sidebar Overlay -->
-    <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/50 z-40 hidden md:hidden glass"></div>
 
-    <!-- Sidebar -->
-    <aside class="w-64 bg-white border-r border-gray-200 flex-col shrink-0 hidden md:flex transition-all duration-300">
-        <!-- Logo -->
-        <div class="h-18 flex items-center px-6 py-6">
-            <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 md:h-10 w-auto">
-        </div>
-
-        <!-- Nav Links -->
-        <div class="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
-            <a href="dashboard-filled.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 text-blue-600 rounded-lg text-sm font-medium transition-colors">
-                <i class="ph ph-squares-four text-lg"></i>
-                Dashboard
-            </a>
-            <a href="briefs.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg text-sm font-medium transition-colors">
-                <i class="ph ph-magnifying-glass text-lg"></i>
-                Find Briefs
-            </a>
-            <a href="messages.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg text-sm font-medium transition-colors">
-                <i class="ph ph-chat-circle-dots text-lg"></i>
-                Messages
-            </a>
-            <a href="settings-account.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:bg-gray-50 hover:text-slate-900 rounded-lg text-sm font-medium transition-colors">
-                <i class="ph ph-gear text-lg"></i>
-                Settings
-            </a>
-        </div>
-
-        <!-- Bottom Actions -->
-        <div class="p-4 border-t border-gray-100">
-            <a href="signin.html" class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-red-600 hover:bg-red-50 rounded-lg text-sm font-medium transition-colors">
-                <i class="ph ph-sign-out text-lg"></i>
-                Sign Out
-            </a>
-        </div>
-    </aside>
 
     <!-- Main Content Wrapper -->
     <div class="flex-1 flex flex-col min-w-0">
         
         <!-- Header -->
-        <header class="bg-white border-b border-gray-200 h-18 flex items-center justify-between px-4 md:px-8 shrink-0">
-            <div class="flex items-center gap-4">
-                 <!-- Mobile Menu Toggle -->
-                <button id="mobile-menu-toggle" class="md:hidden text-slate-500 hover:text-slate-700">
-                    <i class="ph ph-list text-2xl"></i>
-                </button>
+        <header class="bg-white border-b border-gray-200 h-18 flex items-center justify-between px-4 md:px-8 shrink-0 sticky top-0 z-50">
+            <div class="flex items-center gap-12">
+                 <!-- Logo -->
+                <a href="home.html" class="flex items-center">
+                    <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+                </a>
 
-                <!-- Search -->
-                <div class="w-full md:w-96 hidden md:block">
-                    <div class="relative">
-                        <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
-                        <input type="text" placeholder="Search briefs, manufacturers..." class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder-slate-400">
-                    </div>
-                </div>
+                <!-- Nav Links -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="dashboard-filled.html" class="flex items-center gap-2 text-sm font-medium text-blue-600 border-b-2 border-blue-600 h-18 px-1">
+                        <i class="ph ph-squares-four text-lg"></i>
+                        Dashboard
+                    </a>
+                    <a href="briefs.html" class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 h-18 px-1 border-b-2 border-transparent hover:border-gray-200 transition-all">
+                        <i class="ph ph-briefcase text-lg"></i>
+                        Product Briefs
+                    </a>
+                    <a href="messages.html" class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 h-18 px-1 border-b-2 border-transparent hover:border-gray-200 transition-all">
+                        <i class="ph ph-chat-circle-dots text-lg"></i>
+                        Messages
+                    </a>
+                </nav>
             </div>
 
             <!-- Right Actions -->
@@ -187,12 +158,12 @@
         </header>
 
         <!-- Main Scrollable Area -->
-        <main class="flex-1 overflow-y-auto p-4 md:p-8">
+        <main class="flex-1 w-full max-w-[1400px] mx-auto p-4 md:p-8">
             <div class="max-w-[1200px] mb-12">
                 
                 <div class="mb-8">
-                    <h1 class="text-2xl font-bold text-slate-900">Manufacturer Dashboard</h1>
-                    <p class="text-slate-500 text-sm mt-1">Invitations, matches and your active proposals in one place.</p>
+                    <h1 class="text-2xl font-bold text-slate-900">Manufacture Dashboard</h1>
+                    <p class="text-slate-500 text-sm mt-1">Review invitations and manage your proposals</p>
                 </div>
 
                 <!-- Alert Banner -->
@@ -225,7 +196,7 @@
                             <span class="block text-3xl font-bold text-slate-900 mt-1">2</span>
                         </div>
                         <div class="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center text-slate-300">
-                            <i class="ph ph-file-text text-2xl"></i>
+                            <i class="ph ph-file text-2xl"></i>
                         </div>
                     </div>
                     <!-- Active Brief -->
@@ -240,104 +211,100 @@
                     </div>
                 </div>
 
-                <!-- Content Grid -->
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     
                     <!-- Recent Briefs (Span 2) -->
                     <div class="col-span-1 lg:col-span-2 space-y-6">
-                        <div class="flex justify-between items-center">
+                        <div class="flex justify-between items-center bg-white p-4 rounded-t-xl md:bg-transparent md:p-0">
                             <h3 class="font-bold text-slate-900 text-lg">Recent Briefs</h3>
                             <a href="briefs.html" class="text-sm text-blue-600 font-semibold hover:text-blue-700 transition-colors">View All</a>
                         </div>
                         
                         <!-- Brief Card 1 -->
-                        <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-blue-200 transition-colors">
-                            <div class="flex flex-col gap-4">
-                                <div>
-                                    <span class="text-xs text-blue-500 font-medium tracking-tight mb-2 block">#BR12345678</span>
-                                    <div class="flex items-center gap-3 mb-2">
-                                        <h4 class="font-bold text-slate-900 text-lg">Premium Vitamin D3 Supplement</h4>
-                                        <span class="px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-500 text-[10px] font-bold uppercase tracking-wider">Draft</span>
-                                    </div>
-                                    <p class="text-slate-500 text-sm leading-relaxed">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:border-blue-200 transition-all relative group">
+                            <a href="brief-detail.html" class="absolute top-6 right-6 flex items-center gap-1 text-blue-600 text-xs font-bold hover:underline">
+                                View Details 
+                                <i class="ph ph-arrow-up-right"></i>
+                            </a>
+                            
+                            <div class="flex flex-col gap-2">
+                                <div class="flex items-center gap-3 text-xs text-blue-500 font-medium mb-1">
+                                    <span>#BR12345678</span>
                                 </div>
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h4 class="font-bold text-slate-900 text-lg">Premium Vitamin D3 Supplement</h4>
+                                    <span class="px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-500 text-[10px] font-bold uppercase tracking-wider">Draft</span>
+                                </div>
+                                <p class="text-slate-500 text-sm leading-relaxed mb-4 max-w-2xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
                                 
-                                <div class="flex flex-wrap items-center gap-4 mt-2">
-                                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-100 bg-gray-50/50">
-                                        <i class="ph ph-folder-notched text-slate-400"></i>
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-100 bg-white">
+                                        <i class="ph ph-file-text text-slate-400"></i>
                                         <span class="text-xs text-slate-600">Dietry Supplements</span>
                                     </div>
-                                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-100 bg-gray-50/50">
-                                        <i class="ph ph-currency-eur text-slate-400"></i>
+                                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-100 bg-white">
+                                        <i class="ph ph-wallet text-slate-400"></i>
                                         <span class="text-xs text-slate-600">€1000 - €100000 USD</span>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <a href="brief-detail.html" class="flex items-center gap-1.5 text-blue-600 text-sm font-bold hover:underline">
-                                            View Details
-                                            <i class="ph ph-arrow-up-right"></i>
-                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Brief Card 2 -->
-                        <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-blue-200 transition-colors">
-                            <div class="flex flex-col gap-4">
-                                <div>
-                                    <span class="text-xs text-blue-500 font-medium tracking-tight mb-2 block">#BR12345678</span>
-                                    <div class="flex items-center gap-3 mb-2">
-                                        <h4 class="font-bold text-slate-900 text-lg">Premium Vitamin D3 Supplement</h4>
-                                        <span class="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-wider">Shared</span>
-                                    </div>
-                                    <p class="text-slate-500 text-sm leading-relaxed">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:border-blue-200 transition-all relative group">
+                            <a href="brief-detail.html" class="absolute top-6 right-6 flex items-center gap-1 text-blue-600 text-xs font-bold hover:underline">
+                                View Details 
+                                <i class="ph ph-arrow-up-right"></i>
+                            </a>
+                            
+                            <div class="flex flex-col gap-2">
+                                <div class="flex items-center gap-3 text-xs text-blue-500 font-medium mb-1">
+                                    <span>#BR12345678</span>
                                 </div>
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h4 class="font-bold text-slate-900 text-lg">Premium Vitamin D3 Supplement</h4>
+                                    <span class="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-600 text-[10px] font-bold uppercase tracking-wider">Shared</span>
+                                </div>
+                                <p class="text-slate-500 text-sm leading-relaxed mb-4 max-w-2xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
                                 
-                                <div class="flex flex-wrap items-center gap-4 mt-2">
-                                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-100 bg-gray-50/50">
-                                        <i class="ph ph-folder-notched text-slate-400"></i>
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-100 bg-white">
+                                        <i class="ph ph-file-text text-slate-400"></i>
                                         <span class="text-xs text-slate-600">Dietry Supplements</span>
                                     </div>
-                                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-100 bg-gray-50/50">
-                                        <i class="ph ph-currency-eur text-slate-400"></i>
+                                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-100 bg-white">
+                                        <i class="ph ph-wallet text-slate-400"></i>
                                         <span class="text-xs text-slate-600">€1000 - €100000 USD</span>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <a href="brief-detail-proposal.html" class="flex items-center gap-1.5 text-blue-600 text-sm font-bold hover:underline">
-                                            View Details
-                                            <i class="ph ph-arrow-up-right"></i>
-                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Brief Card 3 -->
-                        <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:border-blue-200 transition-colors">
-                            <div class="flex flex-col gap-4">
-                                <div>
-                                    <span class="text-xs text-blue-500 font-medium tracking-tight mb-2 block">#BR12345678</span>
-                                    <div class="flex items-center gap-3 mb-2">
-                                        <h4 class="font-bold text-slate-900 text-lg">Premium Vitamin D3 Supplement</h4>
-                                        <span class="px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-wider">Invited</span>
-                                    </div>
-                                    <p class="text-slate-500 text-sm leading-relaxed">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
+                        <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:border-blue-200 transition-all relative group">
+                            <a href="brief-detail.html" class="absolute top-6 right-6 flex items-center gap-1 text-blue-600 text-xs font-bold hover:underline">
+                                View Details 
+                                <i class="ph ph-arrow-up-right"></i>
+                            </a>
+                            
+                            <div class="flex flex-col gap-2">
+                                <div class="flex items-center gap-3 text-xs text-blue-500 font-medium mb-1">
+                                    <span>#BR12345678</span>
                                 </div>
+                                <div class="flex items-center gap-3 mb-2">
+                                    <h4 class="font-bold text-slate-900 text-lg">Premium Vitamin D3 Supplement</h4>
+                                    <span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-600 text-[10px] font-bold uppercase tracking-wider">Invited</span>
+                                </div>
+                                <p class="text-slate-500 text-sm leading-relaxed mb-4 max-w-2xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
                                 
-                                <div class="flex flex-wrap items-center gap-4 mt-2">
-                                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-100 bg-gray-50/50">
-                                        <i class="ph ph-folder-notched text-slate-400"></i>
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-100 bg-white">
+                                        <i class="ph ph-file-text text-slate-400"></i>
                                         <span class="text-xs text-slate-600">Dietry Supplements</span>
                                     </div>
-                                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-100 bg-gray-50/50">
-                                        <i class="ph ph-currency-eur text-slate-400"></i>
+                                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-100 bg-white">
+                                        <i class="ph ph-wallet text-slate-400"></i>
                                         <span class="text-xs text-slate-600">€1000 - €100000 USD</span>
-                                    </div>
-                                    <div class="ml-auto">
-                                        <a href="brief-detail.html" class="flex items-center gap-1.5 text-blue-600 text-sm font-bold hover:underline">
-                                            View Details
-                                            <i class="ph ph-arrow-up-right"></i>
-                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -346,62 +313,50 @@
                     </div>
 
                     <!-- Notifications (Span 1) -->
-                    <div class="col-span-1 border-l border-gray-100 pl-8 hidden lg:block">
+                    <div class="col-span-1 border-l border-gray-100 pl-0 lg:pl-8">
                         <div class="flex justify-between items-center mb-6">
                             <h3 class="font-bold text-slate-900 text-lg">Notifications</h3>
-                            <a href="#" class="text-sm text-blue-600 font-semibold hover:text-blue-700 transition-colors">Mark all read</a>
+                            <a href="#" class="text-sm text-blue-600 font-semibold hover:text-blue-700 transition-colors">View All</a>
                         </div>
                         
-                        <div class="space-y-6">
+                        <div class="divide-y divide-gray-100">
                             <!-- Notification Item -->
-                            <div class="flex gap-4 items-start relative pb-6 border-b border-gray-50 last:border-0 last:pb-0">
-                                <div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-                                    <i class="ph ph-envelope-simple text-lg"></i>
+                            <div class="bg-gray-50 p-4 rounded-xl mb-4 border border-gray-100">
+                                <div class="flex justify-between items-start mb-2">
+                                    <p class="text-sm font-bold text-slate-900">New manufacturer match</p>
+                                    <span class="px-2 py-0.5 bg-blue-100 text-blue-600 text-[10px] font-bold rounded-full">New</span>
                                 </div>
-                                <div class="grow">
-                                    <div class="flex items-center justify-between mb-0.5">
-                                        <p class="text-sm text-slate-900 font-bold">New Brief Invitation</p>
-                                        <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
-                                    </div>
-                                    <p class="text-xs text-slate-500 leading-relaxed mb-1">EcoWear Inc. invited you to submit a proposal for their summer line.</p>
-                                    <span class="text-[10px] text-slate-400 flex items-center gap-1 font-medium"><i class="ph ph-clock"></i> 2 hours ago</span>
-                                </div>
+                                <p class="text-xs text-slate-500 leading-relaxed">3 new manufacturers have been matched to your vitamin supplement brief</p>
                             </div>
 
                              <!-- Notification Item -->
-                            <div class="flex gap-4 items-start relative pb-6 border-b border-gray-50 last:border-0 last:pb-0">
-                                <div class="w-10 h-10 rounded-full bg-green-50 text-green-600 flex items-center justify-center shrink-0">
-                                    <i class="ph ph-chat-circle-dots text-lg"></i>
-                                </div>
-                                <div class="grow">
-                                    <p class="text-sm text-slate-900 font-bold mb-0.5">Message from Sarah</p>
-                                    <p class="text-xs text-slate-500 leading-relaxed mb-1">"Hey, just wanted to check if you've seen the updated material specs."</p>
-                                    <span class="text-[10px] text-slate-400 flex items-center gap-1 font-medium"><i class="ph ph-clock"></i> 5 hours ago</span>
-                                </div>
+                            <div class="py-4 last:pb-0">
+                                <p class="text-sm font-bold text-slate-900 mb-1">Brief published</p>
+                                <p class="text-xs text-slate-500 leading-relaxed">Your 'Premium Vitamin D3 Supplement' brief has been successfully published</p>
                             </div>
 
                              <!-- Notification Item -->
-                            <div class="flex gap-4 items-start relative pb-6 border-b border-gray-50 last:border-0 last:pb-0">
-                                <div class="w-10 h-10 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center shrink-0">
-                                    <i class="ph ph-warning-circle text-lg"></i>
-                                </div>
-                                <div class="grow">
-                                    <p class="text-sm text-slate-900 font-bold mb-0.5">Profile Reminder</p>
-                                    <p class="text-xs text-slate-500 leading-relaxed mb-1">Your ISO 9001 certification expires in 14 days. Please update it.</p>
-                                    <span class="text-[10px] text-slate-400 flex items-center gap-1 font-medium"><i class="ph ph-clock"></i> 1 day ago</span>
-                                </div>
+                            <div class="py-4 last:pb-0">
+                                <p class="text-sm font-bold text-slate-900 mb-1">Draft reminder</p>
+                                <p class="text-xs text-slate-500 leading-relaxed">You have 2 drafts that haven't been updated in over a week</p>
                             </div>
 
+                            <!-- Notification Item -->
+                            <div class="py-4 last:pb-0">
+                                <p class="text-sm font-bold text-slate-900 mb-1">Brief published</p>
+                                <p class="text-xs text-slate-500 leading-relaxed">Your 'Premium Vitamin D3 Supplement' brief has been successfully published</p>
+                            </div>
+                            
+                            <!-- Notification Item -->
+                            <div class="py-4 last:pb-0">
+                                <p class="text-sm font-bold text-slate-900 mb-1">Draft reminder</p>
+                                <p class="text-xs text-slate-500 leading-relaxed">You have 2 drafts that haven't been updated in over a week</p>
+                            </div>
+                            
                              <!-- Notification Item -->
-                            <div class="flex gap-4 items-start relative pb-6 border-b border-gray-50 last:border-0 last:pb-0">
-                                <div class="w-10 h-10 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
-                                    <i class="ph ph-paper-plane-tilt text-lg"></i>
-                                </div>
-                                <div class="grow">
-                                    <p class="text-sm text-slate-900 font-bold mb-0.5">Proposal Submitted</p>
-                                    <p class="text-xs text-slate-500 leading-relaxed mb-1">Your quote for "Bamboo Fabrics" has been delivered to the brand.</p>
-                                    <span class="text-[10px] text-slate-400 flex items-center gap-1 font-medium"><i class="ph ph-clock"></i> 2 days ago</span>
-                                </div>
+                            <div class="py-4 last:pb-0">
+                                <p class="text-sm font-bold text-slate-900 mb-1">Draft reminder</p>
+                                <p class="text-xs text-slate-500 leading-relaxed">You have 2 drafts that haven't been updated in over a week</p>
                             </div>
                         </div>
 
@@ -412,6 +367,68 @@
             </div>
         </main>
     </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-8 shrink-0">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                     <div class="mb-4">
+                        <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+                     </div>
+                     <p class="text-slate-500 leading-relaxed max-w-sm">
+                        AI-powered platform connecting brands with manufacturers. Streamline your sourcing process with intelligent matchmaking.
+                     </p>
+                </div>
+                <div>
+                   <h4 class="font-bold text-slate-900 mb-6">Platform</h4>
+                   <ul class="space-y-4 text-slate-500 text-sm">
+                       <li><a href="home.html" class="hover:text-blue-600 transition-colors">Home</a></li>
+                       <li><a href="for-brands.html" class="hover:text-blue-600 transition-colors">For Brands</a></li>
+                       <li><a href="for-manufacturers.html" class="hover:text-blue-600 transition-colors">For Manufacturers</a></li>
+                       <li><a href="ai-brief-assistant.html" class="hover:text-blue-600 transition-colors">AI Brief Assistant</a></li>
+                   </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-6">Resources</h4>
+                    <ul class="space-y-4 text-slate-500 text-sm">
+                        <li><a href="api-documentation.html" class="hover:text-blue-600 transition-colors">API Documentation</a></li>
+                        <li><a href="help-center.html" class="hover:text-blue-600 transition-colors">Help Center</a></li>
+                        <li><a href="product-categories.html" class="hover:text-blue-600 transition-colors">Product Categories</a></li>
+                        <li><a href="success-stories.html" class="hover:text-blue-600 transition-colors">Success Stories</a></li>
+                    </ul>
+                 </div>
+                 <div>
+                    <h4 class="font-bold text-slate-900 mb-6">Company</h4>
+                    <ul class="space-y-4 text-slate-500 text-sm">
+                        <li><a href="about-us.html" class="hover:text-blue-600 transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-blue-600 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="hover:text-blue-600 transition-colors">Terms of Service</a></li>
+                    </ul>
+                 </div>
+            </div>
+
+            <div class="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+                <p>&copy; 2026 DonauApp</p>
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-2 cursor-pointer hover:text-slate-600">
+                        <i class="ph ph-globe"></i>
+                        <span>English</span>
+                    </div>
+                    <div class="flex items-center gap-2 cursor-pointer hover:text-slate-600">
+                        <i class="ph ph-currency-eur"></i>
+                        <span>EUR</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <a href="#" class="hover:text-slate-600"><i class="ph ph-facebook-logo text-lg"></i></a>
+                        <a href="#" class="hover:text-slate-600"><i class="ph ph-instagram-logo text-lg"></i></a>
+                        <a href="#" class="hover:text-slate-600"><i class="ph ph-linkedin-logo text-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="./src/js/main.js"></script>
 </body>

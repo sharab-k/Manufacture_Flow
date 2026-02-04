@@ -282,9 +282,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Feature: Auto-Active Navigation Link
   // Note: Since HTML pages have hardcoded active states, this dynamic check validates them or sets them if missing.
+  // We restriction this to the sidebar (aside) to avoid messing up the header nav which uses different styling.
   const currentPath =
     window.location.pathname.split("/").pop() || "dashboard-filled.html";
-  const navLinks = document.querySelectorAll("aside a, nav a"); // Extended to aside for sidebar
+  const navLinks = document.querySelectorAll("aside a"); // Only target sidebar links
 
   navLinks.forEach((link) => {
     const href = link.getAttribute("href");
