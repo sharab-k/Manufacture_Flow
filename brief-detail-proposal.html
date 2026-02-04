@@ -10,11 +10,22 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
         body { font-family: 'Inter', sans-serif; }
+        
+        /* Tooltip Logic */
+        .tooltip-content {
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.2s ease;
+        }
+        .tooltip-container:hover .tooltip-content {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="bg-gray-50 h-screen flex flex-col overflow-y-auto">
-
-
 
     <!-- Main Content Wrapper -->
     <div class="flex-1 flex flex-col min-w-0">
@@ -46,9 +57,6 @@
 
             <!-- Right Actions -->
             <div class="flex items-center gap-4 md:gap-6">
-                <button class="md:hidden text-slate-400 hover:text-slate-600">
-                    <i class="ph ph-magnifying-glass text-xl"></i>
-                </button>
                 <!-- Help -->
                 <a href="help-center.html" class="text-slate-400 hover:text-slate-600">
                     <i class="ph ph-question text-xl"></i>
@@ -108,148 +116,118 @@
 
         <!-- Main Scrollable Area -->
         <main class="flex-1 w-full max-w-[1400px] mx-auto p-4 md:p-8">
-            <div class="max-w-[1400px] mb-12 flex flex-col lg:flex-row items-start gap-8">
+            <div class="max-w-[1200px] mb-12">
                 
-                <!-- Left Content -->
-                <div class="grow min-w-0">
-                     <!-- Header -->
-                    <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
-                        <div>
-                            <div class="flex items-center gap-3 mb-1">
-                                <h1 class="text-2xl font-bold text-slate-900">Premium Vitamin D3 Supplement</h1>
-                            </div>
-                            <div class="flex items-center gap-2 text-xs text-slate-500">
-                                <i class="ph ph-buildings text-sm"></i>
-                                <span>Evergreenapparel.co</span>
-                            </div>
-                            <div class="flex flex-wrap items-center gap-3 mt-3 text-xs text-slate-400">
-                                <span class="font-mono text-blue-500 font-medium">#BR12345678</span>
-                                <span>•</span>
-                                <span>Dietary Supplements</span>
-                                <span>•</span>
-                                <span>Created 12/01/2026</span>
-                                <span>•</span>
-                                <span>Last Updated 18/01/2026</span>
-                            </div>
+                <!-- Header -->
+                <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
+                    <div class="relative">
+                        <div class="flex items-center gap-3 mb-1">
+                            <h1 class="text-2xl font-bold text-slate-900">Premium Vitamin D3 Supplement</h1>
+                             <span class="bg-blue-100 text-blue-600 text-xs px-2.5 py-0.5 rounded-full font-bold whitespace-nowrap">Under Discussion</span>
                         </div>
-                        <div class="flex items-center gap-3 w-full md:w-auto">
-                            <span class="bg-blue-50 text-blue-600 text-xs px-2.5 py-0.5 rounded-full font-medium whitespace-nowrap">Under Discussion</span>
-                            <button class="flex-1 md:flex-none px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-colors shadow-sm whitespace-nowrap">Submit Proposal</button>
-                            <button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 border border-gray-200 rounded-lg hover:bg-gray-50">
-                                <i class="ph ph-dots-three-vertical text-xl"></i>
-                            </button>
+                        <div class="flex items-center gap-2 text-xs text-slate-500">
+                            <i class="ph ph-buildings text-sm"></i>
+                            <span>Evergreenapparel.co</span>
+                        </div>
+                         <div class="flex flex-wrap items-center gap-3 mt-3 text-xs text-slate-400">
+                            <span class="font-mono text-blue-500 font-medium">#BR12345678</span>
+                            <span>•</span>
+                            <span>Dietary Supplements</span>
+                            <span>•</span>
+                            <span>Created 12/01/2026</span>
+                            <span>•</span>
+                            <span>Last Updated 18/01/2026</span>
                         </div>
                     </div>
-        
-                     <!-- Tabs -->
-                    <div class="border-b border-gray-200 mb-8">
-                        <div class="flex gap-8 overflow-x-auto pb-1">
-                            <a href="brief-detail.html" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium text-sm flex items-center gap-2 transition-colors">
-                                <i class="ph ph-file-text text-lg"></i>
-                                Overview
-                            </a>
-                            <a href="brief-detail-proposal.html" class="pb-3 border-b-2 border-blue-600 text-blue-600 font-medium text-sm flex items-center gap-2">
-                                <i class="ph ph-file-text text-lg"></i>
-                                Proposal
-                            </a>
-                            <a href="brief-detail-chat.html" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium text-sm flex items-center gap-2 transition-colors">
-                                <i class="ph ph-chat-circle-dots text-lg"></i>
-                                Chat
-                            </a>
-                        </div>
-                    </div>
-        
-                    <!-- Proposals Section -->
-                    <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6 mb-20 min-h-[500px]">
-                        <h2 class="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Proposals</h2>
-                        
-                        <!-- Submitted Proposal Card -->
-                        <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                            <div class="mb-4">
-                                 <h3 class="text-sm font-bold text-slate-900">Your Proposal</h3>
-                                 <span class="text-xs text-slate-400">Submitted on 15/01/2025</span>
-                            </div>
-        
-                            <div class="bg-white rounded-lg border border-gray-200 p-4 mb-4 grid grid-cols-1 md:grid-cols-3 gap-6">
-                                <div>
-                                     <span class="block text-[10px] text-slate-400 font-medium uppercase mb-1">Quoted Price</span>
-                                     <span class="block text-lg font-bold text-slate-900">€10,000</span>
-                                </div>
-                                <div>
-                                     <span class="block text-[10px] text-slate-400 font-medium uppercase mb-1">Timeline</span>
-                                     <span class="block text-lg font-bold text-slate-900">2 weeks</span>
-                                </div>
-                                 <div>
-                                     <span class="block text-[10px] text-slate-400 font-medium uppercase mb-1">MOQ</span>
-                                     <span class="block text-lg font-bold text-slate-900">4,000</span>
-                                </div>
-                            </div>
-        
-                            <div class="mb-6">
-                                 <h4 class="text-xs font-bold text-slate-900 mb-2">Notes</h4>
-                                 <p class="text-sm text-slate-500 leading-relaxed">
-                                     We can meet all your requirements with GOTS certified organic cotton. Price includes packaging.
-                                 </p>
-                            </div>
-        
-                            <div class="flex justify-end gap-3">
-                                 <button class="px-5 py-2 text-sm font-medium text-slate-600 border border-gray-300 rounded-lg hover:bg-white bg-white shadow-sm">Cancel</button>
-                                 <button class="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 shadow-sm">Edit</button>
+                    <div class="flex items-center gap-3 w-full md:w-auto">
+                        <div class="relative tooltip-container">
+                            <button id="open-proposal-modal" class="flex-1 md:flex-none px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-colors shadow-sm whitespace-nowrap">Submit Proposal</button>
+                            
+                            <!-- Tooltip -->
+                            <div class="tooltip-content absolute top-full right-0 mt-3 w-64 bg-slate-900 text-white text-[10px] p-3 rounded-lg shadow-xl z-50">
+                                <div class="absolute -top-1.5 right-8 w-3 h-3 bg-slate-900 rotate-45"></div>
+                                <p class="relative z-10 leading-relaxed font-medium">This does not represent a final decision or purchase. You can continue exploring other manufacturers.</p>
                             </div>
                         </div>
-        
+
+                        <button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 border border-gray-200 rounded-lg hover:bg-gray-50">
+                            <i class="ph ph-dots-three-vertical text-xl"></i>
+                        </button>
                     </div>
-        
                 </div>
-        
-                <!-- AI Sidebar -->
-                <div class="w-full lg:w-[360px] bg-white border border-gray-200 rounded-xl shadow-lg flex flex-col h-[600px] static lg:sticky top-8 shrink-0">
-                     
-                     <!-- Header -->
-                     <div class="p-4 border-b border-gray-100 flex items-center justify-between bg-zinc-50 rounded-t-xl">
-                         <div class="flex items-center gap-3">
-                             <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-sm">
-                                 <i class="ph ph-robot text-lg"></i>
-                             </div>
-                             <div>
-                                 <h3 class="text-sm font-bold text-slate-900">Donau AI Assistant</h3>
-                                 <p class="text-[10px] text-slate-500">Your assistant for winning new briefs.</p>
-                             </div>
-                         </div>
-                         <button class="text-slate-400 hover:text-slate-600">
-                             <i class="ph ph-x"></i>
-                         </button>
-                     </div>
-        
-                     <!-- Chat Area -->
-                     <div class="grow p-6 flex flex-col items-center justify-center text-center overflow-y-auto">
-                         <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
-                             <i class="ph ph-robot text-2xl"></i>
-                         </div>
-                         <h4 class="text-sm font-bold text-slate-900 mb-2">Welcome to Donau AI!</h4>
-                         <p class="text-xs text-slate-500 max-w-[240px] leading-relaxed mb-6">
-                             I'm here to help you analyze new briefs, draft competitive proposals, or answer questions about active invites.
-                         </p>
-                         <div class="flex flex-wrap gap-2 justify-center">
-                             <button class="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded-lg text-xs font-medium text-slate-600 hover:bg-white hover:border-blue-200 hover:text-blue-600 transition-colors">Draft a Proposal</button>
-                             <button class="px-3 py-1.5 bg-gray-50 border border-gray-200 rounded-lg text-xs font-medium text-slate-600 hover:bg-white hover:border-blue-200 hover:text-blue-600 transition-colors">Production FAQs</button>
-                         </div>
-                     </div>
-        
-                     <!-- Input Area -->
-                     <div class="p-4 border-t border-gray-100">
-                         <div class="relative">
-                             <input type="text" placeholder="Type your response..." class="w-full pl-10 pr-10 py-2.5 bg-gray-50 border border-gray-200 rounded-lg text-xs focus:outline-none focus:ring-1 focus:ring-blue-500">
-                             <i class="ph ph-paperclip absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
-                             <button class="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 bg-blue-600 text-white rounded flex items-center justify-center hover:bg-blue-700">
-                                 <i class="ph ph-paper-plane-right text-sm"></i>
-                             </button>
-                         </div>
-                     </div>
-        
+
+                <!-- Tabs -->
+                <div class="border-b border-gray-200 mb-8">
+                    <div class="flex gap-8 overflow-x-auto pb-1">
+                        <a href="brief-detail.html" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium text-sm flex items-center gap-2 transition-colors">
+                            <i class="ph ph-file-text text-lg"></i>
+                            Overview
+                        </a>
+                        <a href="brief-detail-proposal.html" class="pb-3 border-b-2 border-blue-600 text-blue-600 font-medium text-sm flex items-center gap-2">
+                            <i class="ph ph-file-text text-lg"></i>
+                            Proposal
+                        </a>
+                        <a href="brief-detail-chat.html" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium text-sm flex items-center gap-2 transition-colors">
+                            <i class="ph ph-chat-circle-dots text-lg"></i>
+                            Messages
+                        </a>
+                    </div>
                 </div>
-        
+
+                <!-- Info Banner -->
+                <div class="bg-blue-50/50 border border-blue-100 rounded-lg p-4 mb-8 flex items-center gap-3 text-sm text-slate-700">
+                    <div class="w-8 h-8 rounded bg-blue-500 flex items-center justify-center text-white shrink-0 shadow-sm shadow-blue-200">
+                         <i class="ph ph-sparkle text-lg"></i>
+                    </div>
+                    <span>Brands may review and discuss proposals from multiple manufacturers before making a final decision.</span>
+                </div>
+
+                <!-- Proposals Section -->
+                <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-8 min-h-[500px]">
+                    <h2 class="text-sm font-bold text-slate-900 mb-6">Proposals</h2>
+                    
+                    <!-- Submitted Proposal Card -->
+                    <div class="bg-gray-50/50 rounded-xl p-8 border border-gray-100">
+                        <div class="mb-8">
+                             <h3 class="text-sm font-bold text-slate-900">Your Proposal</h3>
+                             <span class="text-xs text-slate-400 mt-1 block">Submitted on 15/01/2025</span>
+                        </div>
+
+                        <div class="bg-white rounded-xl border border-gray-200 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100 mb-8">
+                            <div class="p-6">
+                                 <span class="block text-[10px] text-slate-400 font-medium uppercase mb-2">Quoted Price</span>
+                                 <span class="block text-xl font-bold text-slate-900">€10,000</span>
+                            </div>
+                            <div class="p-6">
+                                 <span class="block text-[10px] text-slate-400 font-medium uppercase mb-2">Timeline</span>
+                                 <span class="block text-xl font-bold text-slate-900">2 weeks</span>
+                            </div>
+                             <div class="p-6">
+                                 <span class="block text-[10px] text-slate-400 font-medium uppercase mb-2">MOQ</span>
+                                 <span class="block text-xl font-bold text-slate-900">4,000</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                             <h4 class="text-xs font-bold text-slate-900 mb-2">Notes</h4>
+                             <p class="text-sm text-slate-500 leading-relaxed max-w-2xl">
+                                 We can meet all your requirements with GOTS certified organic cotton. Price includes packaging.
+                             </p>
+                        </div>
+
+                        <div class="flex justify-end gap-3 pt-6 border-t border-gray-200">
+                             <button class="px-6 py-2.5 text-sm font-medium text-slate-600 border border-gray-300 rounded-lg hover:bg-white bg-white shadow-sm w-24">Cancel</button>
+                             <button class="px-6 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 shadow-sm w-24">Edit</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+             <!-- Floating AI Chat Button -->
+            <button class="fixed bottom-8 right-8 w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all z-40 animate-bounce-in">
+                <i class="ph ph-chat-circle-text text-2xl"></i>
+            </button>
         </main>
     </div>
 
@@ -314,6 +292,113 @@
             </div>
         </div>
     </footer>
+
+    <!-- Submit Proposal Modal -->
+    <div id="proposal-modal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity opacity-0" id="modal-backdrop"></div>
+
+        <!-- Full-screen container for centering -->
+        <div class="fixed inset-0 z-10 w-screen h-screen overflow-y-auto">
+            <div class="flex min-h-full items-center justify-center p-4 text-center">
+                <!-- Modal Panel -->
+                <div id="modal-panel" class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all w-full max-w-[500px] opacity-0 scale-95 mx-auto">
+                    <div class="bg-white px-6 py-6">
+                        <div>
+                            <h3 class="text-lg font-bold leading-6 text-slate-900 mb-6" id="modal-title">Submit Your Proposal</h3>
+                            
+                            <form>
+                                <div class="grid grid-cols-2 gap-4 mb-5">
+                                    <div>
+                                        <label class="block text-[11px] font-bold text-slate-900 mb-1.5">Quoted Price (€) <span class="text-red-500">*</span></label>
+                                        <input type="text" value="62000" class="w-full h-10 px-3 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-slate-900 font-medium placeholder-slate-400 transition-shadow">
+                                    </div>
+                                     <div>
+                                        <label class="block text-[11px] font-bold text-slate-900 mb-1.5">Timeline <span class="text-red-500">*</span></label>
+                                        <input type="text" value="7 weeks" class="w-full h-10 px-3 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-slate-900 font-medium placeholder-slate-400 transition-shadow">
+                                    </div>
+                                </div>
+                
+                                 <div class="mb-5">
+                                    <label class="block text-[11px] font-bold text-slate-900 mb-1.5">Minimum Order Quantity <span class="text-red-500">*</span></label>
+                                    <input type="text" value="10,000 units" class="w-full h-10 px-3 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-slate-900 font-medium placeholder-slate-400 transition-shadow">
+                                 </div>
+                
+                                 <div class="mb-5">
+                                    <label class="block text-[11px] font-bold text-slate-900 mb-1.5">Proposal Notes <span class="text-red-500">*</span></label>
+                                    <textarea class="w-full px-3 py-2 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent h-24 resize-none text-slate-500 placeholder-slate-400 transition-shadow" placeholder="Type here"></textarea>
+                                 </div>
+                
+                                 <div class="mb-6">
+                                    <label class="block text-[11px] font-bold text-slate-900 mb-1.5">Attachments</label>
+                                    <div class="border-2 border-dashed border-gray-200 rounded-lg p-6 flex flex-col items-center justify-center text-center hover:bg-gray-50/50 hover:border-blue-200 transition-all cursor-pointer group">
+                                        <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                                             <i class="ph ph-upload-simple text-lg"></i>
+                                        </div>
+                                        <span class="text-xs font-bold text-blue-600 mb-0.5">Browse</span>
+                                        <span class="text-[10px] text-slate-400">or drop your file (PNG, JPG, PDF) here</span>
+                                    </div>
+                                 </div>
+                
+                                 <div class="flex flex-col-reverse md:flex-row items-center justify-between pt-5 border-t border-gray-100 gap-4">
+                                    <div class="flex items-center gap-2 max-w-[200px] md:mr-auto">
+                                        <i class="ph ph-info text-slate-400 text-base shrink-0"></i>
+                                        <p class="text-[10px] text-slate-500 leading-tight text-left">Submitting a proposal does not imply exclusivity or final selection.</p>
+                                    </div>
+                                    <div class="flex items-center gap-2 w-full md:w-auto">
+                                        <button type="button" id="close-modal" class="flex-1 md:flex-none px-4 py-2 text-xs font-bold text-slate-700 border border-gray-200 rounded-lg hover:bg-gray-50 bg-white shadow-sm whitespace-nowrap transition-colors">Cancel</button>
+                                        <button type="submit" class="flex-1 md:flex-none px-4 py-2 text-xs font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700 shadow-sm whitespace-nowrap transition-colors">Submit Proposal</button>
+                                    </div>
+                                 </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('proposal-modal');
+            const openBtn = document.getElementById('open-proposal-modal');
+            const closeBtn = document.getElementById('close-modal');
+            const backdrop = document.getElementById('modal-backdrop');
+            const panel = document.getElementById('modal-panel');
+
+            function openModal() {
+                modal.classList.remove('hidden');
+                // Small delay to allow display block to take effect before transition
+                setTimeout(() => {
+                    backdrop.classList.remove('opacity-0');
+                    panel.classList.remove('opacity-0', 'scale-95');
+                    panel.classList.add('opacity-100', 'scale-100');
+                }, 10);
+            }
+
+            function closeModal() {
+                backdrop.classList.add('opacity-0');
+                panel.classList.remove('opacity-100', 'scale-100');
+                panel.classList.add('opacity-0', 'scale-95');
+                
+                // Wait for transition to finish
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+
+            openBtn.addEventListener('click', openModal);
+            closeBtn.addEventListener('click', closeModal);
+            
+            // Close on backdrop click
+            modal.addEventListener('click', (e) => {
+                if (e.target.closest('#modal-panel') === null) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
 
     <script src="./src/js/main.js"></script>
 </body>

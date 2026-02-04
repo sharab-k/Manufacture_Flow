@@ -111,17 +111,17 @@
             <div class="max-w-[1200px] mb-12">
                 
                 <!-- Header -->
-                <!-- Header -->
                 <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
                     <div>
                         <div class="flex items-center gap-3 mb-1">
                             <h1 class="text-2xl font-bold text-slate-900">Premium Vitamin D3 Supplement</h1>
+                            <span class="bg-blue-100 text-blue-600 text-xs px-2.5 py-0.5 rounded-full font-bold whitespace-nowrap">Under Discussion</span>
                         </div>
                         <div class="flex items-center gap-2 text-xs text-slate-500">
-                            <i class="ph ph-buildings text-sm"></i>
-                            <span>Evergreenapparel.co</span>
+                             <i class="ph ph-buildings text-sm"></i>
+                             <span>Evergreenapparel.co</span>
                         </div>
-                         <div class="flex flex-wrap items-center gap-3 mt-3 text-xs text-slate-400">
+                         <div class="flex flex-wrap items-center gap-3 mt-3 text-xs text-slate-500">
                             <span class="font-mono text-blue-500 font-medium">#BR12345678</span>
                             <span>•</span>
                             <span>Dietary Supplements</span>
@@ -132,29 +132,55 @@
                         </div>
                     </div>
                     <div class="flex items-center gap-3 w-full md:w-auto">
-                        <span class="bg-blue-50 text-blue-600 text-xs px-2.5 py-0.5 rounded-full font-medium whitespace-nowrap">Under Discussion</span>
                         <button class="flex-1 md:flex-none px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-colors shadow-sm whitespace-nowrap">Submit Proposal</button>
-                        <button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 border border-gray-200 rounded-lg hover:bg-gray-50">
-                            <i class="ph ph-dots-three-vertical text-xl"></i>
-                        </button>
+                        
+                        <!-- Options Dropdown -->
+                        <div class="relative">
+                            <button data-dropdown-trigger data-dropdown-target="brief-options-dropdown" class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-100">
+                                <i class="ph ph-dots-three-vertical text-xl pointer-events-none"></i>
+                            </button>
+                            <!-- Dropdown Menu -->
+                            <div id="brief-options-dropdown" data-dropdown-content class="hidden absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 z-50 overflow-hidden animate-fade-in p-1">
+                                <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors">
+                                    <i class="ph ph-check text-base"></i>
+                                    Mark as Ready
+                                </a>
+                                <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors">
+                                    <i class="ph ph-pencil-simple text-base"></i>
+                                    Edit
+                                </a>
+                                <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors">
+                                    <i class="ph ph-trash text-base"></i>
+                                    Delete
+                                </a>
+                                <div class="h-px bg-gray-100 my-1"></div>
+                                <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors">
+                                    <i class="ph ph-copy text-base"></i>
+                                    Duplicate
+                                </a>
+                                <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors">
+                                    <i class="ph ph-download-simple text-base"></i>
+                                    Export as PDF
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
         
                 <!-- Alert -->
                 <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">
                     <div class="flex items-start md:items-center gap-4">
-                         <div class="w-8 h-8 rounded bg-blue-600 flex items-center justify-center text-white shrink-0">
-                            <i class="ph ph-sparkle text-lg"></i>
+                         <div class="w-10 h-10 rounded-lg bg-blue-500 flex items-center justify-center text-white shrink-0 shadow-sm shadow-blue-200">
+                            <i class="ph ph-sparkle text-xl"></i>
                         </div>
-                        <p class="text-sm text-slate-700 leading-relaxed">The timeline is not specified. Consider asking the brand for clarification before submitting your proposal. "MOQ is not mentioned. Confirming this ensures your proposal matches expectations.</p>
+                        <p class="text-xs md:text-sm text-slate-600 leading-relaxed font-medium">The timeline is not specified. Consider asking the brand for clarification before submitting your proposal."MOQ is not mentioned. Confirming this ensures your proposal matches expectations.</p>
                     </div>
-                    <a href="#" class="text-sm font-bold text-blue-600 hover:underline shrink-0 md:ml-4 whitespace-nowrap">Chat with Brand</a>
                 </div>
         
                 <!-- Tabs -->
                 <div class="border-b border-gray-200 mb-8">
                     <div class="flex gap-8 overflow-x-auto pb-1">
-                        <a href="brief-detail.html" class="pb-3 border-b-2 border-blue-600 text-blue-600 font-medium text-sm flex items-center gap-2">
+                        <a href="brief-detail.html" class="pb-3 border-b-2 border-blue-600 text-blue-600 font-bold text-sm flex items-center gap-2">
                             <i class="ph ph-file-text text-lg"></i>
                             Overview
                         </a>
@@ -164,86 +190,86 @@
                         </a>
                         <a href="brief-detail-chat.html" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium text-sm flex items-center gap-2 transition-colors">
                             <i class="ph ph-chat-circle-dots text-lg"></i>
-                            Chat
+                            Messages
                         </a>
                     </div>
                 </div>
         
                 <!-- Project Requirements -->
-                <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6 mb-6">
-                    <h2 class="text-sm font-bold text-slate-900 mb-4 uppercase tracking-wide">Project Requirements</h2>
+                <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-8 mb-6">
+                    <h2 class="text-sm font-bold text-slate-900 mb-4">Project Requirements</h2>
                     <p class="text-sm text-slate-500 leading-relaxed">
                         We are looking for eco-friendly packaging solutions for our new organic skincare line. The packaging must be 100% recyclable, aesthetically pleasing, and cost-effective. We need samples within 2 weeks and full production capability.
                     </p>
                 </div>
         
                 <!-- Technical Specifications -->
-                <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6 mb-6">
-                    <h2 class="text-sm font-bold text-slate-900 mb-6 uppercase tracking-wide">Technical Specifications</h2>
+                <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-8 mb-6">
+                    <h2 class="text-sm font-bold text-slate-900 mb-6">Technical Specifications</h2>
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Row 1 -->
-                        <div class="flex items-center p-4 bg-gray-50 rounded-lg">
-                            <span class="text-xs font-semibold text-slate-500 w-24 shrink-0">Material</span>
-                            <span class="text-sm font-semibold text-slate-900">Recyclable cardboard or biodegradable plastic</span>
+                        <div class="flex items-center p-4 bg-gray-50/50 rounded-lg">
+                            <span class="text-xs font-medium text-slate-500 w-32 shrink-0">Material</span>
+                            <span class="text-sm font-bold text-slate-900">Recyclable cardboard or biodegradable plastic</span>
                         </div>
-                        <div class="flex items-center p-4 bg-gray-50 rounded-lg">
-                            <span class="text-xs font-semibold text-slate-500 w-24 shrink-0">Dimensions</span>
-                            <span class="text-sm font-semibold text-slate-900">15cm x 10cm x 5cm</span>
+                        <div class="flex items-center p-4 bg-gray-50/50 rounded-lg">
+                            <span class="text-xs font-medium text-slate-500 w-32 shrink-0">Dimensions</span>
+                            <span class="text-sm font-bold text-slate-900">15cm x 10cm x 5cm</span>
                         </div>
                          <!-- Row 2 -->
-                        <div class="flex items-center p-4 bg-gray-50 rounded-lg">
-                            <span class="text-xs font-semibold text-slate-500 w-24 shrink-0">Printing</span>
-                            <span class="text-sm font-semibold text-slate-900">Full color CMYK with matte finish</span>
+                        <div class="flex items-center p-4 bg-gray-50/50 rounded-lg">
+                            <span class="text-xs font-medium text-slate-500 w-32 shrink-0">Printing</span>
+                            <span class="text-sm font-bold text-slate-900">Full color CMYK with matte finish</span>
                         </div>
-                        <div class="flex items-center p-4 bg-gray-50 rounded-lg">
-                            <span class="text-xs font-semibold text-slate-500 w-24 shrink-0">MOQ</span>
-                            <span class="text-sm font-semibold text-slate-900">10,000 units minimum</span>
+                        <div class="flex items-center p-4 bg-gray-50/50 rounded-lg">
+                            <span class="text-xs font-medium text-slate-500 w-32 shrink-0">MOQ</span>
+                            <span class="text-sm font-bold text-slate-900">10,000 units minimum</span>
                         </div>
                     </div>
                 </div>
         
                 <!-- Brief Details -->
-                <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6 mb-6">
-                    <h2 class="text-sm font-bold text-slate-900 mb-6 uppercase tracking-wide">Brief Details</h2>
+                <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-8 mb-6">
+                    <h2 class="text-sm font-bold text-slate-900 mb-8">Brief Details</h2>
                     
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center text-slate-400 shrink-0">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center text-slate-400 shrink-0 border border-gray-100">
                                 <i class="ph ph-clock text-xl"></i>
                             </div>
                             <div>
-                                <span class="block text-[10px] text-slate-400 font-medium uppercase">Quantity</span>
+                                <span class="block text-[10px] text-slate-400 font-medium uppercase mb-0.5">Quantity</span>
                                 <span class="block text-sm font-bold text-slate-900">5,000 units</span>
                             </div>
                         </div>
                         
-                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center text-slate-400 shrink-0">
+                         <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center text-slate-400 shrink-0 border border-gray-100">
                                 <i class="ph ph-clock text-xl"></i>
                             </div>
                             <div>
-                                <span class="block text-[10px] text-slate-400 font-medium uppercase">Timeline</span>
+                                <span class="block text-[10px] text-slate-400 font-medium uppercase mb-0.5">Timeline</span>
                                 <span class="block text-sm font-bold text-slate-900">8-12 weeks</span>
                             </div>
                         </div>
         
-                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center text-slate-400 shrink-0">
+                         <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center text-slate-400 shrink-0 border border-gray-100">
                                 <i class="ph ph-wallet text-xl"></i>
                             </div>
                             <div>
-                                <span class="block text-[10px] text-slate-400 font-medium uppercase">Budget Range</span>
+                                <span class="block text-[10px] text-slate-400 font-medium uppercase mb-0.5">Budget Range</span>
                                 <span class="block text-sm font-bold text-slate-900">€30,000 - €45,000</span>
                             </div>
                         </div>
         
-                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center text-slate-400 shrink-0">
+                         <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center text-slate-400 shrink-0 border border-gray-100">
                                 <i class="ph ph-file text-xl"></i>
                             </div>
                             <div>
-                                <span class="block text-[10px] text-slate-400 font-medium uppercase">Category</span>
+                                <span class="block text-[10px] text-slate-400 font-medium uppercase mb-0.5">Category</span>
                                 <span class="block text-sm font-bold text-slate-900">Dietry Supplements</span>
                             </div>
                         </div>
@@ -251,34 +277,37 @@
                 </div>
         
                 <!-- Attachments -->
-                 <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6 mb-20">
-                    <h2 class="text-sm font-bold text-slate-900 mb-6 uppercase tracking-wide">Attachments</h2>
+                 <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-8 mb-20">
+                    <h2 class="text-sm font-bold text-slate-900 mb-6">Attachments</h2>
                     
                     <div class="space-y-3">
                         <div class="flex items-center p-4 bg-gray-50 rounded-lg border border-transparent hover:border-gray-200 transition-all cursor-pointer group">
-                            <div class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-slate-400 shrink-0 group-hover:bg-white group-hover:shadow-sm transition-all">
+                            <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-slate-400 shrink-0 group-hover:shadow-sm transition-all border border-gray-200/50">
                                 <i class="ph ph-file-pdf text-xl"></i>
                             </div>
                             <div class="ml-4 grow">
                                 <span class="block text-sm font-bold text-slate-900">Specs.pdf</span>
-                                <span class="block text-xs text-slate-400">PDF Document • 2.4 MB</span>
+                                <span class="block text-xs text-slate-400 mt-0.5">PDF Document • 2.4 MB</span>
                             </div>
                         </div>
                         
                         <div class="flex items-center p-4 bg-gray-50 rounded-lg border border-transparent hover:border-gray-200 transition-all cursor-pointer group">
-                            <div class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center text-slate-400 shrink-0 group-hover:bg-white group-hover:shadow-sm transition-all">
+                            <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-slate-400 shrink-0 group-hover:shadow-sm transition-all border border-gray-200/50">
                                 <i class="ph ph-file-image text-xl"></i>
                             </div>
                             <div class="ml-4 grow">
                                 <span class="block text-sm font-bold text-slate-900">Design-mockup.png</span>
-                                <span class="block text-xs text-slate-400">PDF Document • 2.4 MB</span>
+                                <span class="block text-xs text-slate-400 mt-0.5">PDF Document • 2.4 MB</span>
                             </div>
                         </div>
                     </div>
                 </div>
-        
-        
             </div>
+
+            <!-- Floating AI Chat Button -->
+            <button class="fixed bottom-8 right-8 w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all z-40 animate-bounce-in">
+                <i class="ph ph-chat-circle-text text-2xl"></i>
+            </button>
         </main>
     </div>
 
