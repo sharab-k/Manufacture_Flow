@@ -12,7 +12,7 @@
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-gray-50 h-screen flex flex-col overflow-y-auto">
+<body class="bg-white h-screen flex flex-col overflow-y-auto">
 
 
 
@@ -139,7 +139,7 @@
     
             <div class="grow flex flex-col md:flex-row gap-6 min-h-0">
                 <!-- Chat Listing Sidebar -->
-                <div class="w-full md:w-[320px] lg:w-[380px] h-[30%] md:h-auto bg-white rounded-xl border border-gray-200 shadow-sm flex flex-col overflow-hidden shrink-0">
+                <div class="w-full md:w-[320px] lg:w-[380px] h-[30%] md:h-auto bg-white rounded-2xl border border-gray-200 shadow-sm flex flex-col overflow-hidden shrink-0">
                     <div class="p-4 border-b border-gray-100 shrink-0">
                         <h2 class="font-bold text-slate-900 mb-4">Messages</h2>
                         <div class="relative">
@@ -152,9 +152,9 @@
                         </div>
                     </div>
                     
-                    <div class="grow overflow-y-auto divide-y divide-gray-50">
+                    <div class="grow overflow-y-auto divide-y divide-gray-50 p-4 space-y-2">
                         <!-- Active Item -->
-                        <div class="p-4 bg-blue-50/50 border-l-4 border-blue-600 cursor-pointer" data-chat-id="chat_1">
+                        <div class="p-4 bg-blue-50 rounded-xl cursor-pointer ring-1 ring-blue-100" data-chat-id="chat_1">
                             <div class="flex justify-between items-start mb-1">
                                 <span class="text-[10px] bg-blue-100 text-blue-600 font-medium px-1.5 rounded">#BR12345678</span>
                                 <span class="text-xs text-slate-400">22/01/2024</span>
@@ -169,7 +169,7 @@
                         </div>
     
                          <!-- Item 2 -->
-                        <div class="p-4 hover:bg-gray-50 cursor-pointer" data-chat-id="chat_2">
+                        <div class="p-4 hover:bg-gray-50 rounded-xl cursor-pointer transition-colors" data-chat-id="chat_2">
                             <div class="flex justify-between items-start mb-1">
                                 <span class="text-[10px] bg-blue-100 text-blue-600 font-medium px-1.5 rounded">#BR12345678</span>
                                 <span class="text-xs text-slate-400">18/01/2024</span>
@@ -184,7 +184,7 @@
                         </div>
     
                         <!-- Item 3 -->
-                        <div class="p-4 hover:bg-gray-50 cursor-pointer" data-chat-id="chat_3">
+                        <div class="p-4 hover:bg-gray-50 rounded-xl cursor-pointer transition-colors" data-chat-id="chat_3">
                             <div class="flex justify-between items-start mb-1">
                                 <span class="text-[10px] bg-blue-100 text-blue-600 font-medium px-1.5 rounded">#BR12345678</span>
                                 <span class="text-xs text-slate-400">12/01/2024</span>
@@ -202,7 +202,7 @@
                 </div>
     
                 <!-- Chat Area -->
-                <div class="grow bg-white rounded-xl border border-gray-200 shadow-sm flex flex-col overflow-hidden">
+                <div class="grow bg-white rounded-2xl border border-gray-200 shadow-sm flex flex-col overflow-hidden">
                     
                     <!-- Chat Header -->
                     <div class="p-4 border-b border-gray-100 flex justify-between items-center shrink-0">
@@ -227,7 +227,7 @@
                         <div class="flex gap-4 max-w-[80%]">
                             <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold shrink-0 mt-1">EA</div>
                             <div>
-                                 <div class="bg-gray-100 rounded-2xl p-4 rounded-tl-sm text-sm text-slate-700 leading-relaxed shadow-sm">
+                                 <div class="bg-gray-50 rounded-2xl p-4 rounded-tl-sm text-sm text-slate-700 leading-relaxed shadow-sm">
                                     <p>Hi! I'm here to help you create a detailed product brief. Let's start with the basics. What type of product are you looking to manufacture?</p>
                                  </div>
                                  <span class="text-[10px] text-slate-400 mt-1 block">20:32</span>
