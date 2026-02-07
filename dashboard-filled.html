@@ -299,7 +299,7 @@
                             
                             <div class="p-6 space-y-4">
                                 <!-- Brief Card 1 -->
-                                <div class="bg-gray-50 rounded-2xl p-6 relative group border border-transparent transition-all">
+                                <div class="bg-gray-50 rounded-2xl p-6 relative group border border-transparent transition-all mobile-clickable-card cursor-pointer">
                                     <a href="brief-detail.html" class="absolute top-6 right-6 flex items-center gap-1 text-blue-600 text-xs font-bold hover:underline">
                                         View Details 
                                         <i class="ph ph-arrow-up-right"></i>
@@ -330,7 +330,7 @@
                                 </div>
 
                                 <!-- Brief Card 2 -->
-                                <div class="bg-gray-50 rounded-2xl p-6 relative group border border-transparent transition-all">
+                                <div class="bg-gray-50 rounded-2xl p-6 relative group border border-transparent transition-all mobile-clickable-card cursor-pointer">
                                     <a href="brief-detail.html" class="absolute top-6 right-6 flex items-center gap-1 text-blue-600 text-xs font-bold hover:underline">
                                         View Details 
                                         <i class="ph ph-arrow-up-right"></i>
@@ -361,7 +361,7 @@
                                 </div>
 
                                 <!-- Brief Card 3 -->
-                                <div class="bg-gray-50 rounded-2xl p-6 relative group border border-transparent transition-all">
+                                <div class="bg-gray-50 rounded-2xl p-6 relative group border border-transparent transition-all mobile-clickable-card cursor-pointer">
                                     <a href="brief-detail.html" class="absolute top-6 right-6 flex items-center gap-1 text-blue-600 text-xs font-bold hover:underline">
                                         View Details 
                                         <i class="ph ph-arrow-up-right"></i>
@@ -601,6 +601,21 @@
 
             if(openChatBtn) openChatBtn.addEventListener('click', toggleChat);
             if(closeChatBtn) closeChatBtn.addEventListener('click', toggleChat);
+
+            // Mobile Clickable Cards
+            const mobileCards = document.querySelectorAll('.mobile-clickable-card');
+            mobileCards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    // Check if mobile (md breakpoint is 768px in Tailwind)
+                    if (window.innerWidth < 768) {
+                        // Prevent if clicking on a specific inner link or button
+                        if (e.target.closest('a') || e.target.closest('button')) {
+                            return;
+                        }
+                        window.location.href = 'brief-detail.html';
+                    }
+                });
+            });
         });
     </script>
 </body>
