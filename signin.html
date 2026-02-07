@@ -15,6 +15,17 @@
       body {
         font-family: "Inter", sans-serif;
       }
+      .error-text {
+          color: #dc2626 !important; /* text-red-600 */
+      }
+      .error-border {
+          border-color: #dc2626 !important; /* border-red-600 */
+          color: #dc2626 !important;
+      }
+      /* Ensure icon inherits color */
+      .error-text i {
+          color: inherit;
+      }
     </style>
   </head>
   <body class="bg-gray-50 min-h-screen flex flex-col justify-between">
@@ -48,7 +59,7 @@
           </p>
         </div>
 
-        <form class="space-y-5">
+        <form class="space-y-5" onsubmit="handleSignIn(event)" novalidate>
           <div>
             <label
               for="email"
@@ -61,6 +72,10 @@
               placeholder="Enter Email"
               class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
             />
+            <div id="email-error" class="hidden items-center gap-2 mt-2 error-text text-xs font-medium animate-fade-in">
+              <i class="ph-fill ph-warning-circle text-base"></i>
+              <span>Incorrect email. Please try again</span>
+            </div>
           </div>
 
           <div>
@@ -83,6 +98,10 @@
                 <i class="ph ph-eye-slash text-xl"></i>
               </button>
             </div>
+            <div id="password-error" class="hidden items-center gap-2 mt-2 error-text text-xs font-medium animate-fade-in">
+              <i class="ph-fill ph-warning-circle text-base"></i>
+              <span>Incorrect password. Please try again</span>
+            </div>
           </div>
 
           <div class="flex items-center justify-between">
@@ -101,8 +120,7 @@
           </div>
 
           <button
-            type="button"
-            onclick="window.location.href = 'dashboard-filled.html'"
+            type="submit"
             class="w-full py-3 px-4 bg-gray-200 hover:bg-gray-300 text-slate-600 font-medium rounded-lg transition-colors cursor-pointer"
           >
             Sign In
@@ -119,8 +137,6 @@
         </div>
       </div>
     </main>
-    <script src="./src/js/main.js"></script>
-
     <!-- Footer -->
     <footer
       class="w-full px-4 md:px-8 py-6 text-sm text-slate-500 flex flex-col md:flex-row justify-center md:items-center gap-2 md:gap-4 text-center md:text-left"
@@ -133,5 +149,107 @@
         <a href="terms-of-service.html" class="hover:text-slate-900">Terms of Service</a>
       </div>
     </footer>
+    <script src="./src/js/main.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.querySelector('form');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const emailError = document.getElementById('email-error');
+        const passwordError = document.getElementById('password-error');
+
+        // Listen for input changes to clear errors
+        if (emailInput) {
+            emailInput.addEventListener('input', () => {
+                validateEmail();
+            });
+        }
+
+        if (passwordInput) {
+            passwordInput.addEventListener('input', () => {
+                validatePassword();
+            });
+        }
+
+        if (form) {
+          form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop form from submitting immediately
+            
+            if (validateForm()) {
+                console.log("Validation passed, navigating...");
+                window.location.href = 'dashboard-filled.html';
+            } else {
+                console.log("Validation failed on submit");
+            }
+          });
+        }
+
+        function validateEmail() {
+             const email = emailInput.value.trim();
+             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+             const isEmailValid = emailPattern.test(email);
+             
+             if (isEmailValid) {
+                 emailError.classList.add('hidden');
+                 emailError.classList.remove('flex');
+                 emailInput.classList.remove('error-border', 'focus:ring-red-500');
+                 emailInput.classList.add('border-gray-200', 'focus:ring-blue-500');
+             }
+             return isEmailValid;
+        }
+
+        function validatePassword() {
+            const password = passwordInput.value.trim();
+            const isPasswordValid = password.length >= 6;
+            
+            if (isPasswordValid) {
+                 passwordError.classList.add('hidden');
+                 passwordError.classList.remove('flex');
+                 passwordInput.classList.remove('error-border', 'focus:ring-red-500');
+                 passwordInput.classList.add('border-gray-200', 'focus:ring-blue-500');
+            }
+            return isPasswordValid;
+        }
+
+        function validateForm() {
+            // This function is called on submit, so we show errors here.
+            
+            // Validate Email
+            const email = emailInput.value.trim();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const isEmailValid = emailPattern.test(email);
+            
+            if (!isEmailValid) {
+                 emailError.classList.remove('hidden');
+                 emailError.classList.add('flex');
+                 emailInput.classList.add('error-border', 'focus:ring-red-500');
+                 emailInput.classList.remove('border-gray-200', 'focus:ring-blue-500');
+            } else {
+                 emailError.classList.add('hidden');
+                 emailError.classList.remove('flex');
+                 emailInput.classList.remove('error-border', 'focus:ring-red-500');
+                 emailInput.classList.add('border-gray-200', 'focus:ring-blue-500');
+            }
+
+            // Validate Password
+            const password = passwordInput.value.trim();
+            const isPasswordValid = password.length >= 6;
+            
+            if (!isPasswordValid) {
+                 passwordError.classList.remove('hidden');
+                 passwordError.classList.add('flex');
+                 passwordInput.classList.add('error-border', 'focus:ring-red-500');
+                 passwordInput.classList.remove('border-gray-200', 'focus:ring-blue-500');
+            } else {
+                 passwordError.classList.add('hidden');
+                 passwordError.classList.remove('flex');
+                 passwordInput.classList.remove('error-border', 'focus:ring-red-500');
+                 passwordInput.classList.add('border-gray-200', 'focus:ring-blue-500');
+            }
+
+            return isEmailValid && isPasswordValid;
+        }
+      });
+    </script>
   </body>
 </html>
