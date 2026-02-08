@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,7 +20,7 @@
     <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/50 z-40 hidden backdrop-blur-sm transition-opacity"></div>
 
     <!-- Mobile Menu Drawer -->
-    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white shadow-xl z-50 transform transition-transform duration-300 hidden flex flex-col">
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white z-50 transform transition-transform duration-300 hidden flex flex-col">
         <div class="px-6 py-4 flex items-center justify-between border-b border-gray-100">
             <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-6 w-auto">
         </div>
@@ -83,7 +83,7 @@
                         <i class="ph ph-bell text-xl"></i>
                     </button>
                      <!-- Notification Dropdown -->
-                     <div id="notification-dropdown" data-dropdown-content class="hidden absolute right-0 mt-4 bg-white rounded-2xl shadow-xl border border-gray-100 z-50 overflow-hidden animate-fade-in w-80 md:w-[400px]" style="min-width: unset;">
+                     <div id="notification-dropdown" data-dropdown-content class="hidden absolute right-0 mt-4 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in w-80 md:w-[400px]" style="min-width: unset;">
                         <!-- Header -->
                         <div class="px-6 py-[22px] border-b border-gray-100 flex justify-between items-center">
                             <h4 class="font-bold text-slate-900 text-lg">Notifications</h4>
@@ -97,10 +97,10 @@
                  <!-- User Avatar -->
                  <div class="relative">
                     <button id="user-menu-button" data-dropdown-trigger data-dropdown-target="user-dropdown" class="flex items-center gap-2 focus:outline-none">
-                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white shadow-sm hover:ring-blue-100 transition-all">MT</div>
+                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white hover:ring-blue-100 transition-all">MT</div>
                     </button>
                     <!-- User Dropdown -->
-                    <div id="user-dropdown" data-dropdown-content class="hidden absolute right-0 mt-3 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 z-50 overflow-hidden animate-fade-in">
+                    <div id="user-dropdown" data-dropdown-content class="hidden absolute right-0 mt-3 w-64 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in">
                         <div class="px-5 py-4 border-b border-gray-50">
                             <p class="text-sm font-bold text-slate-900">Mark Thompson</p>
                             <p class="text-xs text-slate-500 font-medium truncate">mark@donau.ai</p>
@@ -139,7 +139,7 @@
     
             <div class="grow flex flex-col md:flex-row gap-6 min-h-0">
                 <!-- Chat Listing Sidebar -->
-                <div class="w-full md:w-[320px] lg:w-[380px] h-[30%] md:h-auto bg-white rounded-2xl border border-gray-200 shadow-sm flex flex-col overflow-hidden shrink-0">
+                <div class="w-full md:w-[320px] lg:w-[380px] h-[30%] md:h-auto bg-white rounded-2xl border border-gray-200 flex flex-col overflow-hidden shrink-0">
                     <div class="p-4 border-b border-gray-100 shrink-0">
                         <h2 class="font-bold text-slate-900 mb-4">Messages</h2>
                         <div class="relative">
@@ -202,7 +202,7 @@
                 </div>
     
                 <!-- Chat Area -->
-                <div class="grow bg-white rounded-2xl border border-gray-200 shadow-sm flex flex-col overflow-hidden">
+                <div class="grow bg-white rounded-2xl border border-gray-200 flex flex-col overflow-hidden">
                     
                     <!-- Chat Header -->
                     <div class="p-4 border-b border-gray-100 flex justify-between items-center shrink-0">
@@ -227,7 +227,7 @@
                         <div class="flex gap-4 max-w-[80%]">
                             <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold shrink-0 mt-1">EA</div>
                             <div>
-                                 <div class="bg-gray-50 rounded-2xl p-4 rounded-tl-sm text-sm text-slate-700 leading-relaxed shadow-sm">
+                                 <div class="bg-gray-50 rounded-2xl p-4 rounded-tl-sm text-sm text-slate-700 leading-relaxed">
                                     <p>Hi! I'm here to help you create a detailed product brief. Let's start with the basics. What type of product are you looking to manufacture?</p>
                                  </div>
                                  <span class="text-[10px] text-slate-400 mt-1 block">20:32</span>
@@ -242,7 +242,7 @@
                                 <i class="ph ph-paperclip text-xl"></i>
                             </button>
                             <input type="text" placeholder="Type your response..." class="grow px-4 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
-                            <button class="w-10 h-10 flex items-center justify-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 shadow-sm">
+                            <button class="w-10 h-10 flex items-center justify-center text-white bg-blue-600 rounded-lg hover:bg-blue-700">
                                 <i class="ph ph-paper-plane-right text-xl"></i>
                             </button>
                         </div>

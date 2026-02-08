@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,7 +18,7 @@
     <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/50 z-40 hidden backdrop-blur-sm transition-opacity"></div>
 
     <!-- Mobile Menu Drawer -->
-    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white shadow-xl z-50 transform transition-transform duration-300 hidden flex flex-col">
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white z-50 transform transition-transform duration-300 hidden flex flex-col">
         <div class="px-6 py-4 flex items-center justify-between border-b border-gray-100">
             <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-6 w-auto">
         </div>
@@ -81,7 +81,7 @@
                         <i class="ph ph-bell text-xl"></i>
                     </button>
                      <!-- Notification Dropdown -->
-                     <div id="notification-dropdown" data-dropdown-content class="hidden absolute right-0 mt-4 bg-white rounded-2xl shadow-xl border border-gray-100 z-50 overflow-hidden animate-fade-in w-80 md:w-[400px]" style="min-width: unset;">
+                     <div id="notification-dropdown" data-dropdown-content class="hidden absolute right-0 mt-4 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in w-80 md:w-[400px]" style="min-width: unset;">
                         <!-- Header -->
                         <div class="px-6 py-[22px] border-b border-gray-100 flex justify-between items-center">
                             <h4 class="font-bold text-slate-900 text-lg">Notifications</h4>
@@ -95,10 +95,10 @@
                  <!-- User Avatar -->
                  <div class="relative">
                     <button id="user-menu-button" data-dropdown-trigger data-dropdown-target="user-dropdown" class="flex items-center gap-2 focus:outline-none">
-                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white shadow-sm hover:ring-blue-100 transition-all">MT</div>
+                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white hover:ring-blue-100 transition-all">MT</div>
                     </button>
                     <!-- User Dropdown -->
-                    <div id="user-dropdown" data-dropdown-content class="hidden absolute right-0 mt-3 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 z-50 overflow-hidden animate-fade-in">
+                    <div id="user-dropdown" data-dropdown-content class="hidden absolute right-0 mt-3 w-64 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in">
                         <div class="px-5 py-4 border-b border-gray-50">
                             <p class="text-sm font-bold text-slate-900">Mark Thompson</p>
                             <p class="text-xs text-slate-500 font-medium truncate">mark@donau.ai</p>
@@ -130,7 +130,7 @@
 
         <!-- Main Scrollable Area -->
         <main class="flex-1 w-full max-w-[1400px] mx-auto p-4 md:p-8">
-            <div class="max-w-[1200px] mb-12">
+            <div class="max-w-[1200px] mx-auto mb-12">
                 
                 <div class="mb-6">
                     <h1 class="text-2xl font-bold text-slate-900">Available My Briefs</h1>
@@ -140,7 +140,7 @@
                 <!-- Stats Row -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                     <!-- Row 1 -->
-                    <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex items-center justify-between">
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center justify-between">
                         <div>
                             <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wide">Total Briefs</span>
                             <span class="block text-2xl font-bold text-slate-900 mt-1">15</span>
@@ -149,7 +149,7 @@
                             <i class="ph ph-briefcase text-xl"></i>
                         </div>
                     </div>
-                    <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex items-center justify-between">
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center justify-between">
                         <div>
                             <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wide">Invited</span>
                             <span class="block text-2xl font-bold text-slate-900 mt-1">2</span>
@@ -158,7 +158,7 @@
                             <i class="ph ph-file-text text-xl"></i>
                         </div>
                     </div>
-                    <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex items-center justify-between">
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center justify-between">
                         <div>
                             <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wide">Under Discussion</span>
                             <span class="block text-2xl font-bold text-slate-900 mt-1">2</span>
@@ -167,7 +167,7 @@
                             <i class="ph ph-check-circle text-xl"></i>
                         </div>
                     </div>
-                    <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex items-center justify-between">
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center justify-between">
                         <div>
                             <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wide">Proposals Submitted</span>
                             <span class="block text-2xl font-bold text-slate-900 mt-1">3</span>
@@ -178,7 +178,7 @@
                     </div>
 
                     <!-- Row 2 -->
-                    <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex items-center justify-between">
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center justify-between">
                         <div>
                             <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wide">Matched</span>
                             <span class="block text-2xl font-bold text-slate-900 mt-1">5</span>
@@ -187,7 +187,7 @@
                             <i class="ph ph-briefcase text-xl"></i>
                         </div>
                     </div>
-                    <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex items-center justify-between">
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center justify-between">
                         <div>
                             <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wide">Not Proceeding</span>
                             <span class="block text-2xl font-bold text-slate-900 mt-1">2</span>
@@ -196,7 +196,7 @@
                             <i class="ph ph-file-x text-xl"></i>
                         </div>
                     </div>
-                    <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex items-center justify-between">
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center justify-between">
                         <div>
                             <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wide">Completed</span>
                             <span class="block text-2xl font-bold text-slate-900 mt-1">1</span>
@@ -205,7 +205,7 @@
                             <i class="ph ph-check-circle text-xl"></i>
                         </div>
                     </div>
-                    <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex items-center justify-between">
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center justify-between">
                         <div>
                             <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wide">Archived</span>
                             <span class="block text-2xl font-bold text-slate-900 mt-1">0</span>
@@ -217,7 +217,7 @@
                 </div>
         
                 <!-- Main Content Card -->
-                <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
+                <div class="bg-white border border-gray-200 rounded-xl p-6">
                     
                     <!-- Filters -->
                     <div class="flex flex-col md:flex-row gap-4 mb-8">
@@ -262,7 +262,7 @@
                                          <!-- Tooltip -->
                                          <div class="relative group">
                                             <i class="ph ph-info text-slate-400 text-lg cursor-help"></i>
-                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
+                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
                                                 You've been invited to submit a proposal. Brands may consider multiple manufacturers before making a decision.
                                                 <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
                                             </div>
@@ -293,7 +293,7 @@
                                 </div>
                                  <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
                                     <i class="ph ph-currency-dollar text-lg text-slate-400"></i>
-                                    <span>€1000 - €100000</span>
+                                    <span>â‚¬1000 - â‚¬100000</span>
                                 </div>
                             </div>
                         </div>
@@ -312,7 +312,7 @@
                                          <!-- Tooltip -->
                                          <div class="relative group">
                                             <i class="ph ph-info text-slate-400 text-lg cursor-help"></i>
-                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
+                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
                                                 Your proposal is under review. Brands may discuss proposals from multiple manufacturers before focusing on one.
                                                 <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
                                             </div>
@@ -343,7 +343,7 @@
                                 </div>
                                 <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
                                     <i class="ph ph-currency-dollar text-lg text-slate-400"></i>
-                                    <span>€1000 - €100000</span>
+                                    <span>â‚¬1000 - â‚¬100000</span>
                                 </div>
                             </div>
                         </div>
@@ -362,7 +362,7 @@
                                          <!-- Tooltip -->
                                          <div class="relative group">
                                             <i class="ph ph-info text-slate-400 text-lg cursor-help"></i>
-                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
+                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
                                                 The brand is currently reviewing and discussing proposals with multiple manufacturers.
                                                 <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
                                             </div>
@@ -393,7 +393,7 @@
                                 </div>
                                 <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
                                     <i class="ph ph-currency-dollar text-lg text-slate-400"></i>
-                                    <span>€1000 - €100000</span>
+                                    <span>â‚¬1000 - â‚¬100000</span>
                                 </div>
                             </div>
                         </div>
@@ -412,7 +412,7 @@
                                          <!-- Tooltip -->
                                          <div class="relative group">
                                             <i class="ph ph-info text-slate-400 text-lg cursor-help"></i>
-                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
+                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
                                                 The brand is currently proceeding with another manufacturer for this brief. You can still review this proposal or submit proposals to other briefs.
                                                 <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
                                             </div>
@@ -443,7 +443,7 @@
                                 </div>
                                 <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
                                     <i class="ph ph-currency-dollar text-lg text-slate-400"></i>
-                                    <span>€1000 - €100000</span>
+                                    <span>â‚¬1000 - â‚¬100000</span>
                                 </div>
                             </div>
                         </div>
@@ -462,7 +462,7 @@
                                          <!-- Tooltip -->
                                          <div class="relative group">
                                             <i class="ph ph-info text-slate-400 text-lg cursor-help"></i>
-                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
+                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
                                                 The brand has chosen to focus discussions with you for now. This does not imply exclusivity or final selection.
                                                 <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
                                             </div>
@@ -493,7 +493,7 @@
                                 </div>
                                  <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
                                     <i class="ph ph-currency-dollar text-lg text-slate-400"></i>
-                                    <span>€1000 - €100000</span>
+                                    <span>â‚¬1000 - â‚¬100000</span>
                                 </div>
                             </div>
                         </div>
@@ -588,18 +588,18 @@
     </footer>
 
     <!-- Floating Chat Button -->
-    <button id="open-ai-chat" style="position: fixed; bottom: 2rem; right: 2rem; width: 3.5rem; height: 3.5rem; border-radius: 9999px; background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); color: white; display: flex; align-items: center; justify-content: center; z-index: 2147483647; box-shadow: 0 8px 20px -4px rgba(59, 130, 246, 0.5); cursor: pointer; border: none;" class="hover:scale-105 transition-transform duration-200">
+    <button id="open-ai-chat" style="position: fixed; bottom: 6rem; right: 2rem; width: 3.5rem; height: 3.5rem; border-radius: 9999px; background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); color: white; display: flex; align-items: center; justify-content: center; z-index: 2147483647; box-: 0 8px 20px -4px rgba(59, 130, 246, 0.5); cursor: pointer; border: none;" class="hover:scale-105 transition-transform duration-200">
         <i class="ph ph-chat-circle text-3xl font-bold"></i>
     </button>
 
     <!-- AI Chat Widget -->
     <!-- AI Chat Widget -->
     <!-- AI Chat Widget -->
-    <div id="ai-chat-widget" style="position: fixed; bottom: 100px; right: 2rem; z-index: 2147483647; width: 380px !important; height: 500px !important;" class="bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] border border-gray-100 hidden flex-col font-sans transition-all duration-300 origin-bottom-right scale-95 opacity-0">
+    <div id="ai-chat-widget" style="position: fixed; bottom: 100px; right: 2rem; z-index: 2147483647; width: 380px !important; height: 500px !important;" class="bg-white rounded-2xl-[0_20px_50px_-12px_rgba(0,0,0,0.15)] border border-gray-100 hidden flex-col font-sans transition-all duration-300 origin-bottom-right scale-95 opacity-0">
         <!-- Header -->
         <div class="px-6 py-4 flex items-center justify-between border-b border-gray-50">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-sm">
+                <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white">
                     <i class="ph ph-robot text-xl"></i>
                 </div>
                 <div>
@@ -636,7 +636,7 @@
                 <div class="flex-1 relative">
                     <input type="text" placeholder="Type your response..." class="w-full h-10 pl-4 pr-4 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all text-slate-600">
                 </div>
-                 <button class="w-10 h-10 flex items-center justify-center bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors shrink-0 shadow-md shadow-blue-100">
+                 <button class="w-10 h-10 flex items-center justify-center bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors shrink-0-100">
                     <i class="ph ph-paper-plane-right text-xl"></i>
                 </button>
             </div>

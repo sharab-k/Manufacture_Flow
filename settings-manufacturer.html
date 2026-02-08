@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,7 +20,7 @@
     <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/50 z-40 hidden backdrop-blur-sm transition-opacity"></div>
 
     <!-- Mobile Menu Drawer -->
-    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white shadow-xl z-50 transform transition-transform duration-300 hidden flex flex-col">
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white z-50 transform transition-transform duration-300 hidden flex flex-col">
         <div class="px-6 py-4 flex items-center justify-between border-b border-gray-100">
             <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-6 w-auto">
         </div>
@@ -83,7 +83,7 @@
                         <i class="ph ph-bell text-xl"></i>
                     </button>
                      <!-- Notification Dropdown -->
-                     <div id="notification-dropdown" data-dropdown-content class="hidden absolute right-0 mt-4 bg-white rounded-2xl shadow-xl border border-gray-100 z-50 overflow-hidden animate-fade-in w-80 md:w-[400px]" style="min-width: unset;">
+                     <div id="notification-dropdown" data-dropdown-content class="hidden absolute right-0 mt-4 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in w-80 md:w-[400px]" style="min-width: unset;">
                         <!-- Header -->
                         <div class="px-6 py-[22px] border-b border-gray-100 flex justify-between items-center">
                             <h4 class="font-bold text-slate-900 text-lg">Notifications</h4>
@@ -97,10 +97,10 @@
                  <!-- User Avatar -->
                  <div class="relative">
                     <button id="user-menu-button" data-dropdown-trigger data-dropdown-target="user-dropdown" class="flex items-center gap-2 focus:outline-none">
-                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white shadow-sm hover:ring-blue-100 transition-all">MT</div>
+                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white hover:ring-blue-100 transition-all">MT</div>
                     </button>
                     <!-- User Dropdown -->
-                    <div id="user-dropdown" data-dropdown-content class="hidden absolute right-0 mt-3 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 z-50 overflow-hidden animate-fade-in">
+                    <div id="user-dropdown" data-dropdown-content class="hidden absolute right-0 mt-3 w-64 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in">
                         <div class="px-5 py-4 border-b border-gray-50">
                             <p class="text-sm font-bold text-slate-900">Mark Thompson</p>
                             <p class="text-xs text-slate-500 font-medium truncate">mark@donau.ai</p>
@@ -159,7 +159,7 @@
                     <div class="grow max-w-4xl space-y-6">
                         
                         <!-- Manufacturing Information -->
-                        <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-8">
+                        <div class="bg-white rounded-2xl border border-gray-200 p-8">
                             <h2 class="text-lg font-bold text-slate-900 mb-6">Manufacturing Information</h2>
                             
                             <div class="space-y-6">
@@ -200,13 +200,13 @@
                                     </div>
                                 </div>
                                  <div class="flex justify-end">
-                                    <button class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-colors shadow-sm">Save</button>
+                                    <button class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-colors">Save</button>
                                 </div>
                             </div>
                         </div>
                         
                         <!-- Capabilities -->
-                        <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-8">
+                        <div class="bg-white rounded-2xl border border-gray-200 p-8">
                              <h2 class="text-lg font-bold text-slate-900 mb-6">Capabilities</h2>
                              <div class="space-y-6">
                                 <div>
@@ -221,7 +221,7 @@
                         </div>
         
                         <!-- Certifications -->
-                        <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-8">
+                        <div class="bg-white rounded-2xl border border-gray-200 p-8">
                              <h2 class="text-lg font-bold text-slate-900 mb-6">Certifications</h2>
                              <div>
                                      <label class="block text-sm font-semibold text-slate-900 mb-1.5">Certifications</label>
@@ -230,7 +230,7 @@
                         </div>
         
                          <!-- Contact Information -->
-                        <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-8">
+                        <div class="bg-white rounded-2xl border border-gray-200 p-8">
                              <h2 class="text-lg font-bold text-slate-900 mb-6">Contact Information</h2>
                              <div class="space-y-6">
                                  <div>
@@ -250,13 +250,13 @@
                                      <input type="text" value="https://example.com" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-1 focus:ring-blue-500">
                                 </div>
                                 <div class="flex justify-end">
-                                    <button class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-colors shadow-sm">Save</button>
+                                    <button class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-colors">Save</button>
                                 </div>
                              </div>
                         </div>
         
                          <!-- Address -->
-                         <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-8">
+                         <div class="bg-white rounded-2xl border border-gray-200 p-8">
                              <h2 class="text-lg font-bold text-slate-900 mb-6">Address</h2>
                               <div class="space-y-6">
                                  <div>
@@ -298,13 +298,13 @@
                                      </div>
                                 </div>
                                 <div class="flex justify-end">
-                                    <button class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-colors shadow-sm">Save</button>
+                                    <button class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-colors">Save</button>
                                 </div>
                               </div>
                          </div>
         
                          <!-- Social Media -->
-                         <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-8">
+                         <div class="bg-white rounded-2xl border border-gray-200 p-8">
                              <h2 class="text-lg font-bold text-slate-900 mb-6">Social Media</h2>
                               <div class="space-y-6">
                                  <div>
@@ -316,7 +316,7 @@
                                      <input type="text" value="https://linkedin.com/company/evergreenapparelco" class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-1 focus:ring-blue-500">
                                 </div>
                                 <div class="flex justify-end">
-                                    <button class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-colors shadow-sm">Save</button>
+                                    <button class="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-colors">Save</button>
                                 </div>
                               </div>
                          </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,7 +20,7 @@
     <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/50 z-40 hidden backdrop-blur-sm transition-opacity"></div>
 
     <!-- Mobile Menu Drawer -->
-    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white shadow-xl z-50 transform transition-transform duration-300 hidden flex flex-col">
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white z-50 transform transition-transform duration-300 hidden flex flex-col">
         <div class="px-6 py-4 flex items-center justify-between border-b border-gray-100">
             <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-6 w-auto">
             <!-- Close button handled by overlay click for now, or we add script later -->
@@ -86,7 +86,7 @@
                         <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
                     </button>
                     <!-- Notification Dropdown -->
-                    <div id="notification-dropdown" data-dropdown-content class="hidden absolute right-0 mt-4 bg-white rounded-2xl shadow-xl border border-gray-100 z-50 overflow-hidden animate-fade-in w-80 md:w-[400px]" style="min-width: unset;">
+                    <div id="notification-dropdown" data-dropdown-content class="hidden absolute right-0 mt-4 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in w-80 md:w-[400px]" style="min-width: unset;">
                         <!-- Header -->
                         <div class="px-6 py-[22px] border-b border-gray-100 flex justify-between items-center">
                             <h4 class="font-bold text-slate-900 text-lg">Notifications</h4>
@@ -150,10 +150,10 @@
                 <!-- User Avatar -->
                 <div class="relative">
                     <button id="user-menu-button" data-dropdown-trigger data-dropdown-target="user-dropdown" class="flex items-center gap-2 focus:outline-none">
-                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white shadow-sm hover:ring-blue-100 transition-all">MT</div>
+                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white hover:ring-blue-100 transition-all">MT</div>
                     </button>
                     <!-- User Dropdown -->
-                    <div id="user-dropdown" data-dropdown-content class="hidden absolute right-0 mt-3 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 z-50 overflow-hidden animate-fade-in">
+                    <div id="user-dropdown" data-dropdown-content class="hidden absolute right-0 mt-3 w-64 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in">
                         <div class="px-5 py-4 border-b border-gray-50">
                             <p class="text-sm font-bold text-slate-900">Mark Thompson</p>
                             <p class="text-xs text-slate-500 font-medium truncate">mark@donau.ai</p>
@@ -185,7 +185,7 @@
 
         <!-- Main Scrollable Area -->
         <main class="flex-1 w-full max-w-[1400px] mx-auto p-4 md:p-8">
-            <div class="max-w-[1200px] mb-12">
+            <div class="max-w-[1200px] mx-auto mb-12">
                 
                 <div class="mb-8">
                     <h1 class="text-2xl font-bold text-slate-900">Manufacture Dashboard</h1>
@@ -206,7 +206,7 @@
                 <!-- Stats Row -->
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
                     <!-- Total Briefs -->
-                    <div class="p-6 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between">
+                    <div class="p-6 rounded-2xl border border-gray-200 flex items-center justify-between">
                         <div>
                             <span class="block text-sm font-medium text-slate-500">Total Briefs</span>
                             <span class="block text-3xl font-bold text-slate-900 mt-1">15</span>
@@ -216,7 +216,7 @@
                         </div>
                     </div>
                     <!-- Invited -->
-                    <div class="p-6 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between">
+                    <div class="p-6 rounded-2xl border border-gray-200 flex items-center justify-between">
                         <div>
                             <span class="block text-sm font-medium text-slate-500">Invited</span>
                             <span class="block text-3xl font-bold text-slate-900 mt-1">2</span>
@@ -226,7 +226,7 @@
                         </div>
                     </div>
                     <!-- Under Discussion -->
-                    <div class="p-6 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between">
+                    <div class="p-6 rounded-2xl border border-gray-200 flex items-center justify-between">
                         <div>
                             <span class="block text-sm font-medium text-slate-500">Under Discussion</span>
                             <span class="block text-3xl font-bold text-slate-900 mt-1">2</span>
@@ -236,7 +236,7 @@
                         </div>
                     </div>
                     <!-- Proposals Submitted -->
-                    <div class="p-6 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-between">
+                    <div class="p-6 rounded-2xl border border-gray-200 flex items-center justify-between">
                         <div>
                             <span class="block text-sm font-medium text-slate-500">Proposals Submitted</span>
                             <span class="block text-3xl font-bold text-slate-900 mt-1">3</span>
@@ -246,7 +246,7 @@
                         </div>
                     </div>
                     <!-- Matched -->
-                    <div class="hidden md:flex p-6 rounded-2xl border border-gray-200 shadow-sm items-center justify-between">
+                    <div class="hidden md:flex p-6 rounded-2xl border border-gray-200 items-center justify-between">
                         <div>
                             <span class="block text-sm font-medium text-slate-500">Matched</span>
                             <span class="block text-3xl font-bold text-slate-900 mt-1">5</span>
@@ -256,7 +256,7 @@
                         </div>
                     </div>
                     <!-- Not Proceeding -->
-                    <div class="hidden md:flex p-6 rounded-2xl border border-gray-200 shadow-sm items-center justify-between">
+                    <div class="hidden md:flex p-6 rounded-2xl border border-gray-200 items-center justify-between">
                         <div>
                             <span class="block text-sm font-medium text-slate-500">Not Proceeding</span>
                             <span class="block text-3xl font-bold text-slate-900 mt-1">2</span>
@@ -266,7 +266,7 @@
                         </div>
                     </div>
                     <!-- Completed -->
-                    <div class="hidden md:flex p-6 rounded-2xl border border-gray-200 shadow-sm items-center justify-between">
+                    <div class="hidden md:flex p-6 rounded-2xl border border-gray-200 items-center justify-between">
                         <div>
                             <span class="block text-sm font-medium text-slate-500">Completed</span>
                             <span class="block text-3xl font-bold text-slate-900 mt-1">1</span>
@@ -276,7 +276,7 @@
                         </div>
                     </div>
                     <!-- Archived -->
-                    <div class="hidden md:flex p-6 rounded-2xl border border-gray-200 shadow-sm items-center justify-between">
+                    <div class="hidden md:flex p-6 rounded-2xl border border-gray-200 items-center justify-between">
                         <div>
                             <span class="block text-sm font-medium text-slate-500">Archived</span>
                             <span class="block text-3xl font-bold text-slate-900 mt-1">0</span>
@@ -291,7 +291,7 @@
                     
                     <!-- Recent Briefs (Span 2) -->
                     <div class="col-span-1 lg:col-span-2">
-                        <div class="bg-white rounded-2xl border border-gray-200 shadow-sm">
+                        <div class="bg-white rounded-2xl border border-gray-200">
                             <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center">
                                 <h3 class="font-bold text-slate-900 text-lg">Recent Briefs</h3>
                                 <a href="briefs.html" class="text-sm text-blue-600 font-semibold hover:text-blue-700 transition-colors">View All</a>
@@ -396,7 +396,7 @@
 
                     <!-- Recent Activity (Span 1) -->
                     <div class="col-span-1">
-                        <div class="rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+                        <div class="rounded-2xl border border-gray-200 overflow-hidden">
                             <!-- Header -->
                             <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center">
                                 <h3 class="font-bold text-slate-900 text-base">Recent Activity</h3>
@@ -519,18 +519,18 @@
 
     <!-- Floating Chat Button -->
     <!-- Floating Chat Button -->
-    <button id="open-ai-chat" style="position: fixed; bottom: 2rem; right: 2rem; width: 3.5rem; height: 3.5rem; border-radius: 9999px; background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); color: white; display: flex; align-items: center; justify-content: center; z-index: 2147483647; box-shadow: 0 8px 20px -4px rgba(59, 130, 246, 0.5); cursor: pointer; border: none;" class="hover:scale-105 transition-transform duration-200">
+    <button id="open-ai-chat" style="position: fixed; bottom: 6rem; right: 2rem; width: 3.5rem; height: 3.5rem; border-radius: 9999px; background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); color: white; display: flex; align-items: center; justify-content: center; z-index: 2147483647; box-: 0 8px 20px -4px rgba(59, 130, 246, 0.5); cursor: pointer; border: none;" class="hover:scale-105 transition-transform duration-200">
         <i class="ph ph-chat-circle text-3xl font-bold"></i>
     </button>
 
     <!-- AI Chat Widget -->
     <!-- AI Chat Widget -->
     <!-- AI Chat Widget -->
-    <div id="ai-chat-widget" style="position: fixed; bottom: 100px; right: 2rem; z-index: 2147483647; width: 380px !important; height: 500px !important;" class="bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] border border-gray-100 hidden flex-col font-sans transition-all duration-300 origin-bottom-right scale-95 opacity-0">
+    <div id="ai-chat-widget" style="position: fixed; bottom: 100px; right: 2rem; z-index: 2147483647; width: 380px !important; height: 500px !important;" class="bg-white rounded-2xl-[0_20px_50px_-12px_rgba(0,0,0,0.15)] border border-gray-100 hidden flex-col font-sans transition-all duration-300 origin-bottom-right scale-95 opacity-0">
         <!-- Header -->
         <div class="px-6 py-4 flex items-center justify-between border-b border-gray-50">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-sm">
+                <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white">
                     <i class="ph ph-robot text-xl"></i>
                 </div>
                 <div>
@@ -567,7 +567,7 @@
                 <div class="flex-1 relative">
                     <input type="text" placeholder="Type your response..." class="w-full h-10 pl-4 pr-4 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all text-slate-600">
                 </div>
-                 <button class="w-10 h-10 flex items-center justify-center bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors shrink-0 shadow-md shadow-blue-100">
+                 <button class="w-10 h-10 flex items-center justify-center bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors shrink-0-100">
                     <i class="ph ph-paper-plane-right text-xl"></i>
                 </button>
             </div>
