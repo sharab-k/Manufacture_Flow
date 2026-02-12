@@ -145,9 +145,11 @@
                 
                 <!-- Notifications -->
                 <div class="relative">
-                    <button id="notification-bell" data-dropdown-trigger data-dropdown-target="notification-dropdown" class="text-slate-400 hover:text-slate-600 relative flex items-center p-2">
-                        <i class="ph ph-bell text-xl"></i>
-                        <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
+                    <button id="notification-bell" data-dropdown-trigger data-dropdown-target="notification-dropdown" class="text-slate-400 hover:text-slate-600 flex items-center p-2">
+                        <span class="relative inline-block">
+                            <i class="ph ph-bell text-xl"></i>
+                            <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
+                        </span>
                     </button>
                     <!-- Notification Dropdown -->
                     <div id="notification-dropdown" data-dropdown-content class="hidden absolute right-0 mt-4 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in w-[calc(100vw-2rem)] md:w-[400px]" style="min-width: unset;">
