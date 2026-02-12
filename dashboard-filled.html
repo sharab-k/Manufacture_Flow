@@ -109,9 +109,44 @@
                 <a href="help-center.html" class="hidden md:flex text-slate-400 hover:text-slate-600">
                     <i class="ph ph-question text-xl"></i>
                 </a>
+                <!-- User Avatar -->
+                <div class="relative hidden md:block">
+                    <button id="user-menu-button" data-dropdown-trigger data-dropdown-target="user-dropdown" class="flex items-center gap-2 focus:outline-none">
+                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white hover:ring-blue-100 transition-all">MT</div>
+                    </button>
+                    <!-- User Dropdown -->
+                    <div id="user-dropdown" data-dropdown-content class="hidden absolute right-0 mt-3 w-64 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in">
+                        <div class="px-5 py-4 border-b border-gray-50">
+                            <p class="text-sm font-bold text-slate-900">Mark Thompson</p>
+                            <p class="text-xs text-slate-500 font-medium truncate">mark@donau.ai</p>
+                        </div>
+                        <div class="p-2">
+                            <a href="settings-account.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
+                                <i class="ph ph-user text-lg"></i>
+                                My Profile
+                            </a>
+                            <a href="settings-account.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
+                                <i class="ph ph-gear text-lg"></i>
+                                Settings
+                            </a>
+                            <a href="help-center.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
+                                <i class="ph ph-headset text-lg"></i>
+                                Support
+                            </a>
+                        </div>
+                        <div class="p-2 border-t border-gray-50">
+                            <a href="signin.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-red-600 hover:bg-red-50 transition-colors whitespace-nowrap">
+                                <i class="ph ph-sign-out text-lg"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
                 <!-- Notifications -->
                 <div class="relative">
-                    <button id="notification-bell" data-dropdown-trigger data-dropdown-target="notification-dropdown" class="text-slate-400 hover:text-slate-600 relative flex items-center p-2 mr-1">
+                    <button id="notification-bell" data-dropdown-trigger data-dropdown-target="notification-dropdown" class="text-slate-400 hover:text-slate-600 relative flex items-center p-2">
                         <i class="ph ph-bell text-xl"></i>
                         <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
                     </button>
@@ -176,40 +211,6 @@
                             <button class="text-sm text-slate-500 font-bold hover:text-slate-900 transition-colors">Mark all as read</button>
                         </div>
                     </div>
-                </div>
-                <!-- User Avatar -->
-                <div class="relative hidden md:block">
-                    <button id="user-menu-button" data-dropdown-trigger data-dropdown-target="user-dropdown" class="flex items-center gap-2 focus:outline-none">
-                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white hover:ring-blue-100 transition-all">MT</div>
-                    </button>
-                    <!-- User Dropdown -->
-                    <div id="user-dropdown" data-dropdown-content class="hidden absolute right-0 mt-3 w-64 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in">
-                        <div class="px-5 py-4 border-b border-gray-50">
-                            <p class="text-sm font-bold text-slate-900">Mark Thompson</p>
-                            <p class="text-xs text-slate-500 font-medium truncate">mark@donau.ai</p>
-                        </div>
-                        <div class="p-2">
-                            <a href="settings-account.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
-                                <i class="ph ph-user text-lg"></i>
-                                My Profile
-                            </a>
-                            <a href="settings-account.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
-                                <i class="ph ph-gear text-lg"></i>
-                                Settings
-                            </a>
-                            <a href="help-center.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
-                                <i class="ph ph-headset text-lg"></i>
-                                Support
-                            </a>
-                        </div>
-                        <div class="p-2 border-t border-gray-50">
-                            <a href="signin.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-red-600 hover:bg-red-50 transition-colors whitespace-nowrap">
-                                <i class="ph ph-sign-out text-lg"></i>
-                                Logout
-                            </a>
-                        </div>
-                    </div>
-                </div>
                 </div>
                 
                 <button id="mobile-menu-toggle" class="md:hidden text-slate-500 hover:text-slate-700 p-2 transition-transform duration-300">
