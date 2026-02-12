@@ -89,26 +89,14 @@
             </div>
 
             <!-- Right Actions -->
-            <div class="flex items-center gap-0">`r`n`r`n                <!-- Help -->
+            <div class="flex items-center gap-0">
+
+                <!-- Help -->
                 <a href="help-center.html" class="hidden md:flex text-slate-400 hover:text-slate-600">
                     <i class="ph ph-question text-xl"></i>
                 </a>
-                <!-- Notifications -->
-                <div class="relative">
-                    <button id="notification-bell" data-dropdown-trigger data-dropdown-target="notification-dropdown" class="text-slate-400 hover:text-slate-600 flex items-center">
-                        <i class="ph ph-bell text-xl"></i>
-                    </button><span class="relative inline-block">`r`n                            <i class="ph ph-bell text-xl"></i>`r`n                            <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border border-white"></span>`r`n                        </span>`r`n                    </button>
-                     <!-- Notification Dropdown -->
-                     <div id="notification-dropdown" data-dropdown-content class="hidden absolute -right-2 md:right-0 mt-4 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in w-[85vw] max-w-[340px] md:w-[400px]" style="min-width: unset;">
-                        <!-- Header -->
-                        <div class="px-4 py-3 md:px-6 md:py-[22px] border-b border-gray-100 flex justify-between items-center">`r`n                            <h4 class="font-bold text-slate-900 text-base md:text-lg">Notifications</h4>`r`n                            <a href="javascript:void(0)" class="text-xs md:text-sm text-blue-600 font-semibold hover:underline">View All</a>
-                        </div>
-                        <div class="p-4 md:p-8 text-center">`r`n                            <p class="text-slate-500 text-xs md:text-sm">No new notifications</p>
-                        </div>
-                    </div>
-                </div>
-                 <!-- User Avatar -->
-                 <div class="relative hidden md:block">
+                <!-- User Avatar -->
+                <div class="relative hidden md:block">
                     <button id="user-menu-button" data-dropdown-trigger data-dropdown-target="user-dropdown" class="flex items-center gap-2 focus:outline-none">
                         <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white hover:ring-blue-100 transition-all">MT</div>
                     </button>
@@ -140,6 +128,26 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Notifications -->
+                <div class="relative">
+                    <button id="notification-bell" data-dropdown-trigger data-dropdown-target="notification-dropdown" class="text-slate-400 hover:text-slate-600 flex items-center p-2">
+                        <span class="relative inline-block">
+                            <i class="ph ph-bell text-xl"></i>
+                            <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
+                        </span>
+                    </button>
+                    <!-- Notification Dropdown -->
+                    <div id="notification-dropdown" data-dropdown-content class="hidden absolute -right-2 md:right-0 mt-4 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in w-[85vw] max-w-[340px] md:w-[400px]" style="min-width: unset;">
+                        <!-- Header -->
+                        <div class="px-4 py-3 md:px-6 md:py-[22px] border-b border-gray-100 flex justify-between items-center">
+                            <h4 class="font-bold text-slate-900 text-base md:text-lg">Notifications</h4>
+                            <a href="javascript:void(0)" class="text-xs md:text-sm text-blue-600 font-semibold hover:underline">View All</a>
+                        </div>
+                        <div class="p-4 md:p-8 text-center">
+                            <p class="text-slate-500 text-xs md:text-sm">No new notifications</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <button id="mobile-menu-toggle" class="md:hidden text-slate-500 hover:text-slate-700 p-2 transition-transform duration-300">
