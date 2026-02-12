@@ -38,6 +38,26 @@
                 Messages
             </a>
         </nav>
+        
+        <!-- User Actions (Mobile Only) -->
+        <div class="p-4 border-t border-gray-100 space-y-1">
+            <a href="settings-account.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-user text-lg"></i>
+                My Profile
+            </a>
+            <a href="settings-account.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-gear text-lg"></i>
+                Settings
+            </a>
+            <a href="help-center.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-headset text-lg"></i>
+                Support
+            </a>
+            <a href="signin.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 font-medium text-sm transition-colors">
+                <i class="ph ph-sign-out text-lg"></i>
+                Logout
+            </a>
+        </div>
     </div>
 
     <!-- Main Content Wrapper -->
@@ -72,7 +92,7 @@
             <div class="flex items-center gap-4 md:gap-6">
 
                 <!-- Help -->
-                <a href="help-center.html" class="text-slate-400 hover:text-slate-600">
+                <a href="help-center.html" class="hidden md:flex text-slate-400 hover:text-slate-600">
                     <i class="ph ph-question text-xl"></i>
                 </a>
                 <!-- Notifications -->
@@ -93,7 +113,7 @@
                     </div>
                 </div>
                  <!-- User Avatar -->
-                 <div class="relative">
+                 <div class="relative hidden md:block">
                     <button id="user-menu-button" data-dropdown-trigger data-dropdown-target="user-dropdown" class="flex items-center gap-2 focus:outline-none">
                         <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white hover:ring-blue-100 transition-all">MT</div>
                     </button>
