@@ -312,35 +312,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener("click", () => {
+        const mobileMenu = document.getElementById("mobile-menu");
+        const icon = mobileMenuToggle.querySelector("i");
+        
         if (sidebar) {
-            sidebar.classList.toggle("hidden");
-            sidebar.classList.toggle("fixed");
-            sidebar.classList.toggle("inset-y-0");
-            sidebar.classList.toggle("left-0");
-            sidebar.classList.toggle("z-50");
+            // Sidebar logic (kept for backward compatibility if needed, but primary is mobile-menu div)
+             sidebar.classList.toggle("hidden"); 
         }
         
-        const mobileMenu = document.getElementById("mobile-menu");
         if (mobileMenu) {
-            mobileMenu.classList.toggle("hidden");
+            // Toggle slide animation
+            mobileMenu.classList.toggle("-translate-x-full");
+            // Remove hidden class if it exists (for initial state)
+            mobileMenu.classList.remove("hidden");
         }
 
         if (overlay) {
             overlay.classList.toggle("hidden");
         }
+        
+        // Icon Animation
+        if (icon) {
+            if (mobileMenu.classList.contains("-translate-x-full")) {
+                // Menu is closed
+                icon.classList.remove("ph-x");
+                icon.classList.add("ph-list");
+                mobileMenuToggle.classList.remove("rotate-90");
+            } else {
+                // Menu is open
+                icon.classList.remove("ph-list");
+                icon.classList.add("ph-x");
+                mobileMenuToggle.classList.add("rotate-90");
+            }
+        }
     });
 
     if (overlay) {
         overlay.addEventListener("click", () => {
+            const mobileMenu = document.getElementById("mobile-menu");
+            const icon = mobileMenuToggle.querySelector("i");
+
             if (sidebar) {
                 sidebar.classList.add("hidden");
-                sidebar.classList.remove("fixed", "inset-y-0", "left-0", "z-50");
             }
-            const mobileMenu = document.getElementById("mobile-menu");
             if (mobileMenu) {
-                mobileMenu.classList.add("hidden");
+                mobileMenu.classList.add("-translate-x-full");
             }
             overlay.classList.add("hidden");
+            
+            // Reset Icon
+            if (icon) {
+                icon.classList.remove("ph-x");
+                icon.classList.add("ph-list");
+                mobileMenuToggle.classList.remove("rotate-90");
+            }
         });
     }
   }

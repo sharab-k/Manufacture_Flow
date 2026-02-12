@@ -20,7 +20,7 @@
     <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/50 z-40 hidden backdrop-blur-sm transition-opacity"></div>
 
     <!-- Mobile Menu Drawer -->
-    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white z-50 transform transition-transform duration-300 hidden flex flex-col">
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white z-50 transform -translate-x-full transition-transform duration-300 flex flex-col">
         <div class="px-6 py-4 flex items-center justify-between border-b border-gray-100">
             <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-6 w-auto">
             <!-- Close button handled by overlay click for now, or we add script later -->
@@ -71,9 +71,7 @@
 
             <!-- Right Actions -->
             <div class="flex items-center gap-4 md:gap-6">
-                <button id="mobile-menu-toggle" class="md:hidden text-slate-500 hover:text-slate-700 p-2">
-                    <i class="ph ph-list text-2xl"></i>
-                </button>
+
 
                 <!-- Help -->
                 <a href="help-center.html" class="text-slate-400 hover:text-slate-600">
@@ -180,6 +178,11 @@
                         </div>
                     </div>
                 </div>
+                </div>
+                
+                <button id="mobile-menu-toggle" class="md:hidden text-slate-500 hover:text-slate-700 p-2 ml-2 transition-transform duration-300">
+                    <i class="ph ph-list text-2xl"></i>
+                </button>
             </div>
         </header>
 
@@ -519,7 +522,7 @@
 
     <!-- Floating Chat Button -->
     <!-- Floating Chat Button -->
-    <button id="open-ai-chat" style="position: fixed; bottom: 6rem; right: 2rem; width: 3.5rem; height: 3.5rem; border-radius: 9999px; background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); color: white; display: flex; align-items: center; justify-content: center; z-index: 2147483647; box-: 0 8px 20px -4px rgba(59, 130, 246, 0.5); cursor: pointer; border: none;" class="hover:scale-105 transition-transform duration-200">
+    <button id="open-ai-chat" style="position: fixed; bottom: 6rem; right: 2rem; width: 3.5rem; height: 3.5rem; border-radius: 9999px; background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); color: white; display: flex; align-items: center; justify-content: center; z-index: 2147483647; box-shadow: 0 8px 20px -4px rgba(59, 130, 246, 0.5); cursor: pointer; border: none;" class="hover:scale-105 transition-transform duration-200">
         <i class="ph ph-chat-circle text-3xl font-bold"></i>
     </button>
 
