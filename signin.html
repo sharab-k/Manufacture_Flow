@@ -28,11 +28,11 @@
       }
     </style>
   </head>
-  <body class="bg-gray-50 flex flex-col justify-between" style="min-height: 100vh;">
+  <body class="bg-gray-50 min-h-screen flex flex-col justify-between">
     <!-- Header -->
-    <header class="w-full px-6 py-4 flex justify-between items-center bg-white border-b border-gray-100 shrink-0">
+    <header class="w-full px-4 md:px-8 py-6 flex justify-between items-center border-b border-gray-100 bg-white">
       <a href="home.html" class="flex items-center gap-2">
-        <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-7 w-auto">
+        <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 md:h-10 w-auto">
       </a>
 
       <div
@@ -50,27 +50,27 @@
     </header>
 
     <!-- Main Content -->
-    <main class="flex-1 flex flex-col justify-center items-center py-12 px-4 shrink-0">
-      <div class="w-full max-w-[440px]">
-        <div class="text-center mb-10">
-          <h1 class="text-[28px] font-bold text-[#0F172A] mb-3">Welcome Back</h1>
-          <p class="text-[#64748B] text-sm">
+    <main class="grow flex items-center justify-center px-4 py-8">
+      <div class="bg-white p-6 md:p-10 rounded-2xl w-full max-w-[500px]">
+        <div class="text-center mb-8">
+          <h1 class="text-2xl font-bold text-slate-900 mb-2">Welcome Back</h1>
+          <p class="text-slate-500 text-sm">
             Enter your credentials to access your account
           </p>
         </div>
 
-        <form class="space-y-6" onsubmit="handleSignIn(event)" novalidate>
+        <form class="space-y-5" onsubmit="handleSignIn(event)" novalidate>
           <div>
             <label
               for="email"
-              class="block text-[13px] font-bold text-[#0F172A] mb-2"
+              class="block text-sm font-semibold text-slate-900 mb-1.5"
               >Email</label
             >
             <input
               type="email"
               id="email"
               placeholder="Enter Email"
-              class="w-full px-4 h-11 border border-gray-200 rounded-lg text-sm text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all bg-white"
+              class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
             />
             <div id="email-error" class="hidden items-center gap-2 mt-2 error-text text-xs font-medium animate-fade-in">
               <i class="ph-fill ph-warning-circle text-base"></i>
@@ -81,7 +81,7 @@
           <div>
             <label
               for="password"
-              class="block text-[13px] font-bold text-[#0F172A] mb-2"
+              class="block text-sm font-semibold text-slate-900 mb-1.5"
               >Password</label
             >
             <div class="relative">
@@ -89,13 +89,13 @@
                 type="password"
                 id="password"
                 placeholder="Enter Password"
-                class="w-full px-4 h-11 border border-gray-200 rounded-lg text-sm text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all pr-10 bg-white"
+                class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all pr-10"
               />
               <button
                 type="button"
-                class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-slate-700 font-bold"
+                class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-slate-600"
               >
-                <i class="ph ph-eye-slash text-lg"></i>
+                <i class="ph ph-eye-slash text-xl"></i>
               </button>
             </div>
             <div id="password-error" class="hidden items-center gap-2 mt-2 error-text text-xs font-medium animate-fade-in">
@@ -104,53 +104,50 @@
             </div>
           </div>
 
-          <div class="flex items-center justify-between pb-1">
-            <label class="flex items-center gap-2.5 cursor-pointer">
-              <div class="relative flex items-center">
-                <input
-                  type="checkbox"
-                  class="peer w-[18px] h-[18px] appearance-none border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 checked:bg-blue-600 checked:border-blue-600 transition-colors cursor-pointer bg-white"
-                />
-                <i class="ph ph-check text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xs opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"></i>
-              </div>
-              <span class="text-[13px] text-[#64748B]">Remember Me</span>
+          <div class="flex items-center justify-between">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+              />
+              <span class="text-sm text-slate-600">Remember Me</span>
             </label>
             <a
               href="forgot-password.html"
-              class="text-[13px] font-bold text-[#3F8AE2] hover:text-[#3B82F6]"
+              class="text-sm font-medium text-blue-600 hover:text-blue-700"
               >Forgot Password</a
             >
           </div>
 
           <button
             type="submit"
-            class="w-full h-11 bg-[#E2E8F0] hover:bg-[#CBD5E1] text-[#475569] text-sm font-medium rounded-lg transition-colors cursor-pointer"
+            class="w-full py-3 px-4 bg-gray-200 hover:bg-gray-300 text-slate-600 font-medium rounded-lg transition-colors cursor-pointer"
           >
             Sign In
           </button>
         </form>
 
-        <div class="mt-8 text-center text-[13px] text-[#0F172A] font-medium">
+        <div class="mt-6 text-center text-sm text-slate-600">
           Don't have an account?
           <a
             href="signup.html"
-            class="text-[#3F8AE2] font-bold hover:underline ml-1"
+            class="text-blue-600 font-medium hover:underline"
             >Sign Up</a
           >
         </div>
       </div>
     </main>
-
     <!-- Footer -->
     <footer
-      class="w-full px-6 py-8 text-[11px] text-[#475569] flex flex-col justify-center items-center gap-3 shrink-0"
+      class="w-full px-4 md:px-8 py-6 text-sm text-slate-500 flex flex-col md:flex-row justify-center md:items-center gap-2 md:gap-4 text-center md:text-left"
     >
-      <div class="flex items-center justify-center gap-2">
+      <span>&copy; 2026 DonauAI</span>
+      <span class="hidden md:block w-px h-3 bg-slate-300"></span>
+      <div class="flex items-center justify-center gap-4">
         <a href="privacy-policy.html" class="hover:text-slate-900">Privacy Policy</a>
-        <span class="w-px h-3 bg-gray-300"></span>
+        <span class="w-px h-3 bg-slate-300"></span>
         <a href="terms-of-service.html" class="hover:text-slate-900">Terms of Service</a>
       </div>
-      <span>&copy; 2026 DonauAI</span>
     </footer>
     <script src="./src/js/main.js"></script>
     <script>
