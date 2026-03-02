@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brief Chat - Donau AI</title>
+    <link href="./src/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-white min-h-screen flex flex-col font-sans">
+
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/50 z-[60] hidden backdrop-blur-sm transition-opacity"></div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white z-[70] transform -translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="px-6 py-4 flex items-center justify-between border-b border-gray-100">
+            <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-6 w-auto">
+        </div>
+        
+        <!-- User Profile (Mobile Only) -->
+        <div class="px-6 py-4 border-b border-gray-100">
+            <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold">MT</div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm font-bold text-slate-900">Mark Thompson</p>
+                    <p class="text-xs text-slate-500 font-medium truncate">mark@donau.ai</p>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="p-4 space-y-2 flex-1">
+            <a href="dashboard-filled.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-squares-four text-lg"></i>
+                Dashboard
+            </a>
+            <a href="briefs.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-blue-50 text-blue-600 font-medium text-sm transition-colors">
+                <i class="ph ph-briefcase text-lg"></i>
+                Product Briefs
+            </a>
+            <a href="messages.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-chat-circle-dots text-lg"></i>
+                Messages
+            </a>
+        </nav>
+        
+        <!-- User Actions (Mobile Only) -->
+        <div class="p-4 border-t border-gray-100 space-y-1">
+            <a href="settings-account.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-user text-lg"></i>
+                My Profile
+            </a>
+            <a href="settings-account.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-gear text-lg"></i>
+                Settings
+            </a>
+            <a href="help-center.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-headset text-lg"></i>
+                Support
+            </a>
+            <a href="signin.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 font-medium text-sm transition-colors">
+                <i class="ph ph-sign-out text-lg"></i>
+                Logout
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div class="flex-1 flex flex-col min-w-0">
+        
+        <!-- Header -->
+        <header class="bg-white border-b border-gray-200 h-18 flex items-center justify-between px-4 md:px-8 shrink-0 sticky top-0 z-50">
+            <div class="flex items-center gap-12">
+                 <!-- Logo -->
+                <a href="home.html" class="flex items-center">
+                    <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+                </a>
+
+                <!-- Nav Links -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="dashboard-filled.html" class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 h-18 px-1 border-b-2 border-transparent hover:border-gray-200 transition-all">
+                        <i class="ph ph-squares-four text-lg"></i>
+                        Dashboard
+                    </a>
+                    <a href="briefs.html" class="flex items-center gap-2 text-sm font-medium text-blue-600 border-b-2 border-blue-600 h-18 px-1">
+                        <i class="ph ph-briefcase text-lg"></i>
+                        Product Briefs
+                    </a>
+                    <a href="messages.html" class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 h-18 px-1 border-b-2 border-transparent hover:border-gray-200 transition-all">
+                        <i class="ph ph-chat-circle-dots text-lg"></i>
+                        Messages
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="flex items-center gap-0">
+
+                <!-- Help -->
+                <a href="help-center.html" class="hidden md:flex text-slate-400 hover:text-slate-600">
+                    <i class="ph ph-question text-xl"></i>
+                </a>
+                <!-- User Avatar -->
+                <div class="relative hidden md:block">
+                    <button id="user-menu-button" data-dropdown-trigger data-dropdown-target="user-dropdown" class="flex items-center gap-2 focus:outline-none">
+                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white hover:ring-blue-100 transition-all">MT</div>
+                    </button>
+                    <!-- User Dropdown -->
+                    <div id="user-dropdown" data-dropdown-content class="hidden absolute right-0 mt-3 w-64 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in">
+                        <div class="px-5 py-4 border-b border-gray-50">
+                            <p class="text-sm font-bold text-slate-900">Mark Thompson</p>
+                            <p class="text-xs text-slate-500 font-medium truncate">mark@donau.ai</p>
+                        </div>
+                        <div class="p-2">
+                            <a href="settings-account.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
+                                <i class="ph ph-user text-lg"></i>
+                                My Profile
+                            </a>
+                            <a href="settings-account.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
+                                <i class="ph ph-gear text-lg"></i>
+                                Settings
+                            </a>
+                            <a href="help-center.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
+                                <i class="ph ph-headset text-lg"></i>
+                                Support
+                            </a>
+                        </div>
+                        <div class="p-2 border-t border-gray-50">
+                            <a href="signin.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-red-600 hover:bg-red-50 transition-colors whitespace-nowrap">
+                                <i class="ph ph-sign-out text-lg"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Notifications -->
+                <div class="relative">
+                    <button id="notification-bell" data-dropdown-trigger data-dropdown-target="notification-dropdown" class="flex items-center p-2 text-slate-400 hover:text-slate-600">
+                        <span class="relative inline-block">
+                            <i class="ph ph-bell text-xl"></i>
+                            <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
+                        </span>
+                    </button>
+                    <!-- Notification Dropdown -->
+                    <div id="notification-dropdown" data-dropdown-content class="hidden absolute -right-2 md:right-0 mt-4 w-[85vw] max-w-[340px] md:w-[400px] animate-fade-in rounded-2xl border border-gray-100 bg-white p-4 text-center md:p-8" style="min-width: unset;">
+                        <!-- Header -->
+                        <div class="flex items-center justify-between border-b border-gray-100 px-4 py-3 md:px-6 md:py-[22px]">
+                            <h4 class="text-base font-bold text-slate-900 md:text-lg">Notifications</h4>
+                            <a href="javascript:void(0)" class="text-xs font-semibold text-blue-600 hover:underline md:text-sm">View All</a>
+                        </div>
+                        <p class="text-xs text-slate-500 md:text-sm">No new notifications</p>
+                    </div>
+                </div>
+                
+                <button id="mobile-menu-toggle" class="md:hidden text-slate-500 hover:text-slate-700 p-2 transition-transform duration-300">
+                    <i class="ph ph-list text-2xl"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Scrollable Area -->
+        <main class="flex-1 w-full max-w-[1400px] mx-auto p-4 md:p-8 flex flex-col">
+            <div class="max-w-[1200px] mx-auto w-full flex flex-col grow">
+            
+            <!-- Header -->
+            <div class="flex flex-col md:flex-row justify-between items-start mb-6 shrink-0 gap-4">
+                <div>
+                    <div class="flex items-center gap-3 mb-1">
+                        <h1 class="text-2xl font-bold text-slate-900">Premium Vitamin D3 Supplement</h1>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-slate-500">
+                        <i class="ph ph-buildings text-sm"></i>
+                        <span>Evergreenapparel.co</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 w-full md:w-auto">
+                    <span class="bg-blue-50 text-blue-600 text-xs px-2.5 py-0.5 rounded-full font-medium whitespace-nowrap">Under Discussion</span>
+                    <button class="flex-1 md:flex-none px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-colors whitespace-nowrap">Submit Proposal</button>
+                    <button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 border border-gray-200 rounded-lg hover:bg-gray-50">
+                        <i class="ph ph-dots-three-vertical text-xl"></i>
+                    </button>
+                </div>
+            </div>
+    
+            <!-- Tabs -->
+            <div class="border-b border-gray-200 mb-6 shrink-0">
+                <div class="flex gap-8 overflow-x-auto pb-1">
+                    <a href="brief-detail.html" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium text-sm flex items-center gap-2 transition-colors">
+                        <i class="ph ph-file-text text-lg"></i>
+                        Overview
+                    </a>
+                    <a href="brief-detail-proposal.html" class="pb-3 border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium text-sm flex items-center gap-2 transition-colors">
+                        <i class="ph ph-file-text text-lg"></i>
+                        Proposal
+                    </a>
+                    <a href="brief-detail-chat.html" class="pb-3 border-b-2 border-blue-600 text-blue-600 font-medium text-sm flex items-center gap-2">
+                        <i class="ph ph-chat-circle-dots text-lg"></i>
+                        Messages
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Chat Area -->
+            <div class="w-full bg-white rounded-2xl border border-gray-200 flex flex-col overflow-hidden h-[600px] shadow-sm">
+                
+                <!-- Chat Header -->
+                <div class="px-6 py-4 border-b border-gray-100 flex items-center justify-between shrink-0">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm font-bold">GT</div>
+                        <div>
+                            <span class="block text-sm font-bold text-slate-900">GreenThread Manufacturing</span>
+                            <span class="block text-xs text-slate-500">Manufacturer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Messages List -->
+                <div class="grow overflow-y-auto p-6 space-y-6 flex flex-col">
+                    
+                    <!-- Sent Message: Hello -->
+                     <div class="flex flex-col items-end self-end max-w-[80%]">
+                        <div class="bg-blue-600 rounded-2xl rounded-br-none px-6 py-3 text-white text-sm">
+                            Hello
+                        </div>
+                    </div>
+
+                    <!-- Received Message: Welcome Block -->
+                    <div class="bg-gray-50 rounded-2xl p-6 max-w-[90%] md:max-w-[70%] text-sm text-slate-700 leading-relaxed">
+                        <p class="mb-4">Hi! I'm here to help you create a detailed product brief. Let's start with the basics. What type of product are you looking to manufacture?</p>
+                        <span class="text-xs text-slate-400">20:32</span>
+                    </div>
+
+                </div>
+    
+                <!-- Input Area -->
+                <div class="p-4 border-t border-gray-100 bg-white shrink-0">
+                    <div class="flex items-center gap-3">
+                        <button class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors shrink-0 shadow-sm">
+                            <i class="ph ph-paperclip text-lg"></i>
+                        </button>
+                        <input type="text" placeholder="Type your response..." class="grow h-10 px-4 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all text-slate-600">
+                        <button class="w-10 h-10 flex items-center justify-center bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shrink-0 shadow-[0_2px_10px_rgba(37,99,235,0.2)]">
+                            <i class="ph ph-paper-plane-right text-lg"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-8 shrink-0 hidden md:block">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                     <div class="mb-4">
+                        <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+                     </div>
+                     <p class="text-slate-500 leading-relaxed max-w-sm">
+                        AI-powered platform connecting brands with manufacturers. Streamline your sourcing process with intelligent matchmaking.
+                     </p>
+                </div>
+                <div>
+                   <h4 class="font-bold text-slate-900 mb-6">Platform</h4>
+                   <ul class="space-y-4 text-slate-500 text-sm">
+                       <li><a href="home.html" class="hover:text-blue-600 transition-colors">Home</a></li>
+                       <li><a href="for-brands.html" class="hover:text-blue-600 transition-colors">For Brands</a></li>
+                       <li><a href="for-manufacturers.html" class="hover:text-blue-600 transition-colors">For Manufacturers</a></li>
+                       <li><a href="ai-brief-assistant.html" class="hover:text-blue-600 transition-colors">AI Brief Assistant</a></li>
+                   </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-6">Resources</h4>
+                    <ul class="space-y-4 text-slate-500 text-sm">
+                        <li><a href="api-documentation.html" class="hover:text-blue-600 transition-colors">API Documentation</a></li>
+                        <li><a href="help-center.html" class="hover:text-blue-600 transition-colors">Help Center</a></li>
+                        <li><a href="product-categories.html" class="hover:text-blue-600 transition-colors">Product Categories</a></li>
+                        <li><a href="success-stories.html" class="hover:text-blue-600 transition-colors">Success Stories</a></li>
+                    </ul>
+                 </div>
+                 <div>
+                    <h4 class="font-bold text-slate-900 mb-6">Company</h4>
+                    <ul class="space-y-4 text-slate-500 text-sm">
+                        <li><a href="about-us.html" class="hover:text-blue-600 transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-blue-600 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="hover:text-blue-600 transition-colors">Terms of Service</a></li>
+                    </ul>
+                 </div>
+            </div>
+
+            <div class="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+                <p>&copy; 2026 DonauApp</p>
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-2 cursor-pointer hover:text-slate-600">
+                        <i class="ph ph-globe"></i>
+                        <span>English</span>
+                    </div>
+                    <div class="flex items-center gap-2 cursor-pointer hover:text-slate-600">
+                        <i class="ph ph-currency-eur"></i>
+                        <span>EUR</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <a href="#" class="hover:text-slate-600"><i class="ph ph-facebook-logo text-lg"></i></a>
+                        <a href="#" class="hover:text-slate-600"><i class="ph ph-instagram-logo text-lg"></i></a>
+                        <a href="#" class="hover:text-slate-600"><i class="ph ph-linkedin-logo text-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./src/js/main.js"></script>
+</body>
+</html>

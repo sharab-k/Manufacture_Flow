@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briefs - Donau AI</title>
+    <link href="./src/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-white h-screen flex flex-col overflow-y-auto">
+
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/50 z-[60] hidden backdrop-blur-sm transition-opacity"></div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white z-[70] transform -translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="px-6 py-4 flex items-center justify-between border-b border-gray-100">
+            <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-6 w-auto">
+        </div>
+        
+        <!-- User Profile (Mobile Only) -->
+        <div class="px-6 py-4 border-b border-gray-100">
+            <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold">MT</div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm font-bold text-slate-900">Mark Thompson</p>
+                    <p class="text-xs text-slate-500 font-medium truncate">mark@donau.ai</p>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="p-4 space-y-2 flex-1">
+            <a href="dashboard-filled.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-squares-four text-lg"></i>
+                Dashboard
+            </a>
+            <a href="briefs.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-blue-50 text-blue-600 font-medium text-sm transition-colors">
+                <i class="ph ph-briefcase text-lg"></i>
+                Product Briefs
+            </a>
+            <a href="messages.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-chat-circle-dots text-lg"></i>
+                Messages
+            </a>
+        </nav>
+        
+        <!-- User Actions (Mobile Only) -->
+        <div class="p-4 border-t border-gray-100 space-y-1">
+            <a href="settings-account.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-user text-lg"></i>
+                My Profile
+            </a>
+            <a href="settings-account.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-gear text-lg"></i>
+                Settings
+            </a>
+            <a href="help-center.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-headset text-lg"></i>
+                Support
+            </a>
+            <a href="signin.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 font-medium text-sm transition-colors">
+                <i class="ph ph-sign-out text-lg"></i>
+                Logout
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div class="flex-1 flex flex-col min-w-0">
+        
+        <!-- Header -->
+        <header class="bg-white border-b border-gray-200 h-18 flex items-center justify-between px-4 md:px-8 shrink-0 sticky top-0 z-50">
+            <div class="flex items-center gap-12">
+                 <!-- Logo -->
+                <a href="home.html" class="flex items-center">
+                    <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+                </a>
+
+                <!-- Nav Links -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="dashboard-filled.html" class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 h-18 px-1 border-b-2 border-transparent hover:border-gray-200 transition-all">
+                        <i class="ph ph-squares-four text-lg"></i>
+                        Dashboard
+                    </a>
+                    <a href="briefs.html" class="flex items-center gap-2 text-sm font-medium text-blue-600 border-b-2 border-blue-600 h-18 px-1">
+                        <i class="ph ph-briefcase text-lg"></i>
+                        Product Briefs
+                    </a>
+                    <a href="messages.html" class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 h-18 px-1 border-b-2 border-transparent hover:border-gray-200 transition-all">
+                        <i class="ph ph-chat-circle-dots text-lg"></i>
+                        Messages
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="flex items-center gap-0">
+
+                <!-- Help -->
+                <a href="help-center.html" class="hidden md:flex text-slate-400 hover:text-slate-600">
+                    <i class="ph ph-question text-xl"></i>
+                </a>
+                <!-- User Avatar -->
+                <div class="relative hidden md:block">
+                    <button id="user-menu-button" data-dropdown-trigger data-dropdown-target="user-dropdown" class="flex items-center gap-2 focus:outline-none">
+                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white hover:ring-blue-100 transition-all">MT</div>
+                    </button>
+                    <!-- User Dropdown -->
+                    <div id="user-dropdown" data-dropdown-content class="hidden absolute right-0 mt-3 w-64 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in">
+                        <div class="px-5 py-4 border-b border-gray-50">
+                            <p class="text-sm font-bold text-slate-900">Mark Thompson</p>
+                            <p class="text-xs text-slate-500 font-medium truncate">mark@donau.ai</p>
+                        </div>
+                        <div class="p-2">
+                            <a href="settings-account.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
+                                <i class="ph ph-user text-lg"></i>
+                                My Profile
+                            </a>
+                            <a href="settings-account.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
+                                <i class="ph ph-gear text-lg"></i>
+                                Settings
+                            </a>
+                            <a href="help-center.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
+                                <i class="ph ph-headset text-lg"></i>
+                                Support
+                            </a>
+                        </div>
+                        <div class="p-2 border-t border-gray-50">
+                            <a href="signin.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-red-600 hover:bg-red-50 transition-colors whitespace-nowrap">
+                                <i class="ph ph-sign-out text-lg"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Notifications -->
+                <div class="relative">
+                    <button id="notification-bell" data-dropdown-trigger data-dropdown-target="notification-dropdown" class="flex items-center p-2 text-slate-400 hover:text-slate-600">
+                        <span class="relative inline-block">
+                            <i class="ph ph-bell text-xl"></i>
+                            <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
+                        </span>
+                    </button>
+                    <!-- Notification Dropdown -->
+                    <div id="notification-dropdown" data-dropdown-content class="hidden absolute -right-2 md:right-0 mt-4 w-[85vw] max-w-[340px] md:w-[400px] animate-fade-in rounded-2xl border border-gray-100 bg-white p-4 text-center md:p-8" style="min-width: unset;">
+                        <!-- Header -->
+                        <div class="flex items-center justify-between border-b border-gray-100 px-4 py-3 md:px-6 md:py-[22px]">
+                            <h4 class="text-base font-bold text-slate-900 md:text-lg">Notifications</h4>
+                            <a href="javascript:void(0)" class="text-xs font-semibold text-blue-600 hover:underline md:text-sm">View All</a>
+                        </div>
+                        <p class="text-xs text-slate-500 md:text-sm">No new notifications</p>
+                    </div>
+                </div>
+                
+                <button id="mobile-menu-toggle" class="md:hidden text-slate-500 hover:text-slate-700 p-2 transition-transform duration-300">
+                    <i class="ph ph-list text-2xl"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Scrollable Area -->
+        <main class="flex-1 w-full max-w-[1400px] mx-auto p-4 md:p-8">
+            <div class="max-w-[1200px] mx-auto mb-12">
+                
+                <div class="mb-6">
+                    <h1 class="text-2xl font-bold text-slate-900">Available My Briefs</h1>
+                    <p class="text-slate-500 text-sm mt-1">Browse and review product briefs from potential clients</p>
+                </div>
+        
+                <!-- Stats Row -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <!-- Row 1 -->
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center justify-between">
+                        <div>
+                            <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wide">Total Briefs</span>
+                            <span class="block text-2xl font-bold text-slate-900 mt-1">15</span>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-slate-400">
+                            <i class="ph ph-briefcase text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center justify-between">
+                        <div>
+                            <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wide">Invited</span>
+                            <span class="block text-2xl font-bold text-slate-900 mt-1">2</span>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-slate-400">
+                            <i class="ph ph-file-text text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center justify-between">
+                        <div>
+                            <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wide">Under Discussion</span>
+                            <span class="block text-2xl font-bold text-slate-900 mt-1">2</span>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-slate-400">
+                            <i class="ph ph-check-circle text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center justify-between">
+                        <div>
+                            <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wide">Proposals Submitted</span>
+                            <span class="block text-2xl font-bold text-slate-900 mt-1">3</span>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-slate-400">
+                            <i class="ph ph-list-dashes text-xl"></i>
+                        </div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center justify-between">
+                        <div>
+                            <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wide">Matched</span>
+                            <span class="block text-2xl font-bold text-slate-900 mt-1">5</span>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-slate-400">
+                            <i class="ph ph-briefcase text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center justify-between">
+                        <div>
+                            <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wide">Not Proceeding</span>
+                            <span class="block text-2xl font-bold text-slate-900 mt-1">2</span>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-slate-400">
+                            <i class="ph ph-file-x text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center justify-between">
+                        <div>
+                            <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wide">Completed</span>
+                            <span class="block text-2xl font-bold text-slate-900 mt-1">1</span>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-slate-400">
+                            <i class="ph ph-check-circle text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-gray-200 flex items-center justify-between">
+                        <div>
+                            <span class="block text-[11px] font-medium text-slate-500 uppercase tracking-wide">Archived</span>
+                            <span class="block text-2xl font-bold text-slate-900 mt-1">0</span>
+                        </div>
+                        <div class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-slate-400">
+                            <i class="ph ph-archive text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Main Content Card -->
+                <div class="bg-white border border-gray-200 rounded-xl p-6">
+                    
+                    <!-- Filters -->
+                    <div class="flex flex-col md:flex-row gap-4 mb-8">
+                         <div class="relative grow">
+                            <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                            <input type="text" placeholder="Search..." class="w-full pl-10 pr-4 py-2 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-blue-500">
+                        </div>
+                         <div class="relative w-full md:w-48">
+                             <select class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm text-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500 appearance-none bg-white">
+                                <option>Filter by date</option>
+                            </select>
+                            <i class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+                        </div>
+                         <div class="relative w-full md:w-48">
+                             <select class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm text-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500 appearance-none bg-white">
+                                <option>Filter by category</option>
+                            </select>
+                            <i class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+                        </div>
+                         <div class="relative w-full md:w-48">
+                             <select class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm text-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500 appearance-none bg-white">
+                                <option>Filter by status</option>
+                            </select>
+                            <i class="ph ph-caret-down absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+                        </div>
+                    </div>
+            
+                    <!-- Briefs List -->
+                    <div class="space-y-4">
+                        
+                        <!-- Brief 1 (Invited) -->
+                         <div class="bg-gray-50 rounded-2xl border border-transparent p-6 transition-all">
+                            <div class="flex flex-col md:flex-row justify-between items-start mb-2 gap-4">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="text-xs text-blue-500 font-medium font-mono">#BR12345678</span>
+                                    </div>
+                                     <div class="flex flex-wrap items-center gap-3">
+                                         <a href="brief-detail.html" class="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors">Premium Vitamin D3 Supplement</a>
+                                         <span class="bg-indigo-100 text-indigo-600 text-sm px-2.5 py-0.5 rounded-full font-medium">Invited</span>
+                                         
+                                         <!-- Tooltip -->
+                                         <div class="relative group">
+                                            <i class="ph ph-info text-slate-400 text-lg cursor-help"></i>
+                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
+                                                You've been invited to submit a proposal. Brands may consider multiple manufacturers before making a decision.
+                                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+                                 <div class="flex items-center gap-3 w-full md:w-auto mt-4 md:mt-0">
+                                    <button class="flex-1 md:flex-none justify-center px-6 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 bg-white">Chat</button>
+                                    <a href="brief-detail.html" class="flex-1 md:flex-none text-center px-6 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 bg-white">View</a>
+                                    <button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-slate-600 rounded-lg hover:bg-gray-100">
+                                        <i class="ph ph-dots-three-vertical text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-500 mb-6 max-w-3xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
+                            <div class="flex flex-wrap items-center gap-4 md:gap-8 text-sm text-slate-600">
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-buildings text-lg text-slate-400"></i>
+                                    <span>Evergreenapparel.co</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-files text-lg text-slate-400"></i>
+                                    <span>Dietry Supplements</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-calendar-blank text-lg text-slate-400"></i>
+                                    <span>2026-04-15</span>
+                                </div>
+                                 <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-wallet text-lg text-slate-400"></i>
+                                    <span>&euro;1000 - &euro;100000</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Brief 2 (Proposal Submitted) -->
+                        <div class="bg-gray-50 rounded-2xl border border-transparent p-6 transition-all">
+                            <div class="flex flex-col md:flex-row justify-between items-start mb-2 gap-4">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="text-xs text-blue-500 font-medium font-mono">#BR12345678</span>
+                                    </div>
+                                    <div class="flex flex-wrap items-center gap-3">
+                                         <a href="brief-detail.html" class="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors">Premium Vitamin D3 Supplement</a>
+                                         <span class="bg-sky-100 text-sky-600 text-sm px-2.5 py-0.5 rounded-full font-medium">Proposal Submitted</span>
+                                         
+                                         <!-- Tooltip -->
+                                         <div class="relative group">
+                                            <i class="ph ph-info text-slate-400 text-lg cursor-help"></i>
+                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
+                                                Your proposal is under review. Brands may discuss proposals from multiple manufacturers before focusing on one.
+                                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 w-full md:w-auto mt-4 md:mt-0">
+                                    <button class="flex-1 md:flex-none justify-center px-6 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 bg-white">Chat</button>
+                                    <a href="brief-detail.html" class="flex-1 md:flex-none text-center px-6 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 bg-white">View</a>
+                                    <button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-slate-600 rounded-lg hover:bg-gray-100">
+                                        <i class="ph ph-dots-three-vertical text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-500 mb-6 max-w-3xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
+                            <div class="flex flex-wrap items-center gap-4 md:gap-8 text-sm text-slate-600">
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-buildings text-lg text-slate-400"></i>
+                                    <span>Evergreenapparel.co</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-files text-lg text-slate-400"></i>
+                                    <span>Dietry Supplements</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-calendar-blank text-lg text-slate-400"></i>
+                                    <span>2026-04-15</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-wallet text-lg text-slate-400"></i>
+                                    <span>&euro;1000 - &euro;100000</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Brief 3 (Under Discussion) -->
+                        <div class="bg-gray-50 rounded-2xl border border-transparent p-6 transition-all">
+                            <div class="flex flex-col md:flex-row justify-between items-start mb-2 gap-4">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="text-xs text-blue-500 font-medium font-mono">#BR12345678</span>
+                                    </div>
+                                    <div class="flex flex-wrap items-center gap-3">
+                                         <a href="brief-detail.html" class="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors">Premium Vitamin D3 Supplement</a>
+                                         <span class="bg-blue-100 text-blue-600 text-sm px-2.5 py-0.5 rounded-full font-medium">Under Discussion</span>
+                                         
+                                         <!-- Tooltip -->
+                                         <div class="relative group">
+                                            <i class="ph ph-info text-slate-400 text-lg cursor-help"></i>
+                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
+                                                The brand is currently reviewing and discussing proposals with multiple manufacturers.
+                                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 w-full md:w-auto mt-4 md:mt-0">
+                                    <button class="flex-1 md:flex-none justify-center px-6 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 bg-white">Chat</button>
+                                    <a href="brief-detail.html" class="flex-1 md:flex-none text-center px-6 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 bg-white">View</a>
+                                    <button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-slate-600 rounded-lg hover:bg-gray-100">
+                                        <i class="ph ph-dots-three-vertical text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-500 mb-6 max-w-3xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
+                            <div class="flex flex-wrap items-center gap-4 md:gap-8 text-sm text-slate-600">
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-buildings text-lg text-slate-400"></i>
+                                    <span>Evergreenapparel.co</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-files text-lg text-slate-400"></i>
+                                    <span>Dietry Supplements</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-calendar-blank text-lg text-slate-400"></i>
+                                    <span>2026-04-15</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-wallet text-lg text-slate-400"></i>
+                                    <span>&euro;1000 - &euro;100000</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Brief 4 (Not Proceeding) -->
+                        <div class="bg-gray-50 rounded-2xl border border-transparent p-6 transition-all">
+                            <div class="flex flex-col md:flex-row justify-between items-start mb-2 gap-4">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="text-xs text-blue-500 font-medium font-mono">#BR12345678</span>
+                                    </div>
+                                    <div class="flex flex-wrap items-center gap-3">
+                                         <a href="brief-detail.html" class="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors">Premium Vitamin D3 Supplement</a>
+                                         <span class="bg-red-100 text-red-600 text-sm px-2.5 py-0.5 rounded-full font-medium">Not Proceeding</span>
+                                         
+                                         <!-- Tooltip -->
+                                         <div class="relative group">
+                                            <i class="ph ph-info text-slate-400 text-lg cursor-help"></i>
+                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
+                                                The brand is currently proceeding with another manufacturer for this brief. You can still review this proposal or submit proposals to other briefs.
+                                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 w-full md:w-auto mt-4 md:mt-0">
+                                    <button class="flex-1 md:flex-none justify-center px-6 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 bg-white">Chat</button>
+                                    <a href="brief-detail.html" class="flex-1 md:flex-none text-center px-6 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 bg-white">View</a>
+                                    <button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-slate-600 rounded-lg hover:bg-gray-100">
+                                        <i class="ph ph-dots-three-vertical text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-500 mb-6 max-w-3xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
+                            <div class="flex flex-wrap items-center gap-4 md:gap-8 text-sm text-slate-600">
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-buildings text-lg text-slate-400"></i>
+                                    <span>Evergreenapparel.co</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-files text-lg text-slate-400"></i>
+                                    <span>Dietry Supplements</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-calendar-blank text-lg text-slate-400"></i>
+                                    <span>2026-04-15</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-wallet text-lg text-slate-400"></i>
+                                    <span>&euro;1000 - &euro;100000</span>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Brief 5 (Matched) -->
+                        <div class="bg-gray-50 rounded-2xl border border-transparent p-6 transition-all">
+                            <div class="flex flex-col md:flex-row justify-between items-start mb-2 gap-4">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="text-xs text-blue-500 font-medium font-mono">#BR12345678</span>
+                                    </div>
+                                     <div class="flex flex-wrap items-center gap-3">
+                                         <a href="brief-detail.html" class="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors">Premium Vitamin D3 Supplement</a>
+                                         <span class="bg-amber-100 text-amber-600 text-sm px-2.5 py-0.5 rounded-full font-medium">Matched</span>
+                                         
+                                         <!-- Tooltip -->
+                                         <div class="relative group">
+                                            <i class="ph ph-info text-slate-400 text-lg cursor-help"></i>
+                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
+                                                The brand has chosen to focus discussions with you for now. This does not imply exclusivity or final selection.
+                                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </div>
+                                 <div class="flex items-center gap-3 w-full md:w-auto mt-4 md:mt-0">
+                                    <button class="flex-1 md:flex-none justify-center px-6 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 bg-white">Chat</button>
+                                    <a href="brief-detail.html" class="flex-1 md:flex-none text-center px-6 py-2 text-sm font-medium text-blue-600 border border-blue-200 rounded-lg hover:bg-blue-50 bg-white">View</a>
+                                    <button class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-slate-600 rounded-lg hover:bg-gray-100">
+                                        <i class="ph ph-dots-three-vertical text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="text-sm text-slate-500 mb-6 max-w-3xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
+                            <div class="flex flex-wrap items-center gap-4 md:gap-8 text-sm text-slate-600">
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-buildings text-lg text-slate-400"></i>
+                                    <span>Evergreenapparel.co</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-files text-lg text-slate-400"></i>
+                                    <span>Dietry Supplements</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-calendar-blank text-lg text-slate-400"></i>
+                                    <span>2026-04-15</span>
+                                </div>
+                                 <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-gray-200">
+                                    <i class="ph ph-wallet text-lg text-slate-400"></i>
+                                    <span>&euro;1000 - &euro;100000</span>
+                                </div>
+                            </div>
+                        </div>
+            
+                    </div>
+    
+                    <!-- Pagination -->
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-4 mt-8 pt-6 border-t border-gray-100">
+                        <p class="text-sm text-slate-500">Showing 1 to 5 of 15 results</p>
+                        <div class="flex items-center gap-1">
+                             <button class="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-200 text-slate-400 hover:text-slate-600 hover:bg-gray-50 disabled:opacity-50">
+                                <i class="ph ph-caret-left text-sm"></i>
+                            </button>
+                            <button class="w-8 h-8 flex items-center justify-center rounded-lg bg-blue-600 text-white font-medium text-sm">1</button>
+                            <button class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-600 hover:bg-gray-50 font-medium text-sm">2</button>
+                            <button class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-600 hover:bg-gray-50 font-medium text-sm">3</button>
+                            <button class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-600 hover:bg-gray-50 font-medium text-sm">4</button>
+                             <button class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-600 hover:bg-gray-50 font-medium text-sm">5</button>
+                            <span class="text-slate-400 text-sm px-1">...</span>
+                            <button class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-600 hover:bg-gray-50 font-medium text-sm">12</button>
+                            <button class="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-200 text-slate-400 hover:text-slate-600 hover:bg-gray-50">
+                                <i class="ph ph-caret-right text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-8 shrink-0">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                     <div class="mb-4">
+                        <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+                     </div>
+                     <p class="text-slate-500 leading-relaxed max-w-sm">
+                        AI-powered platform connecting brands with manufacturers. Streamline your sourcing process with intelligent matchmaking.
+                     </p>
+                </div>
+                <div>
+                   <h4 class="font-bold text-slate-900 mb-6">Platform</h4>
+                   <ul class="space-y-4 text-slate-500 text-sm">
+                       <li><a href="home.html" class="hover:text-blue-600 transition-colors">Home</a></li>
+                       <li><a href="for-brands.html" class="hover:text-blue-600 transition-colors">For Brands</a></li>
+                       <li><a href="for-manufacturers.html" class="hover:text-blue-600 transition-colors">For Manufacturers</a></li>
+                       <li><a href="ai-brief-assistant.html" class="hover:text-blue-600 transition-colors">AI Brief Assistant</a></li>
+                   </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-6">Resources</h4>
+                    <ul class="space-y-4 text-slate-500 text-sm">
+                        <li><a href="api-documentation.html" class="hover:text-blue-600 transition-colors">API Documentation</a></li>
+                        <li><a href="help-center.html" class="hover:text-blue-600 transition-colors">Help Center</a></li>
+                        <li><a href="product-categories.html" class="hover:text-blue-600 transition-colors">Product Categories</a></li>
+                        <li><a href="success-stories.html" class="hover:text-blue-600 transition-colors">Success Stories</a></li>
+                    </ul>
+                 </div>
+                 <div>
+                    <h4 class="font-bold text-slate-900 mb-6">Company</h4>
+                    <ul class="space-y-4 text-slate-500 text-sm">
+                        <li><a href="about-us.html" class="hover:text-blue-600 transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-blue-600 transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="hover:text-blue-600 transition-colors">Terms of Service</a></li>
+                    </ul>
+                 </div>
+            </div>
+
+            <div class="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+                <p>&copy; 2026 DonauApp</p>
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-2 cursor-pointer hover:text-slate-600">
+                        <i class="ph ph-globe"></i>
+                        <span>English</span>
+                    </div>
+                    <div class="flex items-center gap-2 cursor-pointer hover:text-slate-600">
+                        <i class="ph ph-currency-eur"></i>
+                        <span>EUR</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <a href="#" class="hover:text-slate-600"><i class="ph ph-facebook-logo text-lg"></i></a>
+                        <a href="#" class="hover:text-slate-600"><i class="ph ph-instagram-logo text-lg"></i></a>
+                        <a href="#" class="hover:text-slate-600"><i class="ph ph-linkedin-logo text-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chat Button -->
+    <button id="open-ai-chat" style="position: fixed; bottom: 6rem; right: 2rem; width: 3.5rem; height: 3.5rem; border-radius: 9999px; background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); color: white; display: flex; align-items: center; justify-content: center; z-index: 2147483647; box-shadow: 0 8px 20px -4px rgba(59, 130, 246, 0.5); cursor: pointer; border: none;" class="hover:scale-105 transition-transform duration-200">
+        <i class="ph ph-chat-circle text-3xl font-bold"></i>
+    </button>
+
+    <!-- AI Chat Widget -->
+    <!-- AI Chat Widget -->
+    <!-- AI Chat Widget -->
+    <div id="ai-chat-widget" style="position: fixed; bottom: 100px; right: 2rem; z-index: 2147483647; width: 380px !important; height: 500px !important;" class="bg-white rounded-2xl-[0_20px_50px_-12px_rgba(0,0,0,0.15)] border border-gray-100 hidden flex-col font-sans transition-all duration-300 origin-bottom-right scale-95 opacity-0">
+        <!-- Header -->
+        <div class="px-6 py-4 flex items-center justify-between border-b border-gray-50">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                    <i class="ph ph-robot text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm">Donau AI Assistant</h3>
+                    <p class="text-xs text-slate-500">Your assistant for winning new briefs.</p>
+                </div>
+            </div>
+            <button id="close-ai-chat" class="text-slate-400 hover:text-slate-600 transition-colors rounded-full p-2 hover:bg-gray-50">
+                <i class="ph ph-x text-lg"></i>
+            </button>
+        </div>
+
+        <!-- Body (Empty State) -->
+        <div class="flex-1 overflow-y-auto p-6 flex flex-col items-center justify-center text-center">
+            <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 mb-6">
+                <i class="ph ph-robot text-3xl"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 mb-3 text-lg">Welcome to Donau AI!</h3>
+            <p class="text-sm text-slate-500 mb-8 leading-relaxed max-w-[260px]">
+                I'm here to help you analyze new briefs, draft competitive proposals, or answer questions about active invites.
+            </p>
+            <div class="flex gap-3">
+                <button class="px-4 py-2 bg-gray-50 hover:bg-gray-100 text-slate-600 text-xs font-medium rounded-full transition-colors border border-gray-100">Draft a Proposal</button>
+                <button class="px-4 py-2 bg-gray-50 hover:bg-gray-100 text-slate-600 text-xs font-medium rounded-full transition-colors border border-gray-100">Production FAQs</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="p-4 border-t border-gray-50">
+            <div class="flex gap-3">
+                <button class="w-10 h-10 flex items-center justify-center border border-gray-200 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-gray-50 transition-colors shrink-0">
+                    <i class="ph ph-paperclip text-xl"></i>
+                </button>
+                <div class="flex-1 relative">
+                    <input type="text" placeholder="Type your response..." class="w-full h-10 pl-4 pr-4 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all text-slate-600">
+                </div>
+                 <button class="w-10 h-10 flex items-center justify-center bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors shrink-0-100">
+                    <i class="ph ph-paper-plane-right text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./src/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+             // AI Chat Widget Logic
+            const chatWidget = document.getElementById('ai-chat-widget');
+            const openChatBtn = document.getElementById('open-ai-chat');
+            const closeChatBtn = document.getElementById('close-ai-chat');
+
+            function toggleChat() {
+                if (chatWidget.classList.contains('hidden')) {
+                    chatWidget.classList.remove('hidden');
+                    chatWidget.classList.add('flex');
+                    setTimeout(() => {
+                        chatWidget.classList.remove('opacity-0', 'scale-95');
+                        chatWidget.classList.add('opacity-100', 'scale-100');
+                    }, 10);
+                } else {
+                    chatWidget.classList.remove('opacity-100', 'scale-100');
+                    chatWidget.classList.add('opacity-0', 'scale-95');
+                    setTimeout(() => {
+                        chatWidget.classList.add('hidden');
+                        chatWidget.classList.remove('flex');
+                    }, 300);
+                }
+            }
+
+            if(openChatBtn) openChatBtn.addEventListener('click', toggleChat);
+            if(closeChatBtn) closeChatBtn.addEventListener('click', toggleChat);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--color-slate-900);
+    background-color: var(--color-white);
+    font-family: "Inter", sans-serif;
+  }
+  
+  /* Fix for 'Property is ignored due to the display' warning */
+  img, svg, video, canvas, audio, iframe, embed, object {
+    vertical-align: unset;
+  }
+}
+
+@layer utilities {
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+}
+
+/* FORCE OVERRIDE: Primary Blue Color Update (User Request) */
+@layer utilities {
+  .bg-blue-600 { background-color: #3F8AE2 !important; }
+  .hover\:bg-blue-600:hover { background-color: #3F8AE2 !important; }
+  .hover\:bg-blue-700:hover { background-color: #3370b7 !important; }
+  .text-blue-600 { color: #3F8AE2 !important; }
+  .hover\:text-blue-600:hover { color: #3F8AE2 !important; }
+  .hover\:text-blue-700:hover { color: #3370b7 !important; }
+  .border-blue-600 { border-color: #3F8AE2 !important; }
+  .focus\:ring-blue-500:focus { --tw-ring-color: #5a9cf8 !important; }
+  .bg-blue-500 { background-color: #5a9cf8 !important; }
+  .text-blue-500 { color: #5a9cf8 !important; }
+}
