@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,64 +10,78 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
     </style>
 </head>
+
 <body class="bg-white h-screen flex flex-col overflow-y-auto">
 
 
 
     <!-- Mobile Sidebar Overlay -->
-    <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/50 z-[60] hidden backdrop-blur-sm transition-opacity"></div>
+    <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/50 z-[60] hidden backdrop-blur-sm transition-opacity">
+    </div>
 
     <!-- Mobile Menu Drawer -->
-    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-white z-[70] transform -translate-x-full transition-transform duration-300 flex flex-col">
+    <div id="mobile-menu"
+        class="fixed inset-y-0 left-0 w-64 bg-white z-[70] transform -translate-x-full transition-transform duration-300 flex flex-col">
         <div class="px-6 py-4 flex items-center justify-between border-b border-gray-100">
             <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-6 w-auto">
             <!-- Close button handled by overlay click for now, or we add script later -->
         </div>
-        
+
         <!-- User Profile (Mobile Only) -->
         <div class="px-6 py-4 border-b border-gray-100">
             <div class="flex items-center gap-3 mb-3">
-                <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold">MT</div>
+                <div
+                    class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold">
+                    MT</div>
                 <div class="flex-1 min-w-0">
                     <p class="text-sm font-bold text-slate-900">Mark Thompson</p>
                     <p class="text-xs text-slate-500 font-medium truncate">mark@donau.ai</p>
                 </div>
             </div>
         </div>
-        
+
         <nav class="p-4 space-y-2 flex-1">
-            <a href="dashboard-filled.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-blue-50 text-blue-600 font-medium text-sm transition-colors">
+            <a href="dashboard-filled.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl bg-blue-50 text-blue-600 font-medium text-sm transition-colors">
                 <i class="ph ph-squares-four text-lg"></i>
                 Dashboard
             </a>
-            <a href="briefs.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+            <a href="briefs.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
                 <i class="ph ph-briefcase text-lg"></i>
                 Product Briefs
             </a>
-            <a href="messages.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+            <a href="messages.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
                 <i class="ph ph-chat-circle-dots text-lg"></i>
                 Messages
             </a>
         </nav>
-        
+
         <!-- User Actions (Mobile Only) -->
         <div class="p-4 border-t border-gray-100 space-y-1">
-            <a href="settings-account.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+            <a href="settings-account.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
                 <i class="ph ph-user text-lg"></i>
                 My Profile
             </a>
-            <a href="settings-account.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+            <a href="settings-account.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
                 <i class="ph ph-gear text-lg"></i>
                 Settings
             </a>
-            <a href="help-center.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+            <a href="help-center.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
                 <i class="ph ph-headset text-lg"></i>
                 Support
             </a>
-            <a href="signin.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 font-medium text-sm transition-colors">
+            <a href="signin.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 font-medium text-sm transition-colors">
                 <i class="ph ph-sign-out text-lg"></i>
                 Logout
             </a>
@@ -75,147 +90,46 @@
 
     <!-- Main Content Wrapper -->
     <div class="flex-1 flex flex-col min-w-0">
-        
+
         <!-- Header -->
-        <header class="bg-white border-b border-gray-200 h-18 flex items-center justify-between px-4 md:px-8 shrink-0 sticky top-0 z-50">
-            <div class="flex items-center gap-12">
-                 <!-- Logo -->
+        <header
+            class="bg-white border-b border-gray-200 flex items-center justify-between px-4 md:px-8 py-4 shrink-0 sticky top-0 z-50">
+            <div class="flex items-center gap-[60px]">
+                <!-- Logo -->
                 <a href="home.html" class="flex items-center">
-                    <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+                    <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-[44px] w-auto">
                 </a>
 
                 <!-- Nav Links -->
-                <nav class="hidden md:flex items-center gap-8">
-                    <a href="dashboard-filled.html" class="flex items-center gap-2 text-sm font-medium text-blue-600 border-b-2 border-blue-600 h-18 px-1">
-                        <i class="ph ph-squares-four text-lg"></i>
+                <nav class="hidden md:flex items-center gap-[40px] pt-1">
+                    <a href="dashboard-filled.html"
+                        class="flex items-center gap-2 text-[15px] font-bold text-[#0e1726]">
+                        <i class="ph ph-house text-[18px]"></i>
                         Dashboard
                     </a>
-                    <a href="briefs.html" class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 h-18 px-1 border-b-2 border-transparent hover:border-gray-200 transition-all">
-                        <i class="ph ph-briefcase text-lg"></i>
-                        Product Briefs
+                    <a href="briefs.html"
+                        class="flex items-center gap-2 text-[15px] font-medium text-[#0e1726] hover:text-black transition-colors">
+                        <i class="ph ph-file-text text-[18px]"></i>
+                        Brief Invitations
                     </a>
-                    <a href="messages.html" class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 h-18 px-1 border-b-2 border-transparent hover:border-gray-200 transition-all">
-                        <i class="ph ph-chat-circle-dots text-lg"></i>
+                    <a href="messages.html"
+                        class="flex items-center gap-2 text-[15px] font-medium text-[#0e1726] hover:text-black transition-colors">
+                        <i class="ph ph-chat-circle-dots text-[18px]"></i>
                         Messages
                     </a>
                 </nav>
             </div>
 
             <!-- Right Actions -->
-            <div class="flex items-center gap-0">
-
-
-                <!-- Help -->
-                <a href="help-center.html" class="hidden md:flex text-slate-400 hover:text-slate-600">
-                    <i class="ph ph-question text-xl"></i>
-                </a>
-                <!-- User Avatar -->
-                <div class="relative hidden md:block">
-                    <button id="user-menu-button" data-dropdown-trigger data-dropdown-target="user-dropdown" class="flex items-center gap-2 focus:outline-none">
-                        <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white hover:ring-blue-100 transition-all">MT</div>
-                    </button>
-                    <!-- User Dropdown -->
-                    <div id="user-dropdown" data-dropdown-content class="hidden absolute right-0 mt-3 w-64 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in">
-                        <div class="px-5 py-4 border-b border-gray-50">
-                            <p class="text-sm font-bold text-slate-900">Mark Thompson</p>
-                            <p class="text-xs text-slate-500 font-medium truncate">mark@donau.ai</p>
-                        </div>
-                        <div class="p-2">
-                            <a href="settings-account.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
-                                <i class="ph ph-user text-lg"></i>
-                                My Profile
-                            </a>
-                            <a href="settings-account.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
-                                <i class="ph ph-gear text-lg"></i>
-                                Settings
-                            </a>
-                            <a href="help-center.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
-                                <i class="ph ph-headset text-lg"></i>
-                                Support
-                            </a>
-                        </div>
-                        <div class="p-2 border-t border-gray-50">
-                            <a href="signin.html" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-red-600 hover:bg-red-50 transition-colors whitespace-nowrap">
-                                <i class="ph ph-sign-out text-lg"></i>
-                                Logout
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
+            <div class="flex items-center gap-8">
                 <!-- Notifications -->
-                <div class="relative">
-                    <button id="notification-bell" data-dropdown-trigger data-dropdown-target="notification-dropdown" class="text-slate-400 hover:text-slate-600 flex items-center p-2">
-                        <span class="relative inline-block">
-                            <i class="ph ph-bell text-xl"></i>
-                            <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
-                        </span>
-                    </button>
-                    <!-- Notification Dropdown -->
-                    <div id="notification-dropdown" data-dropdown-content class="hidden absolute -right-2 md:right-0 mt-4 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in w-[85vw] max-w-[340px] md:w-[400px]" style="min-width: unset;">
-                        <!-- Header -->
-                        <div class="px-4 py-3 md:px-6 md:py-[22px] border-b border-gray-100 flex justify-between items-center">
-                            <h4 class="font-bold text-slate-900 text-base md:text-lg">Notifications</h4>
-                            <a href="javascript:void(0)" class="text-xs md:text-sm text-blue-600 font-semibold hover:underline">View All</a>
-                        </div>
-                        
-                        <!-- Items Scrollable Area -->
-                        <div class="max-h-[500px] overflow-y-auto overflow-x-hidden">
-                            <!-- Item 1: New Proposal (Unread) -->
-                            <div class="px-4 py-3 md:px-6 md:py-[22px] border-b border-gray-50 bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group">
-                                <div class="flex justify-between items-baseline mb-1">
-                                    <p class="text-sm md:text-[15px] font-bold text-slate-900 group-hover:text-blue-600 transition-colors">New Proposal Received</p>
-                                    <span class="text-[10px] md:text-xs text-slate-400 font-medium whitespace-nowrap ml-2">Today</span>
-                                </div>
-                                <p class="text-xs md:text-sm text-slate-500 leading-relaxed">Ecopack solutions submitted a proposal for "sustainable packaging for organic skincare line"</p>
-                            </div>
-                            
-                            <!-- Item 2: Proposal Accepted (Unread) -->
-                            <div class="px-4 py-3 md:px-6 md:py-[22px] border-b border-gray-50 bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group">
-                                <div class="flex justify-between items-baseline mb-1">
-                                    <p class="text-sm md:text-[15px] font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Proposal Accepted</p>
-                                    <span class="text-[10px] md:text-xs text-slate-400 font-medium whitespace-nowrap ml-2">Yesterday</span>
-                                </div>
-                                <p class="text-xs md:text-sm text-slate-500 leading-relaxed">Your proposal for "industrial metal components" has been accepted by TechMatch industries</p>
-                            </div>
+                <button class="text-[#0e1726] hover:text-black transition-colors">
+                    <i class="ph ph-bell text-[20px]"></i>
+                </button>
 
-                            <!-- Item 3: New Brief Invitation -->
-                            <div class="px-4 py-3 md:px-6 md:py-[22px] border-b border-gray-50 hover:bg-gray-50 transition-colors cursor-pointer group">
-                                <div class="flex justify-between items-baseline mb-1">
-                                    <p class="text-sm md:text-[15px] font-bold text-slate-900 group-hover:text-blue-600 transition-colors">New Brief Invitation</p>
-                                    <span class="text-[10px] md:text-xs text-slate-400 font-medium tracking-tight whitespace-nowrap ml-2">14/01/2026</span>
-                                </div>
-                                <p class="text-xs md:text-sm text-slate-500 leading-relaxed">You have been invited to submit a proposal for "Custom Furniture for Hotel Chain"</p>
-                            </div>
-
-                            <!-- Item 4: New Brief Invitation -->
-                            <div class="px-4 py-3 md:px-6 md:py-[22px] border-b border-gray-50 hover:bg-gray-50 transition-colors cursor-pointer group">
-                                <div class="flex justify-between items-baseline mb-1">
-                                    <p class="text-sm md:text-[15px] font-bold text-slate-900 group-hover:text-blue-600 transition-colors">New Brief Invitation</p>
-                                    <span class="text-[10px] md:text-xs text-slate-400 font-medium tracking-tight whitespace-nowrap ml-2">12/01/2026</span>
-                                </div>
-                                <p class="text-xs md:text-sm text-slate-500 leading-relaxed">You have been invited to submit a proposal for "Custom Furniture for Hotel Chain"</p>
-                            </div>
-
-                            <!-- Item 5: New Brief Invitation -->
-                            <div class="px-4 py-3 md:px-6 md:py-[22px] hover:bg-gray-50 transition-colors cursor-pointer group">
-                                <div class="flex justify-between items-baseline mb-1">
-                                    <p class="text-sm md:text-[15px] font-bold text-slate-900 group-hover:text-blue-600 transition-colors">New Brief Invitation</p>
-                                    <span class="text-[10px] md:text-xs text-slate-400 font-medium whitespace-nowrap ml-2">1 month ago</span>
-                                </div>
-                                <p class="text-xs md:text-sm text-slate-500 leading-relaxed">You have been invited to submit a proposal for "Custom Furniture for Hotel Chain"</p>
-                            </div>
-                        </div>
-
-                        <!-- Footer -->
-                        <div class="p-3 md:p-[22px] bg-white text-center border-t border-gray-50">
-                            <button class="text-xs md:text-sm text-slate-500 font-bold hover:text-slate-900 transition-colors">Mark all as read</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <button id="mobile-menu-toggle" class="md:hidden text-slate-500 hover:text-slate-700 p-2 transition-transform duration-300">
-                    <i class="ph ph-list text-2xl"></i>
+                <!-- Menu -->
+                <button class="text-[#0e1726] hover:text-black transition-colors">
+                    <i class="ph ph-list text-[20px] font-bold"></i>
                 </button>
             </div>
         </header>
@@ -223,207 +137,162 @@
         <!-- Main Scrollable Area -->
         <main class="flex-1 w-full max-w-[1400px] mx-auto p-4 md:p-8">
             <div class="max-w-[1200px] mx-auto mb-12">
-                
-                <div class="mb-8">
-                    <h1 class="text-2xl font-bold text-slate-900">Manufacture Dashboard</h1>
-                    <p class="text-slate-500 text-sm mt-1">Review invitations and manage your proposals</p>
+
+                <div class="mb-6 mt-4">
+                    <h1 class="text-[14px] font-bold text-[#0e1726]">Manufacture Dashboard</h1>
+                    <p class="text-[#0e1726] text-[14px] mt-1.5">Review invitations and manage your proposals</p>
                 </div>
 
                 <!-- Alert Banner -->
-                <div class="bg-blue-50 border border-blue-100 rounded-2xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-4">
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center shrink-0">
-                            <i class="ph ph-sparkle text-lg"></i>
-                        </div>
-                        <p class="text-slate-700 text-sm">A brand has invited you to review this brief. Take a look to see if it matches your capabilities.</p>
-                    </div>
-                    <button class="text-blue-600 text-sm font-bold hover:underline px-4 whitespace-nowrap">Review Brief</button>
+                <div
+                    class="bg-white border border-[#e2e8f0] p-4 flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
+                    <p class="text-[#0e1726] text-[14px] ml-4">A brand has invited you to review this brief. Take a look
+                        to see if it matches your capabilities.</p>
+                    <button class="text-[#0e1726] text-[14px] font-bold hover:underline whitespace-nowrap">Review
+                        Brief</button>
                 </div>
 
                 <!-- Stats Row -->
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
-                    <!-- Total Briefs -->
-                    <div class="p-6 rounded-2xl border border-gray-200 flex items-center justify-between">
-                        <div>
-                            <span class="block text-sm font-medium text-slate-500">Total Briefs</span>
-                            <span class="block text-3xl font-bold text-slate-900 mt-1">15</span>
-                        </div>
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-300 border border-gray-100">
-                            <i class="ph ph-briefcase text-2xl"></i>
-                        </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                    <!-- New Invites -->
+                    <div class="p-6 border border-[#e2e8f0] bg-white flex flex-col justify-between h-[104px] relative">
+                        <span class="block text-[14px] font-bold text-[#0e1726]">New Invites</span>
+                        <span class="block text-[15px] font-bold text-[#0e1726] leading-none">15</span>
+                        <i class="ph ph-briefcase text-[16px] text-[#0e1726] absolute bottom-6 right-6"></i>
                     </div>
-                    <!-- Invited -->
-                    <div class="p-6 rounded-2xl border border-gray-200 flex items-center justify-between">
-                        <div>
-                            <span class="block text-sm font-medium text-slate-500">Invited</span>
-                            <span class="block text-3xl font-bold text-slate-900 mt-1">2</span>
-                        </div>
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-300 border border-gray-100">
-                            <i class="ph ph-file text-2xl"></i>
-                        </div>
-                    </div>
+
                     <!-- Under Discussion -->
-                    <div class="p-6 rounded-2xl border border-gray-200 flex items-center justify-between">
-                        <div>
-                            <span class="block text-sm font-medium text-slate-500">Under Discussion</span>
-                            <span class="block text-3xl font-bold text-slate-900 mt-1">2</span>
-                        </div>
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-300 border border-gray-100">
-                            <i class="ph ph-check-circle text-2xl"></i>
-                        </div>
+                    <div class="p-6 border border-[#e2e8f0] bg-white flex flex-col justify-between h-[104px] relative">
+                        <span class="block text-[14px] font-bold text-[#0e1726]">Under Discussion</span>
+                        <span class="block text-[15px] font-bold text-[#0e1726] leading-none">2</span>
+                        <i class="ph ph-envelope-simple text-[16px] text-[#0e1726] absolute bottom-6 right-6"></i>
                     </div>
-                    <!-- Proposals Submitted -->
-                    <div class="p-6 rounded-2xl border border-gray-200 flex items-center justify-between">
-                        <div>
-                            <span class="block text-sm font-medium text-slate-500">Proposals Submitted</span>
-                            <span class="block text-3xl font-bold text-slate-900 mt-1">3</span>
-                        </div>
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-300 border border-gray-100">
-                            <i class="ph ph-list-dashes text-2xl"></i>
-                        </div>
+
+                    <!-- Active Proposals -->
+                    <div class="p-6 border border-[#e2e8f0] bg-white flex flex-col justify-between h-[104px] relative">
+                        <span class="block text-[14px] font-bold text-[#0e1726]">Active Proposals</span>
+                        <span class="block text-[15px] font-bold text-[#0e1726] leading-none">3</span>
+                        <i class="ph ph-file text-[16px] text-[#0e1726] absolute bottom-6 right-6"></i>
                     </div>
-                    <!-- Matched -->
-                    <div class="hidden md:flex p-6 rounded-2xl border border-gray-200 items-center justify-between">
-                        <div>
-                            <span class="block text-sm font-medium text-slate-500">Matched</span>
-                            <span class="block text-3xl font-bold text-slate-900 mt-1">5</span>
-                        </div>
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-300 border border-gray-100">
-                            <i class="ph ph-briefcase text-2xl"></i>
-                        </div>
-                    </div>
-                    <!-- Not Proceeding -->
-                    <div class="hidden md:flex p-6 rounded-2xl border border-gray-200 items-center justify-between">
-                        <div>
-                            <span class="block text-sm font-medium text-slate-500">Not Proceeding</span>
-                            <span class="block text-3xl font-bold text-slate-900 mt-1">2</span>
-                        </div>
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-300 border border-gray-100">
-                            <i class="ph ph-file-x text-2xl"></i>
-                        </div>
-                    </div>
-                    <!-- Completed -->
-                    <div class="hidden md:flex p-6 rounded-2xl border border-gray-200 items-center justify-between">
-                        <div>
-                            <span class="block text-sm font-medium text-slate-500">Completed</span>
-                            <span class="block text-3xl font-bold text-slate-900 mt-1">1</span>
-                        </div>
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-300 border border-gray-100">
-                            <i class="ph ph-check-circle text-2xl"></i>
-                        </div>
-                    </div>
-                    <!-- Archived -->
-                    <div class="hidden md:flex p-6 rounded-2xl border border-gray-200 items-center justify-between">
-                        <div>
-                            <span class="block text-sm font-medium text-slate-500">Archived</span>
-                            <span class="block text-3xl font-bold text-slate-900 mt-1">0</span>
-                        </div>
-                        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-slate-300 border border-gray-100">
-                            <i class="ph ph-archive text-2xl"></i>
-                        </div>
+
+                    <!-- Matched Briefs -->
+                    <div class="p-6 border border-[#e2e8f0] bg-white flex flex-col justify-between h-[104px] relative">
+                        <span class="block text-[14px] font-bold text-[#0e1726]">Matched Briefs</span>
+                        <span class="block text-[15px] font-bold text-[#0e1726] leading-none">5</span>
+                        <i class="ph ph-check-circle text-[16px] text-[#0e1726] absolute bottom-6 right-6"></i>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    
+
                     <!-- Recent Briefs (Span 2) -->
-                    <div class="col-span-1 lg:col-span-2">
-                        <div class="bg-white rounded-2xl border border-gray-200">
-                            <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center">
-                                <h3 class="font-bold text-slate-900 text-lg">Recent Briefs</h3>
-                                <a href="briefs.html" class="text-sm text-blue-600 font-semibold hover:text-blue-700 transition-colors">View All</a>
+                    <div class="col-span-1 lg:col-span-2 flex flex-col gap-5">
+                        <div class="flex justify-between items-center px-1">
+                            <h3 class="font-bold text-[#0e1726] text-[15px]">Recent Briefs</h3>
+                            <a href="#" class="text-[14px] text-[#0e1726] font-bold hover:underline">View All</a>
+                        </div>
+
+                        <div class="flex flex-col gap-4">
+                            <!-- Brief Card 1 -->
+                            <div class="bg-white border border-[#e2e8f0] p-6 rounded-[8px] relative group">
+                                <a href="brief-detail.html"
+                                    class="absolute top-6 right-6 flex items-center gap-1 text-[#0e1726] text-[13px] font-bold hover:underline">
+                                    View Details <i class="ph ph-arrow-up-right text-[15px]"></i>
+                                </a>
+                                <div class="flex flex-col">
+                                    <div class="flex items-center gap-3 mb-1">
+                                        <h4 class="font-bold text-[#0e1726] text-[15px]">Premium Vitamin D3 Supplement
+                                        </h4>
+                                        <span class="text-[#0e1726] text-[14px] font-semibold">Invited</span>
+                                        <i class="ph ph-info text-[#64748b] text-[16px]"></i>
+                                    </div>
+                                    <p class="text-[#64748b] text-[14px] mb-5">Evergreenapparel.co</p>
+                                    <div class="flex flex-wrap items-center gap-5">
+                                        <div class="flex items-center gap-2 text-[#334155]">
+                                            <i class="ph ph-file-text text-[16px] text-[#64748b]"></i>
+                                            <span class="text-[14px] font-medium">Dietry Supplements</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-[#334155]">
+                                            <i class="ph ph-wallet text-[16px] text-[#64748b]"></i>
+                                            <span class="text-[14px] font-medium">€1000 - €100000</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-[#334155]">
+                                            <i class="ph ph-package text-[16px] text-[#64748b]"></i>
+                                            <span class="text-[14px] font-medium">400 units</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-[#334155]">
+                                            <i class="ph ph-calendar-blank text-[16px] text-[#64748b]"></i>
+                                            <span class="text-[14px] font-medium">2026-04-15</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            
-                            <div class="p-6 space-y-4">
-                                <!-- Brief Card 1 -->
-                                <div class="bg-gray-50 rounded-2xl p-6 relative group border border-transparent transition-all mobile-clickable-card cursor-pointer">
-                                    <a href="brief-detail.html" class="absolute top-6 right-6 flex items-center gap-1 text-blue-600 text-xs font-bold hover:underline">
-                                        View Details 
-                                        <i class="ph ph-arrow-up-right"></i>
-                                    </a> 
-                                    
-                                    <div class="flex flex-col gap-2">
-                                        <div class="flex items-center gap-3 text-xs text-blue-500 font-medium mb-1">
-                                            <span>#BR12345678</span>
+
+                            <!-- Brief Card 2 -->
+                            <div class="bg-white border border-[#e2e8f0] p-6 rounded-[8px] relative group">
+                                <a href="brief-detail.html"
+                                    class="absolute top-6 right-6 flex items-center gap-1 text-[#0e1726] text-[13px] font-bold hover:underline">
+                                    View Details <i class="ph ph-arrow-up-right text-[15px]"></i>
+                                </a>
+                                <div class="flex flex-col">
+                                    <div class="flex items-center gap-3 mb-1">
+                                        <h4 class="font-bold text-[#0e1726] text-[15px]">Premium Vitamin D3 Supplement
+                                        </h4>
+                                        <span class="text-[#0e1726] text-[14px] font-semibold">Proposal Submitted</span>
+                                        <i class="ph ph-info text-[#64748b] text-[16px]"></i>
+                                    </div>
+                                    <p class="text-[#64748b] text-[14px] mb-5">Evergreenapparel.co</p>
+                                    <div class="flex flex-wrap items-center gap-5">
+                                        <div class="flex items-center gap-2 text-[#334155]">
+                                            <i class="ph ph-file-text text-[16px] text-[#64748b]"></i>
+                                            <span class="text-[14px] font-medium">Dietry Supplements</span>
                                         </div>
-                                        <div class="flex items-center gap-3 mb-2">
-                                            <h4 class="font-bold text-slate-900 text-lg">Premium Vitamin D3 Supplement</h4>
-                                            <span class="px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-600 text-sm font-medium">Invited</span>
-                                            <i class="ph ph-info text-slate-400 text-lg"></i>
+                                        <div class="flex items-center gap-2 text-[#334155]">
+                                            <i class="ph ph-wallet text-[16px] text-[#64748b]"></i>
+                                            <span class="text-[14px] font-medium">€1000 - €100000</span>
                                         </div>
-                                        <p class="text-slate-500 text-sm leading-relaxed mb-4 max-w-2xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
-                                        
-                                        <div class="flex flex-wrap items-center gap-3">
-                                            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 bg-white">
-                                                <i class="ph ph-buildings text-slate-400"></i>
-                                                <span class="text-xs text-slate-600">Evergreenapparel.co</span>
-                                            </div>
-                                            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 bg-white">
-                                                <i class="ph ph-file-text text-slate-400"></i>
-                                                <span class="text-xs text-slate-600">Dietry Supplements</span>
-                                            </div>
+                                        <div class="flex items-center gap-2 text-[#334155]">
+                                            <i class="ph ph-package text-[16px] text-[#64748b]"></i>
+                                            <span class="text-[14px] font-medium">400 units</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-[#334155]">
+                                            <i class="ph ph-calendar-blank text-[16px] text-[#64748b]"></i>
+                                            <span class="text-[14px] font-medium">2026-04-15</span>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <!-- Brief Card 2 -->
-                                <div class="bg-gray-50 rounded-2xl p-6 relative group border border-transparent transition-all mobile-clickable-card cursor-pointer">
-                                    <a href="brief-detail.html" class="absolute top-6 right-6 flex items-center gap-1 text-blue-600 text-xs font-bold hover:underline">
-                                        View Details 
-                                        <i class="ph ph-arrow-up-right"></i>
-                                    </a>
-                                    
-                                    <div class="flex flex-col gap-2">
-                                        <div class="flex items-center gap-3 text-xs text-blue-500 font-medium mb-1">
-                                            <span>#BR12345678</span>
-                                        </div>
-                                        <div class="flex items-center gap-3 mb-2">
-                                            <h4 class="font-bold text-slate-900 text-lg">Premium Vitamin D3 Supplement</h4>
-                                            <span class="px-2.5 py-0.5 rounded-full bg-sky-100 text-sky-600 text-sm font-medium">Proposal Submitted</span>
-                                            <i class="ph ph-info text-slate-400 text-lg"></i>
-                                        </div>
-                                        <p class="text-slate-500 text-sm leading-relaxed mb-4 max-w-2xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
-                                        
-                                        <div class="flex flex-wrap items-center gap-3">
-                                            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 bg-white">
-                                                <i class="ph ph-buildings text-slate-400"></i>
-                                                <span class="text-xs text-slate-600">Evergreenapparel.co</span>
-                                            </div>
-                                            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 bg-white">
-                                                <i class="ph ph-file-text text-slate-400"></i>
-                                                <span class="text-xs text-slate-600">Dietry Supplements</span>
-                                            </div>
-                                        </div>
+                            <!-- Brief Card 3 -->
+                            <div class="bg-white border border-[#e2e8f0] p-6 rounded-[8px] relative group">
+                                <a href="brief-detail.html"
+                                    class="absolute top-6 right-6 flex items-center gap-1 text-[#0e1726] text-[13px] font-bold hover:underline">
+                                    View Details <i class="ph ph-arrow-up-right text-[15px]"></i>
+                                </a>
+                                <div class="flex flex-col">
+                                    <div class="flex items-center gap-3 mb-1">
+                                        <h4 class="font-bold text-[#0e1726] text-[15px]">Premium Vitamin D3 Supplement
+                                        </h4>
+                                        <span class="text-[#0e1726] text-[14px] font-semibold">Matched</span>
+                                        <i class="ph ph-info text-[#64748b] text-[16px]"></i>
                                     </div>
-                                </div>
-
-                                <!-- Brief Card 3 -->
-                                <div class="bg-gray-50 rounded-2xl p-6 relative group border border-transparent transition-all mobile-clickable-card cursor-pointer">
-                                    <a href="brief-detail.html" class="absolute top-6 right-6 flex items-center gap-1 text-blue-600 text-xs font-bold hover:underline">
-                                        View Details 
-                                        <i class="ph ph-arrow-up-right"></i>
-                                    </a>
-                                    
-                                    <div class="flex flex-col gap-2">
-                                        <div class="flex items-center gap-3 text-xs text-blue-500 font-medium mb-1">
-                                            <span>#BR12345678</span>
+                                    <p class="text-[#64748b] text-[14px] mb-5">Evergreenapparel.co</p>
+                                    <div class="flex flex-wrap items-center gap-5">
+                                        <div class="flex items-center gap-2 text-[#334155]">
+                                            <i class="ph ph-file-text text-[16px] text-[#64748b]"></i>
+                                            <span class="text-[14px] font-medium">Dietry Supplements</span>
                                         </div>
-                                        <div class="flex items-center gap-3 mb-2">
-                                            <h4 class="font-bold text-slate-900 text-lg">Premium Vitamin D3 Supplement</h4>
-                                            <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-600 text-sm font-medium">Matched</span>
-                                            <i class="ph ph-info text-slate-400 text-lg"></i>
+                                        <div class="flex items-center gap-2 text-[#334155]">
+                                            <i class="ph ph-wallet text-[16px] text-[#64748b]"></i>
+                                            <span class="text-[14px] font-medium">€1000 - €100000</span>
                                         </div>
-                                        <p class="text-slate-500 text-sm leading-relaxed mb-4 max-w-2xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
-                                        
-                                        <div class="flex flex-wrap items-center gap-3">
-                                            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 bg-white">
-                                                <i class="ph ph-buildings text-slate-400"></i>
-                                                <span class="text-xs text-slate-600">Evergreenapparel.co</span>
-                                            </div>
-                                            <div class="flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 bg-white">
-                                                <i class="ph ph-file-text text-slate-400"></i>
-                                                <span class="text-xs text-slate-600">Dietry Supplements</span>
-                                            </div>
+                                        <div class="flex items-center gap-2 text-[#334155]">
+                                            <i class="ph ph-package text-[16px] text-[#64748b]"></i>
+                                            <span class="text-[14px] font-medium">400 units</span>
+                                        </div>
+                                        <div class="flex items-center gap-2 text-[#334155]">
+                                            <i class="ph ph-calendar-blank text-[16px] text-[#64748b]"></i>
+                                            <span class="text-[14px] font-medium">2026-04-15</span>
                                         </div>
                                     </div>
                                 </div>
@@ -431,55 +300,51 @@
                         </div>
                     </div>
 
-                    <!-- Recent Activity (Span 1) -->
-                    <div class="col-span-1">
-                        <div class="rounded-2xl border border-gray-200 overflow-hidden">
-                            <!-- Header -->
-                            <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center">
-                                <h3 class="font-bold text-slate-900 text-base">Recent Activity</h3>
-                                <a href="#" class="text-sm text-blue-600 font-semibold hover:text-blue-700 transition-colors">View All</a>
+                    <!-- Notifications (Span 1) -->
+                    <div class="col-span-1 flex flex-col gap-5">
+                        <div class="flex justify-between items-center px-1">
+                            <h3 class="font-bold text-[#0e1726] text-[15px]">Notifications</h3>
+                            <a href="#" class="text-[14px] text-[#0e1726] font-bold hover:underline">View All</a>
+                        </div>
+
+                        <div
+                            class="bg-white border border-[#e2e8f0] rounded-[8px] flex flex-col divide-y divide-[#e2e8f0]">
+                            <!-- Notification Item 1 -->
+                            <div class="px-6 py-5">
+                                <div class="flex justify-between items-center mb-1.5">
+                                    <p class="text-[14px] font-bold text-[#0e1726]">New manufacturer match</p>
+                                    <span class="text-[#0e1726] text-[14px] font-bold">New</span>
+                                </div>
+                                <p class="text-[14px] text-[#334155] leading-relaxed">3 new manufacturers have been
+                                    matched to your vitamin supplement brief.</p>
                             </div>
-                            
-                            <!-- List -->
-                            <div class="divide-y divide-gray-100">
-                                <!-- Notification Item 1 (New match) -->
-                                <div class="px-6 py-4 bg-gray-50">
-                                    <div class="flex justify-between items-start mb-1">
-                                        <p class="text-sm font-bold text-slate-900">New manufacturer match</p>
-                                        <span class="px-2 py-0.5 bg-sky-100 text-sky-600 text-[10px] font-bold rounded-full">New</span>
-                                    </div>
-                                    <p class="text-xs text-slate-500 leading-relaxed">3 new manufacturers have been matched to your vitamin supplement brief</p>
-                                </div>
 
-                                <!-- Notification Item 2 -->
-                                <div class="px-6 py-4">
-                                    <p class="text-sm font-bold text-slate-900 mb-1">Brief published</p>
-                                    <p class="text-xs text-slate-500 leading-relaxed">Your 'Premium Vitamin D3 Supplement' brief has been successfully published</p>
-                                </div>
+                            <!-- Notification Item 2 -->
+                            <div class="px-6 py-5">
+                                <p class="text-[14px] font-bold text-[#0e1726] mb-1.5">Brief published</p>
+                                <p class="text-[14px] text-[#334155] leading-relaxed">Your 'Premium Vitamin D3
+                                    Supplement' brief has been successfully published</p>
+                            </div>
 
-                                <!-- Notification Item 3 -->
-                                <div class="px-6 py-4">
-                                    <p class="text-sm font-bold text-slate-900 mb-1">Draft reminder</p>
-                                    <p class="text-xs text-slate-500 leading-relaxed">You have 2 drafts that haven't been updated in over a week</p>
-                                </div>
+                            <!-- Notification Item 3 -->
+                            <div class="px-6 py-5">
+                                <p class="text-[14px] font-bold text-[#0e1726] mb-1.5">Draft reminder</p>
+                                <p class="text-[14px] text-[#334155] leading-relaxed">You have 2 drafts that haven't
+                                    been updated in over a week</p>
+                            </div>
 
-                                <!-- Notification Item 4 -->
-                                <div class="px-6 py-4">
-                                    <p class="text-sm font-bold text-slate-900 mb-1">Brief published</p>
-                                    <p class="text-xs text-slate-500 leading-relaxed">Your 'Premium Vitamin D3 Supplement' brief has been successfully published</p>
-                                </div>
-                                
-                                <!-- Notification Item 5 -->
-                                <div class="px-6 py-4">
-                                    <p class="text-sm font-bold text-slate-900 mb-1">Draft reminder</p>
-                                    <p class="text-xs text-slate-500 leading-relaxed">You have 2 drafts that haven't been updated in over a week</p>
-                                </div>
-                                
-                                <!-- Notification Item 6 -->
-                                <div class="px-6 py-4">
-                                    <p class="text-sm font-bold text-slate-900 mb-1">Draft reminder</p>
-                                    <p class="text-xs text-slate-500 leading-relaxed">You have 2 drafts that haven't been updated in over a week</p>
-                                </div>
+                            <!-- Notification Item 4 -->
+                            <div class="px-6 py-5">
+                                <p class="text-[14px] font-bold text-[#0e1726] mb-1.5">Brief published</p>
+                                <p class="text-[14px] text-[#334155] leading-relaxed">Your 'Premium Vitamin D3
+                                    Supplement' brief has been successfully published</p>
+                            </div>
+
+                            <!-- Notification Item 5 -->
+                            <div class="px-6 py-5">
+                                <p class="text-[14px] font-bold text-[#0e1726] mb-1.5">Draft reminder</p>
+                                <p class="text-[14px] text-[#334155] leading-relaxed">You have 2 drafts that haven't
+                                    been updated in over a week</p>
                             </div>
                         </div>
                     </div>
@@ -491,62 +356,59 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 pt-16 pb-8 shrink-0">
+    <footer class="bg-white border-t border-gray-200 pt-[100px] pb-10 shrink-0">
         <div class="max-w-[1400px] mx-auto px-4 md:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
-                <div class="col-span-1 md:col-span-2">
-                     <div class="mb-4">
-                        <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
-                     </div>
-                     <p class="text-slate-500 leading-relaxed max-w-sm">
-                        AI-powered platform connecting brands with manufacturers. Streamline your sourcing process with intelligent matchmaking.
-                     </p>
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-12 mb-[80px]">
+                <div class="col-span-1 md:col-span-3">
+                    <div class="mb-2">
+                        <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-[50px] w-auto">
+                    </div>
+                    <p class="text-[#334155] text-[15px] max-w-[400px]">
+                        AI-powered platform connecting brands with manufacturers
+                    </p>
                 </div>
-                <div>
-                   <h4 class="font-bold text-slate-900 mb-6">Platform</h4>
-                   <ul class="space-y-4 text-slate-500 text-sm">
-                       <li><a href="home.html" class="hover:text-blue-600 transition-colors">Home</a></li>
-                       <li><a href="for-brands.html" class="hover:text-blue-600 transition-colors">For Brands</a></li>
-                       <li><a href="for-manufacturers.html" class="hover:text-blue-600 transition-colors">For Manufacturers</a></li>
-                       <li><a href="ai-brief-assistant.html" class="hover:text-blue-600 transition-colors">AI Brief Assistant</a></li>
-                   </ul>
+
+                <div class="col-span-1">
+                    <h4 class="font-bold text-[#0e1726] text-[15px] mb-6">Platform</h4>
+                    <ul class="space-y-[18px] text-[#0e1726] text-[14px] font-bold">
+                        <li><a href="#" class="hover:underline">Home</a></li>
+                        <li><a href="#" class="hover:underline">Brands</a></li>
+                        <li><a href="#" class="hover:underline">Manufacturers</a></li>
+                    </ul>
                 </div>
-                <div>
-                    <h4 class="font-bold text-slate-900 mb-6">Resources</h4>
-                    <ul class="space-y-4 text-slate-500 text-sm">
-                        <li><a href="api-documentation.html" class="hover:text-blue-600 transition-colors">API Documentation</a></li>
-                        <li><a href="help-center.html" class="hover:text-blue-600 transition-colors">Help Center</a></li>
-                        <li><a href="product-categories.html" class="hover:text-blue-600 transition-colors">Product Categories</a></li>
-                        <li><a href="success-stories.html" class="hover:text-blue-600 transition-colors">Success Stories</a></li>
+                <div class="col-span-1">
+                    <h4 class="font-bold text-[#0e1726] text-[15px] mb-6">Company</h4>
+                    <ul class="space-y-[18px] text-[#0e1726] text-[14px] font-bold">
+                        <li><a href="#" class="hover:underline">Contact</a></li>
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Terms of Service</a></li>
                     </ul>
-                 </div>
-                 <div>
-                    <h4 class="font-bold text-slate-900 mb-6">Company</h4>
-                    <ul class="space-y-4 text-slate-500 text-sm">
-                        <li><a href="about-us.html" class="hover:text-blue-600 transition-colors">About Us</a></li>
-                        <li><a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a></li>
-                        <li><a href="privacy-policy.html" class="hover:text-blue-600 transition-colors">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html" class="hover:text-blue-600 transition-colors">Terms of Service</a></li>
+                </div>
+                <div class="col-span-1">
+                    <h4 class="font-bold text-[#0e1726] text-[15px] mb-6">Contact</h4>
+                    <ul class="space-y-[18px] text-[#0e1726] text-[14px] font-bold mb-6">
+                        <li><a href="mailto:info@donauai.com" class="hover:underline">info@donauai.com</a></li>
                     </ul>
-                 </div>
+                    <div class="flex items-center gap-3">
+                        <a href="#"
+                            class="w-[28px] h-[28px] rounded-full border border-[#64748b] flex items-center justify-center text-[#64748b] hover:text-[#0e1726] hover:border-[#0e1726] transition-colors"><i
+                                class="ph ph-facebook-logo text-[14px]"></i></a>
+                        <a href="#"
+                            class="w-[28px] h-[28px] rounded-full border border-[#64748b] flex items-center justify-center text-[#64748b] hover:text-[#0e1726] hover:border-[#0e1726] transition-colors"><i
+                                class="ph ph-instagram-logo text-[14px]"></i></a>
+                        <a href="#"
+                            class="w-[28px] h-[28px] rounded-full border border-[#64748b] flex items-center justify-center text-[#64748b] hover:text-[#0e1726] hover:border-[#0e1726] transition-colors"><i
+                                class="ph ph-linkedin-logo text-[14px]"></i></a>
+                    </div>
+                </div>
             </div>
 
-            <div class="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+            <div
+                class="flex flex-col md:flex-row justify-between items-center gap-4 text-[14px] text-[#0e1726] font-bold pt-10">
                 <p>&copy; 2026 DonauApp</p>
-                <div class="flex items-center gap-6">
-                    <div class="flex items-center gap-2 cursor-pointer hover:text-slate-600">
-                        <i class="ph ph-globe"></i>
-                        <span>English</span>
-                    </div>
-                    <div class="flex items-center gap-2 cursor-pointer hover:text-slate-600">
-                        <i class="ph ph-currency-eur"></i>
-                        <span>EUR</span>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <a href="#" class="hover:text-slate-600"><i class="ph ph-facebook-logo text-lg"></i></a>
-                        <a href="#" class="hover:text-slate-600"><i class="ph ph-instagram-logo text-lg"></i></a>
-                        <a href="#" class="hover:text-slate-600"><i class="ph ph-linkedin-logo text-lg"></i></a>
-                    </div>
+                <div class="flex items-center gap-1.5 cursor-pointer hover:opacity-80">
+                    <i class="ph ph-globe text-[18px]"></i>
+                    <span>English</span>
                 </div>
             </div>
         </div>
@@ -554,92 +416,9 @@
 
     <script src="./src/js/main.js"></script>
 
-    <!-- Floating Chat Button -->
-    <!-- Floating Chat Button -->
-    <button id="open-ai-chat" style="position: fixed; bottom: 6rem; right: 2rem; width: 3.5rem; height: 3.5rem; border-radius: 9999px; background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); color: white; display: flex; align-items: center; justify-content: center; z-index: 2147483647; box-shadow: 0 8px 20px -4px rgba(59, 130, 246, 0.5); cursor: pointer; border: none;" class="hover:scale-105 transition-transform duration-200">
-        <i class="ph ph-chat-circle text-3xl font-bold"></i>
-    </button>
-
-    <!-- AI Chat Widget -->
-    <!-- AI Chat Widget -->
-    <!-- AI Chat Widget -->
-    <div id="ai-chat-widget" style="position: fixed; bottom: 100px; right: 2rem; z-index: 2147483647; width: 380px !important; height: 500px !important;" class="bg-white rounded-2xl-[0_20px_50px_-12px_rgba(0,0,0,0.15)] border border-gray-100 hidden flex-col font-sans transition-all duration-300 origin-bottom-right scale-95 opacity-0">
-        <!-- Header -->
-        <div class="px-6 py-4 flex items-center justify-between border-b border-gray-50">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white">
-                    <i class="ph ph-robot text-xl"></i>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-900 text-sm">Donau AI Assistant</h3>
-                    <p class="text-xs text-slate-500">Your assistant for winning new briefs.</p>
-                </div>
-            </div>
-            <button id="close-ai-chat" class="text-slate-400 hover:text-slate-600 transition-colors rounded-full p-2 hover:bg-gray-50">
-                <i class="ph ph-x text-lg"></i>
-            </button>
-        </div>
-
-        <!-- Body (Empty State) -->
-        <div class="flex-1 overflow-y-auto p-6 flex flex-col items-center justify-center text-center">
-            <div class="w-16 h-16 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 mb-6">
-                <i class="ph ph-robot text-3xl"></i>
-            </div>
-            <h3 class="font-bold text-slate-900 mb-3 text-lg">Welcome to Donau AI!</h3>
-            <p class="text-sm text-slate-500 mb-8 leading-relaxed max-w-[260px]">
-                I'm here to help you analyze new briefs, draft competitive proposals, or answer questions about active invites.
-            </p>
-            <div class="flex gap-3">
-                <button class="px-4 py-2 bg-gray-50 hover:bg-gray-100 text-slate-600 text-xs font-medium rounded-full transition-colors border border-gray-100">Draft a Proposal</button>
-                <button class="px-4 py-2 bg-gray-50 hover:bg-gray-100 text-slate-600 text-xs font-medium rounded-full transition-colors border border-gray-100">Production FAQs</button>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="p-4 border-t border-gray-50">
-            <div class="flex gap-3">
-                <button class="w-10 h-10 flex items-center justify-center border border-gray-200 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-gray-50 transition-colors shrink-0">
-                    <i class="ph ph-paperclip text-xl"></i>
-                </button>
-                <div class="flex-1 relative">
-                    <input type="text" placeholder="Type your response..." class="w-full h-10 pl-4 pr-4 bg-gray-50 border border-gray-200 rounded-xl text-xs focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all text-slate-600">
-                </div>
-                 <button class="w-10 h-10 flex items-center justify-center bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors shrink-0-100">
-                    <i class="ph ph-paper-plane-right text-xl"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
+    <!-- Mobile Clickable Cards -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-             // AI Chat Widget Logic
-            const chatWidget = document.getElementById('ai-chat-widget');
-            const openChatBtn = document.getElementById('open-ai-chat');
-            const closeChatBtn = document.getElementById('close-ai-chat');
-
-            function toggleChat() {
-                if (chatWidget.classList.contains('hidden')) {
-                    chatWidget.classList.remove('hidden');
-                    chatWidget.classList.add('flex');
-                    setTimeout(() => {
-                        chatWidget.classList.remove('opacity-0', 'scale-95');
-                        chatWidget.classList.add('opacity-100', 'scale-100');
-                    }, 10);
-                } else {
-                    chatWidget.classList.remove('opacity-100', 'scale-100');
-                    chatWidget.classList.add('opacity-0', 'scale-95');
-                    setTimeout(() => {
-                        chatWidget.classList.add('hidden');
-                        chatWidget.classList.remove('flex');
-                    }, 300);
-                }
-            }
-
-            if(openChatBtn) openChatBtn.addEventListener('click', toggleChat);
-            if(closeChatBtn) closeChatBtn.addEventListener('click', toggleChat);
-
-            // Mobile Clickable Cards
             const mobileCards = document.querySelectorAll('.mobile-clickable-card');
             mobileCards.forEach(card => {
                 card.addEventListener('click', (e) => {
@@ -656,4 +435,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -1,255 +1,291 @@
 ﻿<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign In - Donau AI</title>
-    <link href="./src/css/style.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
-      .error-text {
-          color: #dc2626 !important; /* text-red-600 */
-      }
-      .error-border {
-          border-color: #dc2626 !important; /* border-red-600 */
-          color: #dc2626 !important;
-      }
-      /* Ensure icon inherits color */
-      .error-text i {
-          color: inherit;
-      }
-    </style>
-  </head>
-  <body class="bg-white min-h-screen flex flex-col justify-between">
-    <!-- Header -->
-    <header class="w-full px-4 md:px-8 py-6 flex justify-between items-center border-b border-gray-100 bg-white">
-      <a href="home.html" class="flex items-center gap-2">
-        <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 md:h-10 w-auto">
-      </a>
 
-      <div
-        class="flex items-center gap-2 text-slate-600 cursor-pointer hover:text-slate-900"
-      >
-        <img
-          src="https://flagcdn.com/w20/gb.png"
-          srcset="https://flagcdn.com/w40/gb.png 2x"
-          width="20"
-          alt="English"
-        />
-        <span class="font-medium text-sm">English</span>
-        <i class="ph ph-caret-down text-xs"></i>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In - Donau AI</title>
+  <link href="./src/css/style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+    }
+
+    .error-text {
+      color: #dc2626 !important;
+      /* text-red-600 */
+    }
+
+    .error-border {
+      border-color: #dc2626 !important;
+      /* border-red-600 */
+      color: #dc2626 !important;
+    }
+
+    /* Ensure icon inherits color */
+    .error-text i {
+      color: inherit;
+    }
+  </style>
+</head>
+
+<body class="bg-white min-h-screen flex flex-col justify-between">
+  <!-- Header -->
+  <header class="w-full px-4 md:px-8 py-6 flex justify-between items-center border-b border-gray-100 bg-white">
+    <a href="home.html" class="flex items-center gap-2">
+      <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 md:h-10 w-auto">
+    </a>
+
+    <div class="flex items-center gap-2 text-slate-600 cursor-pointer hover:text-slate-900">
+      <img src="https://flagcdn.com/w20/gb.png" srcset="https://flagcdn.com/w40/gb.png 2x" width="20" alt="English" />
+      <span class="font-medium text-sm">English</span>
+      <i class="ph ph-caret-down text-xs"></i>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <style>
+    .exact-btn {
+      background-color: #448ae6 !important;
+      height: 56px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+    }
+
+    .exact-btn:hover {
+      background-color: #3b76c4 !important;
+    }
+
+    .exact-input {
+      border-radius: 10px;
+      border-color: #d1d5db;
+      color: #0e1726;
+      font-size: 15px;
+    }
+
+    .exact-input::placeholder {
+      color: #94a3b8;
+      opacity: 1;
+    }
+
+    .exact-input:focus {
+      border-color: #448ae6;
+      box-shadow: none;
+      outline: none;
+    }
+
+    .exact-input-active {
+      border-color: #448ae6 !important;
+    }
+
+    .exact-checkbox {
+      width: 20px;
+      height: 20px;
+      border-color: #d1d5db;
+      border-radius: 4px;
+    }
+
+    .exact-checkbox:checked {
+      background-color: #448ae6 !important;
+      border-color: #448ae6 !important;
+    }
+
+    .exact-link {
+      color: #448ae6 !important;
+    }
+
+    .exact-link:hover {
+      color: #3b76c4 !important;
+      text-decoration: underline;
+    }
+  </style>
+  <main class="bg-white"
+    style="flex-grow: 1; display: flex; align-items: flex-start; justify-content: center; padding: 4rem 1rem;">
+    <div style="width: 100%; max-width: 440px; margin: 0 auto;">
+      <div class="text-center" style="margin-bottom: 40px;">
+        <h1 class="font-bold tracking-tight" style="font-size: 32px; color: #0e1726; margin-bottom: 12px;">Welcome Back
+        </h1>
+        <p style="color: #94a3b8; font-size: 16px; margin: 0;">
+          Enter your credentials to access your account
+        </p>
       </div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="grow flex items-center justify-center px-4 py-8">
-      <div class="bg-white p-6 md:p-10 rounded-2xl w-full max-w-[500px]">
-        <div class="text-center mb-8">
-          <h1 class="text-2xl font-bold text-slate-900 mb-2">Welcome Back</h1>
-          <p class="text-slate-500 text-sm">
-            Enter your credentials to access your account
-          </p>
-        </div>
-
-        <form class="space-y-5" onsubmit="handleSignIn(event)" novalidate>
+      <form novalidate>
+        <div style="display: flex; flex-direction: column; gap: 24px;">
           <div>
-            <label
-              for="email"
-              class="block text-sm font-semibold text-slate-900 mb-1.5"
-              >Email</label
-            >
-            <input
-              type="email"
-              id="email"
-              placeholder="Enter Email"
-              class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-            />
-            <div id="email-error" class="hidden items-center gap-2 mt-2 error-text text-xs font-medium animate-fade-in">
+            <label for="email" class="block font-bold"
+              style="font-size: 15px; color: #0e1726; margin-bottom: 10px;">Email</label>
+            <input type="email" id="email" placeholder="emilyparker@gmail.com"
+              class="w-full px-4 py-3 border exact-input transition-all" />
+            <div id="email-error" class="hidden items-center gap-2 mt-2 error-text text-sm font-medium animate-fade-in">
               <i class="ph-fill ph-warning-circle text-base"></i>
               <span>Incorrect email. Please try again</span>
             </div>
           </div>
 
           <div>
-            <label
-              for="password"
-              class="block text-sm font-semibold text-slate-900 mb-1.5"
-              >Password</label
-            >
+            <label for="password" class="block font-bold"
+              style="font-size: 15px; color: #0e1726; margin-bottom: 10px;">Password</label>
             <div class="relative">
-              <input
-                type="password"
-                id="password"
-                placeholder="Enter Password"
-                class="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm text-slate-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all pr-10"
-              />
-              <button
-                type="button"
-                class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-slate-600"
-              >
-                <i class="ph ph-eye-slash text-xl"></i>
+              <input type="password" id="password" value="**********"
+                class="w-full px-4 py-3 border exact-input exact-input-active transition-all pr-12" />
+              <button type="button"
+                class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-700 transition-colors">
+                <i class="ph ph-eye" style="font-size: 22px;"></i>
               </button>
             </div>
-            <div id="password-error" class="hidden items-center gap-2 mt-2 error-text text-xs font-medium animate-fade-in">
+            <div id="password-error"
+              class="hidden items-center gap-2 mt-2 error-text text-sm font-medium animate-fade-in">
               <i class="ph-fill ph-warning-circle text-base"></i>
               <span>Incorrect password. Please try again</span>
             </div>
           </div>
 
-          <div class="flex items-center justify-between">
-            <label class="flex items-center gap-2 cursor-pointer">
-              <input
-                type="checkbox"
-                class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-              />
-              <span class="text-sm text-slate-600">Remember Me</span>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 4px;">
+            <label class="cursor-pointer group" style="display: flex; align-items: center; gap: 10px;">
+              <div class="relative flex items-center justify-center">
+                <input type="checkbox" checked
+                  class="peer appearance-none border bg-white exact-checkbox transition-all cursor-pointer" />
+                <i class="ph ph-check absolute text-white opacity-0 peer-checked:opacity-100 pointer-events-none"
+                  style="font-size: 14px;"></i>
+              </div>
+              <span class="font-medium transition-colors" style="font-size: 15px; color: #94a3b8;">Remember Me</span>
             </label>
-            <a
-              href="forgot-password.html"
-              class="text-sm font-medium text-blue-600 hover:text-blue-700"
-              >Forgot Password</a
-            >
+            <a href="forgot-password.html" class="font-bold exact-link transition-colors"
+              style="font-size: 15px;">Forgot Password</a>
           </div>
 
-          <button
-            type="submit"
-            class="w-full py-3 px-4 bg-gray-200 hover:bg-gray-300 text-slate-600 font-medium rounded-lg transition-colors cursor-pointer"
-          >
+          <button type="submit"
+            class="w-full flex items-center justify-center text-white font-bold transition-all cursor-pointer exact-btn"
+            style="font-size: 16px; margin-top: 8px;">
             Sign In
           </button>
-        </form>
-
-        <div class="mt-6 text-center text-sm text-slate-600">
-          Don't have an account?
-          <a
-            href="signup.html"
-            class="text-blue-600 font-medium hover:underline"
-            >Sign Up</a
-          >
         </div>
+      </form>
+
+      <div class="text-center font-medium" style="font-size: 16px; color: #0e1726; margin-top: 40px;">
+        Don't have an account?
+        <a href="signup.html" class="font-bold ml-1 exact-link">Sign Up</a>
       </div>
-    </main>
-    <!-- Footer -->
-    <footer
-      class="w-full px-4 md:px-8 py-6 text-sm text-slate-500 flex flex-col md:flex-row justify-center md:items-center gap-2 md:gap-4 text-center md:text-left"
-    >
-      <span>&copy; 2026 DonauAI</span>
-      <span class="hidden md:block w-px h-3 bg-slate-300"></span>
-      <div class="flex items-center justify-center gap-4">
-        <a href="privacy-policy.html" class="hover:text-slate-900">Privacy Policy</a>
-        <span class="w-px h-3 bg-slate-300"></span>
-        <a href="terms-of-service.html" class="hover:text-slate-900">Terms of Service</a>
-      </div>
-    </footer>
-    <script src="./src/js/main.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const form = document.querySelector('form');
-        const emailInput = document.getElementById('email');
-        const passwordInput = document.getElementById('password');
-        const emailError = document.getElementById('email-error');
-        const passwordError = document.getElementById('password-error');
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer class="w-full pb-14 flex flex-col items-center gap-6 text-[14px] text-[#334155]">
+    <div class="flex items-center gap-3">
+      <a href="privacy-policy.html" class="hover:text-slate-900 transition-colors">Privacy Policy</a>
+      <span class="text-slate-300 font-light">|</span>
+      <a href="terms-of-service.html" class="hover:text-slate-900 transition-colors">Terms of Service</a>
+    </div>
+    <div class="flex items-center gap-2 text-[#64748b]">
+      <span>© 2026 DonauAI</span>
+    </div>
+  </footer>
+  <script src="./src/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('form');
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      const emailError = document.getElementById('email-error');
+      const passwordError = document.getElementById('password-error');
 
-        // Listen for input changes to clear errors
-        if (emailInput) {
-            emailInput.addEventListener('input', () => {
-                validateEmail();
-            });
+      // Listen for input changes to clear errors
+      if (emailInput) {
+        emailInput.addEventListener('input', () => {
+          validateEmail();
+        });
+      }
+
+      if (passwordInput) {
+        passwordInput.addEventListener('input', () => {
+          validatePassword();
+        });
+      }
+
+      if (form) {
+        form.addEventListener('submit', function (event) {
+          event.preventDefault(); // Stop form from submitting immediately
+
+          if (validateForm()) {
+            console.log("Validation passed, navigating...");
+            window.location.href = 'dashboard-filled.html';
+          } else {
+            console.log("Validation failed on submit");
+          }
+        });
+      }
+
+      function validateEmail() {
+        const email = emailInput.value.trim();
+        const emailPattern = /^.+$/;
+        const isEmailValid = emailPattern.test(email);
+
+        if (isEmailValid) {
+          emailError.classList.add('hidden');
+          emailError.classList.remove('flex');
+          emailInput.classList.remove('error-border', 'focus:ring-red-500');
+          emailInput.classList.add('border-gray-200', 'focus:ring-blue-500');
+        }
+        return isEmailValid;
+      }
+
+      function validatePassword() {
+        const password = passwordInput.value.trim();
+        const isPasswordValid = password.length >= 6;
+
+        if (isPasswordValid) {
+          passwordError.classList.add('hidden');
+          passwordError.classList.remove('flex');
+          passwordInput.classList.remove('error-border', 'focus:ring-red-500');
+          passwordInput.classList.add('border-gray-200', 'focus:ring-blue-500');
+        }
+        return isPasswordValid;
+      }
+
+      function validateForm() {
+        // This function is called on submit, so we show errors here.
+
+        // Validate Email
+        const email = emailInput.value.trim();
+        const emailPattern = /^.+$/;
+        const isEmailValid = emailPattern.test(email);
+
+        if (!isEmailValid) {
+          emailError.classList.remove('hidden');
+          emailError.classList.add('flex');
+          emailInput.classList.add('error-border', 'focus:ring-red-500');
+          emailInput.classList.remove('border-gray-200', 'focus:ring-blue-500');
+        } else {
+          emailError.classList.add('hidden');
+          emailError.classList.remove('flex');
+          emailInput.classList.remove('error-border', 'focus:ring-red-500');
+          emailInput.classList.add('border-gray-200', 'focus:ring-blue-500');
         }
 
-        if (passwordInput) {
-            passwordInput.addEventListener('input', () => {
-                validatePassword();
-            });
+        // Validate Password
+        const password = passwordInput.value.trim();
+        const isPasswordValid = password.length >= 6;
+
+        if (!isPasswordValid) {
+          passwordError.classList.remove('hidden');
+          passwordError.classList.add('flex');
+          passwordInput.classList.add('error-border', 'focus:ring-red-500');
+          passwordInput.classList.remove('border-gray-200', 'focus:ring-blue-500');
+        } else {
+          passwordError.classList.add('hidden');
+          passwordError.classList.remove('flex');
+          passwordInput.classList.remove('error-border', 'focus:ring-red-500');
+          passwordInput.classList.add('border-gray-200', 'focus:ring-blue-500');
         }
 
-        if (form) {
-          form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Stop form from submitting immediately
-            
-            if (validateForm()) {
-                console.log("Validation passed, navigating...");
-                window.location.href = 'dashboard-filled.html';
-            } else {
-                console.log("Validation failed on submit");
-            }
-          });
-        }
+        return isEmailValid && isPasswordValid;
+      }
+    });
+  </script>
+</body>
 
-        function validateEmail() {
-             const email = emailInput.value.trim();
-             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-             const isEmailValid = emailPattern.test(email);
-             
-             if (isEmailValid) {
-                 emailError.classList.add('hidden');
-                 emailError.classList.remove('flex');
-                 emailInput.classList.remove('error-border', 'focus:ring-red-500');
-                 emailInput.classList.add('border-gray-200', 'focus:ring-blue-500');
-             }
-             return isEmailValid;
-        }
-
-        function validatePassword() {
-            const password = passwordInput.value.trim();
-            const isPasswordValid = password.length >= 6;
-            
-            if (isPasswordValid) {
-                 passwordError.classList.add('hidden');
-                 passwordError.classList.remove('flex');
-                 passwordInput.classList.remove('error-border', 'focus:ring-red-500');
-                 passwordInput.classList.add('border-gray-200', 'focus:ring-blue-500');
-            }
-            return isPasswordValid;
-        }
-
-        function validateForm() {
-            // This function is called on submit, so we show errors here.
-            
-            // Validate Email
-            const email = emailInput.value.trim();
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            const isEmailValid = emailPattern.test(email);
-            
-            if (!isEmailValid) {
-                 emailError.classList.remove('hidden');
-                 emailError.classList.add('flex');
-                 emailInput.classList.add('error-border', 'focus:ring-red-500');
-                 emailInput.classList.remove('border-gray-200', 'focus:ring-blue-500');
-            } else {
-                 emailError.classList.add('hidden');
-                 emailError.classList.remove('flex');
-                 emailInput.classList.remove('error-border', 'focus:ring-red-500');
-                 emailInput.classList.add('border-gray-200', 'focus:ring-blue-500');
-            }
-
-            // Validate Password
-            const password = passwordInput.value.trim();
-            const isPasswordValid = password.length >= 6;
-            
-            if (!isPasswordValid) {
-                 passwordError.classList.remove('hidden');
-                 passwordError.classList.add('flex');
-                 passwordInput.classList.add('error-border', 'focus:ring-red-500');
-                 passwordInput.classList.remove('border-gray-200', 'focus:ring-blue-500');
-            } else {
-                 passwordError.classList.add('hidden');
-                 passwordError.classList.remove('flex');
-                 passwordInput.classList.remove('error-border', 'focus:ring-red-500');
-                 passwordInput.classList.add('border-gray-200', 'focus:ring-blue-500');
-            }
-
-            return isEmailValid && isPasswordValid;
-        }
-      });
-    </script>
-  </body>
 </html>
