@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal Submitted - Donau AI</title>
+    <link href="./src/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-white h-screen flex flex-col overflow-y-auto">
+
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/50 z-[60] hidden backdrop-blur-sm transition-opacity">
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu"
+        class="fixed inset-y-0 left-0 w-64 bg-white z-[70] transform -translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="px-6 py-4 flex items-center justify-between border-b border-gray-100">
+            <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-6 w-auto">
+        </div>
+
+        <!-- User Profile (Mobile Only) -->
+        <div class="px-6 py-4 border-b border-gray-100">
+            <div class="flex items-center gap-3 mb-3">
+                <div
+                    class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold">
+                    MT</div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm font-bold text-slate-900">Mark Thompson</p>
+                    <p class="text-xs text-slate-500 font-medium truncate">mark@donau.ai</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="p-4 space-y-2 flex-1">
+            <a href="dashboard-filled.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-squares-four text-lg"></i>
+                Dashboard
+            </a>
+            <a href="briefs.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl bg-blue-50 text-blue-600 font-medium text-sm transition-colors">
+                <i class="ph ph-briefcase text-lg"></i>
+                Product Briefs
+            </a>
+            <a href="messages.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-chat-circle-dots text-lg"></i>
+                Messages
+            </a>
+        </nav>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div class="flex-1 flex flex-col min-w-0">
+
+        <!-- Header -->
+        <header
+            class="bg-white border-b border-gray-200 h-18 flex items-center justify-between px-4 md:px-8 shrink-0 sticky top-0 z-50">
+            <div class="flex items-center gap-12">
+                <!-- Logo -->
+                <a href="home.html" class="flex items-center">
+                    <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+                </a>
+
+                <!-- Nav Links -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="dashboard-filled.html"
+                        class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 h-18 px-1 border-b-2 border-transparent hover:border-gray-200 transition-all">
+                        <i class="ph ph-house text-lg"></i>
+                        Dashboard
+                    </a>
+                    <a href="briefs.html"
+                        class="flex items-center gap-2 text-sm font-medium text-blue-600 border-b-2 border-blue-600 h-18 px-1">
+                        <i class="ph ph-file-text text-lg"></i>
+                        Brief Invitations
+                    </a>
+                    <a href="messages.html"
+                        class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 h-18 px-1 border-b-2 border-transparent hover:border-gray-200 transition-all">
+                        <i class="ph ph-chat-circle text-lg"></i>
+                        Messages
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="flex items-center gap-3">
+                <!-- Notifications -->
+                <div class="relative flex items-center">
+                    <button id="notification-bell" data-dropdown-trigger data-dropdown-target="notification-dropdown"
+                        class="text-slate-400 hover:text-slate-600 transition-colors relative h-10 w-10 flex items-center justify-center rounded-full hover:bg-gray-50">
+                        <i class="ph ph-bell text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- User Avatar -->
+                <div class="relative">
+                    <button id="user-menu-button" class="flex items-center focus:outline-none">
+                        <div
+                            class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white hover:ring-blue-100 transition-all">
+                            M</div>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Scrollable Area -->
+        <main class="flex-1 w-full max-w-[1400px] mx-auto p-4 md:p-8">
+            <div class="max-w-[1200px] mx-auto mb-12">
+
+                <!-- Header -->
+                <div class="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
+                    <div class="relative">
+                        <div class="flex items-center gap-3 mb-1">
+                            <h1 class="text-2xl font-bold text-slate-900">Premium Vitamin D3 Supplement</h1>
+                            <span
+                                class="bg-blue-100 text-blue-600 text-xs px-2.5 py-0.5 rounded-full font-bold whitespace-nowrap">Proposal
+                                Submitted</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-slate-500">
+                            <i class="ph ph-buildings text-sm"></i>
+                            <span>Evergreenapparel.co</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arrow Stepper -->
+                <div class="bg-white border border-gray-100 rounded-2xl overflow-hidden mb-8">
+                    <div class="flex items-stretch h-[72px]">
+                        <!-- Step 1: Invited -->
+                        <div class="relative flex-1 flex items-center justify-center gap-3 bg-white pr-4">
+                            <div class="w-8 h-8 rounded-full bg-[#448ae6] flex items-center justify-center text-white">
+                                <i class="ph ph-check text-lg"></i>
+                            </div>
+                            <span class="text-[12px] font-bold text-slate-900">Invited</span>
+                            <div class="absolute right-0 top-0 bottom-0 w-[24px] z-10">
+                                <svg class="h-full w-full" viewBox="0 0 24 72" fill="none" preserveAspectRatio="none">
+                                    <path d="M0 0L12 36L0 72H4L16 36L4 0H0Z" fill="white" />
+                                    <path d="M12 36L0 0H1M1 72L13 36L1 0M1 72H0L12 36L0 0" stroke="#f1f5f9"
+                                        stroke-width="1" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: In Discussion -->
+                        <div class="relative flex-1 flex items-center justify-center gap-3 bg-white px-4">
+                            <div class="w-8 h-8 rounded-full bg-[#448ae6] flex items-center justify-center text-white">
+                                <i class="ph ph-check text-lg"></i>
+                            </div>
+                            <span class="text-[12px] font-bold text-slate-900">In Discussion</span>
+                            <div class="absolute right-0 top-0 bottom-0 w-[24px] z-10">
+                                <svg class="h-full w-full" viewBox="0 0 24 72" fill="none" preserveAspectRatio="none">
+                                    <path d="M0 0L12 36L0 72H4L16 36L4 0H0Z" fill="white" />
+                                    <path d="M12 36L0 0H1M1 72L13 36L1 0M1 72H0L12 36L0 0" stroke="#f1f5f9"
+                                        stroke-width="1" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Proposal Submitted (ACTIVE & TICKED) -->
+                        <div class="relative flex-1 flex items-center justify-center gap-3 bg-white px-4">
+                            <div class="w-8 h-8 rounded-full bg-[#448ae6] flex items-center justify-center text-white">
+                                <i class="ph ph-check text-lg"></i>
+                            </div>
+                            <span class="text-[12px] font-bold text-slate-900">Proposal Submitted</span>
+                            <div class="absolute right-0 top-0 bottom-0 w-[24px] z-10">
+                                <svg class="h-full w-full" viewBox="0 0 24 72" fill="none" preserveAspectRatio="none">
+                                    <path d="M0 0L12 36L0 72H4L16 36L4 0H0Z" fill="white" />
+                                    <path d="M12 36L0 0H1M1 72L13 36L1 0M1 72H0L12 36L0 0" stroke="#f1f5f9"
+                                        stroke-width="1" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Matched -->
+                        <div class="relative flex-1 flex items-center justify-center gap-3 bg-white px-4 opacity-50">
+                            <div
+                                class="w-8 h-8 rounded-full border border-slate-300 flex items-center justify-center text-slate-500 text-[12px] font-bold">
+                                04
+                            </div>
+                            <span class="text-[12px] font-bold text-slate-500">Matched</span>
+                            <div class="absolute right-0 top-0 bottom-0 w-[24px] z-10">
+                                <svg class="h-full w-full" viewBox="0 0 24 72" fill="none" preserveAspectRatio="none">
+                                    <path d="M0 0L12 36L0 72H4L16 36L4 0H0Z" fill="white" />
+                                    <path d="M12 36L0 0H1M1 72L13 36L1 0M1 72H0L12 36L0 0" stroke="#f1f5f9"
+                                        stroke-width="1" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Completed -->
+                        <div class="relative flex-1 flex items-center justify-center gap-3 bg-white px-4 opacity-50">
+                            <div
+                                class="w-8 h-8 rounded-full border border-slate-300 flex items-center justify-center text-slate-500 text-[12px] font-bold">
+                                05
+                            </div>
+                            <span class="text-[12px] font-bold text-slate-500">Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="border-b border-gray-100 mb-8">
+                    <div class="flex gap-10">
+                        <a href="brief-detail.html"
+                            class="pb-4 border-b-2 border-transparent text-slate-400 hover:text-slate-600 font-bold text-[14px] flex items-center gap-2 transition-all">
+                            <i class="ph ph-file-text text-lg"></i> Overview
+                        </a>
+                        <a href="#"
+                            class="pb-4 border-b-2 border-[#448ae6] text-[#448ae6] font-bold text-[14px] flex items-center gap-2">
+                            <i class="ph ph-file-text text-lg"></i> Proposal
+                        </a>
+                        <a href="brief-detail-chat.html"
+                            class="pb-4 border-b-2 border-transparent text-slate-400 hover:text-slate-600 font-bold text-[14px] flex items-center gap-2 transition-all">
+                            <i class="ph ph-chat-circle text-lg"></i> Messages
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Info Banner -->
+                <div
+                    class="bg-blue-50 border border-blue-100 rounded-2xl p-4 mb-8 flex items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-blue-500 flex items-center justify-center text-white shrink-0">
+                            <i class="ph ph-sparkle text-xl"></i>
+                        </div>
+                        <p class="text-[13px] text-slate-600 leading-relaxed font-medium">
+                            Your proposal has been submitted. The brand will review it and get back to you soon.
+                        </p>
+                    </div>
+                    <a href="brief-detail-chat.html"
+                        class="text-[#448ae6] font-bold text-[14px] hover:underline whitespace-nowrap">Chat with
+                        Brand</a>
+                </div>
+
+                <!-- Proposals Section -->
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 min-h-[500px]">
+                    <h2 class="text-sm font-bold text-slate-900 mb-6">Proposals</h2>
+
+                    <!-- Submitted Proposal Card -->
+                    <div class="bg-gray-50 rounded-2xl p-8 border border-transparent">
+                        <div class="mb-8">
+                            <h3 class="text-sm font-bold text-slate-900">Your Submitted Proposal</h3>
+                            <span class="text-xs text-slate-400 mt-1 block">Submitted on 03/03/2026</span>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl border border-gray-200 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100 mb-8">
+                            <div class="p-6">
+                                <span class="block text-[10px] text-slate-400 font-medium uppercase mb-2">Quoted
+                                    Price</span>
+                                <span class="block text-xl font-bold text-slate-900">€62,000</span>
+                            </div>
+                            <div class="p-6">
+                                <span
+                                    class="block text-[10px] text-slate-400 font-medium uppercase mb-2">Timeline</span>
+                                <span class="block text-xl font-bold text-slate-900">7 weeks</span>
+                            </div>
+                            <div class="p-6">
+                                <span class="block text-[10px] text-slate-400 font-medium uppercase mb-2">MOQ</span>
+                                <span class="block text-xl font-bold text-slate-900">10,000 units</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <h4 class="text-xs font-bold text-slate-900 mb-2">Notes</h4>
+                            <p class="text-sm text-slate-500 leading-relaxed max-w-2xl">
+                                We've carefully reviewed your requirements and can provide the high-quality Vitamin D3
+                                supplements you're looking for. Our production facility is certified and ready to handle
+                                your volume.
+                            </p>
+                        </div>
+
+                        <div class="flex justify-end gap-3 pt-6 border-t border-gray-200">
+                            <button
+                                class="px-6 py-2.5 text-sm font-medium text-slate-600 border border-gray-300 rounded-lg hover:bg-white bg-white w-24">Cancel</button>
+                            <button
+                                class="px-6 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 w-24">Edit</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-8 shrink-0">
+        <div class="max-w-[1400px] mx-auto px-4 md:px-8 text-center text-sm text-slate-400">
+            &copy; 2026 Donau AI. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="./src/js/main.js"></script>
+</body>
+
+</html>
