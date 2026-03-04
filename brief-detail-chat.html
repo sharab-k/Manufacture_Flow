@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -274,8 +276,8 @@
                             </div>
                             <span class="text-[12px] font-bold text-slate-900">Invited</span>
                             <!-- Chevron -->
-                            <div class="absolute right-0 top-0 bottom-0 w-[12px] z-10">
-                                <svg class="h-full w-full" viewBox="0 0 12 72" fill="none" preserveAspectRatio="none">
+                            <div class="absolute right-0 top-0 bottom-0 z-10" style="width: 12px;">
+                                <svg width="12" height="72" viewBox="0 0 12 72" fill="none" class="h-full w-full">
                                     <path d="M0 0L12 36L0 72" stroke="#e2e8f0" stroke-width="1" />
                                 </svg>
                             </div>
@@ -289,8 +291,8 @@
                             </div>
                             <span class="text-[12px] font-bold text-[#448ae6]">In Discussion</span>
                             <!-- Chevron -->
-                            <div class="absolute right-0 top-0 bottom-0 w-[12px] z-10">
-                                <svg class="h-full w-full" viewBox="0 0 12 72" fill="none" preserveAspectRatio="none">
+                            <div class="absolute right-0 top-0 bottom-0 z-10" style="width: 12px;">
+                                <svg width="12" height="72" viewBox="0 0 12 72" fill="none" class="h-full w-full">
                                     <path d="M0 0L12 36L0 72" stroke="#e2e8f0" stroke-width="1" />
                                 </svg>
                             </div>
@@ -304,8 +306,8 @@
                             </div>
                             <span class="text-[12px] font-bold text-slate-500">Proposal Submitted</span>
                             <!-- Chevron -->
-                            <div class="absolute right-0 top-0 bottom-0 w-[12px] z-10">
-                                <svg class="h-full w-full" viewBox="0 0 12 72" fill="none" preserveAspectRatio="none">
+                            <div class="absolute right-0 top-0 bottom-0 z-10" style="width: 12px;">
+                                <svg width="12" height="72" viewBox="0 0 12 72" fill="none" class="h-full w-full">
                                     <path d="M0 0L12 36L0 72" stroke="#e2e8f0" stroke-width="1" />
                                 </svg>
                             </div>
@@ -319,8 +321,8 @@
                             </div>
                             <span class="text-[12px] font-bold text-slate-500">Matched</span>
                             <!-- Chevron -->
-                            <div class="absolute right-0 top-0 bottom-0 w-[12px] z-10">
-                                <svg class="h-full w-full" viewBox="0 0 12 72" fill="none" preserveAspectRatio="none">
+                            <div class="absolute right-0 top-0 bottom-0 z-10" style="width: 12px;">
+                                <svg width="12" height="72" viewBox="0 0 12 72" fill="none" class="h-full w-full">
                                     <path d="M0 0L12 36L0 72" stroke="#e2e8f0" stroke-width="1" />
                                 </svg>
                             </div>
@@ -338,16 +340,16 @@
                 </div>
 
                 <!-- Tabs -->
-                <div class="border-b border-gray-100 mb-6 flex-shrink-0">
-                    <div class="flex gap-10">
+                <div class="border-b border-gray-100 mb-8 flex-shrink-0">
+                    <div class="flex" style="gap: 40px;">
                         <a href="brief-detail.html"
-                            class="pb-4 border-b-2 border-transparent text-slate-400 hover:text-slate-600 font-bold text-[14px] flex items-center gap-2 transition-all">
-                            <i class="ph ph-file-text text-lg"></i>
+                            class="pb-4 border-b-2 border-transparent text-slate-400 hover:text-slate-600 font-bold text-[14px] flex items-center gap-3 transition-all">
+                            <i class="ph ph-file-magnifying-glass text-lg"></i>
                             Overview
                         </a>
                         <a href="brief-detail-proposal.html"
-                            class="pb-4 border-b-2 border-transparent text-slate-400 hover:text-slate-600 font-bold text-[14px] flex items-center gap-2 transition-all">
-                            <i class="ph ph-file-text text-lg"></i>
+                            class="pb-4 border-b-2 border-transparent text-slate-400 hover:text-slate-600 font-bold text-[14px] flex items-center gap-3 transition-all">
+                            <i class="ph ph-file text-lg"></i>
                             Proposal
                         </a>
                         <a href="brief-detail-chat.html"
@@ -417,72 +419,61 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 pt-16 pb-8 shrink-0 hidden md:block">
+    <footer class="bg-white border-t border-gray-200 py-12 shrink-0 relative w-full">
         <div class="max-w-[1400px] mx-auto px-4 md:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-12 mb-10">
                 <div class="col-span-1 md:col-span-2">
                     <div class="mb-4">
-                        <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+                        <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-6 w-auto">
                     </div>
-                    <p class="text-slate-500 leading-relaxed max-w-sm">
-                        AI-powered platform connecting brands with manufacturers. Streamline your sourcing process with
-                        intelligent matchmaking.
+                    <p class="text-[#475569] text-[13px] leading-relaxed max-w-[280px]">
+                        AI-powered platform connecting brands<br />with manufacturers
                     </p>
                 </div>
-                <div>
-                    <h4 class="font-bold text-slate-900 mb-6">Platform</h4>
-                    <ul class="space-y-4 text-slate-500 text-sm">
-                        <li><a href="home.html" class="hover:text-blue-600 transition-colors">Home</a></li>
-                        <li><a href="for-brands.html" class="hover:text-blue-600 transition-colors">For Brands</a></li>
-                        <li><a href="for-manufacturers.html" class="hover:text-blue-600 transition-colors">For
-                                Manufacturers</a></li>
-                        <li><a href="ai-brief-assistant.html" class="hover:text-blue-600 transition-colors">AI Brief
-                                Assistant</a></li>
+                <div class="col-span-1 md:col-span-1"></div>
+
+                <div class="col-span-1">
+                    <h4 class="font-bold text-[#0e1726] text-[14px] mb-4">Platform</h4>
+                    <ul class="space-y-[12px] text-[#475569] text-[13px]">
+                        <li><a href="#" class="hover:text-[#448ae6] transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-[#448ae6] transition-colors">Brands</a></li>
+                        <li><a href="#" class="hover:text-[#448ae6] transition-colors">Manufacturers</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-bold text-slate-900 mb-6">Resources</h4>
-                    <ul class="space-y-4 text-slate-500 text-sm">
-                        <li><a href="api-documentation.html" class="hover:text-blue-600 transition-colors">API
-                                Documentation</a></li>
-                        <li><a href="help-center.html" class="hover:text-blue-600 transition-colors">Help Center</a>
-                        </li>
-                        <li><a href="product-categories.html" class="hover:text-blue-600 transition-colors">Product
-                                Categories</a></li>
-                        <li><a href="success-stories.html" class="hover:text-blue-600 transition-colors">Success
-                                Stories</a></li>
+                <div class="col-span-1">
+                    <h4 class="font-bold text-[#0e1726] text-[14px] mb-4">Company</h4>
+                    <ul class="space-y-[12px] text-[#475569] text-[13px]">
+                        <li><a href="#" class="hover:text-[#448ae6] transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-[#448ae6] transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-[#448ae6] transition-colors">Terms of Service</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="font-bold text-slate-900 mb-6">Company</h4>
-                    <ul class="space-y-4 text-slate-500 text-sm">
-                        <li><a href="about-us.html" class="hover:text-blue-600 transition-colors">About Us</a></li>
-                        <li><a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a></li>
-                        <li><a href="privacy-policy.html" class="hover:text-blue-600 transition-colors">Privacy
-                                Policy</a></li>
-                        <li><a href="terms-of-service.html" class="hover:text-blue-600 transition-colors">Terms of
-                                Service</a></li>
+                <div class="col-span-1">
+                    <h4 class="font-bold text-[#0e1726] text-[15px] mb-5">Contact</h4>
+                    <ul class="text-[#0e1726] text-[15px] mb-6">
+                        <li><a href="mailto:info@donauai.com"
+                                class="hover:text-[#448ae6] transition-colors">info@donauai.com</a></li>
                     </ul>
+                    <div class="flex items-center gap-[16px]">
+                        <a href="#"
+                            class="w-[42px] h-[42px] rounded-full bg-[#f1f5f9] flex items-center justify-center text-[#0e1726] hover:bg-[#e2e8f0] transition-colors"><i
+                                class="fa-brands fa-facebook-f text-[19px]"></i></a>
+                        <a href="#"
+                            class="w-[42px] h-[42px] rounded-full bg-[#f1f5f9] flex items-center justify-center text-[#0e1726] hover:bg-[#e2e8f0] transition-colors"><i
+                                class="fa-brands fa-instagram text-[23px]"></i></a>
+                        <a href="#"
+                            class="w-[42px] h-[42px] rounded-full bg-[#f1f5f9] flex items-center justify-center text-[#0e1726] hover:bg-[#e2e8f0] transition-colors"><i
+                                class="fa-brands fa-linkedin-in text-[19px]"></i></a>
+                    </div>
                 </div>
             </div>
 
             <div
-                class="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+                class="border-t border-gray-200 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] text-[#64748b]">
                 <p>&copy; 2026 DonauApp</p>
-                <div class="flex items-center gap-6">
-                    <div class="flex items-center gap-2 cursor-pointer hover:text-slate-600">
-                        <i class="ph ph-globe"></i>
-                        <span>English</span>
-                    </div>
-                    <div class="flex items-center gap-2 cursor-pointer hover:text-slate-600">
-                        <i class="ph ph-currency-eur"></i>
-                        <span>EUR</span>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <a href="#" class="hover:text-slate-600"><i class="ph ph-facebook-logo text-lg"></i></a>
-                        <a href="#" class="hover:text-slate-600"><i class="ph ph-instagram-logo text-lg"></i></a>
-                        <a href="#" class="hover:text-slate-600"><i class="ph ph-linkedin-logo text-lg"></i></a>
-                    </div>
+                <div class="flex items-center gap-[6px] cursor-pointer hover:text-[#0e1726]">
+                    <i class="ph ph-globe text-[16px]"></i>
+                    <span>English</span>
                 </div>
             </div>
         </div>
