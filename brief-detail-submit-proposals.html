@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Proposal - Donau AI</title>
+    <link href="./src/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-white h-screen flex flex-col overflow-y-auto">
+
+    <!-- Mobile Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-gray-900/50 z-[60] hidden backdrop-blur-sm transition-opacity">
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu"
+        class="fixed inset-y-0 left-0 w-64 bg-white z-[70] transform -translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="px-6 py-4 flex items-center justify-between border-b border-gray-100">
+            <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-6 w-auto">
+        </div>
+
+        <!-- User Profile (Mobile Only) -->
+        <div class="px-6 py-4 border-b border-gray-100">
+            <div class="flex items-center gap-3 mb-3">
+                <div
+                    class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold">
+                    MT</div>
+                <div class="flex-1 min-w-0">
+                    <p class="text-sm font-bold text-slate-900">Mark Thompson</p>
+                    <p class="text-xs text-slate-500 font-medium truncate">mark@donau.ai</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="p-4 space-y-2 flex-1">
+            <a href="dashboard-filled.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-squares-four text-lg"></i>
+                Dashboard
+            </a>
+            <a href="briefs.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl bg-blue-50 text-blue-600 font-medium text-sm transition-colors">
+                <i class="ph ph-briefcase text-lg"></i>
+                Product Briefs
+            </a>
+            <a href="messages.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-chat-circle-dots text-lg"></i>
+                Messages
+            </a>
+        </nav>
+
+        <!-- User Actions (Mobile Only) -->
+        <div class="p-4 border-t border-gray-100 space-y-1">
+            <a href="settings-account.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-user text-lg"></i>
+                My Profile
+            </a>
+            <a href="settings-account.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                <i class="ph ph-gear text-lg"></i>
+                Settings
+            </a>
+            <a href="signin.html"
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 font-medium text-sm transition-colors">
+                <i class="ph ph-sign-out text-lg"></i>
+                Logout
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div class="flex-1 flex flex-col min-w-0">
+
+        <!-- Header -->
+        <header class="bg-white border-b border-gray-200 h-18 shrink-0 sticky top-0 z-50 px-4 md:px-8">
+            <div class="max-w-[1200px] mx-auto w-full h-full flex items-center justify-between">
+                <div class="flex items-center gap-12">
+                    <!-- Logo -->
+                    <a href="home.html" class="flex items-center">
+                        <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+                    </a>
+
+                    <!-- Nav Links -->
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a href="dashboard-filled.html"
+                            class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 h-18 px-1 border-b-2 border-transparent hover:border-gray-200 transition-all">
+                            <i class="ph ph-house text-lg"></i>
+                            Dashboard
+                        </a>
+                        <a href="briefs.html"
+                            class="flex items-center gap-2 text-sm font-medium text-blue-600 border-b-2 border-blue-600 h-18 px-1">
+                            <i class="ph ph-file-text text-lg"></i>
+                            Brief Invitations
+                        </a>
+                        <a href="messages.html"
+                            class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 h-18 px-1 border-b-2 border-transparent hover:border-gray-200 transition-all">
+                            <i class="ph ph-chat-circle text-lg"></i>
+                            Messages
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="flex items-center gap-4">
+                    <!-- Notifications -->
+                    <div class="relative flex items-center">
+                        <button
+                            class="text-slate-400 hover:text-slate-600 transition-colors relative h-10 w-10 flex items-center justify-center rounded-full hover:bg-gray-50">
+                            <i class="ph ph-bell text-xl"></i>
+                        </button>
+                    </div>
+
+                    <!-- User Profile Desktop -->
+                    <div
+                        class="hidden md:flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white text-xs font-bold ring-2 ring-white hover:ring-blue-100 transition-all cursor-pointer">
+                        M
+                    </div>
+
+                    <!-- Menu -->
+                    <button id="mobile-menu-btn"
+                        class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 text-slate-400 hover:bg-gray-100 transition-all">
+                        <i class="ph ph-list text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Scrollable Area -->
+        <main class="flex-1 w-full max-w-[1400px] mx-auto p-4 md:p-8">
+            <div class="max-w-[1200px] mx-auto mb-12">
+                <!-- Proposal Form Title and AI Draft -->
+                <div class="flex flex-col md:flex-row items-start justify-between mb-8 gap-4 md:pl-[180px]">
+                    <div>
+                        <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-1">Proposal for Premium Vitamin D3
+                            Supplement</h1>
+                        <p class="text-slate-500 text-sm font-medium">Evergreenapparel.co</p>
+                    </div>
+                    <button
+                        class="flex items-center gap-2 px-5 py-2.5 border border-blue-100 text-[#448ae6] font-bold rounded-xl text-sm hover:bg-blue-50 transition-colors bg-white shadow-sm">
+                        <i class="ph ph-sparkle text-lg"></i>
+                        AI Draft
+                    </button>
+                </div>
+
+                <!-- Form Section -->
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 mb-6 md:ml-[180px]">
+                    <form class="space-y-6">
+                        <!-- Production Feasibility -->
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <label class="text-[14px] font-bold text-slate-900 uppercase tracking-wide">Production
+                                    Feasibility</label>
+                                <button type="button"
+                                    class="flex items-center gap-2 text-[#448ae6] text-[13px] font-bold hover:underline">
+                                    <i class="ph ph-sparkle text-lg"></i>
+                                    Improve Clarity
+                                </button>
+                            </div>
+                            <textarea placeholder="Type here" rows="4"
+                                class="w-full px-4 py-3 border border-gray-200 rounded-xl text-[14px] text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 resize-none font-medium"></textarea>
+                        </div>
+
+                        <!-- Order Quantity -->
+                        <div>
+                            <label class="block text-[14px] font-bold text-slate-900 mb-3 uppercase tracking-wide">Order
+                                Quantity</label>
+                            <input type="text" placeholder="e.g. 5,000"
+                                class="w-full h-12 px-4 border border-gray-200 rounded-xl text-[14px] text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 font-medium">
+                        </div>
+
+                        <!-- Total Price -->
+                        <div>
+                            <label class="block text-[14px] font-bold text-slate-900 mb-3 uppercase tracking-wide">Total
+                                Price (€)</label>
+                            <input type="text" placeholder="e.g. 50,000"
+                                class="w-full h-12 px-4 border border-gray-200 rounded-xl text-[14px] text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 font-medium">
+                        </div>
+
+                        <!-- Lead Time -->
+                        <div>
+                            <label class="block text-[14px] font-bold text-slate-900 mb-3 uppercase tracking-wide">Lead
+                                Time</label>
+                            <input type="text" placeholder="e.g. 6-8 weeks"
+                                class="w-full h-12 px-4 border border-gray-200 rounded-xl text-[14px] text-slate-600 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 font-medium">
+                        </div>
+
+                        <!-- Material -->
+                        <div>
+                            <label
+                                class="block text-[14px] font-bold text-slate-900 mb-3 uppercase tracking-wide">Material</label>
+                            <div class="relative">
+                                <select
+                                    class="w-full h-12 px-4 border border-gray-200 rounded-xl text-[14px] text-slate-400 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 appearance-none bg-white font-medium">
+                                    <option value="" disabled selected>Select Material</option>
+                                    <option value="recycled-cardboard">Recyclable Cardboard</option>
+                                    <option value="biodegradable-plastic">Biodegradable Plastic</option>
+                                    <option value="glass">Glass</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <i
+                                    class="ph ph-caret-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                        <!-- Attachments -->
+                        <div>
+                            <label
+                                class="block text-[14px] font-bold text-slate-900 mb-3 uppercase tracking-wide">Attachments</label>
+                            <div
+                                class="border-2 border-dashed border-gray-200 rounded-2xl p-8 flex flex-col items-center justify-center text-center hover:bg-gray-50/50 hover:border-blue-200 transition-all cursor-pointer group bg-gray-50/30">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                                    <i class="ph ph-upload-simple text-xl"></i>
+                                </div>
+                                <span class="text-[14px] font-bold text-[#448ae6] mb-1">Browse</span>
+                                <span class="text-[11px] text-slate-400 font-medium">or drop your file (PNG, JPG, PDF)
+                                    here</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Info Banner -->
+                <div
+                    class="bg-blue-50 border border-blue-100 rounded-2xl p-4 mb-10 flex items-center justify-between gap-4">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-blue-500 flex items-center justify-center text-white shrink-0">
+                            <i class="ph ph-info text-xl"></i>
+                        </div>
+                        <p class="text-[13px] text-slate-600 leading-relaxed font-medium">
+                            Submitting a proposal does not imply exclusivity or final selection.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex items-center justify-between mb-20 md:ml-[180px]">
+                    <a href="brief-detail.html"
+                        class="px-8 py-3 text-sm font-bold text-[#448ae6] border border-[#448ae6] rounded-xl hover:bg-blue-50 transition-colors">
+                        Cancel
+                    </a>
+                    <div class="flex items-center gap-4">
+                        <button type="button"
+                            class="px-8 py-3 text-sm font-bold text-[#448ae6] border border-[#448ae6] rounded-xl hover:bg-blue-50 transition-colors">
+                            Save as Draft
+                        </button>
+                        <a href="brief-detail-proposal-submitted.html"
+                            class="px-8 py-3 text-sm font-bold text-white bg-[#448ae6] border border-[#448ae6] rounded-xl hover:bg-blue-700 transition-colors">
+                            Submit Proposal
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-12 shrink-0 relative w-full">
+        <div class="max-w-[1200px] mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-6 gap-12 mb-10">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="mb-4">
+                        <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-6 w-auto">
+                    </div>
+                    <p class="text-[#475569] text-[13px] leading-relaxed max-w-[280px]">
+                        AI-powered platform connecting brands<br />with manufacturers
+                    </p>
+                </div>
+                <div class="col-span-1 md:col-span-1"></div>
+
+                <div class="col-span-1">
+                    <h4 class="font-bold text-[#0e1726] text-[14px] mb-4">Platform</h4>
+                    <ul class="space-y-[12px] text-[#475569] text-[13px]">
+                        <li><a href="#" class="hover:text-[#448ae6] transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-[#448ae6] transition-colors">Brands</a></li>
+                        <li><a href="#" class="hover:text-[#448ae6] transition-colors">Manufacturers</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-1">
+                    <h4 class="font-bold text-[#0e1726] text-[14px] mb-4">Company</h4>
+                    <ul class="space-y-[12px] text-[#475569] text-[13px]">
+                        <li><a href="#" class="hover:text-[#448ae6] transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-[#448ae6] transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-[#448ae6] transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-1">
+                    <h4 class="font-bold text-[#0e1726] text-[15px] mb-5">Contact</h4>
+                    <ul class="text-[#0e1726] text-[15px] mb-6">
+                        <li><a href="mailto:info@donauai.com"
+                                class="hover:text-[#448ae6] transition-colors">info@donauai.com</a></li>
+                    </ul>
+                    <div class="flex items-center gap-[16px]">
+                        <a href="#"
+                            class="w-[42px] h-[42px] rounded-full bg-[#f1f5f9] flex items-center justify-center text-[#0e1726] hover:bg-[#e2e8f0] transition-colors"><i
+                                class="fa-brands fa-facebook-f text-[19px]"></i></a>
+                        <a href="#"
+                            class="w-[42px] h-[42px] rounded-full bg-[#f1f5f9] flex items-center justify-center text-[#0e1726] hover:bg-[#e2e8f0] transition-colors"><i
+                                class="fa-brands fa-instagram text-[23px]"></i></a>
+                        <a href="#"
+                            class="w-[42px] h-[42px] rounded-full bg-[#f1f5f9] flex items-center justify-center text-[#0e1726] hover:bg-[#e2e8f0] transition-colors"><i
+                                class="fa-brands fa-linkedin-in text-[19px]"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-200 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] text-[#64748b]">
+                <p>&copy; 2026 DonauApp</p>
+                <div class="flex items-center gap-[6px] cursor-pointer hover:text-[#0e1726]">
+                    <i class="ph ph-globe text-[16px]"></i>
+                    <span>English</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chat Button -->
+    <button id="open-ai-chat"
+        style="position: fixed; bottom: 6rem; right: 2rem; width: 3.5rem; height: 3.5rem; border-radius: 9999px; background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); color: white; display: flex; align-items: center; justify-content: center; z-index: 2147483647; box-shadow: 0 8px 20px -4px rgba(59, 130, 246, 0.5); cursor: pointer; border: none;"
+        class="hover:scale-105 transition-transform duration-200">
+        <i class="ph ph-chat-circle text-3xl font-bold"></i>
+    </button>
+
+    <script src="./src/js/main.js"></script>
+</body>
+
+</html>

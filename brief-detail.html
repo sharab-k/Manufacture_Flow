@@ -93,153 +93,164 @@
     <div class="flex-1 flex flex-col min-w-0">
 
         <!-- Header -->
-        <header
-            class="bg-white border-b border-gray-200 h-18 flex items-center justify-between px-4 md:px-8 shrink-0 sticky top-0 z-50">
-            <div class="flex items-center gap-12">
-                <!-- Logo -->
-                <a href="home.html" class="flex items-center">
-                    <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
-                </a>
+        <header class="bg-white border-b border-gray-200 h-18 shrink-0 sticky top-0 z-50 px-4 md:px-8">
+            <div class="max-w-[1200px] mx-auto w-full h-full flex items-center justify-between">
+                <div class="flex items-center gap-12">
+                    <!-- Logo -->
+                    <a href="home.html" class="flex items-center">
+                        <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+                    </a>
 
-                <!-- Nav Links -->
-                <nav class="hidden md:flex items-center gap-8">
-                    <a href="dashboard-filled.html"
-                        class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 h-18 px-1 border-b-2 border-transparent hover:border-gray-200 transition-all">
-                        <i class="ph ph-house text-lg"></i>
-                        Dashboard
-                    </a>
-                    <a href="briefs.html"
-                        class="flex items-center gap-2 text-sm font-medium text-blue-600 border-b-2 border-blue-600 h-18 px-1">
-                        <i class="ph ph-file-text text-lg"></i>
-                        Brief Invitations
-                    </a>
-                    <a href="messages.html"
-                        class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 h-18 px-1 border-b-2 border-transparent hover:border-gray-200 transition-all">
-                        <i class="ph ph-chat-circle text-lg"></i>
-                        Messages
-                    </a>
-                </nav>
-            </div>
+                    <!-- Nav Links -->
+                    <nav class="hidden md:flex items-center gap-8">
+                        <a href="dashboard-filled.html"
+                            class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 h-18 px-1 border-b-2 border-transparent hover:border-gray-200 transition-all">
+                            <i class="ph ph-house text-lg"></i>
+                            Dashboard
+                        </a>
+                        <a href="briefs.html"
+                            class="flex items-center gap-2 text-sm font-medium text-blue-600 border-b-2 border-blue-600 h-18 px-1">
+                            <i class="ph ph-file-text text-lg"></i>
+                            Brief Invitations
+                        </a>
+                        <a href="messages.html"
+                            class="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-900 h-18 px-1 border-b-2 border-transparent hover:border-gray-200 transition-all">
+                            <i class="ph ph-chat-circle text-lg"></i>
+                            Messages
+                        </a>
+                    </nav>
+                </div>
 
-            <!-- Right Actions -->
-            <div class="flex items-center gap-3">
-                <!-- Notifications -->
-                <div class="relative flex items-center">
-                    <button id="notification-bell" data-dropdown-trigger data-dropdown-target="notification-dropdown"
-                        class="text-slate-400 hover:text-slate-600 transition-colors relative h-10 w-10 flex items-center justify-center rounded-full hover:bg-gray-50">
-                        <i class="ph ph-bell text-xl"></i>
-                    </button>
-                    <!-- Notification Dropdown -->
-                    <div id="notification-dropdown" data-dropdown-content
-                        class="hidden absolute right-0 mt-3 top-full w-[85vw] max-w-[280px] md:w-[300px] animate-fade-in rounded-[10px] border border-[#e2e8f0] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] overflow-hidden text-left z-50">
-                        <div class="flex items-center justify-between border-b border-[#e2e8f0] px-4 py-3">
-                            <h4 class="text-[14px] font-bold text-[#0e1726]">Notifications</h4>
-                            <a href="javascript:void(0)"
-                                class="text-[12px] font-medium text-[#448ae6] hover:underline">Mark all as read</a>
-                        </div>
-                        <div class="max-h-[340px] overflow-y-auto w-full">
-                            <div
-                                class="p-3 border-b border-[#e2e8f0] bg-[#f8fafc] hover:bg-gray-50 transition-colors cursor-pointer w-full">
-                                <div class="flex items-start justify-between mb-1 gap-2">
-                                    <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New Proposal
-                                        Received</h5>
-                                    <span class="text-[11px] text-[#64748b] whitespace-nowrap">Today</span>
-                                </div>
-                                <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">
-                                    Ecopack solutions submitted a proposal for "sustainable packaging fororganic
-                                    skincare line"</p>
+                <!-- Right Actions -->
+                <div class="flex items-center gap-3">
+                    <!-- Notifications -->
+                    <div class="relative flex items-center">
+                        <button id="notification-bell" data-dropdown-trigger
+                            data-dropdown-target="notification-dropdown"
+                            class="text-slate-400 hover:text-slate-600 transition-colors relative h-10 w-10 flex items-center justify-center rounded-full hover:bg-gray-50">
+                            <i class="ph ph-bell text-xl"></i>
+                        </button>
+                        <!-- Notification Dropdown -->
+                        <div id="notification-dropdown" data-dropdown-content
+                            class="hidden absolute right-0 mt-3 top-full w-[85vw] max-w-[280px] md:w-[300px] animate-fade-in rounded-[10px] border border-[#e2e8f0] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] overflow-hidden text-left z-50">
+                            <div class="flex items-center justify-between border-b border-[#e2e8f0] px-4 py-3">
+                                <h4 class="text-[14px] font-bold text-[#0e1726]">Notifications</h4>
+                                <a href="javascript:void(0)"
+                                    class="text-[12px] font-medium text-[#448ae6] hover:underline">Mark all as read</a>
                             </div>
-                            <div
-                                class="p-3 border-b border-[#e2e8f0] hover:bg-gray-50 transition-colors cursor-pointer w-full">
-                                <div class="flex items-start justify-between mb-1 gap-2">
-                                    <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">Proposal
-                                        Accepted</h5>
-                                    <span class="text-[11px] text-[#64748b] whitespace-nowrap">Yesterday</span>
+                            <div class="max-h-[340px] overflow-y-auto w-full">
+                                <div
+                                    class="p-3 border-b border-[#e2e8f0] bg-[#f8fafc] hover:bg-gray-50 transition-colors cursor-pointer w-full">
+                                    <div class="flex items-start justify-between mb-1 gap-2">
+                                        <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New
+                                            Proposal
+                                            Received</h5>
+                                        <span class="text-[11px] text-[#64748b] whitespace-nowrap">Today</span>
+                                    </div>
+                                    <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">
+                                        Ecopack solutions submitted a proposal for "sustainable packaging fororganic
+                                        skincare line"</p>
                                 </div>
-                                <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">Your
-                                    proposal for "industrial metal components" has been accepted by TechMatch industries
-                                </p>
-                            </div>
-                            <div
-                                class="p-3 border-b border-[#e2e8f0] hover:bg-gray-50 transition-colors cursor-pointer w-full">
-                                <div class="flex items-start justify-between mb-1 gap-2">
-                                    <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New Brief
-                                        Invitation</h5>
-                                    <span class="text-[11px] text-[#64748b] whitespace-nowrap">14/01/2026</span>
+                                <div
+                                    class="p-3 border-b border-[#e2e8f0] hover:bg-gray-50 transition-colors cursor-pointer w-full">
+                                    <div class="flex items-start justify-between mb-1 gap-2">
+                                        <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">Proposal
+                                            Accepted</h5>
+                                        <span class="text-[11px] text-[#64748b] whitespace-nowrap">Yesterday</span>
+                                    </div>
+                                    <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">
+                                        Your
+                                        proposal for "industrial metal components" has been accepted by TechMatch
+                                        industries
+                                    </p>
                                 </div>
-                                <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">You
-                                    have bee invited to submit a proposal for " Custom Furniture for Hotel Chain"</p>
-                            </div>
-                            <div
-                                class="p-3 border-b border-[#e2e8f0] hover:bg-gray-50 transition-colors cursor-pointer w-full">
-                                <div class="flex items-start justify-between mb-1 gap-2">
-                                    <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New Brief
-                                        Invitation</h5>
-                                    <span class="text-[11px] text-[#64748b] whitespace-nowrap">12/01/2026</span>
+                                <div
+                                    class="p-3 border-b border-[#e2e8f0] hover:bg-gray-50 transition-colors cursor-pointer w-full">
+                                    <div class="flex items-start justify-between mb-1 gap-2">
+                                        <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New Brief
+                                            Invitation</h5>
+                                        <span class="text-[11px] text-[#64748b] whitespace-nowrap">14/01/2026</span>
+                                    </div>
+                                    <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">
+                                        You
+                                        have bee invited to submit a proposal for " Custom Furniture for Hotel Chain"
+                                    </p>
                                 </div>
-                                <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">You
-                                    have bee invited to submit a proposal for " Custom Furniture for Hotel Chain"</p>
-                            </div>
-                            <div class="p-3 hover:bg-gray-50 transition-colors cursor-pointer w-full">
-                                <div class="flex items-start justify-between mb-1 gap-2">
-                                    <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New Brief
-                                        Invitation</h5>
-                                    <span class="text-[11px] text-[#64748b] whitespace-nowrap">1 month ago</span>
+                                <div
+                                    class="p-3 border-b border-[#e2e8f0] hover:bg-gray-50 transition-colors cursor-pointer w-full">
+                                    <div class="flex items-start justify-between mb-1 gap-2">
+                                        <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New Brief
+                                            Invitation</h5>
+                                        <span class="text-[11px] text-[#64748b] whitespace-nowrap">12/01/2026</span>
+                                    </div>
+                                    <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">
+                                        You
+                                        have bee invited to submit a proposal for " Custom Furniture for Hotel Chain"
+                                    </p>
                                 </div>
-                                <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">You
-                                    have bee invited to submit a proposal for " Custom Furniture for Hotel Chain"</p>
+                                <div class="p-3 hover:bg-gray-50 transition-colors cursor-pointer w-full">
+                                    <div class="flex items-start justify-between mb-1 gap-2">
+                                        <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New Brief
+                                            Invitation</h5>
+                                        <span class="text-[11px] text-[#64748b] whitespace-nowrap">1 month ago</span>
+                                    </div>
+                                    <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">
+                                        You
+                                        have bee invited to submit a proposal for " Custom Furniture for Hotel Chain"
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- User Avatar -->
-                <div class="relative">
-                    <button id="user-menu-button" data-dropdown-trigger data-dropdown-target="user-dropdown"
-                        class="flex items-center focus:outline-none">
-                        <div
-                            class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white hover:ring-blue-100 transition-all">
-                            M</div>
-                    </button>
-                    <!-- User Dropdown -->
-                    <div id="user-dropdown" data-dropdown-content
-                        class="hidden absolute right-0 mt-3 w-64 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in">
-                        <div class="px-5 py-4 border-b border-gray-50">
-                            <p class="text-sm font-bold text-slate-900">Mark Thompson</p>
-                            <p class="text-xs text-slate-500 font-medium truncate">mark@donau.ai</p>
-                        </div>
-                        <div class="p-2">
-                            <a href="settings-account.html"
-                                class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
-                                <i class="ph ph-user text-lg"></i>
-                                My Profile
-                            </a>
-                            <a href="settings-account.html"
-                                class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
-                                <i class="ph ph-gear text-lg"></i>
-                                Settings
-                            </a>
-                            <a href="help-center.html"
-                                class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
-                                <i class="ph ph-headset text-lg"></i>
-                                Support
-                            </a>
-                        </div>
-                        <div class="p-2 border-t border-gray-50">
-                            <a href="signin.html"
-                                class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-red-600 hover:bg-red-50 transition-colors whitespace-nowrap">
-                                <i class="ph ph-sign-out text-lg"></i>
-                                Logout
-                            </a>
+                    <!-- User Avatar -->
+                    <div class="relative">
+                        <button id="user-menu-button" data-dropdown-trigger data-dropdown-target="user-dropdown"
+                            class="flex items-center focus:outline-none">
+                            <div
+                                class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold ring-2 ring-white hover:ring-blue-100 transition-all">
+                                M</div>
+                        </button>
+                        <!-- User Dropdown -->
+                        <div id="user-dropdown" data-dropdown-content
+                            class="hidden absolute right-0 mt-3 w-64 bg-white rounded-2xl border border-gray-100 z-50 overflow-hidden animate-fade-in">
+                            <div class="px-5 py-4 border-b border-gray-50">
+                                <p class="text-sm font-bold text-slate-900">Mark Thompson</p>
+                                <p class="text-xs text-slate-500 font-medium truncate">mark@donau.ai</p>
+                            </div>
+                            <div class="p-2">
+                                <a href="settings-account.html"
+                                    class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
+                                    <i class="ph ph-user text-lg"></i>
+                                    My Profile
+                                </a>
+                                <a href="settings-account.html"
+                                    class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
+                                    <i class="ph ph-gear text-lg"></i>
+                                    Settings
+                                </a>
+                                <a href="help-center.html"
+                                    class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors whitespace-nowrap">
+                                    <i class="ph ph-headset text-lg"></i>
+                                    Support
+                                </a>
+                            </div>
+                            <div class="p-2 border-t border-gray-50">
+                                <a href="signin.html"
+                                    class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-red-600 hover:bg-red-50 transition-colors whitespace-nowrap">
+                                    <i class="ph ph-sign-out text-lg"></i>
+                                    Logout
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Hamburger Menu Icon -->
-                <button id="mobile-menu-toggle"
-                    class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 text-slate-400 hover:bg-gray-100 transition-all">
-                    <i class="ph ph-list text-xl"></i>
-                </button>
+                    <!-- Hamburger Menu Icon -->
+                    <button id="mobile-menu-toggle"
+                        class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-50 text-slate-400 hover:bg-gray-100 transition-all">
+                        <i class="ph ph-list text-xl"></i>
+                    </button>
+                </div>
             </div>
         </header>
 
@@ -271,46 +282,11 @@
                     </div>
                     <div class="flex items-center gap-3 w-full md:w-auto">
                         <button
-                            class="flex-1 md:flex-none px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-colors whitespace-nowrap">Submit
-                            Proposal</button>
-
-                        <!-- Options Dropdown -->
-                        <div class="relative">
-                            <button data-dropdown-trigger data-dropdown-target="brief-options-dropdown"
-                                class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 border border-gray-200 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-100">
-                                <i class="ph ph-dots-three-vertical text-xl pointer-events-none"></i>
-                            </button>
-                            <!-- Dropdown Menu -->
-                            <div id="brief-options-dropdown" data-dropdown-content
-                                class="hidden absolute right-0 mt-2 w-48 bg-white rounded-xl border border-gray-100 z-50 overflow-hidden animate-fade-in p-1">
-                                <a href="#"
-                                    class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors">
-                                    <i class="ph ph-check text-base"></i>
-                                    Mark as Ready
-                                </a>
-                                <a href="#"
-                                    class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors">
-                                    <i class="ph ph-pencil-simple text-base"></i>
-                                    Edit
-                                </a>
-                                <a href="#"
-                                    class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors">
-                                    <i class="ph ph-trash text-base"></i>
-                                    Delete
-                                </a>
-                                <div class="h-px bg-gray-100 my-1"></div>
-                                <a href="#"
-                                    class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors">
-                                    <i class="ph ph-copy text-base"></i>
-                                    Duplicate
-                                </a>
-                                <a href="#"
-                                    class="flex items-center gap-3 px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:bg-gray-50 hover:text-slate-900 transition-colors">
-                                    <i class="ph ph-download-simple text-base"></i>
-                                    Export as PDF
-                                </a>
-                            </div>
-                        </div>
+                            class="flex-1 md:flex-none px-6 py-2.5 bg-white hover:bg-gray-50 text-[#448ae6] font-bold rounded-xl text-sm transition-colors whitespace-nowrap border border-[#448ae6]">Not
+                            Proceed</button>
+                        <a href="brief-detail-submit-proposals.html"
+                            class="flex-1 md:flex-none px-6 py-2.5 bg-[#448ae6] hover:bg-blue-700 text-white font-bold rounded-xl text-sm transition-colors whitespace-nowrap text-center">Submit
+                            Proposal</a>
                     </div>
                 </div>
 
@@ -566,7 +542,7 @@
 
     <!-- Footer -->
     <footer class="bg-white border-t border-gray-200 py-12 shrink-0 relative mt-12 w-full">
-        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+        <div class="max-w-[1200px] mx-auto px-4 md:px-8">
             <div class="grid grid-cols-1 md:grid-cols-6 gap-12 mb-10">
                 <div class="col-span-1 md:col-span-2">
                     <div class="mb-4">

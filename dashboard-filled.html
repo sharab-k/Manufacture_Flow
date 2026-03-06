@@ -94,132 +94,190 @@
     <div class="flex-1 flex flex-col min-w-0">
 
         <!-- Header -->
-        <header
-            class="bg-white border-b border-gray-200 flex items-center justify-between px-4 md:px-8 shrink-0 h-[72px] sticky top-0 z-50">
-            <div class="flex items-center gap-[60px] h-full">
-                <!-- Logo -->
-                <a href="home.html" class="flex items-center">
-                    <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-6 w-auto">
-                </a>
+        <header class="bg-white border-b border-gray-200 px-4 md:px-8 shrink-0 h-[72px] sticky top-0 z-50">
+            <div class="max-w-[1240px] mx-auto w-full h-full flex items-center justify-between">
+                <div class="flex items-center gap-[60px] h-full">
+                    <!-- Logo -->
+                    <a href="home.html" class="flex items-center">
+                        <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-6 w-auto">
+                    </a>
 
-                <!-- Nav Links -->
-                <nav class="hidden md:flex items-center gap-[40px] h-full">
-                    <a href="dashboard-filled.html"
-                        class="flex items-center gap-2 text-[14px] font-bold text-[#448ae6] h-full border-b-[3px] border-[#448ae6]">
-                        <i class="ph ph-house text-[18px]"></i>
-                        Dashboard
-                    </a>
-                    <a href="briefs.html"
-                        class="flex items-center gap-2 text-[14px] font-medium text-[#64748b] hover:text-[#0e1726] transition-colors h-full border-b-[3px] border-transparent">
-                        <i class="ph ph-file-text text-[18px]"></i>
-                        Brief Invitations
-                    </a>
-                    <a href="messages.html"
-                        class="flex items-center gap-2 text-[14px] font-medium text-[#64748b] hover:text-[#0e1726] transition-colors h-full border-b-[3px] border-transparent">
-                        <i class="ph ph-chat-circle-dots text-[18px]"></i>
-                        Messages
-                    </a>
-                </nav>
-            </div>
+                    <!-- Nav Links -->
+                    <nav class="hidden md:flex items-center gap-[40px] h-full">
+                        <a href="dashboard-filled.html"
+                            class="flex items-center gap-2 text-[14px] font-bold text-[#448ae6] h-full border-b-[3px] border-[#448ae6]">
+                            <i class="ph ph-house text-[18px]"></i>
+                            Dashboard
+                        </a>
+                        <a href="briefs.html"
+                            class="flex items-center gap-2 text-[14px] font-medium text-[#64748b] hover:text-[#0e1726] transition-colors h-full border-b-[3px] border-transparent">
+                            <i class="ph ph-file-text text-[18px]"></i>
+                            Brief Invitations
+                        </a>
+                        <a href="messages.html"
+                            class="flex items-center gap-2 text-[14px] font-medium text-[#64748b] hover:text-[#0e1726] transition-colors h-full border-b-[3px] border-transparent">
+                            <i class="ph ph-chat-circle-dots text-[18px]"></i>
+                            Messages
+                        </a>
+                    </nav>
+                </div>
 
-            <!-- Right Actions -->
-            <div class="flex items-center gap-4">
-                <!-- Notifications -->
-                <div class="relative flex items-center">
-                    <button id="notification-bell" data-dropdown-trigger data-dropdown-target="notification-dropdown"
-                        class="text-[#64748b] hover:text-[#0e1726] transition-colors relative h-10 w-10 flex items-center justify-center rounded-full hover:bg-gray-50">
-                        <i class="ph ph-bell text-[20px]"></i>
-                    </button>
-                    <!-- Notification Dropdown -->
-                    <div id="notification-dropdown" data-dropdown-content
-                        class="hidden absolute right-0 mt-3 top-full w-[85vw] max-w-[280px] md:w-[300px] animate-fade-in rounded-[10px] border border-[#e2e8f0] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] overflow-hidden text-left z-50">
-                        <div class="flex items-center justify-between border-b border-[#e2e8f0] px-4 py-3">
-                            <h4 class="text-[14px] font-bold text-[#0e1726]">Notifications</h4>
-                            <a href="javascript:void(0)"
-                                class="text-[12px] font-medium text-[#448ae6] hover:underline">Mark all as read</a>
+                <!-- Right Actions -->
+                <div class="flex items-center gap-4">
+                    <!-- Notifications -->
+                    <div class="relative flex items-center">
+                        <button id="notification-bell" data-dropdown-trigger
+                            data-dropdown-target="notification-dropdown"
+                            class="text-[#64748b] hover:text-[#0e1726] transition-colors relative h-10 w-10 flex items-center justify-center rounded-full hover:bg-gray-50">
+                            <i class="ph ph-bell text-[20px]"></i>
+                        </button>
+                        <!-- Notification Dropdown -->
+                        <div id="notification-dropdown" data-dropdown-content
+                            class="hidden absolute right-0 mt-3 top-full w-[85vw] max-w-[280px] md:w-[300px] animate-fade-in rounded-[10px] border border-[#e2e8f0] bg-white shadow-[0_8px_30px_rgb(0,0,0,0.08)] overflow-hidden text-left z-50">
+                            <div class="flex items-center justify-between border-b border-[#e2e8f0] px-4 py-3">
+                                <h4 class="text-[14px] font-bold text-[#0e1726]">Notifications</h4>
+                                <a href="javascript:void(0)"
+                                    class="text-[12px] font-medium text-[#448ae6] hover:underline">Mark all as read</a>
+                            </div>
+                            <div class="max-h-[340px] overflow-y-auto w-full">
+                                <!-- Item 1 -->
+                                <div
+                                    class="p-3 border-b border-[#e2e8f0] bg-[#f8fafc] hover:bg-gray-50 transition-colors cursor-pointer w-full">
+                                    <div class="flex items-start justify-between mb-1 gap-2">
+                                        <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New
+                                            Proposal
+                                            Received</h5>
+                                        <span class="text-[11px] text-[#64748b] whitespace-nowrap">Today</span>
+                                    </div>
+                                    <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">
+                                        Ecopack solutions submitted a proposal for "sustainable packaging fororganic
+                                        skincare line"</p>
+                                </div>
+
+                                <!-- Item 2 -->
+                                <div
+                                    class="p-3 border-b border-[#e2e8f0] hover:bg-gray-50 transition-colors cursor-pointer w-full">
+                                    <div class="flex items-start justify-between mb-1 gap-2">
+                                        <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">Proposal
+                                            Accepted</h5>
+                                        <span class="text-[11px] text-[#64748b] whitespace-nowrap">Yesterday</span>
+                                    </div>
+                                    <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">
+                                        Your
+                                        proposal for "industrial metal components" has been accepted by TechMatch
+                                        industries
+                                    </p>
+                                </div>
+
+                                <!-- Item 3 -->
+                                <div
+                                    class="p-3 border-b border-[#e2e8f0] hover:bg-gray-50 transition-colors cursor-pointer w-full">
+                                    <div class="flex items-start justify-between mb-1 gap-2">
+                                        <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New Brief
+                                            Invitation</h5>
+                                        <span class="text-[11px] text-[#64748b] whitespace-nowrap">14/01/2026</span>
+                                    </div>
+                                    <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">
+                                        You
+                                        have bee invited to submit a proposal for " Custom Furniture for Hotel Chain"
+                                    </p>
+                                </div>
+
+                                <!-- Item 4 -->
+                                <div
+                                    class="p-3 border-b border-[#e2e8f0] hover:bg-gray-50 transition-colors cursor-pointer w-full">
+                                    <div class="flex items-start justify-between mb-1 gap-2">
+                                        <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New Brief
+                                            Invitation</h5>
+                                        <span class="text-[11px] text-[#64748b] whitespace-nowrap">12/01/2026</span>
+                                    </div>
+                                    <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">
+                                        You
+                                        have bee invited to submit a proposal for " Custom Furniture for Hotel Chain"
+                                    </p>
+                                </div>
+
+                                <!-- Item 5 -->
+                                <div class="p-3 hover:bg-gray-50 transition-colors cursor-pointer w-full">
+                                    <div class="flex items-start justify-between mb-1 gap-2">
+                                        <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New Brief
+                                            Invitation</h5>
+                                        <span class="text-[11px] text-[#64748b] whitespace-nowrap">1 month ago</span>
+                                    </div>
+                                    <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">
+                                        You
+                                        have bee invited to submit a proposal for " Custom Furniture for Hotel Chain"
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="max-h-[340px] overflow-y-auto w-full">
-                            <!-- Item 1 -->
-                            <div
-                                class="p-3 border-b border-[#e2e8f0] bg-[#f8fafc] hover:bg-gray-50 transition-colors cursor-pointer w-full">
-                                <div class="flex items-start justify-between mb-1 gap-2">
-                                    <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New Proposal
-                                        Received</h5>
-                                    <span class="text-[11px] text-[#64748b] whitespace-nowrap">Today</span>
-                                </div>
-                                <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">
-                                    Ecopack solutions submitted a proposal for "sustainable packaging fororganic
-                                    skincare line"</p>
-                            </div>
+                    </div>
 
-                            <!-- Item 2 -->
-                            <div
-                                class="p-3 border-b border-[#e2e8f0] hover:bg-gray-50 transition-colors cursor-pointer w-full">
-                                <div class="flex items-start justify-between mb-1 gap-2">
-                                    <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">Proposal
-                                        Accepted</h5>
-                                    <span class="text-[11px] text-[#64748b] whitespace-nowrap">Yesterday</span>
-                                </div>
-                                <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">Your
-                                    proposal for "industrial metal components" has been accepted by TechMatch industries
-                                </p>
-                            </div>
+                    <!-- User Profile Desktop -->
+                    <div
+                        class="hidden md:flex items-center justify-center w-[34px] h-[34px] rounded-full bg-[#448ae6] text-white text-[14px] font-bold cursor-pointer">
+                        M
+                    </div>
 
-                            <!-- Item 3 -->
-                            <div
-                                class="p-3 border-b border-[#e2e8f0] hover:bg-gray-50 transition-colors cursor-pointer w-full">
-                                <div class="flex items-start justify-between mb-1 gap-2">
-                                    <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New Brief
-                                        Invitation</h5>
-                                    <span class="text-[11px] text-[#64748b] whitespace-nowrap">14/01/2026</span>
-                                </div>
-                                <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">You
-                                    have bee invited to submit a proposal for " Custom Furniture for Hotel Chain"</p>
-                            </div>
+                    <!-- Menu -->
+                    <div class="relative">
+                        <button id="mobile-menu-btn" data-dropdown-trigger data-dropdown-target="hamburger-dropdown"
+                            class="w-[34px] h-[34px] rounded-full bg-gray-100 flex items-center justify-center text-[#64748b] hover:bg-gray-200 transition-colors">
+                            <i class="ph ph-list text-[18px] font-bold"></i>
+                        </button>
 
-                            <!-- Item 4 -->
-                            <div
-                                class="p-3 border-b border-[#e2e8f0] hover:bg-gray-50 transition-colors cursor-pointer w-full">
-                                <div class="flex items-start justify-between mb-1 gap-2">
-                                    <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New Brief
-                                        Invitation</h5>
-                                    <span class="text-[11px] text-[#64748b] whitespace-nowrap">12/01/2026</span>
-                                </div>
-                                <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">You
-                                    have bee invited to submit a proposal for " Custom Furniture for Hotel Chain"</p>
+                        <!-- Hamburger Menu Dropdown -->
+                        <div id="hamburger-dropdown" data-dropdown-content
+                            class="hidden absolute right-0 mt-3 w-64 bg-white rounded-2xl border border-[#e2e8f0] shadow-[0_8px_30px_rgb(0,0,0,0.08)] z-50 animate-fade-in text-left">
+                            <div class="px-6 pt-6 pb-5 border-b border-gray-50">
+                                <p class="text-[15px] font-bold text-[#0e1726]">Mark Thompson</p>
+                                <p class="text-[13px] text-[#64748b] mt-0.5">mark@donau.ai</p>
                             </div>
-
-                            <!-- Item 5 -->
-                            <div class="p-3 hover:bg-gray-50 transition-colors cursor-pointer w-full">
-                                <div class="flex items-start justify-between mb-1 gap-2">
-                                    <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New Brief
-                                        Invitation</h5>
-                                    <span class="text-[11px] text-[#64748b] whitespace-nowrap">1 month ago</span>
-                                </div>
-                                <p class="text-[12px] text-[#64748b] leading-relaxed text-left w-full break-words">You
-                                    have bee invited to submit a proposal for " Custom Furniture for Hotel Chain"</p>
+                            <div class="p-2">
+                                <a href="dashboard-filled.html"
+                                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#64748b] hover:bg-[#f8fafc] hover:text-[#448ae6] transition-colors">
+                                    <i class="ph ph-house text-[18px]"></i>
+                                    Dashboard
+                                </a>
+                                <a href="briefs.html"
+                                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#64748b] hover:bg-[#f8fafc] hover:text-[#448ae6] transition-colors">
+                                    <i class="ph ph-briefcase text-[18px]"></i>
+                                    My Briefs
+                                </a>
+                                <a href="messages.html"
+                                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#64748b] hover:bg-[#f8fafc] hover:text-[#448ae6] transition-colors">
+                                    <i class="ph ph-chat-circle-dots text-[18px]"></i>
+                                    Messages
+                                </a>
+                            </div>
+                            <div class="p-2 border-t border-gray-50">
+                                <a href="settings-account.html"
+                                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#64748b] hover:bg-[#f8fafc] hover:text-[#448ae6] transition-colors">
+                                    <i class="ph ph-gear text-[18px]"></i>
+                                    Settings
+                                </a>
+                                <a href="#"
+                                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#64748b] hover:bg-[#f8fafc] hover:text-[#448ae6] transition-colors">
+                                    <i class="ph ph-globe text-[18px]"></i>
+                                    Language
+                                </a>
+                            </div>
+                            <div class="p-2 border-t border-gray-50">
+                                <a href="signin.html"
+                                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#ef4444] hover:bg-red-50 transition-colors">
+                                    <i class="ph ph-sign-out text-[18px]"></i>
+                                    Sign Out
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- User Profile Desktop -->
-                <div
-                    class="hidden md:flex items-center justify-center w-[34px] h-[34px] rounded-full bg-[#448ae6] text-white text-[14px] font-bold cursor-pointer">
-                    M
-                </div>
-
-                <!-- Menu -->
-                <button id="mobile-menu-btn"
-                    class="w-[34px] h-[34px] rounded-full bg-gray-100 flex items-center justify-center text-[#64748b] hover:bg-gray-200 transition-colors">
-                    <i class="ph ph-list text-[18px] font-bold"></i>
-                </button>
             </div>
         </header>
 
         <!-- Main Scrollable Area -->
         <main class="flex-1 w-full max-w-[1400px] mx-auto p-4 md:p-8">
-            <div class="max-w-[1240px] mx-auto mb-12">
+            <div class="max-w-[1240px] mx-auto mb-10">
 
                 <div class="mb-6 mt-4">
                     <h1 class="text-[24px] font-bold text-[#0e1726] mb-1">Manufacture Dashboard</h1>
@@ -488,8 +546,8 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 py-12 shrink-0 relative mt-12 w-full">
-        <div class="max-w-[1400px] mx-auto px-4 md:px-8">
+    <footer class="bg-white border-t border-gray-200 py-12 shrink-0 relative mt-10 w-full">
+        <div class="max-w-[1240px] mx-auto px-4 md:px-8">
             <div class="grid grid-cols-1 md:grid-cols-6 gap-12 mb-10">
                 <div class="col-span-1 md:col-span-2">
                     <div class="mb-4">
@@ -593,25 +651,30 @@
     <!-- Page Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Mobile Menu Toggle Logic
+            // Mobile Menu Toggle Logic - Repurposed for mobile drawer if needed, 
+            // but the hamburger now uses the global dropdown logic from main.js on desktop.
+            // On very small screens, the drawer is still useful.
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const sidebarOverlay = document.getElementById('sidebar-overlay');
+            const hamburgerDropdown = document.getElementById('hamburger-dropdown');
 
             if (mobileMenuBtn && mobileMenu && sidebarOverlay) {
-                // Open menu
-                mobileMenuBtn.addEventListener('click', () => {
-                    sidebarOverlay.classList.remove('hidden');
-                    // Small delay to allow display:block to apply before animating opacity
-                    setTimeout(() => {
-                        mobileMenu.classList.remove('-translate-x-full');
-                    }, 10);
+                mobileMenuBtn.addEventListener('click', (e) => {
+                    if (window.innerWidth < 768) {
+                        e.stopPropagation();
+                        // Hide dropdown on mobile, show drawer instead
+                        if (hamburgerDropdown) hamburgerDropdown.classList.add('hidden');
+
+                        sidebarOverlay.classList.remove('hidden');
+                        setTimeout(() => {
+                            mobileMenu.classList.remove('-translate-x-full');
+                        }, 10);
+                    }
                 });
 
-                // Close menu when clicking overlay
                 sidebarOverlay.addEventListener('click', () => {
                     mobileMenu.classList.add('-translate-x-full');
-                    // Wait for transform animation to finish before hiding overlay
                     setTimeout(() => {
                         sidebarOverlay.classList.add('hidden');
                     }, 300);

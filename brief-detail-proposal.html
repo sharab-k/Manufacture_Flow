@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -276,24 +278,12 @@
                         </div>
                     </div>
                     <div class="flex items-center gap-3 w-full md:w-auto">
-                        <div class="relative tooltip-container">
-                            <a href="submit-proposal.html"
-                                class="flex-1 md:flex-none px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg text-sm transition-colors whitespace-nowrap text-center">Submit
-                                Proposal</a>
-
-                            <!-- Tooltip -->
-                            <div
-                                class="tooltip-content absolute top-full right-0 mt-3 w-64 bg-slate-900 text-white text-[10px] p-3 rounded-lg z-50">
-                                <div class="absolute -top-1.5 right-8 w-3 h-3 bg-slate-900 rotate-45"></div>
-                                <p class="relative z-10 leading-relaxed font-medium">This does not represent a final
-                                    decision or purchase. You can continue exploring other manufacturers.</p>
-                            </div>
-                        </div>
-
                         <button
-                            class="w-10 h-10 flex items-center justify-center text-slate-400 hover:text-slate-600 border border-gray-200 rounded-lg hover:bg-gray-50">
-                            <i class="ph ph-dots-three-vertical text-xl"></i>
-                        </button>
+                            class="flex-1 md:flex-none px-6 py-2.5 bg-white hover:bg-gray-50 text-slate-500 font-bold rounded-xl text-sm transition-colors whitespace-nowrap border border-gray-200">Not
+                            Proceed</button>
+                        <button
+                            class="flex-1 md:flex-none px-6 py-2.5 bg-[#448ae6] text-white font-bold rounded-xl text-sm transition-colors whitespace-nowrap text-center opacity-90 cursor-default">Proposal
+                            Submitted</button>
                     </div>
                 </div>
 
@@ -314,13 +304,12 @@
                             </div>
                         </div>
 
-                        <!-- Step 2: In Discussion (Active) -->
+                        <!-- Step 2: In Discussion -->
                         <div class="relative flex-1 flex items-center justify-center gap-3 bg-white px-4">
-                            <div
-                                class="w-8 h-8 rounded-full border-2 border-[#448ae6] flex items-center justify-center text-[#448ae6] text-[12px] font-bold">
-                                02
+                            <div class="w-8 h-8 rounded-full bg-[#448ae6] flex items-center justify-center text-white">
+                                <i class="ph ph-check text-lg"></i>
                             </div>
-                            <span class="text-[12px] font-bold text-[#448ae6]">In Discussion</span>
+                            <span class="text-[12px] font-bold text-slate-900">In Discussion</span>
                             <!-- Chevron -->
                             <div class="absolute right-0 top-0 bottom-0 z-10" style="width: 12px;">
                                 <svg width="12" height="72" viewBox="0 0 12 72" fill="none" class="h-full w-full">
@@ -329,13 +318,13 @@
                             </div>
                         </div>
 
-                        <!-- Step 3: Proposal Submitted -->
+                        <!-- Step 3: Proposal Submitted (Progress) -->
                         <div class="relative flex-1 flex items-center justify-center gap-3 bg-white px-4">
                             <div
-                                class="w-8 h-8 rounded-full border border-slate-300 flex items-center justify-center text-slate-400 text-[12px] font-bold">
+                                class="w-8 h-8 rounded-full border-2 border-[#448ae6] flex items-center justify-center text-[#448ae6] text-[12px] font-bold">
                                 03
                             </div>
-                            <span class="text-[12px] font-bold text-slate-500">Proposal Submitted</span>
+                            <span class="text-[12px] font-bold text-[#448ae6]">Proposal Submitted</span>
                             <!-- Chevron -->
                             <div class="absolute right-0 top-0 bottom-0 z-10" style="width: 12px;">
                                 <svg width="12" height="72" viewBox="0 0 12 72" fill="none" class="h-full w-full">
@@ -409,48 +398,54 @@
                         Brand</a>
                 </div>
 
-                <!-- Proposals Section -->
-                <div class="bg-white rounded-2xl border border-gray-200 p-8 min-h-[500px]">
-                    <h2 class="text-sm font-bold text-slate-900 mb-6">Proposals</h2>
+                <!-- My Proposal Section -->
+                <div class="bg-white rounded-2xl border border-gray-200 p-8 mb-6">
+                    <div class="mb-8">
+                        <h2 class="text-[15px] font-bold text-slate-900 mb-1">My Proposal</h2>
+                        <p class="text-[13px] text-slate-500 font-medium">Track the status of all your submitted
+                            proposals.</p>
+                    </div>
 
-                    <!-- Submitted Proposal Card -->
-                    <div class="bg-gray-50 rounded-2xl p-8 border border-transparent">
-                        <div class="mb-8">
-                            <h3 class="text-sm font-bold text-slate-900">Your Proposal</h3>
-                            <span class="text-xs text-slate-400 mt-1 block">Submitted on 15/01/2025</span>
-                        </div>
-
-                        <div
-                            class="bg-white rounded-xl border border-gray-200 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100 mb-8">
-                            <div class="p-6">
-                                <span class="block text-[10px] text-slate-400 font-medium uppercase mb-2">Quoted
-                                    Price</span>
-                                <span class="block text-xl font-bold text-slate-900">€10,000</span>
+                    <!-- Proposal List Card -->
+                    <div
+                        class="bg-[#f8fafc] rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-gray-100">
+                        <div class="flex items-center gap-4 w-full md:w-auto">
+                            <div
+                                class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-sm shrink-0">
+                                GM
                             </div>
-                            <div class="p-6">
-                                <span
-                                    class="block text-[10px] text-slate-400 font-medium uppercase mb-2">Timeline</span>
-                                <span class="block text-xl font-bold text-slate-900">2 weeks</span>
-                            </div>
-                            <div class="p-6">
-                                <span class="block text-[10px] text-slate-400 font-medium uppercase mb-2">MOQ</span>
-                                <span class="block text-xl font-bold text-slate-900">4,000</span>
+                            <div>
+                                <h3 class="text-[14px] font-bold text-slate-900 mb-2">GreenThread Manufacturing</h3>
+                                <div
+                                    class="flex flex-wrap items-center gap-y-2 gap-x-4 text-[12px] text-slate-500 font-medium">
+                                    <div class="flex items-center gap-2">
+                                        <i class="ph ph-currency-eur text-base text-slate-400"></i>
+                                        <span>€4000</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="ph ph-clock text-base text-slate-400"></i>
+                                        <span>2 weeks</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="ph ph-package text-base text-slate-400"></i>
+                                        <span>100 units</span>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <i class="ph ph-calendar-blank text-base text-slate-400"></i>
+                                        <span>Submitted Jan 14, 2025</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="mb-8">
-                            <h4 class="text-xs font-bold text-slate-900 mb-2">Notes</h4>
-                            <p class="text-sm text-slate-500 leading-relaxed max-w-2xl">
-                                We can meet all your requirements with GOTS certified organic cotton. Price includes
-                                packaging.
-                            </p>
-                        </div>
-
-                        <div class="flex justify-end gap-3 pt-6 border-t border-gray-200">
+                        <div class="flex items-center gap-3 w-full md:w-auto">
                             <button
-                                class="px-6 py-2.5 text-sm font-medium text-slate-600 border border-gray-300 rounded-lg hover:bg-white bg-white w-24">Cancel</button>
+                                class="flex-1 md:flex-none px-8 py-2.5 bg-white border border-gray-200 text-slate-600 font-bold rounded-xl text-sm hover:bg-gray-50 transition-colors">
+                                Cancel
+                            </button>
                             <button
-                                class="px-6 py-2.5 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 w-24">Edit</button>
+                                class="flex-1 md:flex-none px-8 py-2.5 bg-[#448ae6] text-white font-bold rounded-xl text-sm hover:bg-blue-700 transition-colors">
+                                Edit
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -462,71 +457,71 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 pt-16 pb-8 shrink-0">
+    <footer class="bg-white border-t border-gray-200 py-12 shrink-0 relative mt-10 w-full">
         <div class="max-w-[1400px] mx-auto px-4 md:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
-                <div class="col-span-1 md:col-span-2">
-                    <div class="mb-4">
-                        <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-8 w-auto">
+            <div class="max-w-[1200px] mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-6 gap-12 mb-10">
+                    <div class="col-span-1 md:col-span-2">
+                        <div class="mb-4">
+                            <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-6 w-auto">
+                        </div>
+                        <p class="text-[#475569] text-[13px] leading-relaxed max-w-[280px]">
+                            AI-powered platform connecting brands<br />with manufacturers
+                        </p>
                     </div>
-                    <p class="text-slate-500 leading-relaxed max-w-sm">
-                        AI-powered platform connecting brands with manufacturers. Streamline your sourcing process with
-                        intelligent matchmaking.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-slate-900 mb-6">Platform</h4>
-                    <ul class="space-y-4 text-slate-500 text-sm">
-                        <li><a href="home.html" class="hover:text-blue-600 transition-colors">Home</a></li>
-                        <li><a href="for-brands.html" class="hover:text-blue-600 transition-colors">For Brands</a></li>
-                        <li><a href="for-manufacturers.html" class="hover:text-blue-600 transition-colors">For
-                                Manufacturers</a></li>
-                        <li><a href="ai-brief-assistant.html" class="hover:text-blue-600 transition-colors">AI Brief
-                                Assistant</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold text-slate-900 mb-6">Resources</h4>
-                    <ul class="space-y-4 text-slate-500 text-sm">
-                        <li><a href="api-documentation.html" class="hover:text-blue-600 transition-colors">API
-                                Documentation</a></li>
-                        <li><a href="help-center.html" class="hover:text-blue-600 transition-colors">Help Center</a>
-                        </li>
-                        <li><a href="product-categories.html" class="hover:text-blue-600 transition-colors">Product
-                                Categories</a></li>
-                        <li><a href="success-stories.html" class="hover:text-blue-600 transition-colors">Success
-                                Stories</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold text-slate-900 mb-6">Company</h4>
-                    <ul class="space-y-4 text-slate-500 text-sm">
-                        <li><a href="about-us.html" class="hover:text-blue-600 transition-colors">About Us</a></li>
-                        <li><a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a></li>
-                        <li><a href="privacy-policy.html" class="hover:text-blue-600 transition-colors">Privacy
-                                Policy</a></li>
-                        <li><a href="terms-of-service.html" class="hover:text-blue-600 transition-colors">Terms of
-                                Service</a></li>
-                    </ul>
-                </div>
-            </div>
+                    <div class="col-span-1 md:col-span-1"></div> <!-- Spacer -->
 
-            <div
-                class="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
-                <p>&copy; 2026 DonauApp</p>
-                <div class="flex items-center gap-6">
-                    <div class="flex items-center gap-2 cursor-pointer hover:text-slate-600">
-                        <i class="ph ph-globe"></i>
-                        <span>English</span>
+                    <div class="col-span-1">
+                        <h4 class="font-bold text-[#0e1726] text-[14px] mb-4">Platform</h4>
+                        <ul class="space-y-[12px] text-[#475569] text-[13px]">
+                            <li><a href="home.html" class="hover:text-[#448ae6] transition-colors">Home</a></li>
+                            <li><a href="#" class="hover:text-[#448ae6] transition-colors">Brands</a></li>
+                            <li><a href="#" class="hover:text-[#448ae6] transition-colors">Manufacturers</a></li>
+                        </ul>
                     </div>
-                    <div class="flex items-center gap-2 cursor-pointer hover:text-slate-600">
-                        <i class="ph ph-currency-eur"></i>
-                        <span>EUR</span>
+                    <div class="col-span-1">
+                        <h4 class="font-bold text-[#0e1726] text-[14px] mb-4">Company</h4>
+                        <ul class="space-y-[12px] text-[#475569] text-[13px]">
+                            <li><a href="about-us.html" class="hover:text-[#448ae6] transition-colors">About Us</a></li>
+                            <li><a href="contact.html" class="hover:text-[#448ae6] transition-colors">Contact</a></li>
+                            <li><a href="privacy-policy.html" class="hover:text-[#448ae6] transition-colors">Privacy
+                                    Policy</a></li>
+                            <li><a href="terms-of-service.html" class="hover:text-[#448ae6] transition-colors">Terms of
+                                    Service</a></li>
+                        </ul>
                     </div>
-                    <div class="flex items-center gap-4">
-                        <a href="#" class="hover:text-slate-600"><i class="ph ph-facebook-logo text-lg"></i></a>
-                        <a href="#" class="hover:text-slate-600"><i class="ph ph-instagram-logo text-lg"></i></a>
-                        <a href="#" class="hover:text-slate-600"><i class="ph ph-linkedin-logo text-lg"></i></a>
+                    <div class="col-span-1">
+                        <h4 class="font-bold text-[#0e1726] text-[15px] mb-5">Contact</h4>
+                        <ul class="text-[#0e1726] text-[15px] mb-6">
+                            <li><a href="mailto:info@donauai.com"
+                                    class="hover:text-[#448ae6] transition-colors">info@donauai.com</a></li>
+                        </ul>
+                        <div class="flex items-center gap-[16px]">
+                            <a href="#"
+                                class="w-[42px] h-[42px] rounded-full bg-[#f1f5f9] flex items-center justify-center text-[#0e1726] hover:bg-[#e2e8f0] transition-colors"><i
+                                    class="fa-brands fa-facebook-f text-[19px]"></i></a>
+                            <a href="#"
+                                class="w-[42px] h-[42px] rounded-full bg-[#f1f5f9] flex items-center justify-center text-[#0e1726] hover:bg-[#e2e8f0] transition-colors"><i
+                                    class="fa-brands fa-instagram text-[23px]"></i></a>
+                            <a href="#"
+                                class="w-[42px] h-[42px] rounded-full bg-[#f1f5f9] flex items-center justify-center text-[#0e1726] hover:bg-[#e2e8f0] transition-colors"><i
+                                    class="fa-brands fa-linkedin-in text-[19px]"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="border-t border-gray-200 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] text-[#64748b]">
+                    <p>&copy; 2026 DonauApp</p>
+                    <div class="flex items-center gap-6">
+                        <div class="flex items-center gap-[6px] cursor-pointer hover:text-[#0e1726]">
+                            <i class="ph ph-globe text-[16px]"></i>
+                            <span>English</span>
+                        </div>
+                        <div class="flex items-center gap-[6px] cursor-pointer hover:text-[#0e1726]">
+                            <i class="ph ph-currency-eur text-[16px]"></i>
+                            <span>EUR</span>
+                        </div>
                     </div>
                 </div>
             </div>
