@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function BriefDetailSubmitProposals() {
   return (
-    <div className="max-w-[1240px] mx-auto mb-12">
+    <div className="max-w-[1240px] mx-auto mb-12 md:px-[152px]">
       {/* Proposal Form Title and AI Draft */}
       <div className="flex flex-col md:flex-row items-start justify-between mb-8 gap-4">
         <div>
