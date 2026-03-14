@@ -1,0 +1,104 @@
+/* Shared styles for auth pages — extracted from inline <style> blocks */
+
+.exact-btn {
+  background-color: #448ae6 !important;
+  height: 56px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.exact-btn:hover {
+  background-color: #3b76c4 !important;
+}
+
+.exact-btn-sm {
+  background-color: #448ae6 !important;
+  height: 44px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.exact-btn-sm:hover {
+  background-color: #3b76c4 !important;
+}
+
+.exact-btn-xs {
+  background-color: #448ae6 !important;
+  height: 40px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.exact-btn-xs:hover {
+  background-color: #3b76c4 !important;
+}
+
+.exact-input {
+  border-radius: 10px;
+  border-color: #d1d5db;
+  color: #0e1726;
+  font-size: 15px;
+}
+
+.exact-input::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+.exact-input:focus {
+  border-color: #448ae6;
+  box-shadow: none;
+  outline: none;
+}
+
+.exact-input-active {
+  border-color: #448ae6 !important;
+}
+
+.exact-checkbox {
+  width: 20px;
+  height: 20px;
+  border-color: #d1d5db;
+  border-radius: 4px;
+}
+
+.exact-checkbox:checked {
+  background-color: #448ae6 !important;
+  border-color: #448ae6 !important;
+}
+
+.exact-link {
+  color: #448ae6 !important;
+}
+
+.exact-link:hover {
+  color: #3b76c4 !important;
+  text-decoration: underline;
+}
+
+.icon-circle {
+  background-color: #448ae6;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+}
+
+.error-text {
+  color: #dc2626 !important;
+}
+
+.error-border {
+  border-color: #dc2626 !important;
+  color: #dc2626 !important;
+}
+
+.error-text i {
+  color: inherit;
+}

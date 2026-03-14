@@ -1,0 +1,31 @@
+.btn-micro {
+  font-size: 11px !important;
+  padding: 5px 14px !important;
+  border-radius: 6px !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+}
+
+.btn-dots {
+  width: 32px !important;
+  height: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 9999px !important;
+  color: #448ae6 !important;
+}
+
+.brief-card-header {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.5rem !important;
+}
+
+@media (min-width: 768px) {
+  .brief-card-header {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    align-items: center !important;
+  }
+}
