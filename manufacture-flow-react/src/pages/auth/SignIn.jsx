@@ -2,14 +2,19 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import '../../styles/auth.css'
 import { usePasswordToggle } from '../../hooks/usePasswordToggle'
+import { useAuth } from '../../context/AuthContext'
+import authService from '../../services/authService'
 
 export default function SignIn() {
   const navigate = useNavigate()
+  const { login } = useAuth()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('**********')
   const [passwordVisible, togglePasswordVisibility] = usePasswordToggle()
   const [emailError, setEmailError] = useState(false)
   const [passwordError, setPasswordError] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [apiError, setApiError] = useState('')
 
   const validateEmail = (value) => {
     const isValid = value.trim().length > 0
@@ -23,7 +28,7 @@ export default function SignIn() {
     return isValid
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const isEmailValid = validateEmail(email)
     const isPasswordValid = validatePassword(password)
@@ -32,7 +37,18 @@ export default function SignIn() {
     if (!isPasswordValid) setPasswordError(true)
 
     if (isEmailValid && isPasswordValid) {
-      navigate('/dashboard')
+      setLoading(true)
+      setApiError('')
+      try {
+        const response = await authService.login(email, password)
+        login(response.user, response.token)
+        navigate('/dashboard')
+      } catch (err) {
+        setApiError('Incorrect email or password. Please try again.')
+        console.error('Login error:', err)
+      } finally {
+        setLoading(false)
+      }
     }
   }
 
@@ -124,12 +140,20 @@ export default function SignIn() {
               </Link>
             </div>
 
+            {apiError && (
+              <div className="flex items-center gap-2 error-text text-sm font-medium animate-fade-in" style={{ marginBottom: '-12px' }}>
+                <i className="ph-fill ph-warning-circle text-base"></i>
+                <span>{apiError}</span>
+              </div>
+            )}
+
             <button
               type="submit"
-              className="w-full flex items-center justify-center text-white font-bold transition-all cursor-pointer exact-btn"
+              disabled={loading}
+              className={`w-full flex items-center justify-center text-white font-bold transition-all cursor-pointer exact-btn ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
               style={{ fontSize: '16px', marginTop: '8px' }}
             >
-              Sign In
+              {loading ? 'Signing In...' : 'Sign In'}
             </button>
           </div>
         </form>

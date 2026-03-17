@@ -1,43 +1,12 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import briefService from '../../services/briefService'
 
 const statsData = [
   { label: 'New Invites', value: '15', icon: 'ph-tray' },
   { label: 'Under Discussion', value: '2', icon: 'ph-envelope-simple' },
   { label: 'Active Proposals', value: '3', icon: 'ph-file-text' },
   { label: 'Matched Briefs', value: '5', icon: 'ph-check-circle' },
-]
-
-const briefsData = [
-  {
-    title: 'Premium Vitamin D3 Supplement',
-    company: 'Evergreenapparel.co',
-    status: 'Invited',
-    statusColor: 'bg-[#e0e7ff] text-[#6366f1]',
-    category: 'Dietry Supplements',
-    budget: '€1000 - €100000',
-    units: '400 units',
-    date: '2026-04-15',
-  },
-  {
-    title: 'Premium Vitamin D3 Supplement',
-    company: 'Evergreenapparel.co',
-    status: 'Proposal Submitted',
-    statusColor: 'bg-[#cffafe] text-[#0ea5e9]',
-    category: 'Dietry Supplements',
-    budget: '€1000 - €100000',
-    units: '400 units',
-    date: '2026-04-15',
-  },
-  {
-    title: 'Premium Vitamin D3 Supplement',
-    company: 'Evergreenapparel.co',
-    status: 'Matched',
-    statusColor: 'bg-[#fef3c7] text-[#f59e0b]',
-    category: 'Dietry Supplements',
-    budget: '€1000 - €100000',
-    units: '400 units',
-    date: '2026-04-15',
-  },
 ]
 
 const notificationsData = [
@@ -69,6 +38,24 @@ const notificationsData = [
 ]
 
 export default function DashboardFilled() {
+  const [briefs, setBriefs] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchBriefs = async () => {
+      try {
+        const data = await briefService.getBriefs()
+        setBriefs(data)
+      } catch (error) {
+        console.error('Error fetching briefs:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchBriefs()
+  }, [])
+
   return (
     <div className="max-w-[1240px] mx-auto mb-10">
       {/* Page Header */}
@@ -116,43 +103,54 @@ export default function DashboardFilled() {
             <Link to="/briefs" className="text-[14px] text-[#448ae6] font-medium hover:underline">View All</Link>
           </div>
 
-          <div className="flex flex-col gap-5 p-6">
-            {briefsData.map((brief, i) => (
-              <div key={i} className="p-6 relative bg-[#f4f6f9] rounded-[16px]">
-                <Link
-                  to="/brief-detail"
-                  className="absolute top-6 right-6 flex items-center gap-1 text-[#448ae6] text-[14px] font-medium hover:underline hover:opacity-80"
-                >
-                  View Details <i className="ph ph-arrow-up-right text-[16px]"></i>
-                </Link>
-                <div className="flex flex-col">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h4 className="font-bold text-[#0e1726] text-[16px]">{brief.title}</h4>
-                    <span className={`px-3 py-1 rounded-full ${brief.statusColor} text-[13px] font-medium`}>{brief.status}</span>
-                    <i className="ph ph-info text-[#94a3b8] text-[18px]"></i>
-                  </div>
-                  <p className="text-[#64748b] text-[14px] mb-5">{brief.company}</p>
-                  <div className="flex flex-wrap items-center gap-4">
-                    <div className="flex items-center gap-2 text-[#334155] px-4 py-1.5 rounded-full border border-gray-200 bg-white">
-                      <i className="ph ph-file-text text-[16px] text-[#64748b]"></i>
-                      <span className="text-[13px] font-medium">{brief.category}</span>
+          <div className="flex flex-col gap-5 p-6 min-h-[400px]">
+            {loading ? (
+              <div className="flex-1 flex items-center justify-center py-20">
+                <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
+              </div>
+            ) : briefs.length > 0 ? (
+              briefs.map((brief, i) => (
+                <div key={i} className="p-6 relative bg-[#f4f6f9] rounded-[16px]">
+                  <Link
+                    to="/brief-detail"
+                    className="absolute top-6 right-6 flex items-center gap-1 text-[#448ae6] text-[14px] font-medium hover:underline hover:opacity-80"
+                  >
+                    View Details <i className="ph ph-arrow-up-right text-[16px]"></i>
+                  </Link>
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-3 mb-2">
+                      <h4 className="font-bold text-[#0e1726] text-[16px]">{brief.title}</h4>
+                      <span className={`px-3 py-1 rounded-full ${brief.statusColor || 'bg-[#e0e7ff] text-[#6366f1]'} text-[13px] font-medium`}>{brief.status}</span>
+                      <i className="ph ph-info text-[#94a3b8] text-[18px]"></i>
                     </div>
-                    <div className="flex items-center gap-2 text-[#334155] px-4 py-1.5 rounded-full border border-gray-200 bg-white">
-                      <i className="ph ph-wallet text-[16px] text-[#64748b]"></i>
-                      <span className="text-[13px] font-medium">{brief.budget}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[#334155] px-4 py-1.5 rounded-full border border-gray-200 bg-white">
-                      <i className="ph ph-package text-[16px] text-[#64748b]"></i>
-                      <span className="text-[13px] font-medium">{brief.units}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-[#334155] px-4 py-1.5 rounded-full border border-gray-200 bg-white">
-                      <i className="ph ph-calendar-blank text-[16px] text-[#64748b]"></i>
-                      <span className="text-[13px] font-medium">{brief.date}</span>
+                    <p className="text-[#64748b] text-[14px] mb-5">{brief.company}</p>
+                    <div className="flex flex-wrap items-center gap-4">
+                      <div className="flex items-center gap-2 text-[#334155] px-4 py-1.5 rounded-full border border-gray-200 bg-white">
+                        <i className="ph ph-file-text text-[16px] text-[#64748b]"></i>
+                        <span className="text-[13px] font-medium">{brief.category}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-[#334155] px-4 py-1.5 rounded-full border border-gray-200 bg-white">
+                        <i className="ph ph-wallet text-[16px] text-[#64748b]"></i>
+                        <span className="text-[13px] font-medium">{brief.budget}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-[#334155] px-4 py-1.5 rounded-full border border-gray-200 bg-white">
+                        <i className="ph ph-package text-[16px] text-[#64748b]"></i>
+                        <span className="text-[13px] font-medium">{brief.units}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-[#334155] px-4 py-1.5 rounded-full border border-gray-200 bg-white">
+                        <i className="ph ph-calendar-blank text-[16px] text-[#64748b]"></i>
+                        <span className="text-[13px] font-medium">{brief.date}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
+              ))
+            ) : (
+              <div className="flex-1 flex flex-col items-center justify-center py-20 text-center">
+                <i className="ph ph-folder-open text-[48px] text-gray-300 mb-4"></i>
+                <p className="text-gray-500">No recent briefs found</p>
               </div>
-            ))}
+            )}
           </div>
         </div>
 

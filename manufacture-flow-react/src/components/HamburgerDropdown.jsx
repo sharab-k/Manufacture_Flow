@@ -1,8 +1,17 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useDropdown } from '../hooks/useDropdown'
+import { useAuth } from '../context/AuthContext'
 
 export default function HamburgerDropdown() {
   const { isOpen, toggle, ref } = useDropdown()
+  const { user, logout } = useAuth()
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    logout()
+    toggle()
+    navigate('/signin')
+  }
 
   return (
     <div className="relative" ref={ref}>
@@ -17,8 +26,8 @@ export default function HamburgerDropdown() {
       {isOpen && (
         <div className="absolute right-0 mt-3 w-64 bg-white rounded-2xl border border-[#e2e8f0] shadow-[0_8px_30px_rgb(0,0,0,0.08)] z-50 animate-fade-in text-left">
           <div className="px-6 pt-6 pb-5 border-b border-gray-50">
-            <p className="text-[15px] font-bold text-[#0e1726]">Mark Thompson</p>
-            <p className="text-[13px] text-[#64748b] mt-0.5">mark@donau.ai</p>
+            <p className="text-[15px] font-bold text-[#0e1726]">{user?.name || 'Mark Thompson'}</p>
+            <p className="text-[13px] text-[#64748b] mt-0.5">{user?.email || 'mark@donau.ai'}</p>
           </div>
           <div className="p-2">
             <Link to="/dashboard" onClick={toggle} className="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#64748b] hover:bg-[#f8fafc] hover:text-[#448ae6] transition-colors">
@@ -45,10 +54,13 @@ export default function HamburgerDropdown() {
             </a>
           </div>
           <div className="p-2 border-t border-gray-50">
-            <Link to="/signin" onClick={toggle} className="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#ef4444] hover:bg-red-50 transition-colors">
+            <button
+              onClick={handleLogout}
+              className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#ef4444] hover:bg-red-50 transition-colors text-left"
+            >
               <i className="ph ph-sign-out text-[18px]"></i>
               Sign Out
-            </Link>
+            </button>
           </div>
         </div>
       )}
