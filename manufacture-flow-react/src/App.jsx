@@ -1,5 +1,64 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './components/ProtectedRoute'
+
+// Layouts
+import PublicLayout from './layouts/PublicLayout'
+import AuthLayout from './components/layouts/AuthLayout'
+import DashboardLayout from './components/layouts/DashboardLayout'
+
+// Auth Pages
+import AccountVerified from './pages/auth/AccountVerified'
+import ForgotPassword from './pages/auth/ForgotPassword'
+import PasswordSuccessful from './pages/auth/PasswordSuccessful'
+import ResetPassword from './pages/auth/ResetPassword'
+import SignIn from './pages/auth/SignIn'
+import SignInSimple from './pages/auth/SignInSimple'
+import SignUp from './pages/auth/SignUp'
+import VerifyEmail from './pages/auth/VerifyEmail'
+
+// Briefs Pages
+import AIBriefAssistant from './pages/briefs/AIBriefAssistant'
+import BriefDetail from './pages/briefs/BriefDetail'
+import BriefDetailChat from './pages/briefs/BriefDetailChat'
+import BriefDetailProposal from './pages/briefs/BriefDetailProposal'
+import BriefDetailProposalSubmitted from './pages/briefs/BriefDetailProposalSubmitted'
+import BriefDetailSubmitProposals from './pages/briefs/BriefDetailSubmitProposals'
+import Briefs from './pages/briefs/Briefs'
+import SubmitProposal from './pages/briefs/SubmitProposal'
+
+// Dashboard Pages
+import DashboardEmpty from './pages/dashboard/DashboardEmpty'
+import DashboardFilled from './pages/dashboard/DashboardFilled'
+
+// Messages Pages
+import Messages from './pages/messages/Messages'
+import MessagesEmpty from './pages/messages/MessagesEmpty'
+
+// Onboarding Pages
+import Onboarding1 from './pages/onboarding/Onboarding1'
+import Onboarding2 from './pages/onboarding/Onboarding2'
+import Onboarding3 from './pages/onboarding/Onboarding3'
+import Onboarding4 from './pages/onboarding/Onboarding4'
+import Onboarding5 from './pages/onboarding/Onboarding5'
+
+// Public Pages
+import APIDocumentation from './pages/public/APIDocumentation'
+import AboutUs from './pages/public/AboutUs'
+import Contact from './pages/public/Contact'
+import ForBrands from './pages/public/ForBrands'
+import ForManufacturers from './pages/public/ForManufacturers'
+import HelpCenter from './pages/public/HelpCenter'
+import Home from './pages/public/Home'
+import PrivacyPolicy from './pages/public/PrivacyPolicy'
+import ProductCategories from './pages/public/ProductCategories'
+import SuccessStories from './pages/public/SuccessStories'
+import TermsOfService from './pages/public/TermsOfService'
+
+// Settings Pages
+import SettingsAccount from './pages/settings/SettingsAccount'
+import SettingsManufacturer from './pages/settings/SettingsManufacturer'
+import SettingsSecurity from './pages/settings/SettingsSecurity'
 
 function App() {
   return (
