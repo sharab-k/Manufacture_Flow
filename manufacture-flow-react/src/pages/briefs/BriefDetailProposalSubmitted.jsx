@@ -4,7 +4,7 @@ import BriefDetailTabs from '../../components/BriefDetailTabs'
 
 export default function BriefDetailProposalSubmitted() {
   return (
-    <div className="max-w-[1200px] mx-auto mb-12">
+    <div className="max-w-[1240px] mx-auto mb-12">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start mb-6 gap-4">
         <div>

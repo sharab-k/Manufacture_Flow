@@ -51,7 +51,7 @@ export default function Briefs() {
   }
 
   return (
-    <div className="max-w-[1200px] mx-auto mb-12">
+    <div className="max-w-[1240px] mx-auto mb-12">
       {/* Page Header */}
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-slate-900">Available My Briefs</h1>

@@ -8,7 +8,7 @@ const statsData = [
 
 export default function DashboardEmpty() {
   return (
-    <div className="max-w-[1200px] mb-12">
+    <div className="max-w-[1240px] mb-12">
       {/* Page Header */}
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-slate-900">Manufacture Dashboard</h1>

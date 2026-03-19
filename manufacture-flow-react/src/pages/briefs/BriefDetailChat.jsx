@@ -4,7 +4,7 @@ import BriefDetailTabs from '../../components/BriefDetailTabs'
 
 export default function BriefDetailChat() {
   return (
-    <div className="max-w-[1200px] mx-auto w-full flex flex-col grow">
+    <div className="max-w-[1240px] mx-auto w-full flex flex-col grow">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start mb-6 shrink-0 gap-4">
         <div>
