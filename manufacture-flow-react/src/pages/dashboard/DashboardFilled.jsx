@@ -57,7 +57,7 @@ export default function DashboardFilled() {
   }, [])
 
   return (
-    <div className="max-w-[1240px] mx-auto mb-10">
+    <div className="max-w-310 mx-auto mb-10">
       {/* Page Header */}
       <div className="mb-6 mt-4">
         <h1 className="text-[24px] font-bold text-[#0e1726] mb-1">Manufacture Dashboard</h1>
@@ -67,7 +67,7 @@ export default function DashboardFilled() {
       {/* Alert Banner */}
       <div className="bg-[#f0f9ff] border border-[#bae6fd] rounded-[10px] p-2 pr-4 flex flex-col md:flex-row items-center justify-between mb-8">
         <div className="flex items-center gap-4">
-          <div className="w-10 h-10 rounded-[8px] bg-[#448ae6] flex items-center justify-center text-white shrink-0">
+          <div className="w-10 h-10 rounded-lg bg-[#448ae6] flex items-center justify-center text-white shrink-0">
             <i className="ph ph-sparkle text-[20px]"></i>
           </div>
           <p className="text-[#0e1726] text-[14px]">
@@ -82,12 +82,12 @@ export default function DashboardFilled() {
       {/* Stats Row */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
         {statsData.map((stat, i) => (
-          <div key={i} className="p-[20px] pb-[16px] border border-[#e2e8f0] bg-white rounded-[16px] flex items-center justify-between shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+          <div key={i} className="p-5 pb-4 border border-[#e2e8f0] bg-white rounded-2xl flex items-center justify-between shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
             <div>
-              <span className="block text-[13px] text-[#64748b] mb-[6px]">{stat.label}</span>
+              <span className="block text-[13px] text-[#64748b] mb-1.5">{stat.label}</span>
               <span className="block text-[24px] font-bold text-[#0e1726] leading-none">{stat.value}</span>
             </div>
-            <div className="w-12 h-12 rounded-[12px] bg-[#f8fafc] flex items-center justify-center border border-gray-100">
+            <div className="w-12 h-12 rounded-xl bg-[#f8fafc] flex items-center justify-center border border-gray-100">
               <i className={`ph ${stat.icon} text-[20px] text-[#334155]`}></i>
             </div>
           </div>
@@ -97,20 +97,20 @@ export default function DashboardFilled() {
       {/* Content Grid */}
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
         {/* Recent Briefs (Span 2) */}
-        <div className="col-span-1 xl:col-span-2 bg-white border border-[#e2e8f0] rounded-[16px] shadow-[0_1px_2px_rgba(0,0,0,0.02)] flex flex-col overflow-hidden h-fit">
+        <div className="col-span-1 xl:col-span-2 bg-white border border-[#e2e8f0] rounded-2xl shadow-[0_1px_2px_rgba(0,0,0,0.02)] flex flex-col overflow-hidden h-fit">
           <div className="flex justify-between items-center p-6 border-b border-[#e2e8f0]">
             <h3 className="font-bold text-[#0e1726] text-[16px]">Recent Briefs</h3>
             <Link to="/briefs" className="text-[14px] text-[#448ae6] font-medium hover:underline">View All</Link>
           </div>
 
-          <div className="flex flex-col gap-5 p-6 min-h-[400px]">
+          <div className="flex flex-col gap-5 p-6 min-h-100">
             {loading ? (
               <div className="flex-1 flex items-center justify-center py-20">
                 <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-500 border-t-transparent"></div>
               </div>
             ) : briefs.length > 0 ? (
               briefs.map((brief, i) => (
-                <div key={i} className="p-6 relative bg-[#f4f6f9] rounded-[16px]">
+                <div key={i} className="p-6 relative bg-[#f4f6f9] rounded-2xl">
                   <Link
                     to="/brief-detail"
                     className="absolute top-6 right-6 flex items-center gap-1 text-[#448ae6] text-[14px] font-medium hover:underline hover:opacity-80"
@@ -155,7 +155,7 @@ export default function DashboardFilled() {
         </div>
 
         {/* Notifications (Span 1) */}
-        <div className="col-span-1 bg-white border border-[#e2e8f0] rounded-[16px] shadow-[0_1px_2px_rgba(0,0,0,0.02)] flex flex-col overflow-hidden h-fit">
+        <div className="col-span-1 bg-white border border-[#e2e8f0] rounded-2xl shadow-[0_1px_2px_rgba(0,0,0,0.02)] flex flex-col overflow-hidden h-fit">
           <div className="flex justify-between items-center p-6 border-b border-[#e2e8f0]">
             <h3 className="font-bold text-[#0e1726] text-[16px]">Notifications</h3>
             <a href="#" className="text-[14px] text-[#448ae6] font-medium hover:underline">View All</a>
