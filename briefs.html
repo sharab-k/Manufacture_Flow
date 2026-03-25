@@ -18,23 +18,10 @@
 
         .btn-micro {
             font-size: 11px !important;
-            padding: 0 !important;
+            padding: 5px 14px !important;
             border-radius: 6px !important;
             font-weight: 500 !important;
             white-space: nowrap !important;
-        }
-
-        .btn-same-size {
-            width: 120px !important;
-            height: 38px !important;
-            display: inline-flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            font-size: 11px !important;
-            border-radius: 6px !important;
-            font-weight: 500 !important;
-            white-space: nowrap !important;
-            padding: 0 !important;
         }
 
         .btn-dots {
@@ -72,55 +59,55 @@
     <!-- Mobile Menu Drawer -->
     <div id="mobile-menu"
         class="fixed inset-y-0 left-0 w-64 bg-white z-[70] transform -translate-x-full transition-transform duration-300 flex flex-col">
-        <div class="px-6 py-4 flex items-center justify-between border-b border-gray-100">
+        <div class="px-6 py-4 flex items-center justify-between border-b border-[#f1f5f9]">
             <img src="./src/images/donau-logo.png" alt="Donau AI" class="h-6 w-auto">
         </div>
 
         <!-- User Profile (Mobile Only) -->
-        <div class="px-6 py-4 border-b border-gray-100">
+        <div class="px-6 py-4 border-b border-[#f1f5f9]">
             <div class="flex items-center gap-3 mb-3">
                 <div
-                    class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold">
+                    class="w-10 h-10 rounded-full bg-[#448ae6] text-white flex items-center justify-center text-sm font-bold">
                     MT</div>
                 <div class="flex-1 min-w-0">
-                    <p class="text-sm font-bold text-slate-900">Mark Thompson</p>
-                    <p class="text-xs text-slate-500 font-medium truncate">mark@donau.ai</p>
+                    <p class="text-sm font-bold text-[#0e1726]">Mark Thompson</p>
+                    <p class="text-xs text-[#64748b] font-medium truncate">mark@donau.ai</p>
                 </div>
             </div>
         </div>
 
         <nav class="p-4 space-y-2 flex-1">
             <a href="dashboard-filled.html"
-                class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#64748b] hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
                 <i class="ph ph-squares-four text-lg"></i>
                 Dashboard
             </a>
             <a href="briefs.html"
-                class="flex items-center gap-3 px-4 py-3 rounded-xl bg-blue-50 text-blue-600 font-medium text-sm transition-colors">
+                class="flex items-center gap-3 px-4 py-3 rounded-xl bg-blue-50 text-[#448ae6] font-medium text-sm transition-colors">
                 <i class="ph ph-briefcase text-lg"></i>
                 Product Briefs
             </a>
             <a href="messages.html"
-                class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#64748b] hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
                 <i class="ph ph-chat-circle-dots text-lg"></i>
                 Messages
             </a>
         </nav>
 
         <!-- User Actions (Mobile Only) -->
-        <div class="p-4 border-t border-gray-100 space-y-1">
+        <div class="p-4 border-t border-[#f1f5f9] space-y-1">
             <a href="settings-account.html"
-                class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#334155] hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
                 <i class="ph ph-user text-lg"></i>
                 My Profile
             </a>
             <a href="settings-account.html"
-                class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#334155] hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
                 <i class="ph ph-gear text-lg"></i>
                 Settings
             </a>
             <a href="help-center.html"
-                class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
+                class="flex items-center gap-3 px-4 py-3 rounded-xl text-[#334155] hover:bg-gray-50 hover:text-slate-900 font-medium text-sm transition-colors">
                 <i class="ph ph-headset text-lg"></i>
                 Support
             </a>
@@ -136,7 +123,7 @@
     <div class="flex-1 flex flex-col min-w-0">
 
         <!-- Header -->
-        <header class="bg-white border-b border-gray-200 px-4 md:px-8 shrink-0 h-[72px] sticky top-0 z-50">
+        <header class="bg-white border-b border-[#e2e8f0] px-4 md:px-8 shrink-0 h-[72px] sticky top-0 z-50">
             <div class="max-w-[1240px] mx-auto w-full h-full flex items-center justify-between">
                 <div class="flex items-center gap-[60px] h-full">
                     <!-- Logo -->
@@ -183,7 +170,7 @@
                 <!-- Right Actions -->
                 <div class="flex items-center gap-3">
                     <!-- Notifications -->
-                    <div class="relative hidden md:flex items-center">
+                    <div class="relative flex items-center">
                         <button id="notification-bell" data-dropdown-trigger
                             data-dropdown-target="notification-dropdown"
                             class="text-[#64748b] hover:text-[#0e1726] transition-colors relative h-10 w-10 flex items-center justify-center rounded-full hover:bg-gray-50">
@@ -272,7 +259,7 @@
                     </div>
 
                     <!-- Divider -->
-                    <div class="hidden md:block h-6 w-px bg-gray-200 mx-1"></div>
+                    <div class="h-6 w-px bg-gray-200 mx-1"></div>
 
                     <!-- User Profile Desktop -->
                     <div
@@ -314,11 +301,6 @@
                             <div class="p-2 border-t border-gray-50">
                                 <a href="settings-account.html"
                                     class="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#64748b] hover:bg-[#f8fafc] hover:text-[#448ae6] transition-colors">
-                                    <i class="ph ph-user text-[18px]"></i>
-                                    My Profile
-                                </a>
-                                <a href="settings-account.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#64748b] hover:bg-[#f8fafc] hover:text-[#448ae6] transition-colors">
                                     <i class="ph ph-gear text-[18px]"></i>
                                     Settings
                                 </a>
@@ -326,11 +308,6 @@
                                     class="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#64748b] hover:bg-[#f8fafc] hover:text-[#448ae6] transition-colors">
                                     <i class="ph ph-globe text-[18px]"></i>
                                     Language
-                                </a>
-                                <a href="support.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#64748b] hover:bg-[#f8fafc] hover:text-[#448ae6] transition-colors">
-                                    <i class="ph ph-question text-[18px]"></i>
-                                    Support
                                 </a>
                             </div>
                             <div class="p-2 border-t border-gray-50">
@@ -347,367 +324,421 @@
         </header>
 
         <!-- Main Scrollable Area -->
-        <main class="flex-1 w-full max-w-[1400px] mx-auto p-4 md:p-8 pt-6 md:pt-8">
+        <main class="flex-1 w-full max-w-[1400px] mx-auto p-4 md:p-8">
             <div class="max-w-[1240px] mx-auto mb-12">
 
-                <div class="mb-6 md:mb-6 mt-2 md:mt-0">
-                    <h1 class="text-2xl font-bold text-slate-900">Available My Briefs</h1>
-                    <p class="text-slate-500 text-[13px] md:text-sm mt-0.5 md:mt-1">Browse and review product briefs from potential clients</p>
+                <div class="mb-6">
+                    <h1 class="text-2xl font-bold text-[#0e1726]">Available My Briefs</h1>
+                    <p class="text-[#64748b] text-sm mt-1">Browse and review product briefs from potential clients</p>
                 </div>
 
 
                 <!-- Stats Row -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mb-12">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
                     <!-- New Invites -->
                     <div
-                        class="p-3 md:p-[20px] pb-3 md:pb-[16px] border border-[#e2e8f0] bg-white rounded-[16px] flex items-center justify-between shadow-none md:shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+                        class="p-[20px] pb-[16px] border border-[#e2e8f0] bg-white rounded-[16px] flex items-center justify-between shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
                         <div>
-                            <span class="block text-[12.5px] md:text-[13px] text-[#64748b] mb-[6px] whitespace-nowrap tracking-tight">New Invites</span>
+                            <span class="block text-[13px] text-[#64748b] mb-[6px]">New Invites</span>
                             <span class="block text-[24px] font-bold text-[#0e1726] leading-none">15</span>
                         </div>
                         <div
-                            class="hidden md:flex w-12 h-12 rounded-[12px] bg-[#f8fafc] items-center justify-center border border-gray-100">
+                            class="w-12 h-12 rounded-[12px] bg-[#f8fafc] flex items-center justify-center border border-[#f1f5f9]">
                             <i class="ph ph-tray text-[20px] text-[#334155]"></i>
                         </div>
                     </div>
 
                     <!-- Under Discussion -->
                     <div
-                        class="p-3 md:p-[20px] pb-3 md:pb-[16px] border border-[#e2e8f0] bg-white rounded-[16px] flex items-center justify-between shadow-none md:shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+                        class="p-[20px] pb-[16px] border border-[#e2e8f0] bg-white rounded-[16px] flex items-center justify-between shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
                         <div>
-                            <span class="block text-[12.5px] md:text-[13px] text-[#64748b] mb-[6px] whitespace-nowrap tracking-tight">Under Discussion</span>
+                            <span class="block text-[13px] text-[#64748b] mb-[6px]">Under Discussion</span>
                             <span class="block text-[24px] font-bold text-[#0e1726] leading-none">2</span>
                         </div>
                         <div
-                            class="hidden md:flex w-12 h-12 rounded-[12px] bg-[#f8fafc] items-center justify-center border border-gray-100">
+                            class="w-12 h-12 rounded-[12px] bg-[#f8fafc] flex items-center justify-center border border-[#f1f5f9]">
                             <i class="ph ph-envelope-simple text-[20px] text-[#334155]"></i>
                         </div>
                     </div>
 
                     <!-- Active Proposals -->
                     <div
-                        class="p-3 md:p-[20px] pb-3 md:pb-[16px] border border-[#e2e8f0] bg-white rounded-[16px] flex items-center justify-between shadow-none md:shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+                        class="p-[20px] pb-[16px] border border-[#e2e8f0] bg-white rounded-[16px] flex items-center justify-between shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
                         <div>
-                            <span class="block text-[12.5px] md:text-[13px] text-[#64748b] mb-[6px] whitespace-nowrap tracking-tight">Active Proposals</span>
+                            <span class="block text-[13px] text-[#64748b] mb-[6px]">Active Proposals</span>
                             <span class="block text-[24px] font-bold text-[#0e1726] leading-none">3</span>
                         </div>
                         <div
-                            class="hidden md:flex w-12 h-12 rounded-[12px] bg-[#f8fafc] items-center justify-center border border-gray-100">
+                            class="w-12 h-12 rounded-[12px] bg-[#f8fafc] flex items-center justify-center border border-[#f1f5f9]">
                             <i class="ph ph-file-text text-[20px] text-[#334155]"></i>
                         </div>
                     </div>
 
                     <!-- Matched Briefs -->
                     <div
-                        class="p-3 md:p-[20px] pb-3 md:pb-[16px] border border-[#e2e8f0] bg-white rounded-[16px] flex items-center justify-between shadow-none md:shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+                        class="p-[20px] pb-[16px] border border-[#e2e8f0] bg-white rounded-[16px] flex items-center justify-between shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
                         <div>
-                            <span class="block text-[12.5px] md:text-[13px] text-[#64748b] mb-[6px] whitespace-nowrap tracking-tight">Matched Briefs</span>
+                            <span class="block text-[13px] text-[#64748b] mb-[6px]">Matched Briefs</span>
                             <span class="block text-[24px] font-bold text-[#0e1726] leading-none">5</span>
                         </div>
                         <div
-                            class="hidden md:flex w-12 h-12 rounded-[12px] bg-[#f8fafc] items-center justify-center border border-gray-100">
+                            class="w-12 h-12 rounded-[12px] bg-[#f8fafc] flex items-center justify-center border border-[#f1f5f9]">
                             <i class="ph ph-check-circle text-[20px] text-[#334155]"></i>
                         </div>
                     </div>
                 </div>
 
                 <!-- Main Content Card -->
-                <div class="bg-white border border-gray-200 rounded-2xl p-4 md:p-6 mb-8 md:mb-0">
+                <div class="bg-white border border-[#e2e8f0] rounded-xl p-6">
 
                     <!-- Filters -->
-                    <div class="flex flex-col md:flex-row gap-4 mb-6 md:mb-8">
-                        <div class="relative w-full md:grow">
-                            <i
-                                class="ph ph-magnifying-glass absolute left-4 md:left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-                            <input type="text" placeholder="Search..."
-                                class="w-full pl-10 pr-4 py-3 md:py-2 bg-white border border-[#e2e8f0] rounded-xl md:rounded-lg text-[14px] focus:outline-none focus:ring-1 focus:ring-blue-500">
+                    <div class="flex flex-col md:flex-row gap-3 md:gap-4 mb-6 md:mb-8">
+                        <div class="relative grow">
+                            <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-[#94a3b8]"></i>
+                            <input type="text" placeholder="Search..." class="w-full pl-10 pr-4 py-2.5 md:py-2 bg-white border border-[#e2e8f0] rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-[#448ae6] transition-all">
                         </div>
-                        <div class="relative w-full md:w-48 hidden md:block">
-                            <select
-                                class="w-full px-4 py-3 md:py-2 border border-[#e2e8f0] rounded-xl md:rounded-lg text-[14px] text-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500 appearance-none bg-white">
-                                <option>Filter by date</option>
+                        <div class="flex gap-2 md:gap-4">
+                            <select class="flex-1 md:w-40 px-3 py-2.5 md:py-2 bg-white border border-[#e2e8f0] rounded-lg text-sm text-[#334155] focus:outline-none focus:ring-1 focus:ring-[#448ae6] transition-all cursor-pointer">
+                                <option>Status: All</option>
+                                <option>Invited</option>
+                                <option>In Discussion</option>
+                                <option>Completed</option>
+                                <option>Proposal Submitted</option>
                             </select>
-                            <i
-                                class="ph ph-caret-down absolute right-4 md:right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
-                        </div>
-                        <div class="relative w-full md:w-48 hidden md:block">
-                            <select
-                                class="w-full px-4 py-3 md:py-2 border border-[#e2e8f0] rounded-xl md:rounded-lg text-[14px] text-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500 appearance-none bg-white">
-                                <option>Filter by category</option>
+                            <select class="flex-1 md:w-40 px-3 py-2.5 md:py-2 bg-white border border-[#e2e8f0] rounded-lg text-sm text-[#334155] focus:outline-none focus:ring-1 focus:ring-[#448ae6] transition-all cursor-pointer">
+                                <option>Category: All</option>
+                                <option>Supplements</option>
+                                <option>Apparel</option>
+                                <option>Electronics</option>
                             </select>
-                            <i
-                                class="ph ph-caret-down absolute right-4 md:right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
-                        </div>
-                        <div class="relative w-full md:w-48">
-                            <select
-                                class="w-full px-4 py-3 md:py-2 border border-[#e2e8f0] rounded-xl md:rounded-lg text-[14px] text-slate-500 focus:outline-none focus:ring-1 focus:ring-blue-500 appearance-none bg-white">
-                                <option>Filter by status</option>
-                            </select>
-                            <i
-                                class="ph ph-caret-down absolute right-4 md:right-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
                         </div>
                     </div>
 
                     <!-- Briefs List -->
-                    <div class="space-y-4 md:space-y-4 flex flex-col gap-4 md:gap-0">
+                    <div class="space-y-4">
 
-                        <!-- Brief 1 (Invited) -->
-                        <div class="bg-gray-50 rounded-[16px] md:rounded-2xl border-transparent p-4 md:p-6 transition-all brief-card-header">
-                            <div class="space-y-4 w-full">
-                                <div class="flex justify-between items-start">
+                        <!-- Brief 1 (Not Proceeding) -->
+                        <div class="bg-[#f8fafc] rounded-2xl border border-[#e2e8f0] md:border-transparent p-4 md:p-6 transition-all brief-card-header">
+                            <div class="space-y-3 md:space-y-4">
+                                <!-- Mobile Header -->
+                                <div class="flex items-center justify-between md:hidden mb-1">
                                     <div class="flex items-center gap-2">
-                                        <span class="bg-indigo-100 text-indigo-600 text-[12px] md:text-sm px-2.5 py-0.5 rounded-full font-medium">Invited</span>
-                                        <div class="relative group">
-                                            <i class="ph ph-info text-slate-400 text-[16px] md:text-lg cursor-help"></i>
-                                            <div class="hidden md:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
-                                                You've been invited to submit a proposal. Brands may consider multiple manufacturers before making a decision.
-                                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                                        <span class="bg-[#fee2e2] text-[#ef4444] text-[11px] px-2.5 py-0.5 rounded-full font-medium">Not Proceeding</span>
+                                        <i class="ph ph-info text-[#94a3b8] text-base"></i>
+                                    </div>
+                                    <button class="text-[#448ae6]"><i class="ph-bold ph-dots-three-outline-vertical text-lg"></i></button>
+                                </div>
+                                
+                                <div>
+                                    <div class="hidden md:flex items-center gap-2 mb-1">
+                                        <span class="text-xs text-[#448ae6] font-medium font-mono">#BR12345678</span>
+                                    </div>
+                                    <div class="flex flex-wrap items-center gap-3">
+                                        <a href="brief-detail.html" class="text-[14px] md:text-lg font-bold text-[#0e1726] hover:text-[#448ae6] transition-colors">Premium Vitamin D3 Supplement</a>
+                                        <span class="hidden md:inline-flex bg-[#fee2e2] text-[#ef4444] text-sm px-2.5 py-0.5 rounded-full font-medium">Not Proceeding</span>
+                                        <div class="relative group hidden md:block">
+                                            <i class="ph ph-info text-[#94a3b8] text-lg cursor-help"></i>
+                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-[#0e1726] text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
+                                                This brief is no longer proceeding. You can still view details but cannot submit a proposal.
+                                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#0e1726]"></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="md:hidden text-[#448ae6] hover:text-blue-600 transition-colors">
+                                </div>
+                                <p class="text-[12px] md:hidden text-[#64748b] mb-2">Evergreenapparel.co</p>
+                                <p class="hidden md:block text-sm text-[#64748b] max-w-3xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
+                                
+                                <div class="flex flex-wrap items-center gap-2 md:gap-4 text-[11px] md:text-sm text-[#334155]">
+                                    <div class="hidden md:flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-[#e2e8f0]">
+                                        <i class="ph ph-buildings text-lg text-[#94a3b8]"></i>
+                                        <span>Evergreenapparel.co</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-files text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">Dietary Supplements</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-wallet text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">&euro;1000 - &euro;100000</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-users text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">400 Units</span>
+                                    </div>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-calendar-blank text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">12/02/2026</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 md:mt-0 flex flex-col md:flex-row items-stretch md:items-center gap-2 md:justify-end">
+                                <a href="brief-detail.html" class="md:hidden w-full text-center py-2 bg-transparent text-[#448ae6] border border-[#448ae6] rounded-lg font-medium text-[13px] hover:bg-[#f0f9ff] transition-colors">View</a>
+                                <div class="hidden md:flex items-center gap-2">
+                                    <a href="brief-detail.html" class="btn-micro text-white bg-[#448ae6] hover:bg-[#3476cb] transition-colors">View Brief</a>
+                                    <button class="btn-dots hover:bg-[#f8fafc] transition-colors">
                                         <i class="ph-bold ph-dots-three-outline-vertical text-[20px]"></i>
                                     </button>
                                 </div>
-                                <div class="mb-3">
-                                    <div class="hidden md:flex items-center gap-2 mb-1">
-                                        <span class="text-xs text-blue-500 font-medium font-mono">#BR12345678</span>
-                                    </div>
-                                    <a href="brief-detail.html" class="block text-[16px] md:text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors leading-tight mb-1">Premium Vitamin D3 Supplement</a>
-                                    <span class="text-[13px] md:text-sm text-slate-500 hidden md:block">Evergreenapparel.co</span>
-                                    <span class="text-[13px] text-slate-500 block md:hidden">Evergreenapparel.co</span>
-                                </div>
-                                <p class="text-sm text-slate-500 max-w-3xl hidden md:block">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
-                                <div class="flex flex-wrap items-center gap-2 md:gap-4 text-[12px] md:text-sm text-slate-600">
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-files text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">Dietry Supplements</span>
-                                    </div>
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-wallet text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">&euro;1000 - &euro;100000</span>
-                                    </div>
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-users text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">400 Units</span>
-                                    </div>
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-calendar-blank text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">12/02/2026</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-2 justify-start md:justify-end w-full md:w-auto mt-4 md:mt-0">
-                                <button class="hidden md:block btn-micro btn-same-size text-[#448ae6] border border-[#448ae6] transition-colors bg-transparent not-proceed-btn">Not Proceed</button>
-                                <a href="brief-detail.html" class="btn-same-size text-white bg-[#448ae6] border border-[#448ae6] hover:bg-blue-600 transition-colors block md:inline-block text-center">View Brief</a>
                             </div>
                         </div>
 
-                        <!-- Brief 2 (Proposal Submitted) -->
-                        <div class="bg-gray-50 rounded-[16px] md:rounded-2xl border-transparent p-4 md:p-6 transition-all brief-card-header">
-                            <div class="space-y-4 w-full">
-                                <div class="flex justify-between items-start">
+                        <!-- Brief 2 (In Discussion) -->
+                        <div class="bg-[#f8fafc] rounded-2xl border border-[#e2e8f0] md:border-transparent p-4 md:p-6 transition-all brief-card-header">
+                            <div class="space-y-3 md:space-y-4">
+                                <!-- Mobile Header -->
+                                <div class="flex items-center justify-between md:hidden mb-1">
                                     <div class="flex items-center gap-2">
-                                        <span class="bg-sky-100 text-sky-600 text-[12px] md:text-sm px-2.5 py-0.5 rounded-full font-medium">Proposal Submitted</span>
-                                        <div class="relative group">
-                                            <i class="ph ph-info text-slate-400 text-[16px] md:text-lg cursor-help"></i>
-                                            <div class="hidden md:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
+                                        <span class="bg-[#cffafe] text-[#0ea5e9] text-[11px] px-2.5 py-0.5 rounded-full font-medium">In Discussion</span>
+                                        <i class="ph ph-info text-[#94a3b8] text-base"></i>
+                                    </div>
+                                    <button class="text-[#448ae6]"><i class="ph-bold ph-dots-three-outline-vertical text-lg"></i></button>
+                                </div>
+
+                                <div>
+                                    <div class="hidden md:flex items-center gap-2 mb-1">
+                                        <span class="text-xs text-[#448ae6] font-medium font-mono">#BR12345678</span>
+                                    </div>
+                                    <div class="flex flex-wrap items-center gap-3">
+                                        <a href="brief-detail.html" class="text-[14px] md:text-lg font-bold text-[#0e1726] hover:text-[#448ae6] transition-colors">Premium Vitamin D3 Supplement</a>
+                                        <span class="hidden md:inline-flex bg-[#cffafe] text-[#0ea5e9] text-sm px-2.5 py-0.5 rounded-full font-medium">In Discussion</span>
+                                        <div class="relative group hidden md:block">
+                                            <i class="ph ph-info text-[#94a3b8] text-lg cursor-help"></i>
+                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-[#0e1726] text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
                                                 Your proposal is under review. Brands may discuss proposals from multiple manufacturers before focusing on one.
-                                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#0e1726]"></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="md:hidden text-[#448ae6] hover:text-blue-600 transition-colors">
-                                        <i class="ph-bold ph-dots-three-outline-vertical text-[20px]"></i>
-                                    </button>
                                 </div>
-                                <div class="mb-3">
-                                    <div class="hidden md:flex items-center gap-2 mb-1">
-                                        <span class="text-xs text-blue-500 font-medium font-mono">#BR12345678</span>
+                                <p class="text-[12px] md:hidden text-[#64748b] mb-2">Evergreenapparel.co</p>
+                                <p class="hidden md:block text-sm text-[#64748b] max-w-3xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
+                                
+                                <div class="flex flex-wrap items-center gap-2 md:gap-4 text-[11px] md:text-sm text-[#334155]">
+                                    <div class="hidden md:flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-[#e2e8f0]">
+                                        <i class="ph ph-buildings text-lg text-[#94a3b8]"></i>
+                                        <span>Evergreenapparel.co</span>
                                     </div>
-                                    <a href="brief-detail.html" class="block text-[16px] md:text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors leading-tight mb-1">Premium Vitamin D3 Supplement</a>
-                                    <span class="text-[13px] md:text-sm text-slate-500 hidden md:block">Evergreenapparel.co</span>
-                                    <span class="text-[13px] text-slate-500 block md:hidden">Evergreenapparel.co</span>
-                                </div>
-                                <p class="text-sm text-slate-500 max-w-3xl hidden md:block">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
-                                <div class="flex flex-wrap items-center gap-2 md:gap-4 text-[12px] md:text-sm text-slate-600">
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-files text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">Dietry Supplements</span>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-files text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">Dietary Supplements</span>
                                     </div>
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-wallet text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">&euro;1000 - &euro;100000</span>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-wallet text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">&euro;1000 - &euro;100000</span>
                                     </div>
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-users text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">400 Units</span>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-users text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">400 Units</span>
                                     </div>
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-calendar-blank text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">12/02/2026</span>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-calendar-blank text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">12/02/2026</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-2 justify-start md:justify-end w-full md:w-auto mt-4 md:mt-0">
-                                <button class="hidden md:block btn-micro btn-same-size text-[#448ae6] border border-[#448ae6] transition-colors bg-transparent not-proceed-btn">Not Proceed</button>
-                                <a href="brief-detail.html" class="btn-same-size text-white bg-[#448ae6] border border-[#448ae6] hover:bg-blue-600 transition-colors block md:inline-block text-center">View Brief</a>
+                            <div class="mt-4 md:mt-0 flex flex-col md:flex-row items-stretch md:items-center gap-2 md:justify-end">
+                                <a href="brief-detail.html" class="md:hidden w-full text-center py-2 bg-transparent text-[#448ae6] border border-[#448ae6] rounded-lg font-medium text-[13px] hover:bg-[#f0f9ff] transition-colors">View</a>
+                                <div class="hidden md:flex items-center gap-2">
+                                    <a href="brief-detail.html" class="btn-micro text-white bg-[#448ae6] hover:bg-[#3476cb] transition-colors">View Brief</a>
+                                    <button class="btn-dots hover:bg-[#f8fafc] transition-colors">
+                                        <i class="ph-bold ph-dots-three-outline-vertical text-[20px]"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Brief 3 (Under Discussion) -->
-                        <div class="bg-gray-50 rounded-[16px] md:rounded-2xl border-transparent p-4 md:p-6 transition-all brief-card-header">
-                            <div class="space-y-4 w-full">
-                                <div class="flex justify-between items-start">
+                        <!-- Brief 3 (Completed) -->
+                        <div class="bg-[#f8fafc] rounded-2xl border border-[#e2e8f0] md:border-transparent p-4 md:p-6 transition-all brief-card-header">
+                            <div class="space-y-3 md:space-y-4">
+                                <!-- Mobile Header -->
+                                <div class="flex items-center justify-between md:hidden mb-1">
                                     <div class="flex items-center gap-2">
-                                        <span class="bg-blue-100 text-blue-600 text-[12px] md:text-sm px-2.5 py-0.5 rounded-full font-medium">Under Discussion</span>
-                                        <div class="relative group">
-                                            <i class="ph ph-info text-slate-400 text-[16px] md:text-lg cursor-help"></i>
-                                            <div class="hidden md:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
-                                                The brand is currently reviewing and discussing proposals with multiple manufacturers.
-                                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                                        <span class="bg-[#d1fae5] text-[#10b981] text-[11px] px-2.5 py-0.5 rounded-full font-medium">Completed</span>
+                                        <i class="ph ph-info text-[#94a3b8] text-base"></i>
+                                    </div>
+                                    <button class="text-[#448ae6]"><i class="ph-bold ph-dots-three-outline-vertical text-lg"></i></button>
+                                </div>
+
+                                <div>
+                                    <div class="hidden md:flex items-center gap-2 mb-1">
+                                        <span class="text-xs text-[#448ae6] font-medium font-mono">#BR12345678</span>
+                                    </div>
+                                    <div class="flex flex-wrap items-center gap-3">
+                                        <a href="brief-detail.html" class="text-[14px] md:text-lg font-bold text-[#0e1726] hover:text-[#448ae6] transition-colors">Premium Vitamin D3 Supplement</a>
+                                        <span class="hidden md:inline-flex bg-[#d1fae5] text-[#10b981] text-sm px-2.5 py-0.5 rounded-full font-medium">Completed</span>
+                                        <div class="relative group hidden md:block">
+                                            <i class="ph ph-info text-[#94a3b8] text-lg cursor-help"></i>
+                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-[#0e1726] text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
+                                                This design of this brief is completed by AI assistance.
+                                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#0e1726]"></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="md:hidden text-[#448ae6] hover:text-blue-600 transition-colors">
-                                        <i class="ph-bold ph-dots-three-outline-vertical text-[20px]"></i>
-                                    </button>
                                 </div>
-                                <div class="mb-3">
-                                    <div class="hidden md:flex items-center gap-2 mb-1">
-                                        <span class="text-xs text-blue-500 font-medium font-mono">#BR12345678</span>
+                                <p class="text-[12px] md:hidden text-[#64748b] mb-2">Evergreenapparel.co</p>
+                                <p class="hidden md:block text-sm text-[#64748b] max-w-3xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
+                                
+                                <div class="flex flex-wrap items-center gap-2 md:gap-4 text-[11px] md:text-sm text-[#334155]">
+                                    <div class="hidden md:flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-[#e2e8f0]">
+                                        <i class="ph ph-buildings text-lg text-[#94a3b8]"></i>
+                                        <span>Evergreenapparel.co</span>
                                     </div>
-                                    <a href="brief-detail.html" class="block text-[16px] md:text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors leading-tight mb-1">Premium Vitamin D3 Supplement</a>
-                                    <span class="text-[13px] md:text-sm text-slate-500 hidden md:block">Evergreenapparel.co</span>
-                                    <span class="text-[13px] text-slate-500 block md:hidden">Evergreenapparel.co</span>
-                                </div>
-                                <p class="text-sm text-slate-500 max-w-3xl hidden md:block">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
-                                <div class="flex flex-wrap items-center gap-2 md:gap-4 text-[12px] md:text-sm text-slate-600">
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-files text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">Dietry Supplements</span>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-files text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">Dietary Supplements</span>
                                     </div>
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-wallet text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">&euro;1000 - &euro;100000</span>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-wallet text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">&euro;1000 - &euro;100000</span>
                                     </div>
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-users text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">400 Units</span>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-users text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">400 Units</span>
                                     </div>
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-calendar-blank text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">12/02/2026</span>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-calendar-blank text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">12/02/2026</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-2 justify-start md:justify-end w-full md:w-auto mt-4 md:mt-0">
-                                <button class="hidden md:block btn-micro btn-same-size text-[#448ae6] border border-[#448ae6] transition-colors bg-transparent not-proceed-btn">Not Proceed</button>
-                                <a href="brief-detail.html" class="btn-same-size text-white bg-[#448ae6] border border-[#448ae6] hover:bg-blue-600 transition-colors block md:inline-block text-center">View Brief</a>
+                            <div class="mt-4 md:mt-0 flex flex-col md:flex-row items-stretch md:items-center gap-2 md:justify-end">
+                                <a href="brief-detail.html" class="md:hidden w-full text-center py-2 bg-transparent text-[#448ae6] border border-[#448ae6] rounded-lg font-medium text-[13px] hover:bg-[#f0f9ff] transition-colors">View</a>
+                                <div class="hidden md:flex items-center gap-2">
+                                    <a href="brief-detail.html" class="btn-micro text-white bg-[#448ae6] hover:bg-[#3476cb] transition-colors">View Brief</a>
+                                    <button class="btn-dots hover:bg-[#f8fafc] transition-colors">
+                                        <i class="ph-bold ph-dots-three-outline-vertical text-[20px]"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Brief 4 (Not Proceeding) -->
-                        <div class="bg-gray-50 rounded-[16px] md:rounded-2xl border-transparent p-4 md:p-6 transition-all brief-card-header">
-                            <div class="space-y-4 w-full">
-                                <div class="flex justify-between items-start">
+                        <!-- Brief 4 (Proposal Submitted) -->
+                        <div class="bg-[#f8fafc] rounded-2xl border border-[#e2e8f0] md:border-transparent p-4 md:p-6 transition-all brief-card-header">
+                            <div class="space-y-3 md:space-y-4">
+                                <!-- Mobile Header -->
+                                <div class="flex items-center justify-between md:hidden mb-1">
                                     <div class="flex items-center gap-2">
-                                        <span class="bg-red-100 text-red-600 text-[12px] md:text-sm px-2.5 py-0.5 rounded-full font-medium">Not Proceeding</span>
-                                        <div class="relative group">
-                                            <i class="ph ph-info text-slate-400 text-[16px] md:text-lg cursor-help"></i>
-                                            <div class="hidden md:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
-                                                The brand is currently proceeding with another manufacturer for this brief. You can still review this proposal or submit proposals to other briefs.
-                                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                                        <span class="bg-[#e0f2fe] text-[#0284c7] text-[11px] px-2.5 py-0.5 rounded-full font-medium">Proposal Submitted</span>
+                                        <i class="ph ph-info text-[#94a3b8] text-base"></i>
+                                    </div>
+                                    <button class="text-[#448ae6]"><i class="ph-bold ph-dots-three-outline-vertical text-lg"></i></button>
+                                </div>
+
+                                <div>
+                                    <div class="hidden md:flex items-center gap-2 mb-1">
+                                        <span class="text-xs text-[#448ae6] font-medium font-mono">#BR12345678</span>
+                                    </div>
+                                    <div class="flex flex-wrap items-center gap-3">
+                                        <a href="brief-detail.html" class="text-[14px] md:text-lg font-bold text-[#0e1726] hover:text-[#448ae6] transition-colors">Premium Vitamin D3 Supplement</a>
+                                        <span class="hidden md:inline-flex bg-[#e0f2fe] text-[#0284c7] text-sm px-2.5 py-0.5 rounded-full font-medium">Proposal Submitted</span>
+                                        <div class="relative group hidden md:block">
+                                            <i class="ph ph-info text-[#94a3b8] text-lg cursor-help"></i>
+                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-[#0e1726] text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
+                                                Your proposal for this brief has been submitted successfully and is currently under review by the brand.
+                                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#0e1726]"></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="md:hidden text-[#448ae6] hover:text-blue-600 transition-colors">
-                                        <i class="ph-bold ph-dots-three-outline-vertical text-[20px]"></i>
-                                    </button>
                                 </div>
-                                <div class="mb-3">
-                                    <div class="hidden md:flex items-center gap-2 mb-1">
-                                        <span class="text-xs text-blue-500 font-medium font-mono">#BR12345678</span>
+                                <p class="text-[12px] md:hidden text-[#64748b] mb-2">Evergreenapparel.co</p>
+                                <p class="hidden md:block text-sm text-[#64748b] max-w-3xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
+                                
+                                <div class="flex flex-wrap items-center gap-2 md:gap-4 text-[11px] md:text-sm text-[#334155]">
+                                    <div class="hidden md:flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-[#e2e8f0]">
+                                        <i class="ph ph-buildings text-lg text-[#94a3b8]"></i>
+                                        <span>Evergreenapparel.co</span>
                                     </div>
-                                    <a href="brief-detail.html" class="block text-[16px] md:text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors leading-tight mb-1">Premium Vitamin D3 Supplement</a>
-                                    <span class="text-[13px] md:text-sm text-slate-500 hidden md:block">Evergreenapparel.co</span>
-                                    <span class="text-[13px] text-slate-500 block md:hidden">Evergreenapparel.co</span>
-                                </div>
-                                <p class="text-sm text-slate-500 max-w-3xl hidden md:block">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
-                                <div class="flex flex-wrap items-center gap-2 md:gap-4 text-[12px] md:text-sm text-slate-600">
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-files text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">Dietry Supplements</span>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-files text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">Dietary Supplements</span>
                                     </div>
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-wallet text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">&euro;1000 - &euro;100000</span>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-wallet text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">&euro;1000 - &euro;100000</span>
                                     </div>
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-users text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">400 Units</span>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-users text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">400 Units</span>
                                     </div>
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-calendar-blank text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">12/02/2026</span>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-calendar-blank text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">12/02/2026</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-2 justify-start md:justify-end w-full md:w-auto mt-4 md:mt-0">
-                                <button class="hidden md:block btn-micro btn-same-size text-[#448ae6] border border-[#448ae6] transition-colors bg-transparent not-proceed-btn">Not Proceed</button>
-                                <a href="brief-detail.html" class="btn-same-size text-white bg-[#448ae6] border border-[#448ae6] hover:bg-blue-600 transition-colors block md:inline-block text-center">View Brief</a>
+                            <div class="mt-4 md:mt-0 flex flex-col md:flex-row items-stretch md:items-center gap-2 md:justify-end">
+                                <a href="brief-detail.html" class="md:hidden w-full text-center py-2 bg-transparent text-[#448ae6] border border-[#448ae6] rounded-lg font-medium text-[13px] hover:bg-[#f0f9ff] transition-colors">View</a>
+                                <div class="hidden md:flex items-center gap-2">
+                                    <a href="brief-detail.html" class="btn-micro text-white bg-[#448ae6] hover:bg-[#3476cb] transition-colors">View Brief</a>
+                                    <button class="btn-dots hover:bg-[#f8fafc] transition-colors">
+                                        <i class="ph-bold ph-dots-three-outline-vertical text-[20px]"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Brief 5 (Matched) -->
-                        <div class="bg-gray-50 rounded-[16px] md:rounded-2xl border-transparent p-4 md:p-6 transition-all brief-card-header">
-                            <div class="space-y-4 w-full">
-                                <div class="flex justify-between items-start">
+                        <!-- Brief 5 (Invited) -->
+                        <div class="bg-[#f8fafc] rounded-2xl border border-[#e2e8f0] md:border-transparent p-4 md:p-6 transition-all brief-card-header">
+                            <div class="space-y-3 md:space-y-4">
+                                <!-- Mobile Header -->
+                                <div class="flex items-center justify-between md:hidden mb-1">
                                     <div class="flex items-center gap-2">
-                                        <span class="bg-amber-100 text-amber-600 text-[12px] md:text-sm px-2.5 py-0.5 rounded-full font-medium">Matched</span>
-                                        <div class="relative group">
-                                            <i class="ph ph-info text-slate-400 text-[16px] md:text-lg cursor-help"></i>
-                                            <div class="hidden md:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-gray-900 text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
-                                                The brand has chosen to focus discussions with you for now. This does not imply exclusivity or final selection.
-                                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                                        <span class="bg-[#e0e7ff] text-[#6366f1] text-[11px] px-2.5 py-0.5 rounded-full font-medium">Invited</span>
+                                        <i class="ph ph-info text-[#94a3b8] text-base"></i>
+                                    </div>
+                                    <button class="text-[#448ae6]"><i class="ph-bold ph-dots-three-outline-vertical text-lg"></i></button>
+                                </div>
+
+                                <div>
+                                    <div class="hidden md:flex items-center gap-2 mb-1">
+                                        <span class="text-xs text-[#448ae6] font-medium font-mono">#BR12345678</span>
+                                    </div>
+                                    <div class="flex flex-wrap items-center gap-3">
+                                        <a href="brief-detail.html" class="text-[14px] md:text-lg font-bold text-[#0e1726] hover:text-[#448ae6] transition-colors">Premium Vitamin D3 Supplement</a>
+                                        <span class="hidden md:inline-flex bg-[#e0e7ff] text-[#6366f1] text-sm px-2.5 py-0.5 rounded-full font-medium">Invited</span>
+                                        <div class="relative group hidden md:block">
+                                            <i class="ph ph-info text-[#94a3b8] text-lg cursor-help"></i>
+                                            <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-[#0e1726] text-white text-xs rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-10 text-center leading-relaxed">
+                                                You've been invited to submit a proposal for this brief. View details to learn more and respond.
+                                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#0e1726]"></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <button class="md:hidden text-[#448ae6] hover:text-blue-600 transition-colors">
-                                        <i class="ph-bold ph-dots-three-outline-vertical text-[20px]"></i>
-                                    </button>
                                 </div>
-                                <div class="mb-3">
-                                    <div class="hidden md:flex items-center gap-2 mb-1">
-                                        <span class="text-xs text-blue-500 font-medium font-mono">#BR12345678</span>
+                                <p class="text-[12px] md:hidden text-[#64748b] mb-2">Evergreenapparel.co</p>
+                                <p class="hidden md:block text-sm text-[#64748b] max-w-3xl">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
+                                
+                                <div class="flex flex-wrap items-center gap-2 md:gap-4 text-[11px] md:text-sm text-[#334155]">
+                                    <div class="hidden md:flex items-center gap-2 bg-white px-3 py-1.5 rounded-full border border-[#e2e8f0]">
+                                        <i class="ph ph-buildings text-lg text-[#94a3b8]"></i>
+                                        <span>Evergreenapparel.co</span>
                                     </div>
-                                    <a href="brief-detail.html" class="block text-[16px] md:text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors leading-tight mb-1">Premium Vitamin D3 Supplement</a>
-                                    <span class="text-[13px] md:text-sm text-slate-500 hidden md:block">Evergreenapparel.co</span>
-                                    <span class="text-[13px] text-slate-500 block md:hidden">Evergreenapparel.co</span>
-                                </div>
-                                <p class="text-sm text-slate-500 max-w-3xl hidden md:block">This brief is being created with AI assistance. The AI will help you fill in the details.</p>
-                                <div class="flex flex-wrap items-center gap-2 md:gap-4 text-[12px] md:text-sm text-slate-600">
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-files text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">Dietry Supplements</span>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-files text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">Dietary Supplements</span>
                                     </div>
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-wallet text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">&euro;1000 - &euro;100000</span>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-wallet text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">&euro;1000 - &euro;100000</span>
                                     </div>
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-users text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">400 Units</span>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-users text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">400 Units</span>
                                     </div>
-                                    <div class="flex items-center gap-2 bg-white px-3 md:px-3 py-1.5 md:py-1.5 rounded-full border border-[#e2e8f0] md:border-gray-200">
-                                        <i class="ph ph-calendar-blank text-[14px] md:text-lg text-slate-400 shrink-0"></i>
-                                        <span class="whitespace-nowrap">12/02/2026</span>
+                                    <div class="flex items-center gap-1.5 md:gap-2 bg-white px-2 py-1.5 md:px-3 md:py-1.5 rounded-full border border-[#e2e8f0] w-[calc(50%-0.5rem)] md:w-auto truncate justify-center md:justify-start">
+                                        <i class="ph ph-calendar-blank text-sm md:text-lg text-[#94a3b8] shrink-0"></i>
+                                        <span class="truncate">12/02/2026</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-2 justify-start md:justify-end w-full md:w-auto mt-4 md:mt-0">
-                                <button class="hidden md:block btn-micro btn-same-size text-[#448ae6] border border-[#448ae6] transition-colors bg-transparent not-proceed-btn">Not Proceed</button>
-                                <a href="brief-detail.html" class="btn-same-size text-white bg-[#448ae6] border border-[#448ae6] hover:bg-blue-600 transition-colors block md:inline-block text-center">View Brief</a>
+                            <div class="mt-4 md:mt-0 flex flex-col md:flex-row items-stretch md:items-center gap-2 md:justify-end">
+                                <a href="brief-detail.html" class="md:hidden w-full text-center py-2 bg-transparent text-[#448ae6] border border-[#448ae6] rounded-lg font-medium text-[13px] hover:bg-[#f0f9ff] transition-colors">View</a>
+                                <div class="hidden md:flex items-center gap-2">
+                                    <a href="brief-detail.html" class="btn-micro text-white bg-[#448ae6] hover:bg-[#3476cb] transition-colors">View Brief</a>
+                                    <button class="btn-dots hover:bg-[#f8fafc] transition-colors">
+                                        <i class="ph-bold ph-dots-three-outline-vertical text-[20px]"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
@@ -715,28 +746,28 @@
 
                     <!-- Pagination -->
                     <div
-                        class="flex flex-col md:flex-row justify-between items-center gap-4 mt-8 pt-6 border-t border-gray-100">
-                        <p class="text-sm text-slate-500">Showing 1 to 5 of 15 results</p>
+                        class="flex flex-col md:flex-row justify-between items-center gap-4 mt-8 pt-6 border-t border-[#f1f5f9]">
+                        <p class="text-sm text-[#64748b]">Showing 1 to 5 of 15 results</p>
                         <div class="flex items-center gap-1">
                             <button
-                                class="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-200 text-slate-400 hover:text-slate-600 hover:bg-gray-50 disabled:opacity-50">
+                                class="w-8 h-8 flex items-center justify-center rounded-lg border border-[#e2e8f0] text-[#94a3b8] hover:text-slate-600 hover:bg-gray-50 disabled:opacity-50">
                                 <i class="ph ph-caret-left text-sm"></i>
                             </button>
                             <button
-                                class="w-8 h-8 flex items-center justify-center rounded-lg bg-blue-600 text-white font-medium text-sm">1</button>
+                                class="w-8 h-8 flex items-center justify-center rounded-lg bg-[#448ae6] text-white font-medium text-sm">1</button>
                             <button
-                                class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-600 hover:bg-gray-50 font-medium text-sm">2</button>
+                                class="w-8 h-8 flex items-center justify-center rounded-lg text-[#334155] hover:bg-gray-50 font-medium text-sm">2</button>
                             <button
-                                class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-600 hover:bg-gray-50 font-medium text-sm">3</button>
+                                class="w-8 h-8 flex items-center justify-center rounded-lg text-[#334155] hover:bg-gray-50 font-medium text-sm">3</button>
                             <button
-                                class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-600 hover:bg-gray-50 font-medium text-sm">4</button>
+                                class="w-8 h-8 flex items-center justify-center rounded-lg text-[#334155] hover:bg-gray-50 font-medium text-sm">4</button>
                             <button
-                                class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-600 hover:bg-gray-50 font-medium text-sm">5</button>
-                            <span class="text-slate-400 text-sm px-1">...</span>
+                                class="w-8 h-8 flex items-center justify-center rounded-lg text-[#334155] hover:bg-gray-50 font-medium text-sm">5</button>
+                            <span class="text-[#94a3b8] text-sm px-1">...</span>
                             <button
-                                class="w-8 h-8 flex items-center justify-center rounded-lg text-slate-600 hover:bg-gray-50 font-medium text-sm">12</button>
+                                class="w-8 h-8 flex items-center justify-center rounded-lg text-[#334155] hover:bg-gray-50 font-medium text-sm">12</button>
                             <button
-                                class="w-8 h-8 flex items-center justify-center rounded-lg border border-gray-200 text-slate-400 hover:text-slate-600 hover:bg-gray-50">
+                                class="w-8 h-8 flex items-center justify-center rounded-lg border border-[#e2e8f0] text-[#94a3b8] hover:text-slate-600 hover:bg-gray-50">
                                 <i class="ph ph-caret-right text-sm"></i>
                             </button>
                         </div>
@@ -748,7 +779,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 py-12 shrink-0 relative mt-10 w-full">
+    <footer class="bg-white border-t border-[#e2e8f0] py-12 shrink-0 relative mt-10 w-full">
         <div class="max-w-[1400px] mx-auto px-4 md:px-8">
             <div class="max-w-[1240px] mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-6 gap-12 mb-10">
@@ -801,7 +832,7 @@
                 </div>
 
                 <div
-                    class="border-t border-gray-100 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] text-[#64748b]">
+                    class="border-t border-[#f1f5f9] pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] text-[#64748b]">
                     <p>&copy; 2026 DonauApp</p>
                     <div class="flex items-center gap-6">
                         <div class="flex items-center gap-[6px] cursor-pointer hover:text-[#0e1726]">
@@ -820,7 +851,7 @@
 
     <!-- Floating Action Button -->
     <button id="open-ai-chat"
-        class="hidden md:flex fixed bottom-10 right-10 w-16 h-16 rounded-full bg-blue-600 text-white items-center justify-center shadow-lg cursor-pointer hover:scale-105 transition-transform duration-200 border-none z-50">
+        class="fixed bottom-10 right-10 w-16 h-16 rounded-full bg-[#448ae6] text-white flex items-center justify-center shadow-lg cursor-pointer hover:scale-105 transition-transform duration-200 border-none z-50">
         <i class="ph ph-sparkle text-2xl"></i>
     </button>
 
@@ -830,10 +861,10 @@
         <!-- Header -->
         <div class="px-5 py-4 flex items-center justify-between border-b border-[#e2e8f0]">
             <div class="flex items-center gap-2">
-                <i class="ph ph-sparkle text-xl text-blue-600"></i>
-                <h3 class="font-bold text-slate-900 text-sm">Donau AI Assistant</h3>
+                <i class="ph ph-sparkle text-xl text-[#448ae6]"></i>
+                <h3 class="font-bold text-[#0e1726] text-sm">Donau AI Assistant</h3>
             </div>
-            <button id="close-ai-chat" class="text-slate-500 hover:text-slate-900 transition-colors focus:outline-none">
+            <button id="close-ai-chat" class="text-[#64748b] hover:text-slate-900 transition-colors focus:outline-none">
                 <i class="ph ph-x text-xl"></i>
             </button>
         </div>
@@ -850,7 +881,7 @@
         <!-- Input Area -->
         <div class="p-4 border-t border-[#e2e8f0] flex items-center gap-3 bg-white">
             <input type="text" placeholder="Type your response..."
-                class="flex-1 border border-[#e2e8f0] rounded-lg px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all">
+                class="flex-1 border border-[#e2e8f0] rounded-lg px-4 py-2.5 text-sm text-[#0e1726] placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all">
             <button
                 class="w-10 h-10 rounded-lg bg-[#448ae6] hover:bg-[#3476cb] text-white flex items-center justify-center transition-colors shrink-0">
                 <i class="ph-bold ph-paper-plane-right text-lg"></i>

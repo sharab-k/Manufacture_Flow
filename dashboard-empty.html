@@ -207,52 +207,54 @@
 
                     <!-- Menu -->
                     <div class="relative">
-                        <button id="mobile-menu-btn" data-dropdown-trigger data-dropdown-target="hamburger-dropdown"
+                        <button  data-dropdown-trigger data-dropdown-target="hamburger-dropdown"
                             class="w-[34px] h-[34px] rounded-full bg-gray-100 flex items-center justify-center text-[#64748b] hover:bg-gray-200 transition-colors">
                             <i class="ph ph-list text-[18px] font-medium"></i>
                         </button>
 
                         <!-- Hamburger Menu Dropdown -->
                         <div id="hamburger-dropdown" data-dropdown-content
-                            class="hidden absolute right-0 mt-3 w-64 bg-white rounded-2xl border border-[#e2e8f0] shadow-[0_8px_30px_rgb(0,0,0,0.08)] z-50 animate-fade-in text-left">
-                            <div class="px-6 pt-6 pb-5 border-b border-gray-50">
+                            class="hidden absolute right-0 mt-3 w-[240px] bg-white rounded-[16px] border border-[#e2e8f0] shadow-[0_8px_30px_rgb(0,0,0,0.08)] z-50 animate-fade-in text-left">
+                            <div class="px-5 pt-5 pb-3">
                                 <p class="text-[15px] font-bold text-[#0e1726]">Mark Thompson</p>
                                 <p class="text-[13px] text-[#64748b] mt-0.5">mark@donau.ai</p>
                             </div>
-                            <div class="p-2">
+                            <div class="flex flex-col pb-3">
                                 <a href="dashboard-filled.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#64748b] hover:bg-[#f8fafc] hover:text-[#448ae6] transition-colors">
+                                    class="flex items-center gap-3 px-5 py-2.5 hover:bg-[#f8fafc] text-[#475569] hover:text-[#448ae6] transition-colors">
                                     <i class="ph ph-house text-[18px]"></i>
-                                    Dashboard
+                                    <span class="text-[14px] font-medium">Dashboard</span>
                                 </a>
                                 <a href="briefs.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#64748b] hover:bg-[#f8fafc] hover:text-[#448ae6] transition-colors">
+                                    class="flex items-center gap-3 px-5 py-2.5 hover:bg-[#f8fafc] text-[#475569] hover:text-[#448ae6] transition-colors">
                                     <i class="ph ph-briefcase text-[18px]"></i>
-                                    Brief Invitations
+                                    <span class="text-[14px] font-medium">Brief Invitations</span>
                                 </a>
                                 <a href="messages.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#64748b] hover:bg-[#f8fafc] hover:text-[#448ae6] transition-colors">
+                                    class="flex items-center gap-3 px-5 py-2.5 hover:bg-[#f8fafc] text-[#475569] hover:text-[#448ae6] transition-colors">
                                     <i class="ph ph-chat-dots text-[18px]"></i>
-                                    Messages
+                                    <span class="text-[14px] font-medium">Messages</span>
                                 </a>
-                            </div>
-                            <div class="p-2 border-t border-gray-50">
+                                
+                                <div class="h-2"></div>
+
                                 <a href="settings-account.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#64748b] hover:bg-[#f8fafc] hover:text-[#448ae6] transition-colors">
+                                    class="flex items-center gap-3 px-5 py-2.5 hover:bg-[#f8fafc] text-[#475569] hover:text-[#448ae6] transition-colors">
                                     <i class="ph ph-gear text-[18px]"></i>
-                                    Settings
+                                    <span class="text-[14px] font-medium">Settings</span>
                                 </a>
                                 <a href="#"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#64748b] hover:bg-[#f8fafc] hover:text-[#448ae6] transition-colors">
+                                    class="flex items-center gap-3 px-5 py-2.5 hover:bg-[#f8fafc] text-[#475569] hover:text-[#448ae6] transition-colors">
                                     <i class="ph ph-globe text-[18px]"></i>
-                                    Language
+                                    <span class="text-[14px] font-medium">Language</span>
                                 </a>
-                            </div>
-                            <div class="p-2 border-t border-gray-50">
+
+                                <div class="h-2"></div>
+
                                 <a href="signin.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-xl text-[14px] font-medium text-[#ef4444] hover:bg-red-50 transition-colors">
+                                    class="flex items-center gap-3 px-5 py-2.5 hover:bg-red-50 text-[#ef4444] transition-colors">
                                     <i class="ph ph-sign-out text-[18px]"></i>
-                                    Sign Out
+                                    <span class="text-[14px] font-medium">Sign Out</span>
                                 </a>
                             </div>
                         </div>
@@ -275,35 +277,35 @@
                 <!-- I will omit the "Brand Invited You" banner for the 'empty' state as it implies no activity -->
                 
                 <!-- Stats Row -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mb-8">
                     <!-- Total Brief -->
-                    <div class="bg-white p-6 rounded-xl border border-gray-200 flex items-center gap-6">
-                        <div class="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center text-slate-500">
+                    <div class="bg-white p-4 md:p-6 rounded-xl border border-gray-200 flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6">
+                        <div class="hidden md:flex w-12 h-12 rounded-lg bg-gray-50 items-center justify-center text-slate-500">
                             <i class="ph ph-file-text text-2xl"></i>
                         </div>
                         <div>
-                            <span class="block text-sm font-medium text-slate-500">Total Brief</span>
-                            <span class="block text-xl font-bold text-slate-900 mt-1">-</span>
+                            <span class="block text-[12px] md:text-sm font-medium text-slate-500">Total Brief</span>
+                            <span class="block text-[18px] md:text-xl font-bold text-slate-900 mt-1 md:mt-1">-</span>
                         </div>
                     </div>
                     <!-- New Brief -->
-                    <div class="bg-white p-6 rounded-xl border border-gray-200 flex items-center gap-6">
-                         <div class="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center text-slate-500">
+                    <div class="bg-white p-4 md:p-6 rounded-xl border border-gray-200 flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6">
+                         <div class="hidden md:flex w-12 h-12 rounded-lg bg-gray-50 items-center justify-center text-slate-500">
                             <i class="ph ph-file-plus text-2xl"></i>
                         </div>
                         <div>
-                            <span class="block text-sm font-medium text-slate-500">New Brief</span>
-                            <span class="block text-xl font-bold text-slate-900 mt-1">-</span>
+                            <span class="block text-[12px] md:text-sm font-medium text-slate-500">New Brief</span>
+                            <span class="block text-[18px] md:text-xl font-bold text-slate-900 mt-1 md:mt-1">-</span>
                         </div>
                     </div>
                     <!-- Active Brief -->
-                    <div class="bg-white p-6 rounded-xl border border-gray-200 flex items-center gap-6">
-                         <div class="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center text-slate-500">
+                    <div class="bg-white p-4 md:p-6 rounded-xl border border-gray-200 flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6">
+                         <div class="hidden md:flex w-12 h-12 rounded-lg bg-gray-50 items-center justify-center text-slate-500">
                             <i class="ph ph-check-circle text-2xl"></i>
                         </div>
                         <div>
-                            <span class="block text-sm font-medium text-slate-500">Active Brief</span>
-                            <span class="block text-xl font-bold text-slate-900 mt-1">-</span>
+                            <span class="block text-[12px] md:text-sm font-medium text-slate-500">Active Brief</span>
+                            <span class="block text-[18px] md:text-xl font-bold text-slate-900 mt-1 md:mt-1">-</span>
                         </div>
                     </div>
                 </div>
@@ -312,12 +314,12 @@
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     
                     <!-- Recent Briefs (Span 2) -->
-                    <div class="col-span-1 lg:col-span-2">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="font-bold text-slate-900">Recent Briefs</h3>
-                            <a href="briefs.html" class="text-sm text-blue-600 font-medium hover:underline">View All</a>
+                    <div class="col-span-1 lg:col-span-2 bg-white md:bg-transparent border border-gray-200 md:border-none rounded-xl p-4 md:p-0">
+                        <div class="flex justify-between items-center mb-4 border-b border-gray-100 md:border-none pb-3 md:pb-0">
+                            <h3 class="font-bold text-[14px] md:text-base text-slate-900">Recent Briefs</h3>
+                            <a href="briefs.html" class="text-[13px] md:text-sm text-blue-600 font-medium hover:underline">View All</a>
                         </div>
-                        <div class="bg-white rounded-xl border border-gray-200 h-80 flex flex-col items-center justify-center text-center p-8">
+                        <div class="bg-white md:rounded-xl md:border md:border-gray-200 h-80 flex flex-col items-center justify-center text-center p-8">
                             <div class="mb-4">
                                 <i class="ph ph-file-search text-4xl text-slate-300"></i>
                             </div>
@@ -327,12 +329,18 @@
                     </div>
 
                     <!-- Notifications (Span 1) -->
-                    <div class="col-span-1">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="font-bold text-slate-900">Notifications</h3>
-                            <a href="javascript:void(0)" class="text-sm text-blue-600 font-medium hover:underline">View All</a>
+                    <div class="col-span-1 bg-white md:bg-transparent border border-gray-200 md:border-none rounded-xl p-4 md:p-0">
+                        <div class="flex justify-between items-center mb-4 border-b border-gray-100 md:border-none pb-3 md:pb-0">
+                            <h3 class="font-bold text-[14px] md:text-base text-slate-900">
+                                <span class="md:hidden">Recent Activity</span>
+                                <span class="hidden md:inline">Notifications</span>
+                            </h3>
+                            <a href="javascript:void(0)" class="text-[13px] md:text-sm text-blue-600 font-medium hover:underline">
+                                <span class="md:hidden">Mark all as read</span>
+                                <span class="hidden md:inline">View All</span>
+                            </a>
                         </div>
-                        <div class="bg-white rounded-xl border border-gray-200 h-48 flex flex-col items-center justify-center text-center p-6">
+                        <div class="bg-white md:rounded-xl md:border md:border-gray-200 h-48 flex flex-col items-center justify-center text-center p-6">
                             <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-slate-400 mb-3">
                                 <i class="ph ph-clock text-xl"></i>
                             </div>
@@ -350,36 +358,45 @@
     <!-- Footer -->
     <footer class="bg-white border-t border-gray-200 pt-16 pb-8 shrink-0">
         <div class="max-w-[1400px] mx-auto px-4 md:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
-                <div class="col-span-1 md:col-span-2">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-0 md:gap-12 mb-10 md:mb-16">
+                <div class="col-span-1 md:col-span-2 pb-8 md:pb-0">
                      <div class="mb-4">
                         <img src="Group 1597890314 (1).svg" alt="Donau AI" class="h-6 w-auto">
                      </div>
-                     <p class="text-slate-500 leading-relaxed max-w-sm">
+                     <p class="text-slate-500 leading-relaxed max-w-sm text-[13px] md:text-base">
                         AI-powered platform connecting brands with manufacturers. Streamline your sourcing process with intelligent matchmaking.
                      </p>
                 </div>
-                <div>
-                   <h4 class="font-bold text-slate-900 mb-6">Platform</h4>
-                   <ul class="space-y-4 text-slate-500 text-sm">
+                <div class="border-b border-gray-100 md:border-none py-4 md:py-0">
+                   <h4 class="font-bold text-slate-900 md:mb-6 mb-0 flex justify-between items-center">
+                       Platform
+                       <i class="ph ph-caret-down md:hidden text-slate-400"></i>
+                   </h4>
+                   <ul class="hidden md:block space-y-4 text-slate-500 text-sm mt-4 md:mt-0">
                        <li><a href="home.html" class="hover:text-blue-600 transition-colors">Home</a></li>
                        <li><a href="for-brands.html" class="hover:text-blue-600 transition-colors">For Brands</a></li>
                        <li><a href="for-manufacturers.html" class="hover:text-blue-600 transition-colors">For Manufacturers</a></li>
                        <li><a href="ai-brief-assistant.html" class="hover:text-blue-600 transition-colors">AI Brief Assistant</a></li>
                    </ul>
                 </div>
-                <div>
-                    <h4 class="font-bold text-slate-900 mb-6">Resources</h4>
-                    <ul class="space-y-4 text-slate-500 text-sm">
+                <div class="border-b border-gray-100 md:border-none py-4 md:py-0">
+                    <h4 class="font-bold text-slate-900 md:mb-6 mb-0 flex justify-between items-center">
+                        Resources
+                        <i class="ph ph-caret-down md:hidden text-slate-400"></i>
+                    </h4>
+                    <ul class="hidden md:block space-y-4 text-slate-500 text-sm mt-4 md:mt-0">
                         <li><a href="api-documentation.html" class="hover:text-blue-600 transition-colors">API Documentation</a></li>
                         <li><a href="help-center.html" class="hover:text-blue-600 transition-colors">Help Center</a></li>
                         <li><a href="product-categories.html" class="hover:text-blue-600 transition-colors">Product Categories</a></li>
                         <li><a href="success-stories.html" class="hover:text-blue-600 transition-colors">Success Stories</a></li>
                     </ul>
                  </div>
-                 <div>
-                    <h4 class="font-bold text-slate-900 mb-6">Company</h4>
-                    <ul class="space-y-4 text-slate-500 text-sm">
+                 <div class="py-4 md:py-0">
+                    <h4 class="font-bold text-slate-900 md:mb-6 mb-0 flex justify-between items-center">
+                        Company
+                        <i class="ph ph-caret-down md:hidden text-slate-400"></i>
+                    </h4>
+                    <ul class="hidden md:block space-y-4 text-slate-500 text-sm mt-4 md:mt-0">
                         <li><a href="about-us.html" class="hover:text-blue-600 transition-colors">About Us</a></li>
                         <li><a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a></li>
                         <li><a href="privacy-policy.html" class="hover:text-blue-600 transition-colors">Privacy Policy</a></li>

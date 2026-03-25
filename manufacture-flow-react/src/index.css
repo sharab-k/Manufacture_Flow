@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@import "./styles/strict-chat-layout.css";
-
 @layer base {
   body {
     -webkit-font-smoothing: antialiased;
