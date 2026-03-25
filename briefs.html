@@ -185,8 +185,7 @@
                                     class="text-[12px] font-medium text-[#448ae6] hover:underline">Mark all as read</a>
                             </div>
                             <div class="max-h-[340px] overflow-y-auto w-full">
-                                <!-- Item 1 -->
-                                <div
+<div
                                     class="p-3 border-b border-[#e2e8f0] bg-[#f8fafc] hover:bg-gray-50 transition-colors cursor-pointer w-full">
                                     <div class="flex items-start justify-between mb-1 gap-2">
                                         <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New
@@ -199,8 +198,7 @@
                                         skincare line"</p>
                                 </div>
 
-                                <!-- Item 2 -->
-                                <div
+<div
                                     class="p-3 border-b border-[#e2e8f0] hover:bg-gray-50 transition-colors cursor-pointer w-full">
                                     <div class="flex items-start justify-between mb-1 gap-2">
                                         <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">Proposal
@@ -214,8 +212,7 @@
                                     </p>
                                 </div>
 
-                                <!-- Item 3 -->
-                                <div
+<div
                                     class="p-3 border-b border-[#e2e8f0] hover:bg-gray-50 transition-colors cursor-pointer w-full">
                                     <div class="flex items-start justify-between mb-1 gap-2">
                                         <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New Brief
@@ -228,8 +225,7 @@
                                     </p>
                                 </div>
 
-                                <!-- Item 4 -->
-                                <div
+<div
                                     class="p-3 border-b border-[#e2e8f0] hover:bg-gray-50 transition-colors cursor-pointer w-full">
                                     <div class="flex items-start justify-between mb-1 gap-2">
                                         <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New Brief
@@ -242,8 +238,7 @@
                                     </p>
                                 </div>
 
-                                <!-- Item 5 -->
-                                <div class="p-3 hover:bg-gray-50 transition-colors cursor-pointer w-full">
+<div class="p-3 hover:bg-gray-50 transition-colors cursor-pointer w-full">
                                     <div class="flex items-start justify-between mb-1 gap-2">
                                         <h5 class="text-[13px] font-bold text-[#0e1726] flex-1 leading-tight">New Brief
                                             Invitation</h5>
@@ -258,8 +253,7 @@
                         </div>
                     </div>
 
-                    <!-- Divider -->
-                    <div class="h-6 w-px bg-gray-200 mx-1"></div>
+<div class="h-6 w-px bg-gray-200 mx-1"></div>
 
                     <!-- User Profile Desktop -->
                     <div
@@ -333,10 +327,8 @@
                 </div>
 
 
-                <!-- Stats Row -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
-                    <!-- New Invites -->
-                    <div
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
+<div
                         class="p-[20px] pb-[16px] border border-[#e2e8f0] bg-white rounded-[16px] flex items-center justify-between shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
                         <div>
                             <span class="block text-[13px] text-[#64748b] mb-[6px]">New Invites</span>
@@ -348,8 +340,7 @@
                         </div>
                     </div>
 
-                    <!-- Under Discussion -->
-                    <div
+<div
                         class="p-[20px] pb-[16px] border border-[#e2e8f0] bg-white rounded-[16px] flex items-center justify-between shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
                         <div>
                             <span class="block text-[13px] text-[#64748b] mb-[6px]">Under Discussion</span>
@@ -361,8 +352,7 @@
                         </div>
                     </div>
 
-                    <!-- Active Proposals -->
-                    <div
+<div
                         class="p-[20px] pb-[16px] border border-[#e2e8f0] bg-white rounded-[16px] flex items-center justify-between shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
                         <div>
                             <span class="block text-[13px] text-[#64748b] mb-[6px]">Active Proposals</span>
@@ -374,8 +364,7 @@
                         </div>
                     </div>
 
-                    <!-- Matched Briefs -->
-                    <div
+<div
                         class="p-[20px] pb-[16px] border border-[#e2e8f0] bg-white rounded-[16px] flex items-center justify-between shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
                         <div>
                             <span class="block text-[13px] text-[#64748b] mb-[6px]">Matched Briefs</span>
@@ -779,7 +768,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-[#e2e8f0] py-12 shrink-0 relative mt-10 w-full">
+    <footer class="bg-white border-t border-[#e2e8f0] py-12 shrink-0 relative mt-10 w-full hidden md:block" id="desktop-footer">
         <div class="max-w-[1400px] mx-auto px-4 md:px-8">
             <div class="max-w-[1240px] mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-6 gap-12 mb-10">
@@ -843,6 +832,64 @@
                             <i class="ph ph-currency-eur text-[16px]"></i>
                             <span>EUR</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Responsive Footer (Visible only on mobile) -->
+    <footer class="bg-white border-t border-gray-200 py-6 shrink-0 mt-4 w-full block md:hidden">
+        <div class="w-full px-4">
+            <div class="mb-6">
+                <div class="mb-4">
+                    <img src="Group 1597890314 (1).svg" alt="Donau AI" class="h-6 w-auto">
+                </div>
+                <p class="text-[#475569] text-[13px] leading-relaxed max-w-[280px]">
+                    AI-powered platform connecting brands<br />with manufacturers
+                </p>
+            </div>
+
+            <div class="border-t border-gray-100 py-4">
+                <h4 class="font-bold text-[#0e1726] text-[14px] flex justify-between items-center m-0">
+                    Platform
+                    <i class="ph ph-caret-down text-slate-400"></i>
+                </h4>
+            </div>
+            <div class="border-t border-gray-100 py-4">
+                <h4 class="font-bold text-[#0e1726] text-[14px] flex justify-between items-center m-0">
+                    Resources
+                    <i class="ph ph-caret-down text-slate-400"></i>
+                </h4>
+            </div>
+            <div class="border-t border-gray-100 py-4">
+                <h4 class="font-bold text-[#0e1726] text-[14px] flex justify-between items-center m-0">
+                    Company
+                    <i class="ph ph-caret-down text-slate-400"></i>
+                </h4>
+            </div>
+            <div class="border-t border-gray-100 py-4">
+                <h4 class="font-bold text-[#0e1726] text-[14px] flex justify-between items-center m-0">
+                    Support
+                    <i class="ph ph-caret-down text-slate-400"></i>
+                </h4>
+            </div>
+
+            <div class="border-t border-gray-100 pt-6 mt-2 flex flex-col items-center gap-6 text-[13px] text-[#64748b]">
+                <p class="order-1">&copy; 2026 DonauApp</p>
+                <div class="flex flex-wrap items-center justify-center gap-4 order-2">
+                    <div class="flex items-center gap-[6px] cursor-pointer hover:text-[#0e1726]">
+                        <i class="ph ph-globe text-[16px]"></i>
+                        <span>English</span>
+                    </div>
+                    <div class="flex items-center gap-[6px] cursor-pointer hover:text-[#0e1726]">
+                        <i class="ph ph-currency-eur text-[16px]"></i>
+                        <span>EUR</span>
+                    </div>
+                    <div class="flex items-center gap-[12px] ml-2">
+                        <a href="#" class="w-[32px] h-[32px] rounded-full bg-[#f1f5f9] flex items-center justify-center text-[#0e1726] hover:bg-[#e2e8f0] transition-colors"><i class="fa-brands fa-facebook-f text-[14px]"></i></a>
+                        <a href="#" class="w-[32px] h-[32px] rounded-full bg-[#f1f5f9] flex items-center justify-center text-[#0e1726] hover:bg-[#e2e8f0] transition-colors"><i class="fa-brands fa-instagram text-[14px]"></i></a>
+                        <a href="#" class="w-[32px] h-[32px] rounded-full bg-[#f1f5f9] flex items-center justify-center text-[#0e1726] hover:bg-[#e2e8f0] transition-colors"><i class="fa-brands fa-linkedin-in text-[14px]"></i></a>
                     </div>
                 </div>
             </div>
